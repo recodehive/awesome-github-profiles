@@ -52,6 +52,10 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         .profile {
             background-color: #fff;
             border: 1px solid #ddd;
@@ -61,6 +65,12 @@
             padding: 15px;
             margin-top: 30;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .profile:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .profile img {
             max-width: 100%;
@@ -72,6 +82,43 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             display: inline-block;
+        }
+        .profile p {
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .profile p:first-child {
+            font-weight: bold;
+        }
+        
+        .profile p:last-child {
+            color: #555; 
+            font-size: 0.9em; 
+        }
+        .profile img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 10px; 
+            display: block; 
+            margin-bottom: 15px; 
+        }
+        .grey-banner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color:#333333;
+            color: white;
+            padding: 10px 15px;
+            border-bottom-left-radius: 10px;
+            font-size: 0.8em;
+            transform: rotate(45deg);
+            transform-origin: top right;
+            right: -20px;
+            top: 80px;
+            width: 120px; 
+            text-align: center;
+            font-size: 11;
         }
     </style>
 </head>
@@ -97,6 +144,9 @@
             <span>Icons 🎯</span>
             <span>Retro 😎</span>
         </div>
+        <a href="https://github.com/recodehive/awesome-github-profiles" class="grey-banner">
+            ADD YOUR PROFILE
+        </a>
         <div class="search-bar">
             <input type="text" placeholder="Search Nickname or Username...">
         </div>
