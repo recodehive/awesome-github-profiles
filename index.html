@@ -58,12 +58,20 @@
             border-radius: 10px;
             margin: 10px;
             width: 300px;
-            padding: 30px; /* Increased padding */
+            padding: 30px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .profile img {
             max-width: 100%;
             border-radius: 10px;
+        }
+        .profile-card {
+            /* Example styling for profile cards */
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: inline-block;
         }
     </style>
 </head>
@@ -93,15 +101,41 @@
             <input type="text" placeholder="Search Nickname or Username...">
         </div>
         <div class="profiles">
-            <div class="profile">
-                <img src="https://via.placeholder.com/500" alt="Profile 1">
-                <p>Hello World, I'm Swyx!</p>
-            </div>
-            <div class="profile">
-                <img src="https://via.placeholder.com/500" alt="Profile 2">
-                <p>Hey! Nice to see you.</p>
-            </div>
+            
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const container = document.querySelector('.profiles');
+                        data.contributors.forEach(contributor => {
+                            const card = document.createElement('div');
+                            card.className = 'profile-card';
+    
+                            const img = document.createElement('img');
+                            img.src = contributor.avatar_url;
+                            img.alt = `Avatar of ${contributor.login}`;
+                            img.width = 100;
+                            img.height = 100;
+    
+                            const name = document.createElement('p');
+                            name.textContent = contributor.login;
+    
+                            card.appendChild(img);
+                            card.appendChild(name);
+    
+                            container.appendChild(card);
+                        });
+                    })
+                    .catch(error => console.error('Failed to fetch contributors:', error));
+            });
+        </script>
     </div>
 </body>
 </html>
