@@ -104,39 +104,55 @@
             
         </div>
         <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
+            document.addEventListener('DOMContentLoaded', function() {
+                let contributors = [];
+            
+                function renderProfiles(filter = '') {
                     const container = document.querySelector('.profiles');
-                    data.contributors.forEach(contributor => {
-                        const card = document.createElement('a');
-                        card.href = `https://github.com/${contributor.login}`
-                        card.className = 'profile'; 
-        
-                        const img = document.createElement('img');
-                        img.src = contributor.avatar_url;
-                        img.alt = `Avatar of ${contributor.login}`;
-                        img.style.maxWidth = '100%'; 
-                        img.style.borderRadius = '10px'; 
-        
-                        const name = document.createElement('p');
-                        name.textContent = contributor.login;
-        
-                        card.appendChild(img);
-                        card.appendChild(name);
-        
-                        container.appendChild(card);
+                    container.innerHTML = '';
+                    contributors.forEach(contributor => {
+                        if (contributor.login.toLowerCase().includes(filter.toLowerCase())) {
+                            const card = document.createElement('a');
+                            card.href = `https://github.com/${contributor.login}`;
+                            card.className = 'profile';
+                            card.target = '_blank';
+            
+                            const img = document.createElement('img');
+                            img.src = contributor.avatar_url;
+                            img.alt = `Avatar of ${contributor.login}`;
+                            img.style.maxWidth = '100%';
+                            img.style.borderRadius = '10px';
+            
+                            const name = document.createElement('p');
+                            name.textContent = contributor.login;
+            
+                            card.appendChild(img);
+                            card.appendChild(name);
+            
+                            container.appendChild(card);
+                        }
                     });
-                })
-                .catch(error => console.error('Failed to fetch contributors:', error));
-        });
-        </script>
+                }
+            
+                fetch('https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        contributors = data.contributors; 
+                        renderProfiles();
+                    })
+                    .catch(error => console.error('Failed to fetch contributors:', error));
+            
+                const searchInput = document.querySelector('.search-bar input');
+                searchInput.addEventListener('input', () => {
+                    renderProfiles(searchInput.value);
+                });
+            });
+            </script>
     </div>
 </body>
 </html>
