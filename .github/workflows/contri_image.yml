@@ -1,0 +1,47 @@
+name: Save Image URL to JSON
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  save-image-url:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Extract Image URL
+        id: extract
+        run: |
+          echo "Extracting image URL from comment"
+          IMAGE_URL=$(echo "${{ github.event.comment.body }}" | grep -oP '(?<=\[image\]\().*?(?=\))')
+          if [ -z "$IMAGE_URL" ]; then
+            echo "No image URL found in the comment."
+            exit 1
+          fi
+          echo "IMAGE_URL=$IMAGE_URL" >> $GITHUB_ENV
+
+      - name: Update image in JSON file
+        run: |
+          IMAGE_URL=${{ env.IMAGE_URL }}
+          JSON_FILE="images.json"
+          if [ ! -f "$JSON_FILE" ]; then
+            echo "[]" > $JSON_FILE
+          fi
+          jq --arg url "$IMAGE_URL" '. += [{"url": $url}]' $JSON_FILE > temp.json && mv temp.json $JSON_FILE
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add $JSON_FILE
+          git commit -m "Add New Profile [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.ALL_TOKEN }}
+
+      - name: Comment on the issue (invoke @all-contributors bot)
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            @all-contributors please add ${{ github.event.issue.user.login }} for content
