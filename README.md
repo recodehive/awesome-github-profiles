@@ -29,6 +29,7 @@ A list of awesome GitHub Profiles under one roof
 <table>
   <tbody>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://dinxsh.xyz"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/issues?q=author%3Adinxsh" title="Bug reports">🐛</a> <a href="#maintenance-dinxsh" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://dinxsh.xyz"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/issues?q=author%3Adinxsh" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/yashksaini-coder"><img src="https://avatars.githubusercontent.com/u/115717039?v=4?s=100" width="100px;" alt="Yash Kumar Saini"/><br /><sub><b>Yash Kumar Saini</b></sub></a><br /><a href="#maintenance-yashksaini-coder" title="Maintenance">🚧</a> <a href="https://github.com/recodehive/awesome-github-profiles/commits?author=yashksaini-coder" title="Code">💻</a></td>
     </tr>

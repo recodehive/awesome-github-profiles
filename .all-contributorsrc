@@ -7,7 +7,16 @@
   "commitType": "docs",
   "commitConvention": "angular",
   "contributors": [
-    
+    {
+      "login": "dinxsh",
+      "name": "Dinesh Talwadker",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90450035?v=4",
+      "profile": "https://dinxsh.xyz",
+      "contributions": [
+        "bug",
+        "maintenance"
+      ]
+    }
   ],
   "contributorsPerLine": 7,
   "skipCi": true,
