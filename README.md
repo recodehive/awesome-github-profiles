@@ -13,13 +13,10 @@
 <a href="https://github.com/recodehive/awesome-github-profiles/blob/master/LICENSE"><img src="https://img.shields.io/github/license/recodehive/awesome-github-profiles?color=2b9348" alt="License Badge"/></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A list of awesome GitHub Profiles under one roof
+
+### add your profile [here](https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+)
 </div>
 
-# Add Your Profile
-
-1. create an issue [here](https://github.com/recodehive/awesome-github-profiles/issues)
-2. comment ```@all-contributors please add @<username> for <contribution>```
-- (refer [here](https://allcontributors.org/docs/en/emoji-key) for contribution types)
 
 ## Profiles ✨
 
