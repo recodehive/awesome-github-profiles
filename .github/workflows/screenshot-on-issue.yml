@@ -1,0 +1,32 @@
+name: Capture GitHub Profile Screenshot
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  capture-screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Capture Screenshot
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node capture-screenshot.js ${{ github.event.issue.user.login }}
+
+      - name: Upload Screenshot
+        uses: actions/upload-artifact@v3
+        with:
+          name: screenshot
+          path: screenshots/
