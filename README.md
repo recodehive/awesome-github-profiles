@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A list of awesome GitHub Profiles under one roof
 
@@ -21,6 +21,7 @@ A list of awesome GitHub Profiles under one roof
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://dinxsh.xyz"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/issues?q=author%3Adinxsh" title="Bug reports">🐛</a> <a href="#maintenance-dinxsh" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MastanSayyad"><img src="https://avatars.githubusercontent.com/u/101971980?v=4?s=100" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AMastanSayyad" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://recodehive.com"><img src="https://avatars.githubusercontent.com/u/30715153?v=4?s=100" width="100px;" alt="Sanjay Viswanathan"/><br /><sub><b>Sanjay Viswanathan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asanjay-kv" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
