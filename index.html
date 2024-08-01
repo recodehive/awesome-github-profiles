@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome GitHub Profile READMEs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -149,58 +150,95 @@
         cursor: pointer;
       }
 
-      .toggle-switch input[type="checkbox"] {
+      /* Hidden Checkbox */
+      #theme-toggle {
         display: none;
       }
 
+      /* Switch Label */
       .toggle-switch label {
-        display: inline-block;
-        width: 50px;
-        height: 25px;
-        background-color: #ccc;
-        border-radius: 50px;
         position: relative;
-        transition: background-color 0.3s ease;
+        width: 55px; /* Adjust width to fit switch button and icons */
+        height: 30px; /* Adjust height if needed */
+        background-color: #ccc;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.5s ease;
       }
 
-      .toggle-switch label::after {
-        content: "";
-        width: 23px;
-        height: 23px;
+      /* Switch Button */
+      .switch-button {
+        position: absolute;
+        top: 2px;
+        left: 3px;
+        width: 27px;
+        height: 27px;
         background-color: #fff;
         border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.5s ease, background-color 0.5s ease;
+      }
+
+      /* Icon Styles */
+      .sun-icon,
+      .moon-icon {
+        user-select: none;
+        font-size: 25px;
         position: absolute;
-        top: 1px;
-        left: 1px;
-        transition: transform 0.3s ease;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.5s ease, color 0.5s ease;
       }
 
-      .toggle-switch input[type="checkbox"]:checked + label {
-        background-color: #333;
+      /* Sun Icon */
+      .sun-icon {
+          color: #f39c12;
+          left: 1px; /* Position from the left edge */
+          opacity: 1; /* Initially visible */
       }
 
-      .toggle-switch input[type="checkbox"]:checked + label::after {
-        transform: translateX(25px);
+      /* Moon Icon */
+      .moon-icon {
+          color: #bdc3c7;
+          right: 1px; /* Position from the right edge */
+          opacity: 0; /* Initially hidden */
       }
 
-      .toggle-switch span {
-        margin-left: 10px;
-        font-size: 16px;
-        color: #333;
+      /* Checkbox Checked State */
+      #theme-toggle:checked + label {
+          background-color: #555;
       }
 
-      body.dark-mode .toggle-switch span {
-        color: #f0f0f0;
+      #theme-toggle:checked + label .sun-icon {
+          opacity: 0; /* Hide sun icon when checked */
       }
+
+      #theme-toggle:checked + label .moon-icon {
+          opacity: 1; /* Show moon icon when checked */
+      }
+
+      #theme-toggle:checked + label .switch-button {
+          transform: translateX(30px); /* Adjust to fit switch width */
+          background-color: black;
+      }
+
     </style>
   </head>
 
   <body>
     <div class="toggle-switch">
       <input type="checkbox" id="theme-toggle" />
-      <label for="theme-toggle"></label>
-      <span>Light Mode</span>
-    </div>
+      <label for="theme-toggle">
+        <div class="switch-button">
+          <span class="material-icons sun-icon">wb_sunny</span>
+          <span class="material-icons moon-icon">brightness_2</span>
+        </div>
+      </label>
+    </div>    
     <div class="container">
       <h1>Awesome GitHub Profile READMEs</h1>
       <div class="tags">
@@ -239,7 +277,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const themeToggleCheckbox = document.querySelector("#theme-toggle");
-        const themeLabel = document.querySelector(".toggle-switch span");
 
         // Function to set the theme
         function setTheme(theme) {
@@ -249,7 +286,6 @@
             themeToggleCheckbox.checked = true;
           } else {
             document.body.classList.remove("dark-mode");
-            themeLabel.textContent = "Light Mode";
             themeToggleCheckbox.checked = false;
           }
           localStorage.setItem("theme", theme);
