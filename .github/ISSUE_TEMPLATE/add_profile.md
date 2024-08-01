@@ -11,3 +11,5 @@ paste a screenshot of your GitHub profile here
 enter category to label your profile
 category:
 
+then comment ``@all-contributors please add @<username> for review``
+
