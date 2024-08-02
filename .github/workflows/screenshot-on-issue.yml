@@ -25,15 +25,12 @@ jobs:
         run: |
           COMMENT="${{ github.event.comment.body }}"
           USERNAME=$(echo "$COMMENT" | sed -n 's/.*@all-contributors please add @\([^ ]*\) for.*/\1/p')
-          echo "USERNAME=$USERNAME" >> $GITHUB_ENV
-          echo "Extracted Username: $USERNAME"
+          echo "USERNAME=${USERNAME}" >> $GITHUB_ENV
+          echo "Extracted Username: ${USERNAME}"
 
       - name: Capture Screenshot
         run: |
-          if [ -z "${{ env.USERNAME }}" ]; then
-            echo "No valid username found in comment."
-            exit 1
-          fi
+          echo "Running screenshot script for username: ${{ env.USERNAME }}"
           node .github/workflows/capture-screenshot.js ${{ env.USERNAME }}
 
       - name: Commit and Push Screenshot
