@@ -25,7 +25,11 @@ jobs:
         run: |
           COMMENT="${{ github.event.comment.body }}"
           echo "Comment body: $COMMENT"
-          USERNAME=$(echo "$COMMENT" | sed -n 's/.*@all-contributors please add @\([^ ]*\) for.*/\1/p')
+          USERNAME=$(echo "$COMMENT" | grep -o '@all-contributors please add @[^ ]*' | cut -d'@' -f3 | cut -d' ' -f1)
+          if [ -z "$USERNAME" ]; then
+            echo "No valid username found in comment."
+            exit 1
+          fi
           echo "Extracted Username: $USERNAME"
           echo "USERNAME=$USERNAME" >> $GITHUB_ENV
 
