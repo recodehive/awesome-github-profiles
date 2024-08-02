@@ -1,0 +1,192 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .main-heading {
+    margin-bottom: 40px;
+  }
+  
+  .tags {
+    margin-bottom: 20px;
+  }
+  
+  .tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-bar {
+    margin-bottom: 20px;
+  }
+  
+  .search-input {
+    width: 50%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .search-input:hover,
+  .search-input:focus {
+    border-color: #aaa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .profile {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px;
+    width: 250px;
+    padding: 15px;
+    margin-top: 30;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .profile p {
+    color: #333;
+  }
+  
+  .grey-banner {
+    background-color: #333333;
+    color: white;
+    padding: 10px 15px;
+    border-bottom-left-radius: 10px;
+    font-size: 0.8em;
+    font-weight: 500;
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+    margin: 20px auto;
+    cursor: pointer;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #000000;
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .tag {
+    background-color: #555;
+    border-color: #444;
+    color: #fff;
+  }
+  
+  body.dark-mode .search-input {
+    background-color: #555;
+    border-color: #444;
+    color: #fff;
+  }
+  
+  body.dark-mode .profile {
+    background-color: #444;
+    border-color: #555;
+  }
+  
+  body.dark-mode .profile p {
+    color: #f0f0f0;
+  }
+  
+  /* Toggle Switch Styles */
+  .toggle-switch {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .toggle-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .toggle-switch label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 50px;
+    position: relative;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-switch label::after {
+    content: "";
+    width: 23px;
+    height: 23px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: transform 0.3s ease;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + label {
+    background-color: #333;
+  }
+  
+  .toggle-switch input[type="checkbox"]:checked + label::after {
+    transform: translateX(25px);
+  }
+  
+  .toggle-label {
+    margin-left: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  body.dark-mode .toggle-label {
+    color: #f0f0f0;
+  }
+  

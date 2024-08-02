@@ -4,312 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome GitHub Profile READMEs</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-        margin: 0;
-        padding: 0;
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
-        text-align: center;
-      }
-
-      h1 {
-        margin-bottom: 40px;
-      }
-
-      .tags {
-        margin-bottom: 20px;
-      }
-
-      .tags span {
-        display: inline-block;
-        margin: 5px;
-        padding: 10px 15px;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .search-bar input {
-        width: 50%;
-        padding: 15px;
-        font-size: 16px;
-        border: 2px solid #ddd;
-        border-radius: 25px;
-        box-shadow: none;
-        transition: border-color 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .search-bar input:hover,
-      .search-bar input:focus {
-        border-color: #aaa;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      .profiles {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
-      }
-
-      .profile {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        margin: 10px;
-        width: 250px;
-        padding: 15px;
-        margin-top: 30;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        animation: fadeIn 0.5s ease-out;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .profile:hover {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .profile img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
-
-      .grey-banner {
-        background-color: #333333;
-        color: white;
-        padding: 10px 15px;
-        border-bottom-left-radius: 10px;
-        font-size: 0.8em;
-        font-weight: 500;
-        width: 200px;
-        text-align: center;
-        display: inline-block;
-        margin: 20px auto;
-        cursor: pointer;
-      }
-
-
-      /* Dark Mode Styles */
-      body.dark-mode {
-        background-color: #000000;
-        color: #f0f0f0;
-      }
-
-      body.dark-mode .tags span {
-        background-color: #555;
-        border-color: #444;
-        color: #fff;
-      }
-
-      body.dark-mode .search-bar input {
-        background-color: #555;
-        border-color: #444;
-        color: #fff;
-      }
-
-      body.dark-mode .profile {
-        background-color: #444;
-        border-color: #555;
-      }
-      body.dark-mode .profile p {
-        color: #f0f0f0;
-      }
-      /* Toggle Switch Styles */
-      .toggle-switch {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      .toggle-switch input[type="checkbox"] {
-        display: none;
-      }
-
-      .toggle-switch label {
-        display: inline-block;
-        width: 50px;
-        height: 25px;
-        background-color: #ccc;
-        border-radius: 50px;
-        position: relative;
-        transition: background-color 0.3s ease;
-      }
-
-      .toggle-switch label::after {
-        content: "";
-        width: 23px;
-        height: 23px;
-        background-color: #fff;
-        border-radius: 50%;
-        position: absolute;
-        top: 1px;
-        left: 1px;
-        transition: transform 0.3s ease;
-      }
-
-      .toggle-switch input[type="checkbox"]:checked + label {
-        background-color: #333;
-      }
-
-      .toggle-switch input[type="checkbox"]:checked + label::after {
-        transform: translateX(25px);
-      }
-
-      .toggle-switch span {
-        margin-left: 10px;
-        font-size: 16px;
-        color: #333;
-      }
-
-      body.dark-mode .toggle-switch span {
-        color: #f0f0f0;
-      }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-
   <body>
     <div class="toggle-switch">
       <input type="checkbox" id="theme-toggle" />
       <label for="theme-toggle"></label>
-      <span>Light Mode</span>
+      <span class="toggle-label">Light Mode</span>
     </div>
     <div class="container">
-      <h1>Awesome GitHub Profile READMEs</h1>
+      <h1 class="main-heading">Awesome GitHub Profile READMEs</h1>
       <div class="tags">
-        <span>All</span>
-        <span>Github Actions 🤖</span>
-        <span>Game Mode 🚀</span>
-        <span>Code Mode 👨‍💻</span>
-        <span>Dynamic Realtime 🔄</span>
-        <span>A Little Bit of Everything 😃</span>
-        <span>Descriptive 🗒</span>
-        <span>Simple but Innovative Ones 🤗</span>
-        <span>Typing.. Mode ⌨️</span>
-        <span>Anime 👾</span>
-        <span>Minimalistic ✨</span>
-        <span>GIFS 🖼️</span>
-        <span>Just Images 🐱</span>
-        <span>Badges 🎖️</span>
-        <span>Fancy Fonts ✍️</span>
-        <span>Icons 🎯</span>
-        <span>Retro 😎</span>
+        <span class="tag">All</span>
+        <span class="tag">Github Actions 🤖</span>
+        <span class="tag">Game Mode 🚀</span>
+        <span class="tag">Code Mode 👨‍💻</span>
+        <span class="tag">Dynamic Realtime 🔄</span>
+        <span class="tag">A Little Bit of Everything 😃</span>
+        <span class="tag">Descriptive 🗒</span>
+        <span class="tag">Simple but Innovative Ones 🤗</span>
+        <span class="tag">Typing.. Mode ⌨️</span>
+        <span class="tag">Anime 👾</span>
+        <span class="tag">Minimalistic ✨</span>
+        <span class="tag">GIFS 🖼️</span>
+        <span class="tag">Just Images 🐱</span>
+        <span class="tag">Badges 🎖️</span>
+        <span class="tag">Fancy Fonts ✍️</span>
+        <span class="tag">Icons 🎯</span>
+        <span class="tag">Retro 😎</span>
       </div>
-      <a
-        href="https://github.com/recodehive/awesome-github-profiles"
-        class="grey-banner"
-      >
+      <a href="https://github.com/recodehive/awesome-github-profiles" class="grey-banner">
         ADD YOUR PROFILE
       </a>
       <div class="search-bar">
-        <input type="text" placeholder="Search Nickname or Username..." />
+        <input type="text" class="search-input" placeholder="Search Nickname or Username..." />
       </div>
       <div class="profiles">
         <!-- Profiles will be dynamically loaded here -->
       </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const themeToggleCheckbox = document.querySelector("#theme-toggle");
-        const themeLabel = document.querySelector(".toggle-switch span");
-
-        // Function to set the theme
-        function setTheme(theme) {
-          if (theme === "dark") {
-            document.body.classList.add("dark-mode");
-            themeLabel.textContent = "Dark Mode";
-            themeToggleCheckbox.checked = true;
-          } else {
-            document.body.classList.remove("dark-mode");
-            themeLabel.textContent = "Light Mode";
-            themeToggleCheckbox.checked = false;
-          }
-          localStorage.setItem("theme", theme);
-        }
-
-        // Load the theme from localStorage
-        const savedTheme = localStorage.getItem("theme") || "light";
-        setTheme(savedTheme);
-
-        // Add event listener to toggle checkbox
-        themeToggleCheckbox.addEventListener("change", () => {
-          const newTheme = themeToggleCheckbox.checked ? "dark" : "light";
-          setTheme(newTheme);
-        });
-
-        // Fetch and render profiles
-        let contributors = [];
-        function renderProfiles(filter = "") {
-          const container = document.querySelector(".profiles");
-          container.innerHTML = "";
-          contributors.forEach((contributor) => {
-            if (
-              contributor.login.toLowerCase().includes(filter.toLowerCase())
-            ) {
-              const card = document.createElement("a");
-              card.href = `https://github.com/${contributor.login}`;
-              card.className = "profile";
-              card.target = "_blank";
-
-              const img = document.createElement("img");
-              img.src = contributor.avatar_url;
-              img.alt = `Avatar of ${contributor.login}`;
-              img.style.maxWidth = "100%";
-              img.style.borderRadius = "10px";
-
-              const name = document.createElement("p");
-              name.textContent = contributor.login;
-
-              card.appendChild(img);
-              card.appendChild(name);
-
-              container.appendChild(card);
-            }
-          });
-        }
-
-        fetch(
-          "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc"
-        )
-          .then((response) => response.json())
-          .then((data) => {
-            contributors = data.contributors;
-            renderProfiles();
-          });
-
-        const searchBar = document.querySelector(".search-bar input");
-        searchBar.addEventListener("input", () => {
-          renderProfiles(searchBar.value);
-        });
-      });
-    </script>
+    <script src="retriveprofile.js"></script>
+    <script src="dark-mode.js"></script>
   </body>
 </html>
