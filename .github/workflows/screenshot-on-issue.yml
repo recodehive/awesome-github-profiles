@@ -17,20 +17,17 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Puppeteer with Chromium
+      - name: Install dependencies
         run: |
-          npm config set puppeteer_skip_chromium_download false
-          npm config set puppeteer_download_host https://storage.googleapis.com
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
           npm install puppeteer
 
       - name: Capture Screenshot
         run: node .github/workflows/capture-screenshot.js ${{ github.event.issue.user.login }}
 
-      - name: List Screenshots Directory
-        run: ls -al screenshots/
-
       - name: Commit and Push Screenshot
-        if: success() && steps.capture-screenshot.outputs.screenshot-created == 'true'
+        if: success()
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
