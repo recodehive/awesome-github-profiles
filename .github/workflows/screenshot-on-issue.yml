@@ -6,7 +6,6 @@ on:
 
 jobs:
   capture-screenshot:
-    if: contains(github.event.comment.body, '@all-contributors please add @')
     runs-on: ubuntu-latest
 
     steps:
@@ -21,22 +20,23 @@ jobs:
       - name: Install Puppeteer
         run: npm install puppeteer
 
-      - name: Debug Comment
-        run: echo "Comment: ${{ github.event.comment.body }}"
-
       - name: Extract Username
         id: extract_username
         run: |
           COMMENT="${{ github.event.comment.body }}"
           USERNAME=$(echo "$COMMENT" | sed -n 's/.*@all-contributors please add @\([^ ]*\) for.*/\1/p')
           echo "USERNAME=$USERNAME" >> $GITHUB_ENV
+          echo "Extracted Username: $USERNAME"
 
       - name: Capture Screenshot
-        if: env.USERNAME != ''
-        run: node .github/workflows/capture-screenshot.js ${{ env.USERNAME }}
+        run: |
+          if [ -z "${{ env.USERNAME }}" ]; then
+            echo "No valid username found in comment."
+            exit 1
+          fi
+          node .github/workflows/capture-screenshot.js ${{ env.USERNAME }}
 
       - name: Commit and Push Screenshot
-        if: env.USERNAME != ''
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
