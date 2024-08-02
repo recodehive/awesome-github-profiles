@@ -5,8 +5,8 @@ const path = require('path');
 async function takeScreenshot(username) {
   const url = `https://github.com/${username}`;
   const browser = await puppeteer.launch({
-    headless: true, // Ensure the browser is launched in headless mode
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] // Add these arguments for compatibility
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   const page = await browser.newPage();
   
@@ -30,7 +30,7 @@ async function main() {
     process.exit(1);
   }
 
-  const screenshotDir = path.resolve(__dirname, 'screenshots');
+  const screenshotDir = path.resolve(__dirname, '../../screenshots');
   if (!fs.existsSync(screenshotDir)) {
     fs.mkdirSync(screenshotDir);
   }

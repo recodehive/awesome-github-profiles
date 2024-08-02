@@ -1,11 +1,12 @@
 name: Capture GitHub Profile Screenshot
 
 on:
-  issues:
-    types: [opened]
+  issue_comment:
+    types: [created]
 
 jobs:
   capture-screenshot:
+    if: contains(github.event.comment.body, '@all-contributors please add @')
     runs-on: ubuntu-latest
 
     steps:
@@ -23,10 +24,15 @@ jobs:
       - name: Capture Screenshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node capture-screenshot.js ${{ github.event.issue.user.login }}
+        run: |
+          COMMENT=${{ github.event.comment.body }}
+          USERNAME=$(echo $COMMENT | sed -n 's/.*@all-contributors please add @\([^ ]*\) for.*/\1/p')
+          node .github/workflows/capture-screenshot.js $USERNAME
 
-      - name: Upload Screenshot
-        uses: actions/upload-artifact@v3
-        with:
-          name: screenshot
-          path: screenshots/
+      - name: Commit and Push Screenshot
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add screenshots/
+          git commit -m "Add screenshot for $USERNAME"
+          git push
