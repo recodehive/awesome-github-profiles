@@ -24,9 +24,10 @@ jobs:
         id: extract_username
         run: |
           COMMENT="${{ github.event.comment.body }}"
+          echo "Comment body: $COMMENT"
           USERNAME=$(echo "$COMMENT" | sed -n 's/.*@all-contributors please add @\([^ ]*\) for.*/\1/p')
-          echo "USERNAME=${USERNAME}" >> $GITHUB_ENV
-          echo "Extracted Username: ${USERNAME}"
+          echo "Extracted Username: $USERNAME"
+          echo "USERNAME=$USERNAME" >> $GITHUB_ENV
 
       - name: Capture Screenshot
         run: |
