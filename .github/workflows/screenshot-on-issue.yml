@@ -17,13 +17,13 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Chromium
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-
       - name: Install Puppeteer
         run: npm install puppeteer
+
+      - name: Install Chromium with Puppeteer
+        run: |
+          npx puppeteer install
+          npx puppeteer browsers install chrome
 
       - name: Capture Screenshot
         run: node .github/workflows/capture-screenshot.js ${{ github.event.issue.user.login }}
