@@ -143,6 +143,8 @@ body {
   /* Switch Label */
   .toggle-switch label {
     position: relative;
+    top: 7px;
+    left: 7px;
     width: 55px; /* Adjust width to fit switch button and icons */
     height: 30px; /* Adjust height if needed */
     background-color: #ccc;
