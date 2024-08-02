@@ -36,3 +36,4 @@ jobs:
           git add screenshots/
           git commit -m "Add screenshot for ${{ github.event.issue.user.login }}"
           git push
+
