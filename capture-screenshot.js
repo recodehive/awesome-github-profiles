@@ -5,15 +5,15 @@ const path = require('path');
 async function takeScreenshot(username) {
   const url = `https://github.com/${username}`;
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox']
+    headless: true, // Ensure the browser is launched in headless mode
+    args: ['--no-sandbox', '--disable-setuid-sandbox'] // Add these arguments for compatibility
   });
   const page = await browser.newPage();
   
   try {
     await page.goto(url, { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1280, height: 800 });
-    const screenshotPath = path.join(__dirname, '../../screenshots', `${username}.png`);
+    const screenshotPath = path.join('screenshots', `${username}.png`);
     await page.screenshot({ path: screenshotPath, fullPage: true });
     await browser.close();
     return screenshotPath;
@@ -30,7 +30,7 @@ async function main() {
     process.exit(1);
   }
 
-  const screenshotDir = path.resolve(__dirname, '../../screenshots');
+  const screenshotDir = path.resolve(__dirname, 'screenshots');
   if (!fs.existsSync(screenshotDir)) {
     fs.mkdirSync(screenshotDir);
   }
