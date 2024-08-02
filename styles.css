@@ -19,6 +19,10 @@ body {
   }
   
   .tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin-bottom: 20px;
   }
   
@@ -138,11 +142,13 @@ body {
   
   /* Toggle Switch Styles */
   .toggle-switch {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+   
+   
     cursor: pointer;
   }
   
@@ -159,7 +165,10 @@ body {
     position: relative;
     transition: background-color 0.3s ease;
   }
-  
+  .toggle-switch-container{
+    position: relative;
+    margin: 40px 0px;
+  }
   .toggle-switch label::after {
     content: "";
     width: 23px;
@@ -189,4 +198,11 @@ body {
   body.dark-mode .toggle-label {
     color: #f0f0f0;
   }
-  
+  @media (max-width:500px){
+    .toggle-switch{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+  }
