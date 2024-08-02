@@ -1,8 +1,8 @@
 name: Capture GitHub Profile Screenshot
 
 on:
-  issue_comment:
-    types: [created]
+  issues:
+    types: [opened]
 
 jobs:
   capture-screenshot:
@@ -20,28 +20,13 @@ jobs:
       - name: Install Puppeteer
         run: npm install puppeteer
 
-      - name: Extract Username
-        id: extract_username
-        run: |
-          COMMENT="${{ github.event.comment.body }}"
-          echo "Comment body: $COMMENT"
-          USERNAME=$(echo "$COMMENT" | grep -o '@all-contributors please add @[^ ]*' | cut -d'@' -f3 | cut -d' ' -f1)
-          if [ -z "$USERNAME" ]; then
-            echo "No valid username found in comment."
-            exit 1
-          fi
-          echo "Extracted Username: $USERNAME"
-          echo "USERNAME=$USERNAME" >> $GITHUB_ENV
-
       - name: Capture Screenshot
-        run: |
-          echo "Running screenshot script for username: ${{ env.USERNAME }}"
-          node .github/workflows/capture-screenshot.js ${{ env.USERNAME }}
+        run: node .github/workflows/capture-screenshot.js ${{ github.event.issue.user.login }}
 
       - name: Commit and Push Screenshot
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add screenshots/
-          git commit -m "Add screenshot for ${{ env.USERNAME }}"
+          git commit -m "Add screenshot for ${{ github.event.issue.user.login }}"
           git push

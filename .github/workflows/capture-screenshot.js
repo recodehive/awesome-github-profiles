@@ -13,7 +13,7 @@ async function takeScreenshot(username) {
   try {
     await page.goto(url, { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1280, height: 800 });
-    const screenshotPath = path.join('screenshots', `${username}.png`);
+    const screenshotPath = path.join(__dirname, '../../screenshots', `${username}.png`);
     await page.screenshot({ path: screenshotPath, fullPage: true });
     await browser.close();
     return screenshotPath;
