@@ -21,7 +21,7 @@ jobs:
           sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable
-          npm install puppeteer
+          npm install puppeteer-core
 
       - name: Capture Screenshot
         run: node .github/workflows/capture-screenshot.js ${{ github.event.issue.user.login }}
