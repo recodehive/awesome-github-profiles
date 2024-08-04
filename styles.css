@@ -225,14 +225,6 @@ body {
   body.dark-mode .toggle-label {
     color: #f0f0f0;
   }
-  @media (max-width:500px){
-    .toggle-switch{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-  }
 
   .navbar {
     display: flex;
