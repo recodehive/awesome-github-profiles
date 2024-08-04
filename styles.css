@@ -143,7 +143,7 @@ body {
   /* Switch Label */
   .toggle-switch label {
     position: relative;
-    top: 7px;
+    top: 0px;
     left: 7px;
     width: 55px; /* Adjust width to fit switch button and icons */
     height: 30px; /* Adjust height if needed */
@@ -225,11 +225,66 @@ body {
   body.dark-mode .toggle-label {
     color: #f0f0f0;
   }
-  @media (max-width:500px){
-    .toggle-switch{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .navbar-text {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-right: 15px;
+  }
+  
+  .navbar-link:hover {
+    background-color: #c5c5c5;
+  }
+  
+  /* Adjust the existing toggle-switch styles to fit in the navbar */
+  .toggle-switch {
+    margin-left: 5px;
+  }
+  
+  /* Dark mode adjustments */
+  body.dark-mode .navbar {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .navbar-link {
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .navbar-link:hover {
+    background-color: #555;
   }
