@@ -1,15 +1,16 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 const path = require('path');
 
 async function takeScreenshot(username) {
   const url = `https://github.com/${username}`;
   const browser = await puppeteer.launch({
-    headless: true, // Ensure the browser is launched in headless mode
-    args: ['--no-sandbox', '--disable-setuid-sandbox'] // Add these arguments for compatibility
+    headless: true,
+    executablePath: '/usr/bin/google-chrome-stable', // Path to Chrome executable
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   const page = await browser.newPage();
-  
+
   try {
     await page.goto(url, { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1280, height: 800 });
