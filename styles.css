@@ -270,7 +270,6 @@ body {
     background-color: #c5c5c5;
   }
   
-  /* Adjust the existing toggle-switch styles to fit in the navbar */
   .toggle-switch {
     margin-left: 5px;
   }
@@ -288,3 +287,152 @@ body {
   body.dark-mode .navbar-link:hover {
     background-color: #555;
   }
+
+  .footer-2 {
+    background-color: #fff;
+    margin-top: 80px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem 0;
+  }
+  
+  .footer-info {
+    flex: 0 1 200px; 
+    margin-top: 2rem;
+    margin-right: 2rem; 
+  }
+  
+  .footer-links {
+    flex: 1 1 auto; 
+    display: flex;
+    justify-content: flex-start; 
+    max-width: 500px; 
+    gap: 50px;
+  }
+  
+  .footer-description {
+    flex: 1 1 300px; 
+    max-width: 400px; 
+  }
+  
+  .footer-logo {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .footer-section {
+    margin-right: 3rem; 
+  }
+  
+  .footer-heading {
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-link {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-description h5 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-link:hover{
+    display: inline-block;
+    text-decoration: underline;
+  }
+  
+  .footer-description h5 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-button {
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .footer-button:hover {
+    background-color: #333;
+  }
+  
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+    font-size: 0.875rem;
+  }
+  
+  /* Dark mode styles */
+  body.dark-mode .footer-2 {
+    background: #333;
+  }
+
+   body.dark-mode .footer-link{
+    color: #fff;
+   }
+
+  body.dark-mode .footer-info img{
+    filter: brightness(0) invert(1) ;
+  } 
+  
+  body.dark-mode .footer-button {
+    background-color: #fff;
+    color: #000;
+  }
+  
+  body.dark-mode .footer-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-info, .footer-links, .footer-description {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .footer-section {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
