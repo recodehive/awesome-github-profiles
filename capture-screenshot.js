@@ -9,8 +9,11 @@ async function takeScreenshot(username) {
     args: ['--no-sandbox', '--disable-setuid-sandbox'] // Add these arguments for compatibility
   });
   const page = await browser.newPage();
-  
+
   try {
+    // Set the page to use light mode
+    await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: 'light' }]);
+
     await page.goto(url, { waitUntil: 'networkidle2' });
     await page.setViewport({ width: 1280, height: 800 });
     const screenshotPath = path.join('screenshots', `${username}.png`);
