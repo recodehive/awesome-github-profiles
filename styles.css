@@ -115,7 +115,10 @@ body {
     margin: 20px auto;
     cursor: pointer;
   }
-  
+  .grey-banner:hover {
+   scale: 1.06;
+   transition: all 0.2s;
+  }
   /* Dark Mode Styles */
   body.dark-mode {
     background-color: #000000;
@@ -438,7 +441,8 @@ body {
     flex-direction: column;
     margin-bottom: 10px !important;
   }
-
+ 
+  
   .footer-section {
     margin-right: 0;
     /* margin-bottom: 1rem; */
