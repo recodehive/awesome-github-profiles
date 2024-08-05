@@ -765,8 +765,8 @@ body.dark-mode .side-icons  a{
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
   border: none;
   display: flex;
   align-items: center;
@@ -781,7 +781,7 @@ body.dark-mode .side-icons  a{
 }
 
 #scrollToTop:hover{
-  background-color: rgb(62, 62, 62);
+  background-color: #3e3e3e;
 }
 
 #scrollToTop.show {
@@ -805,12 +805,12 @@ body.dark-mode .side-icons  a{
 }
 
 body.dark-mode #scrollToTop {
-  background-color: white;
-  color: black;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 body.dark-mode #scrollToTop:hover {
-  background-color: rgba(182, 182, 182, 0.999);
+  background-color: #b6b6b6ff;
 }
 
 body.dark-mode #scrollToTop .arrow-icon {
