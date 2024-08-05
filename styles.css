@@ -462,6 +462,3 @@ body {
   transition: transform 0.75s ease-in-out;
 }
 
-.scroll-on-hover:hover img {
-  transform: translateY(-35%); /* Adjust to match container height */
-}
