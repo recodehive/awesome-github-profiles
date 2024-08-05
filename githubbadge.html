@@ -73,6 +73,68 @@
                 text-align: left;
             }
         }
+
+        
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#scrollToTop:hover{
+  background-color: rgb(62, 62, 62);
+}
+
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTop .arrow-icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+#scrollToTop:hover {
+  transform: translateY(-5px); /* Move button up on hover */
+}
+
+#scrollToTop:hover .arrow-icon {
+  transform: translateY(-2px); /* Move arrow up on hover */
+}
+
+body.dark-mode #scrollToTop {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode #scrollToTop:hover {
+  background-color: rgba(182, 182, 182, 0.999);
+}
+
+body.dark-mode #scrollToTop .arrow-icon {
+  fill: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
     </style>
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <link
@@ -637,6 +699,15 @@
           </div>
         </div>
       </footer>
+
+      <!-- Scroll to top -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+          <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+        </svg>
+      </button>
+  
+      <script src="ScrollToTop.js"></script>
     <script src="dark-mode.js"></script>
 
 </body>
