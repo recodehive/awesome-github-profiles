@@ -3,12 +3,12 @@ const path = require('path');
 
 const username = process.argv[2];
 const prBody = process.argv[3];
-const screenshotUrl = `https://raw.githubusercontent.com/your-repo/awesome-github-profiles/main/screenshots/${username}.png`;
+const screenshotUrl = `https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/${username}.png`;
 
 // Extract selected categories from the PR body
-const categories = prBody.match(/\[(x| )\] (.+)/g).map(line => line.replace(/^\[(x| )\] /, ''));
+const categories = (prBody.match(/\[(x| )\] (.+)/g) || []).map(line => line.replace(/^\[(x| )\] /, ''));
 
-const contributorsFilePath = path.join(__dirname, '../../.all-contributorsrc');
+const contributorsFilePath = path.join(process.cwd(), '.all-contributorsrc');
 const contributorsData = JSON.parse(fs.readFileSync(contributorsFilePath, 'utf8'));
 
 // Check if the user already exists in the contributors data
