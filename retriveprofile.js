@@ -11,34 +11,32 @@ document.addEventListener("DOMContentLoaded", function () {
         card.className = "profile";
         card.target = "_blank";
 
-        // Create the div container for the img element
         const imgContainer = document.createElement("div");
-        imgContainer.className = "img-container"; // Add a class for styling
+        imgContainer.className = "img-container";
 
         const img = document.createElement("img");
         const screenshotSrc = `https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/${contributor.login}.png`;
         img.src = screenshotSrc;
         img.alt = `Avatar of ${contributor.login}`;
-        img.className = "profile-img"; // Add a class for the img
+        img.className = "profile-img";
 
-        // Check if the image is from the specific source
-        if (img.src === screenshotSrc) {
-          imgContainer.classList.add("scroll-on-hover"); // Add a specific class for scroll on hover
-        }
-
-        // Fallback to avatar_url if the screenshot is not found
-        img.onerror = function () {
-          img.src = contributor.avatar_url;
-          imgContainer.classList.remove("scroll-on-hover"); // Remove the scroll-on-hover class if fallback image is used
+        img.onload = function () {
+          if (img.src === screenshotSrc) {
+            imgContainer.classList.add("scroll-on-hover");
+            imgContainer.dataset.imgHeight = img.naturalHeight;
+          }
         };
 
-        // Append the img to the imgContainer
+        img.onerror = function () {
+          img.src = contributor.avatar_url;
+          imgContainer.classList.remove("scroll-on-hover");
+        };
+
         imgContainer.appendChild(img);
 
         const name = document.createElement("p");
         name.textContent = contributor.login;
 
-        // Append the imgContainer and name to the card
         card.appendChild(imgContainer);
         card.appendChild(name);
 
@@ -58,4 +56,23 @@ document.addEventListener("DOMContentLoaded", function () {
   searchBar.addEventListener("input", () => {
     renderProfiles(searchBar.value);
   });
+});
+
+document.addEventListener("mouseover", function (e) {
+  if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
+    const imgContainer = e.target.closest(".img-container");
+    const imgHeight = e.target.naturalHeight;
+    const containerHeight = imgContainer.clientHeight;
+
+    if (imgHeight > containerHeight) {
+      const translateValue = ((imgHeight - containerHeight - 1000) / imgHeight) * 100;
+      e.target.style.transform = `translateY(-${translateValue}%)`;
+    }
+  }
+});
+
+document.addEventListener("mouseout", function (e) {
+  if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
+    e.target.style.transform = "translateY(0)";
+  }
 });
