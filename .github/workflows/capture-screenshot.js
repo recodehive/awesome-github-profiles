@@ -1,19 +1,27 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 const path = require('path');
 
 async function takeScreenshot(username) {
   const url = `https://github.com/${username}`;
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: '/usr/bin/google-chrome-stable', // Path to Chrome executable
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
-  await page.goto(url);
 
-  await page.setViewport({ width: 1280, height: 800 });
-  const screenshotPath = path.join('screenshots', `${username}.png`);
-  await page.screenshot({ path: screenshotPath, fullPage: true });
-
-  await browser.close();
-  return screenshotPath;
+  try {
+    await page.goto(url, { waitUntil: 'networkidle2' });
+    await page.setViewport({ width: 1280, height: 800 });
+    const screenshotPath = path.join('screenshots', `${username}.png`);
+    await page.screenshot({ path: screenshotPath, fullPage: true });
+    await browser.close();
+    return screenshotPath;
+  } catch (error) {
+    await browser.close();
+    throw error;
+  }
 }
 
 async function main() {
@@ -22,13 +30,18 @@ async function main() {
     console.error('No username provided');
     process.exit(1);
   }
-  
-  if (!fs.existsSync('screenshots')) {
-    fs.mkdirSync('screenshots');
+
+  const screenshotDir = path.resolve(__dirname, 'screenshots');
+  if (!fs.existsSync(screenshotDir)) {
+    fs.mkdirSync(screenshotDir);
   }
 
-  const screenshotPath = await takeScreenshot(username);
-  console.log(`Screenshot taken for ${username}: ${screenshotPath}`);
+  try {
+    const screenshotPath = await takeScreenshot(username);
+    console.log(`Screenshot taken for ${username}: ${screenshotPath}`);
+  } catch (error) {
+    console.error(`Error taking screenshot for ${username}:`, error);
+  }
 }
 
 main();
