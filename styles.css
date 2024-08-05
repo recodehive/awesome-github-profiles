@@ -496,14 +496,10 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-}
-body.dark-mode .side-icons {
-  background: #333;
 }
 
 .icons{
@@ -726,3 +722,38 @@ body.dark-mode .side-icons  a{
   color: white !important;
 }
 
+@media (max-width: 768px) {
+  .side-icons {
+    width: 50px;
+    height: auto;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .icons {
+    width: 30px;
+    height: 30px;
+  }
+
+  .side-icons a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px){
+  .side-icons {
+    width: 42px;
+    height: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .icons {
+    width: 25px;
+    height: 25px;
+  }
+
+  .side-icons a {
+    font-size: 16px;
+  }
+}
