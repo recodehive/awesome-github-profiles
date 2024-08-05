@@ -1,0 +1,63 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "MastanSayyad",
+      "name": "Mastan Sayyad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/101971980?v=4",
+      "profile": "https://github.com/MastanSayyad",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "sanjay-kv",
+      "name": "Sanjay Viswanathan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30715153?v=4",
+      "ScreenShot": "https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/sanjay-kv.png",
+      "profile": "https://recodehive.com",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "vishanurag",
+      "name": "ANURAG VISHWAKARMA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/126074487?v=4",
+      "profile": "http://vcma.rf.gd/Portfolio/",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "thevijayshankersharma",
+      "name": "Vijay Shanker Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109781385?v=4",
+      "profile": "https://github.com/thevijayshankersharma",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "nishant0708",
+      "name": "Nishant Kaushal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/101548649?v=4",
+      "profile": "https://github.com/nishant0708",
+      "contributions": [
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "awesome-github-profiles",
+  "projectOwner": "recodehive"
+}
