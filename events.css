@@ -155,6 +155,10 @@ body.dark-mode .event-link:hover {
     background-color: #ccc;
 }
 
+body.dark-mode .navbar-text{
+    color: #fff;
+}
+
 
 /* Responsive design */
 @media screen and (max-width: 768px) {
