@@ -20,14 +20,13 @@
       "login": "sanjay-kv",
       "name": "Sanjay Viswanathan",
       "avatar_url": "https://avatars.githubusercontent.com/u/30715153?v=4",
-       "ScreenShot":"https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/sanjay-kv.png",
+      "ScreenShot": "https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/sanjay-kv.png",
       "profile": "https://recodehive.com",
       "contributions": [
         "review"
       ]
     },
     {
-
       "login": "vishanurag",
       "name": "ANURAG VISHWAKARMA",
       "avatar_url": "https://avatars.githubusercontent.com/u/126074487?v=4",
@@ -41,6 +40,15 @@
       "name": "Vijay Shanker Sharma",
       "avatar_url": "https://avatars.githubusercontent.com/u/109781385?v=4",
       "profile": "https://github.com/thevijayshankersharma",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "nishant0708",
+      "name": "Nishant Kaushal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/101548649?v=4",
+      "profile": "https://github.com/nishant0708",
       "contributions": [
         "review"
       ]
