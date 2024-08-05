@@ -776,6 +776,8 @@ body.dark-mode .side-icons  a{
   transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
   opacity: 0;
   visibility: hidden;
+  z-index: 9999;
+
 }
 
 #scrollToTop:hover{
