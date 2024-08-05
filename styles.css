@@ -479,3 +479,32 @@ body {
   transition: transform 1.5s ease-in-out;
 }
 
+.side-icons{
+  position: fixed;
+  left: 0px;
+  top: 30%;
+  height: 260px;
+  width: 70px;
+  align-items: center;
+  padding-top: 30px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+body.dark-mode .side-icons {
+  background: #333;
+}
+.side-icons a {
+  color: #374151; /* Gray color for the icons */
+  font-size: 24px; /* Size of the icons */
+  text-decoration: none;
+}
+
+.side-icons a:hover {
+  color: #555; /* Darker gray on hover, or adjust to desired hover color */
+}
+body.dark-mode .side-icons  a{
+  color: white !important;
+}
