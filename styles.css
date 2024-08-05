@@ -476,6 +476,6 @@ body {
 }
 
 .scroll-on-hover img {
-  transition: transform 0.75s ease-in-out;
+  transition: transform 1.5s ease-in-out;
 }
 
