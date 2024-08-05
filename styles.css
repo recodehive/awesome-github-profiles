@@ -271,7 +271,7 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    margin-right: 15px;
+    margin-right: 5px;
   }
   
   .navbar-link:hover {
@@ -429,10 +429,14 @@ body {
   .footer-content {
     flex-direction: column;
   }
-.footer-links{
-  gap: 0px !important;
-}
-  .footer-info, .footer-links, .footer-description {
+  .footer-links{
+    gap: 0px !important;
+  }
+  .footer-info{
+    width: 250px;
+    margin-bottom: 2rem;
+  }
+  .footer-links, .footer-description {
     width: 100%;
     margin-bottom: 2rem;
   }
@@ -480,7 +484,57 @@ body {
 }
 
 .scroll-on-hover img {
-  transition: transform 0.75s ease-in-out;
+  transition: transform 1.5s ease-in-out;
+}
+
+.side-icons{
+  position: fixed;
+  right: 0px;
+  top: 30%;
+  height: 260px;
+  width: 70px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+body.dark-mode .side-icons {
+  background: #333;
+}
+
+.icons{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.side-icons a {
+  color: #374151; /* Gray color for the icons */
+  font-size: 24px; /* Size of the icons */
+  text-decoration: none;
+}
+
+.icons:hover{
+  background-color: #777;
+}
+
+.side-icons .icons:hover a{
+  color: #fff; 
+}
+
+body.dark-mode .side-icons .icons:hover a{
+  color: #333 !important; 
+}
+
+body.dark-mode .side-icons .icons:hover{
+  background-color: #fff;
 }
 
 /* Base styles */
@@ -667,4 +721,8 @@ body.theme-dark .center {
 }
 .dark-mode .header,.dark-mode .cell{
   background-color: black !important;
+}
+body.dark-mode .side-icons  a{
+  color: white !important;
+
 }
