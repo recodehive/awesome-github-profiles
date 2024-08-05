@@ -297,7 +297,7 @@ body {
   }
 
   .footer-2 {
-    background-color: #fff;
+      background-color: #dedede;
     margin-top: 80px;
   }
   
@@ -724,5 +724,5 @@ body.theme-dark .center {
 }
 body.dark-mode .side-icons  a{
   color: white !important;
-
 }
+
