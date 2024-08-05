@@ -481,12 +481,13 @@ body {
 
 .side-icons{
   position: fixed;
-  left: 0px;
+  right: 0px;
   top: 30%;
   height: 260px;
   width: 70px;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -496,15 +497,38 @@ body {
 body.dark-mode .side-icons {
   background: #333;
 }
+
+.icons{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 .side-icons a {
   color: #374151; /* Gray color for the icons */
   font-size: 24px; /* Size of the icons */
   text-decoration: none;
 }
 
-.side-icons a:hover {
-  color: #555; /* Darker gray on hover, or adjust to desired hover color */
+.icons:hover{
+  background-color: #777;
 }
+
+.side-icons .icons:hover a{
+  color: #fff; 
+}
+
+body.dark-mode .side-icons .icons:hover a{
+  color: #333 !important; 
+}
+
+body.dark-mode .side-icons .icons:hover{
+  background-color: #fff;
+}
+
 body.dark-mode .side-icons  a{
   color: white !important;
 }
