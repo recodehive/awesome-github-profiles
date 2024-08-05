@@ -36,7 +36,10 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+  .tag:hover{
+    background-color: #ebebeb;
+    
+  }
   .search-bar {
     margin-bottom: 20px;
   }
@@ -124,7 +127,9 @@ body {
     border-color: #444;
     color: #fff;
   }
-  
+  body.dark-mode .tag:hover{
+    background-color: #3f3f3f;
+  }
   body.dark-mode .search-input {
     background-color: #555;
     border-color: #444;
