@@ -492,14 +492,10 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-}
-body.dark-mode .side-icons {
-  background: #333;
 }
 
 .icons{
