@@ -1,0 +1,35 @@
+name: Capture GitHub Profile Screenshot
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  capture-screenshot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxshmfence-dev
+          sudo apt-get install -y wget gnupg
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          npm install puppeteer-core
+
+      - name: Capture Screenshot
+        run: node .github/workflows/capture-screenshot.js ${{ github.event.issue.user.login }}
+
+      - name: Commit and Push Screenshot
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add screenshots/
+          git commit -m "Add screenshot for ${{ github.event.issue.user.login }}"
+          git push
