@@ -426,7 +426,9 @@ body {
   .footer-content {
     flex-direction: column;
   }
-
+.footer-links{
+  gap: 0px !important;
+}
   .footer-info, .footer-links, .footer-description {
     width: 100%;
     margin-bottom: 2rem;
@@ -434,12 +436,22 @@ body {
 
   .footer-links {
     flex-direction: column;
+    margin-bottom: 10px !important;
   }
 
   .footer-section {
     margin-right: 0;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
   }
+  .footer-heading{margin-top: 25px !important;}
+  .footer-info{
+    flex: 0 1;
+    margin-bottom: 10px;
+  }.footer-description{
+    flex: 1 1;
+    margin-bottom: 0px !important;
+  }
+
 }
 
 .img-container {
