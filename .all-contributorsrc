@@ -26,7 +26,6 @@
       ]
     },
     {
-
       "login": "vishanurag",
       "name": "ANURAG VISHWAKARMA",
       "avatar_url": "https://avatars.githubusercontent.com/u/126074487?v=4",
@@ -40,6 +39,15 @@
       "name": "Vijay Shanker Sharma",
       "avatar_url": "https://avatars.githubusercontent.com/u/109781385?v=4",
       "profile": "https://github.com/thevijayshankersharma",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "dinxsh",
+      "name": "Dinesh Talwadker",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90450035?v=4",
+      "profile": "https://dinxsh.xyz",
       "contributions": [
         "review"
       ]
