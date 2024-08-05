@@ -436,3 +436,32 @@ body {
     margin-bottom: 1rem;
   }
 }
+
+.img-container {
+  height: 250px; /* Set the height of the container */
+  width: 100%; /* Adjust width if necessary */
+  overflow: hidden;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.img-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.scroll-on-hover {
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-on-hover img {
+  transition: transform 0.75s ease-in-out;
+}
+
+.scroll-on-hover:hover img {
+  transform: translateY(-35%); /* Adjust to match container height */
+}
