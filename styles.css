@@ -115,7 +115,10 @@ body {
     margin: 20px auto;
     cursor: pointer;
   }
-  
+  .grey-banner:hover {
+   scale: 1.06;
+   transition: all 0.2s;
+  }
   /* Dark Mode Styles */
   body.dark-mode {
     background-color: #000000;
@@ -443,7 +446,8 @@ body {
     flex-direction: column;
     margin-bottom: 10px !important;
   }
-
+ 
+  
   .footer-section {
     margin-right: 0;
     /* margin-bottom: 1rem; */
@@ -493,14 +497,10 @@ body {
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: white;
+  background-color: none;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-}
-body.dark-mode .side-icons {
-  background: #333;
 }
 
 .icons{
@@ -534,6 +534,227 @@ body.dark-mode .side-icons .icons:hover{
   background-color: #fff;
 }
 
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 3em;
+  font-weight: bold;
+  color: #f67621;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* Chrono component styles */
+.chrono {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event {
+  background-color: #f67621;
+  color: white;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.event img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.event figcaption {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.event p {
+  font-size: 1em;
+  margin: 10px 0;
+}
+
+.event .link {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+}
+
+.event .link:hover {
+  text-decoration: underline;
+}
+
+/* Dark mode styles */
+body.theme-dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.theme-dark .wrapper {
+  background: #1e1e1e;
+}
+
+body.theme-dark .title {
+  color: #f67621;
+}
+
+body.theme-dark .event {
+  background-color: #474747;
+}
+
+body.theme-dark .event .link {
+  color: #f67621;
+  border-bottom: 2px solid #f67621;
+}
+
+body.theme-dark .container{
+  background-color: black !important;
+}
+body.theme-dark .center {
+  background-color: black !important;
+}
+/* Light Mode Styles */
+.darkmodeimg {
+  display: none;
+}
+
+/* Dark Mode Styles */
+.dark-mode .darkmodeimg {
+  display: block !important;
+}
+.lightmodeimg{
+  display: block;
+}
+.dark-mode .lightmodeimg {
+  display: none !important;
+}
+.dark-mode .container h1,.dark-mode .container h2{
+  color: white !important;
+}
+.table-container {
+    width: 100% !important; /* Set width to 90% of the viewport width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin: 0 auto; /* Center the container */
+}
+
+.header, .row {
+    display: flex;
+
+    flex-wrap: wrap; /* Prevent wrapping */
+}
+
+.cell {
+    flex: auto; /* Allow cells to expand and fill the row */
+    padding: 8px;
+    border: 1px solid #ddd; /* Add border */
+    text-align: left; /* Align text to the left */
+    /* min-width: 100px; */
+}
+
+.header {
+    background-color: #f2f2f2; /* Light gray background for header */
+    font-weight: bold;
+}
+
+.inner-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inner-table .header, .inner-table .rows {
+    display: flex;
+    flex-wrap: wrap; /* Prevent wrapping */
+}
+
+.inner-table .header .cell {
+    flex: auto !important;
+    background-color: #f2f2f2; /* Light gray background for inner table header */
+}
+
+.inner-table .rows {
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.inner-table .row {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.inner-table .row .cell {
+    flex: 1;
+    border: 1px solid #ddd; /* Add border */
+}
+.dark-mode .header,.dark-mode .cell{
+  background-color: black !important;
+}
 body.dark-mode .side-icons  a{
   color: white !important;
+}
+
+@media (max-width: 768px) {
+  .side-icons {
+    width: 50px;
+    height: auto;
+    padding: 10px 0;
+    gap: 15px;
+  }
+
+  .icons {
+    width: 30px;
+    height: 30px;
+  }
+
+  .side-icons a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 425px){
+  .side-icons {
+    width: 42px;
+    height: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .icons {
+    width: 25px;
+    height: 25px;
+  }
+
+  .side-icons a {
+    font-size: 16px;
+  }
 }
