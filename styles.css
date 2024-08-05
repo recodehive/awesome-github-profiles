@@ -245,6 +245,7 @@ body {
   
   .navbar-left {
     display: flex;
+    cursor: pointer;
     align-items: center;
   }
   
