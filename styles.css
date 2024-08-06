@@ -898,3 +898,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* view count */
+a{
+  text-decoration: none;
+}
