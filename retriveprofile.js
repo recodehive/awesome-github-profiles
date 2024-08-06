@@ -1,13 +1,6 @@
 // Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyBEBhBv7AcPhmWS1JwfXijBEarDjsz16xM",
-  authDomain: "lupo-7ba5f.firebaseapp.com",
-  databaseURL: "https://lupo-7ba5f-default-rtdb.firebaseio.com",
-  projectId: "lupo-7ba5f",
-  storageBucket: "lupo-7ba5f.appspot.com",
-  messagingSenderId: "418172032930",
-  appId: "1:418172032930:web:b28842c67139e5c0e6c4fb",
-  measurementId: "G-1NVNFSWR1M"
+  //Add firebase Config Files
 };
 
 // Initialize Firebase
@@ -55,28 +48,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const viewCount = document.createElement("p");
         viewCount.className = "view-count";
-        viewCount.innerHTML = '<i class="fa fa-eye"></i> <span>Views: Loading...</span>'; // Placeholder text
+        viewCount.innerHTML =
+          '<i class="fa fa-eye"></i> <span>Views: Loading...</span>'; // Placeholder text
 
         // Retrieve and listen to view count from Firebase
-        const profileRef = firebase.database().ref(`profiles/${contributor.login}/views`);
+        const profileRef = firebase
+          .database()
+          .ref(`profiles/${contributor.login}/views`);
         profileRef.on("value", (snapshot) => {
           if (snapshot.exists()) {
             viewCount.innerHTML = `<i class="fa fa-eye"></i> <span>Views: ${snapshot.val()} </span>`;
           } else {
             // Handle new profile
             profileRef.set(0);
-            viewCount.innerHTML = '<i class="fa fa-eye"></i><span> Views: 0 </span>';
+            viewCount.innerHTML =
+              '<i class="fa fa-eye"></i><span> Views: 0 </span>';
           }
         });
 
         // Increment view count on click
         card.addEventListener("click", (e) => {
           e.preventDefault();
-          profileRef.transaction((currentViews) => {
-            return (currentViews || 0) + 1;
-          }).then(() => {
-            window.open(card.href, "_blank");
-          });
+          profileRef
+            .transaction((currentViews) => {
+              return (currentViews || 0) + 1;
+            })
+            .then(() => {
+              window.open(card.href, "_blank");
+            });
         });
 
         card.appendChild(imgContainer);
@@ -90,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch contributors data
-  fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
+  fetch(
+    "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc"
+  )
     .then((response) => response.json())
     .then((data) => {
       contributors = data.contributors;
