@@ -1,12 +1,11 @@
 // Firebase configuration
 var firebaseConfig = {
-  //Add firebase Config Files
+//Add Config Files here 
 };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
 
@@ -48,34 +47,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const viewCount = document.createElement("p");
         viewCount.className = "view-count";
-        viewCount.innerHTML =
-          '<i class="fa fa-eye"></i> <span>Views: Loading...</span>'; // Placeholder text
+        viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: Loading...'; // Placeholder text
 
         // Retrieve and listen to view count from Firebase
-        const profileRef = firebase
-          .database()
-          .ref(`profiles/${contributor.login}/views`);
+        const profileRef = firebase.database().ref(`profiles/${contributor.login}/views`);
         profileRef.on("value", (snapshot) => {
           if (snapshot.exists()) {
-            viewCount.innerHTML = `<i class="fa fa-eye"></i> <span>Views: ${snapshot.val()} </span>`;
+            viewCount.innerHTML = `<i class="fa fa-eye"></i> Views: ${snapshot.val()}`;
           } else {
             // Handle new profile
             profileRef.set(0);
-            viewCount.innerHTML =
-              '<i class="fa fa-eye"></i><span> Views: 0 </span>';
+            viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: 0';
           }
         });
 
         // Increment view count on click
         card.addEventListener("click", (e) => {
           e.preventDefault();
-          profileRef
-            .transaction((currentViews) => {
-              return (currentViews || 0) + 1;
-            })
-            .then(() => {
-              window.open(card.href, "_blank");
-            });
+          profileRef.transaction((currentViews) => {
+            return (currentViews || 0) + 1;
+          }).then(() => {
+            window.open(card.href, "_blank");
+          });
         });
 
         card.appendChild(imgContainer);
@@ -89,9 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Fetch contributors data
-  fetch(
-    "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc"
-  )
+  fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
     .then((response) => response.json())
     .then((data) => {
       contributors = data.contributors;
@@ -103,4 +94,23 @@ document.addEventListener("DOMContentLoaded", function () {
   searchBar.addEventListener("input", () => {
     renderProfiles(searchBar.value);
   });
+});
+
+document.addEventListener("mouseover", function (e) {
+  if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
+    const imgContainer = e.target.closest(".img-container");
+    const imgHeight = e.target.naturalHeight;
+    const containerHeight = imgContainer.clientHeight;
+
+    if (imgHeight > containerHeight) {
+      const translateValue = ((imgHeight - containerHeight - 1000) / imgHeight) * 100;
+      e.target.style.transform = `translateY(-${translateValue}%)`;
+    }
+  }
+});
+
+document.addEventListener("mouseout", function (e) {
+  if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
+    e.target.style.transform = "translateY(0)";
+  }
 });
