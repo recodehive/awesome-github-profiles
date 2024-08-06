@@ -7,6 +7,68 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Styling for Vertical Scrollbar */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ebebeb;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #383838; 
+  border-radius: 6px; 
+  border: 0.4px solid #eaeaeb; 
+  transition: background 0.6s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #545454; 
+}
+
+::-webkit-scrollbar-button {
+  background-color: #f1f1f1;
+  background-repeat: no-repeat;   
+  background-size: 120%;
+}
+
+::-webkit-scrollbar-button:decrement {
+  background-image: url("https://omjsblog.wordpress.com/wp-content/uploads/2024/05/rocket-up.png");   
+}
+
+::-webkit-scrollbar-button:increment {
+  background-image: url("https://omjsblog.wordpress.com/wp-content/uploads/2024/05/rocket-down.png"); 
+}
+
+/* Styling for Dark Mode */
+
+body.dark-mode ::-webkit-scrollbar {
+  width: 12px;
+}
+
+body.dark-mode::-webkit-scrollbar-track {
+  background: #646464;
+  border-radius: 6px;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb {
+  background-color: #ffffff; 
+  border-radius: 6px; 
+  border: 0.4px solid #555; 
+  transition: background 0.6s ease-in-out;
+}
+
+body.dark-mode::-webkit-scrollbar-thumb:hover {
+  background-color: #edfbff; 
+}
+
+body.dark-mode ::-webkit-scrollbar-button {
+  background-color: #444;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
