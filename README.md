@@ -3,6 +3,8 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 This is the all in one place of awesome-github-profiles.
@@ -16,18 +18,26 @@ This is the all in one place of awesome-github-profiles.
 <table>
   <tbody>
     <tr>
+
+      <td align="center" valign="top" width="14.28%"><a href="https://dinxsh.xyz"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/issues?q=author%3Adinxsh" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yashksaini-coder"><img src="https://avatars.githubusercontent.com/u/115717039?v=4?s=100" width="100px;" alt="Yash Kumar Saini"/><br /><sub><b>Yash Kumar Saini</b></sub></a><br /><a href="#maintenance-yashksaini-coder" title="Maintenance">🚧</a> <a href="https://github.com/recodehive/awesome-github-profiles/commits?author=yashksaini-coder" title="Code">💻</a> <a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayashksaini-coder" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/MastanSayyad"><img src="https://avatars.githubusercontent.com/u/101971980?v=4?s=100" width="100px;" alt="Mastan Sayyad"/><br /><sub><b>Mastan Sayyad</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AMastanSayyad" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://recodehive.com"><img src="https://avatars.githubusercontent.com/u/30715153?v=4?s=100" width="100px;" alt="Sanjay Viswanathan"/><br /><sub><b>Sanjay Viswanathan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asanjay-kv" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://vcma.rf.gd/Portfolio/"><img src="https://avatars.githubusercontent.com/u/126074487?v=4?s=100" width="100px;" alt="ANURAG VISHWAKARMA"/><br /><sub><b>ANURAG VISHWAKARMA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avishanurag" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/thevijayshankersharma"><img src="https://avatars.githubusercontent.com/u/109781385?v=4?s=100" width="100px;" alt="Vijay Shanker Sharma"/><br /><sub><b>Vijay Shanker Sharma</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Athevijayshankersharma" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nishant0708"><img src="https://avatars.githubusercontent.com/u/101548649?v=4?s=100" width="100px;" alt="Nishant Kaushal"/><br /><sub><b>Nishant Kaushal</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Anishant0708" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/RadhikaMalpani1702"><img src="https://avatars.githubusercontent.com/u/163530398?v=4?s=100" width="100px;" alt="Radhika Malpani"/><br /><sub><b>Radhika Malpani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ARadhikaMalpani1702" title="Reviewed Pull Requests">👀</a></td>
+
     </tr>
   </tbody>
 </table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
