@@ -8,22 +8,59 @@
   "commitConvention": "angular",
   "contributors": [
     {
-      "login": "dinxsh",
-      "name": "Dinesh Talwadker",
-      "avatar_url": "https://avatars.githubusercontent.com/u/90450035?v=4",
-      "profile": "https://dinxsh.xyz",
+      "login": "MastanSayyad",
+      "name": "Mastan Sayyad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/101971980?v=4",
+      "profile": "https://github.com/MastanSayyad",
       "contributions": [
-        "bug"
+        "review"
       ]
     },
     {
-      "login": "yashksaini-coder",
-      "name": "Yash Kumar Saini",
-      "avatar_url": "https://avatars.githubusercontent.com/u/115717039?v=4",
-      "profile": "https://github.com/yashksaini-coder",
+      "login": "sanjay-kv",
+      "name": "Sanjay Viswanathan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30715153?v=4",
+      "ScreenShot": "https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/sanjay-kv.png",
+      "profile": "https://recodehive.com",
       "contributions": [
         "maintenance",
         "code",
+        "review"
+      ]
+    },
+    {
+      "login": "vishanurag",
+      "name": "ANURAG VISHWAKARMA",
+      "avatar_url": "https://avatars.githubusercontent.com/u/126074487?v=4",
+      "profile": "http://vcma.rf.gd/Portfolio/",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "thevijayshankersharma",
+      "name": "Vijay Shanker Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/109781385?v=4",
+      "profile": "https://github.com/thevijayshankersharma",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "nishant0708",
+      "name": "Nishant Kaushal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/101548649?v=4",
+      "profile": "https://github.com/nishant0708",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "RadhikaMalpani1702",
+      "name": "Radhika Malpani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/163530398?v=4",
+      "profile": "https://github.com/RadhikaMalpani1702",
+      "contributions": [
         "review"
       ]
     }
