@@ -3,14 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<a href="https://github.com/recodehive/awesome-github-profiles/stargazers"><img src="https://img.shields.io/github/stars/recodehive/awesome-github-profiles" alt="Stars Badge"/></a>
-<a href="https://github.com/recodehive/awesome-github-profiles/network/members"><img src="https://img.shields.io/github/forks/recodehive/awesome-github-profiles" alt="Forks Badge"/></a>
-<a href="https://github.com/recodehive/awesome-github-profiles/pulls"><img src="https://img.shields.io/github/issues-pr/recodehive/awesome-github-profiles" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/recodehive/awesome-github-profiles/issues"><img src="https://img.shields.io/github/issues/recodehive/awesome-github-profiles" alt="Issues Badge"/></a>
-<a href="https://github.com/recodehive/awesome-github-profiles/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/recodehive/awesome-github-profiles?color=2b9348"></a>
-<a href="https://github.com/recodehive/awesome-github-profiles/blob/master/LICENSE"><img src="https://img.shields.io/github/license/recodehive/awesome-github-profiles?color=2b9348" alt="License Badge"/></a>
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 A list of awesome GitHub Profiles under one roof
 </div>
@@ -30,12 +23,14 @@ A list of awesome GitHub Profiles under one roof
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://dinxsh.xyz"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/issues?q=author%3Adinxsh" title="Bug reports">🐛</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yashksaini-coder"><img src="https://avatars.githubusercontent.com/u/115717039?v=4?s=100" width="100px;" alt="Yash Kumar Saini"/><br /><sub><b>Yash Kumar Saini</b></sub></a><br /><a href="#maintenance-yashksaini-coder" title="Maintenance">🚧</a> <a href="https://github.com/recodehive/awesome-github-profiles/commits?author=yashksaini-coder" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yashksaini-coder"><img src="https://avatars.githubusercontent.com/u/115717039?v=4?s=100" width="100px;" alt="Yash Kumar Saini"/><br /><sub><b>Yash Kumar Saini</b></sub></a><br /><a href="#maintenance-yashksaini-coder" title="Maintenance">🚧</a> <a href="https://github.com/recodehive/awesome-github-profiles/commits?author=yashksaini-coder" title="Code">💻</a> <a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayashksaini-coder" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Tools
