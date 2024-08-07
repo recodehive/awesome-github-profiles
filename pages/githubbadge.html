@@ -136,6 +136,105 @@
     html {
       scroll-behavior: smooth;
     }
+
+    .navbar-links {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    margin: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .hamburger.active div:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    position: absolute;
+    top: 52px;
+    left: 0;
+    opacity: 0;
+    z-index: 999;
+    transform: translateY(-20px);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+  }
+
+
+  .mobile-menu a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    /* border-bottom: 1px solid #444; */
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a:hover {
+    text-decoration: underline;
+  }
+
+  
+  body.dark-mode .hamburger div {
+    background-color: white;
+  }
+
+  body.dark-mode .mobile-menu a {
+    color: white;
+  }
+
+  body.dark-mode .mobile-menu {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+
+
+  @media (max-width: 768px) {
+    .navbar-right {
+      display: none !important;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .side-icons {
+        flex-direction: column;
+        margin-top: 35px;
+    }
+
+  }
   </style>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link
@@ -170,7 +269,21 @@
             </label>
           </div>
         </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
       </nav>
+      <div class="mobile-menu" id="mobile-menu">
+		<a href="#" class="navbar-links">Github-Badge</a>
+          <a href="#" class="navbar-links">Tools</a>
+        <a href="events.html" class="navbar-links">Events</a>
+        <a href="blog.html" class="navbar-links">Blog</a>
+        <a href="#" class="navbar-links">Add Profile</a>
+        <a href="blog.html" class="navbar-links">Learn</a>
+	</div>
+    
     <div class="container">
         <div class="center">
             <div style="display: flex;flex-direction: column;align-items: center;">
@@ -699,8 +812,26 @@
         </svg>
       </button>
   
-      <script src="../scripts/ScrollToTop.js"></script>
+    <script src="../scripts/ScrollToTop.js"></script>
     <script src="../scripts/dark-mode.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
 
+    hamburger.addEventListener("click", function() {
+        hamburger.classList.toggle("active");
+        if (mobileMenu.classList.contains("show")) {
+            mobileMenu.classList.remove("show");
+            setTimeout(() => mobileMenu.style.display = "none", 300);
+        } else {
+            mobileMenu.style.display = "flex";
+            setTimeout(() => mobileMenu.classList.add("show"), 10);
+        }
+    });
+});
+
+
+      </script>
 </body>
 </html>
