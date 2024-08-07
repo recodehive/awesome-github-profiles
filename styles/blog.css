@@ -200,3 +200,143 @@ body.dark-mode .blog-card .excerpt {
     width: 40%;
     height: 400px;
 }
+
+
+
+/* Popup container */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+/* Popup content */
+.popup-content {
+    background-color: #fefefe;
+    display: flex;
+max-width: 700px;
+    margin: 15% auto; /* 15% from the top and centered */
+   
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: relative;
+    border-radius: 20px;
+}
+.line{
+    width: 100px;
+    border-right: solid  1px black;
+    border-right-style: dashed;
+}
+/* Close button */
+.popup-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+
+.popup-close:hover,
+.popup-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button inside popup */
+.popup-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+}
+
+.popup-button:hover {
+    background-color: #45a049;
+}
+.main-popup-content{
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 500px;
+    height: 417px;
+
+}
+.main-popup-content h1{
+    margin-bottom: 40px;
+}
+.call{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+}
+.card-footer{
+    height: 80px;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+.card-footer a{
+    text-decoration: none;
+    color: black ;
+}
+.side-content{
+    height: 100%;
+    display: flex;
+    width: 300px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 417px;
+}
+
+.side-content svg{
+    position: relative;
+    top:70px;
+}
+
+@media only screen and (max-width:700px){
+    .side-content{
+        height: auto ;
+    }
+    .main-popup-content{
+        height: auto ;
+    }
+    .main-popup-content h1{
+        font-size: 30px !important;
+        margin-bottom: 10px;
+    }
+    .main-popup-content p{
+        margin-bottom: 4px;
+    }
+    .call{
+        flex-direction: column;
+        gap:10px;
+        align-items: start;
+    }
+    .popup-content{
+        margin: 15% auto;
+        width: 95vw;
+    }
+}
+.dark-mode .main-popup-content h1{
+    color: black !important;
+}
+.dark-mode .card-footer p{
+    color: black !important;
+}
