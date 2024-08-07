@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Awesome GitHub Profile READMEs</title>
+    <link rel="shortcut icon" href="assets/recode-hive.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
@@ -11,7 +12,8 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -23,7 +25,7 @@
         <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
         <a href="#" class="navbar-link">Tools</a>
         <a href="events.html" class="navbar-link">Events</a>
-        <a href="link-to-blog" class="navbar-link">Blog</a>
+        <a href="blog.html" class="navbar-link">Blog</a>
         <div class="toggle-switch">
           <input type="checkbox" id="theme-toggle">
           <label for="theme-toggle">
@@ -40,32 +42,38 @@
 
     </nav>   
     <div class="side-icons">
-      <div class="icons">
-      <a href="https://www.facebook.com/recodehive" target="_blank" aria-label="Facebook">
+      <div class="icon-content">
+        <a href="https://www.facebook.com/recodehive" target="_blank" aria-label="Facebook" data-social="facebook">
           <i class="fab fa-facebook-f"></i>
-      </a>
-    </div>
-    <div class="icons">
-      <a href="https://github.com/recodehive" target="_blank" aria-label="Instagram">
-          <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-    <div class="icons">
-      <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn">
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
           <i class="fab fa-linkedin-in"></i>
-      </a>
-    </div>
-    <div class="icons">
-      <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter">
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://twitter.com/sanjay_kv" target="_blank" aria-label="Twitter" data-social="twitter">
           <i class="fab fa-twitter"></i>
-      </a>
-    </div>
-    <div class="icons">
-      <a href="https://www.youtube.com/@RecodeHive" target="_blank" aria-label="YouTube">
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube" data-social="youtube">
           <i class="fab fa-youtube"></i>
-      </a>
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://github.com/recodehive" target="_blank" aria-label="GitHub" data-social="github">
+          <i class="fab fa-github"></i>
+          <div class="filled"></div>
+        </a>
+      </div>
     </div>
-  </div>
+    
   
 
     <div class="container">
@@ -143,7 +151,21 @@
         </div>
       </div>
     </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+        <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+      </svg>
+    </button>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="ScrollToTop.js"></script>
     <script src="retriveprofile.js"></script>
     <script src="dark-mode.js"></script>
+
+
   </body>
 </html>
