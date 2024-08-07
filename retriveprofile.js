@@ -1,14 +1,14 @@
 // Firebase configuration
 var firebaseConfig = {
 //Add Config Files here 
-apiKey: "AIzaSyBEBhBv7AcPhmWS1JwfXijBEarDjsz16xM",
-  authDomain: "lupo-7ba5f.firebaseapp.com",
-  databaseURL: "https://lupo-7ba5f-default-rtdb.firebaseio.com",
-  projectId: "lupo-7ba5f",
-  storageBucket: "lupo-7ba5f.appspot.com",
-  messagingSenderId: "418172032930",
-  appId: "1:418172032930:web:b28842c67139e5c0e6c4fb",
-  measurementId: "G-1NVNFSWR1M"
+  apiKey: "AIzaSyBSiO9d5tHuyyAeUCt37pxDWTT7jPSigaU",
+  authDomain: "awesome-github-profiles.firebaseapp.com",
+  databaseURL: "https://awesome-github-profiles-default-rtdb.firebaseio.com",
+  projectId: "awesome-github-profiles",
+  storageBucket: "awesome-github-profiles.appspot.com",
+  messagingSenderId: "490821849262",
+  appId: "1:490821849262:web:7e97984d98f578b81f9d3f",
+  measurementId: "G-WM33JZYEV0"
 };
 
 // Initialize Firebase
