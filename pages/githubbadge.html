@@ -76,76 +76,75 @@
         }
 
         
-#scrollToTop {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: black;
-  color: white;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
-  opacity: 0;
-  visibility: hidden;
-}
+    #scrollToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+      opacity: 0;
+      visibility: hidden;
+    }
 
-#scrollToTop:hover{
-  background-color: rgb(62, 62, 62);
-}
+    #scrollToTop:hover{
+      background-color: rgb(62, 62, 62);
+    }
 
-#scrollToTop.show {
-  opacity: 1;
-  visibility: visible;
-}
+    #scrollToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
 
-#scrollToTop .arrow-icon {
-  fill: white;
-  width: 24px;
-  height: 24px;
-  transition: transform 0.3s;
-}
+    #scrollToTop .arrow-icon {
+      fill: white;
+      width: 24px;
+      height: 24px;
+      transition: transform 0.3s;
+    }
 
-#scrollToTop:hover {
-  transform: translateY(-5px); /* Move button up on hover */
-}
+    #scrollToTop:hover {
+      transform: translateY(-5px); /* Move button up on hover */
+    }
 
-#scrollToTop:hover .arrow-icon {
-  transform: translateY(-2px); /* Move arrow up on hover */
-}
+    #scrollToTop:hover .arrow-icon {
+      transform: translateY(-2px); /* Move arrow up on hover */
+    }
 
-body.dark-mode #scrollToTop {
-  background-color: white;
-  color: black;
-}
+    body.dark-mode #scrollToTop {
+      background-color: white;
+      color: black;
+    }
 
-body.dark-mode #scrollToTop:hover {
-  background-color: rgba(182, 182, 182, 0.999);
-}
+    body.dark-mode #scrollToTop:hover {
+      background-color: rgba(182, 182, 182, 0.999);
+    }
 
-body.dark-mode #scrollToTop .arrow-icon {
-  fill: black;
-}
+    body.dark-mode #scrollToTop .arrow-icon {
+      fill: black;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
-    </style>
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <link
-       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-       rel="stylesheet"
-     />
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
 
-     <link rel="stylesheet" href="../styles/styles.css">
-     <link rel="stylesheet" href="../styles/githubbadge.css" />
-
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/githubbadge.css" />
 
 </head>
 <body>
@@ -155,9 +154,8 @@ html {
           <span class="navbar-text">Recode Hive</span>
         </div>
         <div class="navbar-right">
-          <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+          <a href="#" class="navbar-link">Github-Badge</a>
           <a href="#" class="navbar-link">Tools</a>
-
         <a href="events.html" class="navbar-link">Events</a>
         <a href="blog.html" class="navbar-link">Learn</a>
           <div class="toggle-switch">
