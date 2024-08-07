@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       return
     } 
-    contributors.forEach((contributor) => {
+    contributors.forEach((contributor,index) => {
       noProfilesMessage.style.display = "none";
 
       if (contributor.login.toLowerCase().includes(filter.toLowerCase())) {
@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Retrieve and listen to view count from Firebase
         const profileRef = firebase.database().ref(`profiles/${contributor.login}/views`);
+        const profileRefLikes = firebase.database().ref(`profiles/${contributor.login}/likes`);
         profileRef.on("value", (snapshot) => {
           if (snapshot.exists()) {
             viewCount.innerHTML = `<i class="fa fa-eye"></i> Views: ${snapshot.val()}`;
@@ -83,8 +84,28 @@ document.addEventListener("DOMContentLoaded", function () {
             profileRef.set(0);
             viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: 0';
           }
+          
         });
-
+        let masterDiv=document.createElement('p')
+        masterDiv.classList='views-likes'
+        let div=document.createElement('p')
+        div.className="view"
+        div.id=contributor.login
+        profileRefLikes.on("value", (snapshot) => {
+          let isRed=false
+          let item=JSON.parse(localStorage.getItem('isLike'))
+          if(item&&item.includes(contributor.login)){
+            isRed=true
+          }
+          if (snapshot.exists()) {
+            div.innerHTML = `<i class="fa fa-heart ${isRed?"like-red":""}"></i> Likes: ${snapshot.val()}`;
+          } else {
+            // Handle new profile
+            profileRef.set(0);
+            div.innerHTML = '<i class="fa fa-heart"></i> Likes: 0';
+          }
+          
+        });
         // Increment view count on click
         card.addEventListener("click", (e) => {
           e.preventDefault();
@@ -94,13 +115,52 @@ document.addEventListener("DOMContentLoaded", function () {
             window.open(card.href, "_blank");
           });
         });
-
         card.appendChild(imgContainer);
         card.appendChild(name);
-        card.appendChild(viewCount);
+        masterDiv.appendChild(viewCount)
+        masterDiv.appendChild(div)
+        card.appendChild(masterDiv);
+
         card.classList.add("profile-card");
 
         container.appendChild(card);
+        div.addEventListener('click', (e) => {
+          e.preventDefault();  // Prevent the default action
+          e.stopPropagation(); // Prevent event bubbling
+        
+          const targetId = e.target.id;
+        
+          // Get current 'isLike' list from LocalStorage
+          let item = JSON.parse(localStorage.getItem('isLike')) || [];
+        
+          if (item.includes(targetId)) {
+            // If the target ID is already in the 'isLike' list, remove it
+            const idx = item.indexOf(targetId);
+            item.splice(idx, 1);
+        
+            // Update LocalStorage
+            if (item.length === 0) {
+              localStorage.removeItem('isLike');
+            } else {
+              localStorage.setItem('isLike', JSON.stringify(item));
+            }
+        
+            // Decrement the like count
+            profileRefLikes.transaction((currentViews) => (currentViews || 1) - 1);
+          } else {
+            // If the target ID is not in the 'isLike' list, add it
+            item.push(targetId);
+            localStorage.setItem('isLike', JSON.stringify(item));
+        
+            // Increment the like count
+            profileRefLikes.transaction((currentViews) => (currentViews || 0) + 1);
+          }
+        
+          // Call renderProfiles to update the UI
+          // renderProfiles();
+        });
+        
+      
       }
     });
   }
