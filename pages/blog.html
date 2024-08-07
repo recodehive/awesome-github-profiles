@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../styles/blog.css">
     <link rel="stylesheet" href="../styles/styles.css">
+	<link rel="stylesheet" href="../styles/hamburger.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -42,7 +43,20 @@
                 </label>
               </div>
         </div>
+		<div class="hamburger" id="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		  </div>
     </nav>
+	<div class="mobile-menu" id="mobile-menu">
+		<a href="events.html" class="navbar-links">Events</a>
+            <a href="githubbadge.html" class="navbar-links">Github-Badge</a>
+            <a href="blog.html" class="navbar-links">Blog</a>
+            <a href="#" class="navbar-links">Add Profile</a>
+            <a href="blog.html" class="navbar-links">Learn</a>
+          <a href="#" class="navbar-links">Tools</a>
+	</div>
     <!-- blog page -->
      <h1 style="text-align: center;"> Blogs</h1>
     <div class="blog-container" id="blogContainer"></div>
@@ -1795,6 +1809,7 @@ z"/>
       <script src="../scripts/blog.js"></script>
       <script src="../scripts/retriveprofile.js"></script>
     <script src="../scripts/dark-mode.js"></script>
+	<script src="../scripts/hamburger.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function() {
     const popup = document.getElementById('scrollPopup');
