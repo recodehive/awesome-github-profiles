@@ -65,15 +65,19 @@
       ]
     },
     {
-
-      "login": "Asymtode712",
-      "name": "Siddheya Kulkarni",
-      "avatar_url": "https://avatars.githubusercontent.com/u/115717746?v=4",
-      "profile": "https://github.com/Asymtode712",
       "login": "yashksaini-coder",
       "name": "Yash Kumar Saini",
       "avatar_url": "https://avatars.githubusercontent.com/u/115717039?v=4",
       "profile": "https://github.com/yashksaini-coder",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "Asymtode712",
+      "name": "Siddheya Kulkarni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115717746?v=4",
+      "profile": "https://github.com/Asymtode712",
       "contributions": [
         "review"
       ]
