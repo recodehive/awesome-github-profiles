@@ -27,6 +27,7 @@ This is the all in one place of awesome-github-profiles.
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Asymtode712"><img src="https://avatars.githubusercontent.com/u/115717746?v=4?s=100" width="100px;" alt="Siddheya Kulkarni"/><br /><sub><b>Siddheya Kulkarni</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AAsymtode712" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vansh-codes"><img src="https://avatars.githubusercontent.com/u/114163734?v=4?s=100" width="100px;" alt="Vansh Chaurasiya"/><br /><sub><b>Vansh Chaurasiya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avansh-codes" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/vansh-codes"><img src="https://avatars.githubusercontent.com/u/114163734?v=4?s=100" width="100px;" alt="Vansh Chaurasiya"/><br /><sub><b>Vansh Chaurasiya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3yashwanths814" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
