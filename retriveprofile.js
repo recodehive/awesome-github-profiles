@@ -1,6 +1,14 @@
 // Firebase configuration
 var firebaseConfig = {
 //Add Config Files here 
+  apiKey: "AIzaSyBSiO9d5tHuyyAeUCt37pxDWTT7jPSigaU",
+  authDomain: "awesome-github-profiles.firebaseapp.com",
+  databaseURL: "https://awesome-github-profiles-default-rtdb.firebaseio.com",
+  projectId: "awesome-github-profiles",
+  storageBucket: "awesome-github-profiles.appspot.com",
+  messagingSenderId: "490821849262",
+  appId: "1:490821849262:web:7e97984d98f578b81f9d3f",
+  measurementId: "G-WM33JZYEV0"
 };
 
 // Initialize Firebase
@@ -8,11 +16,27 @@ firebase.initializeApp(firebaseConfig);
 
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
-
+  const noProfilesMessage = document.querySelector(".no-profiles-message");
+  noProfilesMessage.style.display="none"
   function renderProfiles(filter = "") {
+  
     const container = document.querySelector(".profiles");
     container.innerHTML = "";
+    const noProfilesMessage = document.querySelector(".no-profiles-message");
+
+    const filteredContributors = contributors.filter(contributor =>
+      contributor.login.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    if (filteredContributors.length === 0) {
+      noProfilesMessage.style.display = "block";
+      console.log('sdsds')
+
+      return
+    } 
     contributors.forEach((contributor) => {
+      noProfilesMessage.style.display = "none";
+
       if (contributor.login.toLowerCase().includes(filter.toLowerCase())) {
         const card = document.createElement("a");
         card.href = `https://github.com/${contributor.login}`;
