@@ -23,6 +23,8 @@
       "ScreenShot": "https://raw.githubusercontent.com/nishant0708/awesome-github-profiles/main/screenshots/sanjay-kv.png",
       "profile": "https://recodehive.com",
       "contributions": [
+        "maintenance",
+        "code",
         "review"
       ]
     },
@@ -49,6 +51,29 @@
       "name": "Nishant Kaushal",
       "avatar_url": "https://avatars.githubusercontent.com/u/101548649?v=4",
       "profile": "https://github.com/nishant0708",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "RadhikaMalpani1702",
+      "name": "Radhika Malpani",
+      "avatar_url": "https://avatars.githubusercontent.com/u/163530398?v=4",
+      "profile": "https://github.com/RadhikaMalpani1702",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+
+      "login": "Asymtode712",
+      "name": "Siddheya Kulkarni",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115717746?v=4",
+      "profile": "https://github.com/Asymtode712",
+      "login": "yashksaini-coder",
+      "name": "Yash Kumar Saini",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115717039?v=4",
+      "profile": "https://github.com/yashksaini-coder",
       "contributions": [
         "review"
       ]
