@@ -1,3 +1,11 @@
+// Firebase configuration
+var firebaseConfig = {
+//Add Config Files here 
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
 
@@ -37,14 +45,43 @@ document.addEventListener("DOMContentLoaded", function () {
         const name = document.createElement("p");
         name.textContent = contributor.login;
 
+        const viewCount = document.createElement("p");
+        viewCount.className = "view-count";
+        viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: Loading...'; // Placeholder text
+
+        // Retrieve and listen to view count from Firebase
+        const profileRef = firebase.database().ref(`profiles/${contributor.login}/views`);
+        profileRef.on("value", (snapshot) => {
+          if (snapshot.exists()) {
+            viewCount.innerHTML = `<i class="fa fa-eye"></i> Views: ${snapshot.val()}`;
+          } else {
+            // Handle new profile
+            profileRef.set(0);
+            viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: 0';
+          }
+        });
+
+        // Increment view count on click
+        card.addEventListener("click", (e) => {
+          e.preventDefault();
+          profileRef.transaction((currentViews) => {
+            return (currentViews || 0) + 1;
+          }).then(() => {
+            window.open(card.href, "_blank");
+          });
+        });
+
         card.appendChild(imgContainer);
         card.appendChild(name);
+        card.appendChild(viewCount);
+        card.classList.add("profile-card");
 
         container.appendChild(card);
       }
     });
   }
 
+  // Fetch contributors data
   fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
     .then((response) => response.json())
     .then((data) => {
@@ -52,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
       renderProfiles();
     });
 
+  // Add event listener to the search bar
   const searchBar = document.querySelector(".search-input");
   searchBar.addEventListener("input", () => {
     renderProfiles(searchBar.value);
