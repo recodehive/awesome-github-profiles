@@ -26,6 +26,8 @@ This is the all in one place of awesome-github-profiles.
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Asymtode712"><img src="https://avatars.githubusercontent.com/u/115717746?v=4?s=100" width="100px;" alt="Siddheya Kulkarni"/><br /><sub><b>Siddheya Kulkarni</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AAsymtode712" title="Reviewed Pull Requests">👀</a></td>
+      td align="center" valign="top" width="14.28%"><a href="https://github.com/yashksaini-coder"><img src="https://avatars.githubusercontent.com/u/115717039?v=4?s=100" width="100px;" alt="Yash Kumar Saini"/><br /><sub><b>Yash Kumar Saini</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%yashwanths814" title="Reviewed Pull Requests">👀</a></td>
+
     </tr>
   </tbody>
 </table>
