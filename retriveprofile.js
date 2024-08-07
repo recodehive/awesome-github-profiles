@@ -16,11 +16,27 @@ firebase.initializeApp(firebaseConfig);
 
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
-
+  const noProfilesMessage = document.querySelector(".no-profiles-message");
+  noProfilesMessage.style.display="none"
   function renderProfiles(filter = "") {
+  
     const container = document.querySelector(".profiles");
     container.innerHTML = "";
+    const noProfilesMessage = document.querySelector(".no-profiles-message");
+
+    const filteredContributors = contributors.filter(contributor =>
+      contributor.login.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    if (filteredContributors.length === 0) {
+      noProfilesMessage.style.display = "block";
+      console.log('sdsds')
+
+      return
+    } 
     contributors.forEach((contributor) => {
+      noProfilesMessage.style.display = "none";
+
       if (contributor.login.toLowerCase().includes(filter.toLowerCase())) {
         const card = document.createElement("a");
         card.href = `https://github.com/${contributor.login}`;
