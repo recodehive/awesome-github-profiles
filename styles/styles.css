@@ -108,22 +108,47 @@ body {
   }
   
   .grey-banner {
-    background-color: #333333;
-    color: white;
-    padding: 10px 15px;
-    border-bottom-left-radius: 10px;
-    font-size: 0.8em;
-    font-weight: 500;
-    width: 200px;
-    text-align: center;
     display: inline-block;
-    margin: 20px auto;
+    background: linear-gradient(135deg, #f0f0f0, #fff);
+    color: black;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; 
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; 
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); 
+    margin: 20px auto;
   }
+
   .grey-banner:hover {
-   scale: 1.06;
-   transition: all 0.2s;
+      background: linear-gradient(135deg, #e0e0e0, #f0f0f0); 
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12); 
   }
+
+  .grey-banner:active {
+      transform: translateY(0);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15); 
+  }
+
+  body.dark-mode .grey-banner {
+      background: linear-gradient(135deg, #444, #555);
+      color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4); 
+  }
+
+  body.dark-mode .grey-banner:hover {
+      background: linear-gradient(135deg, #333, #444);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.5); 
+  }
+
+  body.dark-mode .grey-banner:active {
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.6);
+  }
+
   /* Dark Mode Styles */
   body.dark-mode {
     background-color: #000000;
@@ -327,23 +352,6 @@ body.dark-mode ::-webkit-scrollbar-button {
   color: #333;
 }
 
-.grey-banner {
-  background-color: #333333;
-  color: white;
-  padding: 10px 15px;
-  border-bottom-left-radius: 10px;
-  font-size: 0.8em;
-  font-weight: 500;
-  width: 200px;
-  text-align: center;
-  display: inline-block;
-  margin: 20px auto;
-  cursor: pointer;
-}
-.grey-banner:hover {
- scale: 1.06;
- transition: all 0.2s;
-}
 /* Dark Mode Styles */
 body.dark-mode {
   background-color: #000000;
