@@ -95,15 +95,24 @@
       >
         ADD YOUR PROFILE
       </a>
-      <div class="search-bar">
+      <div class="search-bar" style="position: relative;">
         <input
           type="text"
           class="search-input"
           placeholder="Search Nickname or Username..."
         />
-              <i class="fas fa-search" style="position: relative;right: 40px;"></i>
-
+        <i class="fas fa-search" style="position: relative;right: 40px;"></i>
+        <i class="fa-solid fa-caret-down dropdown" id="caret-down"></i>
       </div>
+      <!-- Modal Structure -->
+      <div id="myModal" class="modal1" style="left: 62%;">
+        <div class="modal-content">
+          <p class="views">Least Views</p>
+          <p class="views">Most Views</p>
+        </div>
+      </div>
+      
+
       <div class="no-profiles-message"><h2>No profiles found</h2></div>
 
       <div class="profiles">
