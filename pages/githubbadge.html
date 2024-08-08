@@ -214,6 +214,17 @@
     color: white;
   }
 
+  body:not(.dark-mode) .badges-icons-light {
+    display: none !important;
+  }
+  body.dark-mode .badges-icons-dark {
+    /* color: white; */
+    display: none !important;
+  }
+  body:not(.dark-mode) .badges-icons-dark {
+    display: inline !important;
+  }
+
   body.dark-mode .mobile-menu {
     background-color: #333;
     color: #f0f0f0;
@@ -602,40 +613,40 @@
             <tbody>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_DarkMode.svg" alt="Pro Dark Mode" style="display: none;" id="pro-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_LightMode.svg" alt="Pro Light Mode" id="pro-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_DarkMode.svg" alt="Pro Dark Mode"  id="pro-dark" class="badges-icons-dark" >
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_LightMode.svg" alt="Pro Light Mode" id="pro-light" class="badges-icons-light" >
                     </td>
                     <td>Pro</td>
                     <td>Use <a href="https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro">GitHub Pro</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_DarkMode.svg" alt="Developer Program Member Dark Mode" style="display: none;" id="developer-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_LightMode.svg" alt="Developer Program Member Light Mode" id="developer-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_DarkMode.svg" alt="Developer Program Member Dark Mode"  id="developer-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_LightMode.svg" alt="Developer Program Member Light Mode" id="developer-light" class="badges-icons-light">
                     </td>
                     <td>Developer Program Member</td>
                     <td>Be a registered member of the <a href="https://docs.github.com/en/developers/overview/github-developer-program">GitHub Developer Program</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_DarkMode.svg" alt="Security Bug Bounty Hunter Dark Mode" style="display: none;" id="security-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_LightMode.svg" alt="Security Bug Bounty Hunter Light Mode" id="security-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_DarkMode.svg" alt="Security Bug Bounty Hunter Dark Mode"  id="security-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_LightMode.svg" alt="Security Bug Bounty Hunter Light Mode" id="security-light" class="badges-icons-light">
                     </td>
                     <td>Security Bug Bounty Hunter</td>
                     <td>Helped out hunting down security vulnerabilities at <a href="https://bounty.github.com/">GitHub Security</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_DarkMode.svg" alt="GitHub Campus Expert Dark Mode" style="display: none;" id="campus-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_LightMode.svg" alt="GitHub Campus Expert Light Mode" id="campus-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_DarkMode.svg" alt="GitHub Campus Expert Dark Mode"  id="campus-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_LightMode.svg" alt="GitHub Campus Expert Light Mode" id="campus-light" class="badges-icons-light">
                     </td>
                     <td>GitHub Campus Expert</td>
                     <td>Participate in the <a href="https://education.github.com/experts">GitHub Campus Program</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_DarkMode.svg" alt="Security Advisory Credit Dark Mode" style="display: none;" id="advisory-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_LightMode.svg" alt="Security Advisory Credit Light Mode" id="advisory-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_DarkMode.svg" alt="Security Advisory Credit Dark Mode"  id="advisory-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_LightMode.svg" alt="Security Advisory Credit Light Mode" id="advisory-light" class="badges-icons-light">
                     </td>
                     <td>Security advisory credit</td>
                     <td>Have your security advisory submitted to the <a href="https://github.com/advisories">GitHub Advisory Database</a> accepted</td>
