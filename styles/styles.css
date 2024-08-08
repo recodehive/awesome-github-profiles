@@ -25,7 +25,13 @@ body {
     flex-wrap: wrap;
     margin-bottom: 20px;
   }
-  
+  .views-likes{
+    display: flex;
+    justify-content: space-around;
+}
+.like-red{
+  color: red;
+}
   .tag {
     display: inline-block;
     margin: 5px;
