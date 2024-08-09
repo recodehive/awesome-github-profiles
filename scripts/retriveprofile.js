@@ -109,11 +109,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Increment view count on click
         card.addEventListener("click", (e) => {
           e.preventDefault();
-          profileRef.transaction((currentViews) => {
-            return (currentViews || 0) + 1;
-          }).then(() => {
+          const viewedProfiles = JSON.parse(localStorage.getItem('viewedProfiles')) || [];
+
+          if (!viewedProfiles.includes(contributor.login)) {
+            // Increment view count
+            profileRef.transaction((currentViews) => (currentViews || 0) + 1).then(() => {
+              // Mark the profile as viewed in localStorage
+              viewedProfiles.push(contributor.login);
+              localStorage.setItem('viewedProfiles', JSON.stringify(viewedProfiles));
+
+              // Open the profile in a new tab
+              window.open(card.href, "_blank");
+            });
+          } else {
+            // If the profile has been viewed, just open it in a new tab
             window.open(card.href, "_blank");
-          });
+          }
         });
         card.appendChild(imgContainer);
         card.appendChild(name);
