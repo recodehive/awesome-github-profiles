@@ -1,8 +1,9 @@
+// this is  code which runs with pat and is more optimized because it is fetching api of 2 people at a time only
+
 document.addEventListener("DOMContentLoaded", function () {
     let contributors = [];
-    let map = new Map();
-    
-    
+    const token = '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'; // Replace with your GitHub PAT
+
     fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
         .then((response) => response.json())
         .then((data) => {
@@ -20,32 +21,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 select1.appendChild(option.cloneNode(true));
                 select2.appendChild(option.cloneNode(true));
             });
-            
-            // Fetch contributor details
-            contributors.forEach((da) => {
-                fetch(`https://api.github.com/users/${da.login}`, {
-                    method: "GET"
-                })
-                .then(response => response.json())
-                .then(res => {
-                    map.set(da.login, { ...res });
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
-            });
         });
-    
+
     document.getElementById('submitBtn').addEventListener('click', function () {
         const login1 = document.getElementById('contributorSelect1').value;
         const login2 = document.getElementById('contributorSelect2').value;
 
         if (login1 && login2 && login1 !== login2) {
-
-            const data1 = map.get(login1);
-            const data2 = map.get(login2);
-            console.log(data1,login1,login2,data2,map)
-            if (data1 && data2) {
+            Promise.all([
+                fetch(`https://api.github.com/users/${login1}`, {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json()),
+                fetch(`https://api.github.com/users/${login2}`, {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json())
+            ])
+            .then(([data1, data2]) => {
                 // Show the table
                 document.getElementById('comparisonTable').classList.remove('hidden');
 
@@ -70,11 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 document.getElementById('following1').textContent = data1.following || 'N/A';
                 document.getElementById('following2').textContent = data2.following || 'N/A';
-            } else {
-                console.error('Contributor data not found.');
-            }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         } else {
             alert('Please select two different contributors.');
         }
     });
 });
+
