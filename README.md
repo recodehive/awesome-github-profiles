@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 This is the all in one place of awesome-github-profiles.
 </div>
@@ -32,6 +32,7 @@ This is the all in one place of awesome-github-profiles.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Skb08"><img src="https://avatars.githubusercontent.com/u/113046759?v=4?s=100" width="100px;" alt="Suraj Kumar Behera"/><br /><sub><b>Suraj Kumar Behera</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASkb08" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://g.dev/ratnesh"><img src="https://avatars.githubusercontent.com/u/85143283?v=4?s=100" width="100px;" alt="Ratnesh Maurya"/><br /><sub><b>Ratnesh Maurya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aratnesh-maurya" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/yashwanths814"><img src="https://avatars.githubusercontent.com/u/123622523?v=4?s=100" width="100px;" alt="Yashwanth S"/><br /><sub><b>Yashwanth S</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayashwanths814" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Meetjain1"><img src="https://avatars.githubusercontent.com/u/133582566?v=4?s=100" width="100px;" alt="Meet Jain"/><br /><sub><b>Meet Jain</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AMeetjain1" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
