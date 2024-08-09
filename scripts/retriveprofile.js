@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
           
         });
         // Increment view count on click
-        card.addEventListener("click", (e) => {
+         card.addEventListener("click", (e) => {
           e.preventDefault();
           const viewedProfiles = JSON.parse(localStorage.getItem('viewedProfiles')) || [];
 
@@ -155,14 +155,15 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
               localStorage.setItem('isLike', JSON.stringify(item));
             }
-        
+            showToast("You UnLiked the Profile","like")
             // Decrement the like count
             profileRefLikes.transaction((currentViews) => (currentViews || 1) - 1);
           } else {
             // If the target ID is not in the 'isLike' list, add it
             item.push(targetId);
             localStorage.setItem('isLike', JSON.stringify(item));
-        
+            showToast("You Liked the Profile","like")
+
             // Increment the like count
             profileRefLikes.transaction((currentViews) => (currentViews || 0) + 1);
           }
@@ -265,10 +266,6 @@ function renderProfiles(filter = "") {
       viewCount.className = "view-count";
       viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: Loading...'; // Placeholder text
 
-      const likeCount = document.createElement("p");
-      likeCount.className = "like-count";
-      likeCount.innerHTML = '<i class="fa fa-heart"></i> Likes: Loading...';
-
       // Retrieve and listen to view count from Firebase
       const profileRef = firebase.database().ref(`profiles/${contributor.login}/views`);
       profileRef.on("value", (snapshot) => {
@@ -280,17 +277,6 @@ function renderProfiles(filter = "") {
           viewCount.innerHTML = '<i class="fa fa-eye"></i> Views: 0';
         }
       });
-
-      // Retrieve and listen to like count from Firebase
-    const profileRefLikes = firebase.database().ref(`profiles/${contributor.login}/likes`);
-    profileRefLikes.on("value", (snapshot) => {
-      if (snapshot.exists()) {
-        likeCount.innerHTML = `<i class="fa fa-heart"></i> Likes: ${snapshot.val()}`;
-      } else {
-        profileRefLikes.set(0);
-        likeCount.innerHTML = '<i class="fa fa-heart"></i> Likes: 0';
-      }
-    });
 
       // Increment view count on click
       card.addEventListener("click", (e) => {
@@ -305,7 +291,6 @@ function renderProfiles(filter = "") {
       card.appendChild(imgContainer);
       card.appendChild(name);
       card.appendChild(viewCount);
-      card.appendChild(likeCount);
       card.classList.add("profile-card");
 
       container.appendChild(card);
@@ -320,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const caretDown = document.getElementById('caret-down');
   const closeButton = document.getElementById('close-button');
   const views = document.getElementsByClassName('views');
-  const likes = document.getElementsByClassName('likes');
 
 
   Array.from(views).map((ele)=>{
@@ -368,52 +352,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   })
-
-  Array.from(likes).map((ele)=>{
-    ele.addEventListener(('click'),(e)=>{
-      close()
-      if(e.target.innerHTML=="Least Likes"){
-   
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRefLikes = firebase.database().ref(`profiles/${data.login}/likes`)
-           profileRefLikes.on("value", (snapshot) => {
-            if (snapshot.exists()) {
-              data['likes']=snapshot.val()
-            } else {
-                profileRefLikes.set(0);
-            }
-        });
-         })
-         contributors=contributors.sort((a,b)=>a.likes-b.likes)
-          renderProfiles();
-        });
-      }else{
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRefLikes = firebase.database().ref(`profiles/${data.login}/likes`)
-           profileRefLikes.on("value", (snapshot) => {
-             if (snapshot.exists()) {
-              data['likes']=snapshot.val()
-            } else {
-              // Handle new profile
-              profileRefLikes.set(0);
-            }
-          });
-         })
-         contributors=contributors.sort((a,b)=>b.likes-a.likes)
-          renderProfiles();
-        });
-      }
-    })
-  })
-
   caretDown.addEventListener('click', (event) => {
     if(modal.style.display=="block"){
       modal.style.display="none"
@@ -433,3 +371,52 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close the modal if clicked outside of it
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to create and show toast notifications
+function showToast(message, type) {
+  const toastContainer = document.getElementById('toast-container');
+
+  // Create toast element
+  const toast = document.createElement('div');
+  toast.className = `toast ${type} show`;
+  toast.textContent = message;
+
+  // Add close button
+  const closeBtn = document.createElement('span');
+  let line=document.createElement('div')
+  closeBtn.className = 'close-btn';
+  closeBtn.textContent = '×';
+  closeBtn.onclick = () => {
+    toast.remove();
+  };
+  line.className="line"
+  toast.appendChild(closeBtn);
+  toastContainer.appendChild(line)
+  // Append toast to container
+  toastContainer.appendChild(toast);
+
+  // Remove toast after a delay
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toastContainer.removeChild(line)
+  }, 3000);
+}
+
+
