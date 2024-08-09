@@ -220,6 +220,7 @@ body.theme-dark .center {
    font-size: 20px !important;
 }
 .ways img{
+  object-fit: contain;
    border-radius: 20px;
 }
 .ways1{

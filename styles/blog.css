@@ -162,7 +162,12 @@ body.dark-mode .blog-card .excerpt {
     font-size: 20px !important;
 }
 
+
 .ways img {
+
+.ways img{
+    object-fit: contain !important;
+
     border-radius: 20px;
 }
 
@@ -207,12 +212,20 @@ body.dark-mode .blog-card .excerpt {
 }
 
 @media only screen and (max-width:600px) {
+
     .ways img {
         scale: 0.60 !important;
     }
 }
 
 .ways a:hover {
+
+    .ways img{
+        object-fit: inherit;
+        scale: 0.60 !important;}
+ }
+.ways a:hover{
+
     text-decoration: underline;
 }
 
