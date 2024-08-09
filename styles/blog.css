@@ -349,3 +349,27 @@ max-width: 700px;
 .dark-mode .card-footer p{
     color: black !important;
 }
+
+.blog-save{
+    display: flex;
+    justify-content: space-between;
+}
+.save-btn{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    color:rgb(69, 69, 69);
+    font-size: 20px;
+    font-weight: 500;
+}
+.saved-blogs{
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}   
+.saved-blogs:hover{
+    text-decoration: underline;
+}
