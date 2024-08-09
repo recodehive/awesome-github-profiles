@@ -8,6 +8,15 @@
   "commitConvention": "angular",
   "contributors": [
     {
+      "login": Dinesh Talwadker",
+      "name": "Dinesh Talwadker",
+      "avatar_url": "https://avatars.githubusercontent.com/u/90450035?v=4",
+      "profile": "https://github.com/dinxsh",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
       "login": "MastanSayyad",
       "name": "Mastan Sayyad",
       "avatar_url": "https://avatars.githubusercontent.com/u/101971980?v=4",
