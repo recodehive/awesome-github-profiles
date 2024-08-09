@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,49 +15,67 @@
             background-color: #f4f4f4;
             color: #333;
         }
+
         .container {
             max-width: 1200px;
             margin: auto;
             padding: 20px;
             /* background: #fff; */
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #333;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid #ddd;
         }
-        th, td {
+
+        th,
+        td {
             padding: 10px;
             text-align: center;
         }
+
         img {
             max-width: 100%;
             height: auto;
         }
+
         .center {
             text-align: center;
         }
+
         @media (max-width: 768px) {
             .table-wrapper {
                 overflow-x: auto;
                 display: block;
             }
-            table, th, td {
+
+            table,
+            th,
+            td {
                 display: block;
                 width: 100%;
             }
-            th, td {
+
+            th,
+            td {
                 box-sizing: border-box;
                 padding: 10px;
             }
+
             td {
                 border: none;
                 border-bottom: 1px solid #ddd;
@@ -64,6 +83,7 @@
                 padding-left: 50%;
                 text-align: right;
             }
+
             td::before {
                 content: attr(data-label);
                 position: absolute;
@@ -75,191 +95,193 @@
             }
         }
 
-        
-    #scrollToTop {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background-color: black;
-      color: white;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
-      opacity: 0;
-      visibility: hidden;
-    }
 
-    #scrollToTop:hover{
-      background-color: rgb(62, 62, 62);
-    }
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
 
-    #scrollToTop.show {
-      opacity: 1;
-      visibility: visible;
-    }
+        #scrollToTop:hover {
+            background-color: rgb(62, 62, 62);
+        }
 
-    #scrollToTop .arrow-icon {
-      fill: white;
-      width: 24px;
-      height: 24px;
-      transition: transform 0.3s;
-    }
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
 
-    #scrollToTop:hover {
-      transform: translateY(-5px); /* Move button up on hover */
-    }
+        #scrollToTop .arrow-icon {
+            fill: white;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
 
-    #scrollToTop:hover .arrow-icon {
-      transform: translateY(-2px); /* Move arrow up on hover */
-    }
+        #scrollToTop:hover {
+            transform: translateY(-5px);
+            /* Move button up on hover */
+        }
 
-    body.dark-mode #scrollToTop {
-      background-color: white;
-      color: black;
-    }
+        #scrollToTop:hover .arrow-icon {
+            transform: translateY(-2px);
+            /* Move arrow up on hover */
+        }
 
-    body.dark-mode #scrollToTop:hover {
-      background-color: rgba(182, 182, 182, 0.999);
-    }
+        body.dark-mode #scrollToTop {
+            background-color: white;
+            color: black;
+        }
 
-    body.dark-mode #scrollToTop .arrow-icon {
-      fill: black;
-    }
+        body.dark-mode #scrollToTop:hover {
+            background-color: rgba(182, 182, 182, 0.999);
+        }
 
-    html {
-      scroll-behavior: smooth;
-    }
+        body.dark-mode #scrollToTop .arrow-icon {
+            fill: black;
+        }
 
-    .navbar-links {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #fff;
-  }
+        html {
+            scroll-behavior: smooth;
+        }
 
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    transition: transform 0.6s ease;
-  }
+        .navbar-links {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
 
-  .hamburger div {
-    width: 25px;
-    height: 2px;
-    background-color: #000000;
-    margin: 4px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.6s ease;
+        }
 
-  .hamburger.active div:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: #000000;
+            margin: 4px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
 
-  .hamburger.active div:nth-child(2) {
-      opacity: 0;
-  }
+        .hamburger.active div:nth-child(1) {
+            transform: translateY(6px) rotate(45deg);
+        }
 
-  .hamburger.active div:nth-child(3) {
-      transform: translateY(-6px) rotate(-45deg);
-  }
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
 
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background-color: #ffffff;
-    width: 100%;
-    position: absolute;
-    top: 52px;
-    left: 0;
-    opacity: 0;
-    z-index: 999;
-    transform: translateY(-20px);
-    transition: transform 0.5s ease, opacity 0.3s ease;
-  }
+        .hamburger.active div:nth-child(3) {
+            transform: translateY(-6px) rotate(-45deg);
+        }
 
-
-  .mobile-menu a {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    /* border-bottom: 1px solid #444; */
-    color: #000000;
-    text-decoration: none;
-  }
-
-  .mobile-menu.show {
-    display: flex;
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .mobile-menu a:hover {
-    text-decoration: underline;
-  }
-
-  
-  body.dark-mode .hamburger div {
-    background-color: white;
-  }
-
-  body.dark-mode .mobile-menu a {
-    color: white;
-  }
-
-  body:not(.dark-mode) .badges-icons-light {
-    display: none !important;
-  }
-  body.dark-mode .badges-icons-dark {
-    /* color: white; */
-    display: none !important;
-  }
-  body:not(.dark-mode) .badges-icons-dark {
-    display: inline !important;
-  }
-
-  body.dark-mode .mobile-menu {
-    background-color: #333;
-    color: #f0f0f0;
-  }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            width: 100%;
+            position: absolute;
+            top: 52px;
+            left: 0;
+            opacity: 0;
+            z-index: 999;
+            transform: translateY(-20px);
+            transition: transform 0.5s ease, opacity 0.3s ease;
+        }
 
 
-  @media screen and (max-width: 768px) {
-    .navbar-right {
-      display: none !important;
-    }
+        .mobile-menu a {
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            /* border-bottom: 1px solid #444; */
+            color: #000000;
+            text-decoration: none;
+        }
 
-    .hamburger {
-      display: flex;
-    }
+        .mobile-menu.show {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-    .side-icons {
-        flex-direction: column;
-        margin-top: 35px;
-    }
+        .mobile-menu a:hover {
+            text-decoration: underline;
+        }
 
-    .ways-content {
-        padding: 0 !important;
-    }
-  }
-  </style>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-    rel="stylesheet"
-  />
 
-  <link rel="stylesheet" href="../styles/styles.css">
-  <link rel="stylesheet" href="../styles/githubbadge.css" />
+        body.dark-mode .hamburger div {
+            background-color: white;
+        }
+
+        body.dark-mode .mobile-menu a {
+            color: white;
+        }
+
+        body:not(.dark-mode) .badges-icons-light {
+            display: none !important;
+        }
+
+        body.dark-mode .badges-icons-dark {
+            /* color: white; */
+            display: none !important;
+        }
+
+        body:not(.dark-mode) .badges-icons-dark {
+            display: inline !important;
+        }
+
+        body.dark-mode .mobile-menu {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+
+        @media screen and (max-width: 768px) {
+            .navbar-right {
+                display: none !important;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .side-icons {
+                flex-direction: column;
+                margin-top: 35px;
+            }
+
+            .ways-content {
+                padding: 0 !important;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/githubbadge.css" />
 
 </head>
+
 <body>
     <nav class="navbar">
         <a  class="navbar-left" href="../index.html" style="text-decoration: none; color: #333;">
@@ -267,48 +289,51 @@
           <span class="navbar-text">Recode Hive</span>
         </a>
         <div class="navbar-right">
-          <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
-          <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
-          class="navbar-link">Add Profile</a>
-          <a href="#" class="navbar-link">Tools</a>
-          <a href="events.html" class="navbar-link">Events</a>
-          <a href="blog.html" class="navbar-link">Learn</a>
-          <a href="compare.html" class="navbar-link">Compare</a>
-  
-         
-          <div class="toggle-switch">
-            <input type="checkbox" id="theme-toggle">
-            <label for="theme-toggle">
-              <div class="switch-button">
-                <span class="material-icons sun-icon">wb_sunny</span>
-                <span class="material-icons moon-icon">brightness_2</span>
-              </div>
-            </label>
-          </div>
+            <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+            <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+                class="navbar-link">Add Profile</a>
+            <a href="#" class="navbar-link">Tools</a>
+            <a href="events.html" class="navbar-link">Events</a>
+            <a href="blog.html" class="navbar-link">Learn</a>
+            <a href="compare.html" class="navbar-link">Compare</a>
+
+
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle">
+                    <div class="switch-button">
+                        <span class="material-icons sun-icon">wb_sunny</span>
+                        <span class="material-icons moon-icon">brightness_2</span>
+                    </div>
+                </label>
+            </div>
         </div>
         <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
-      </nav> 
-      <div class="mobile-menu" id="mobile-menu">
-		<a href="#" class="navbar-links">Github-Badge</a>
-          <a href="#" class="navbar-links">Tools</a>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#" class="navbar-links">Github-Badge</a>
+        <a href="#" class="navbar-links">Tools</a>
         <a href="events.html" class="navbar-links">Events</a>
         <a href="blog.html" class="navbar-links">Blog</a>
-        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
+        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+            class="navbar-links">Add Profile</a>
         <a href="blog.html" class="navbar-links">Learn</a>
-	</div>
-    
+    </div>
+
     <div class="container">
         <div class="center">
             <div style="display: flex;flex-direction: column;align-items: center;">
 
                 <h1>🏆 GitHub Achievements 🏆</h1>
-                <img src="https://user-images.githubusercontent.com/65187002/172940015-d9d072e7-c47d-4ddd-83f6-8e7717a721b8.png" class="lightmodeimg" height="100" width="100" alt="Achievements Banner">
-                <img src="https://user-images.githubusercontent.com/65187002/172940773-7ef23b63-3356-4634-9e52-34f2676e2854.png" height="100" class="darkmodeimg" width="100" alt="Achievements Preview">
-                <h1 >Github</h1>
+                <img src="https://user-images.githubusercontent.com/65187002/172940015-d9d072e7-c47d-4ddd-83f6-8e7717a721b8.png"
+                    class="lightmodeimg" height="100" width="100" alt="Achievements Banner">
+                <img src="https://user-images.githubusercontent.com/65187002/172940773-7ef23b63-3356-4634-9e52-34f2676e2854.png"
+                    height="100" class="darkmodeimg" width="100" alt="Achievements Preview">
+                <h1>Github</h1>
             </div>
         </div>
 
@@ -325,7 +350,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png" width="60px" alt="Starstruck"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png"
+                            width="60px" alt="Starstruck"></td>
                     <td>Starstruck</td>
                     <td>Created a repository that has many stars</td>
                     <td>
@@ -340,10 +366,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png" width="60px" alt="Starstruck Default"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Bronze.png" width="60px" alt="Starstruck Bronze"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Silver.png" width="60px" alt="Starstruck Silver"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Gold.png" width="60px" alt="Starstruck Gold"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png"
+                                            width="60px" alt="Starstruck Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Bronze.png"
+                                            width="60px" alt="Starstruck Bronze"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Silver.png"
+                                            width="60px" alt="Starstruck Silver"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/StarStruck_Gold.png"
+                                            width="60px" alt="Starstruck Gold"></td>
                                 </tr>
                                 <tr>
                                     <td>16</td>
@@ -356,7 +386,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png" width="60px" alt="Quickdraw"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png"
+                            width="60px" alt="Quickdraw"></td>
                     <td>Quickdraw</td>
                     <td>Gitty up!<br>(closed an issue / pull request within 5 minutes of opening)</td>
                     <td>
@@ -368,7 +399,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png" width="60px" alt="Quickdraw Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png"
+                                            width="60px" alt="Quickdraw Default"></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -378,9 +410,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire.png" width="60px" alt="Pair Extraordinaire"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire.png"
+                            width="60px" alt="Pair Extraordinaire"></td>
                     <td>Pair Extraordinaire</td>
-                    <td><a href="https://docs.github.com/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors">Coauthored</a> commits on merged pull request</td>
+                    <td><a
+                            href="https://docs.github.com/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors">Coauthored</a>
+                        commits on merged pull request</td>
                     <td>
                         <table>
                             <thead>
@@ -393,10 +428,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire.png" width="60px" alt="Pair Extraordinaire Default"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Bronze.png" width="60px" alt="Pair Extraordinaire Bronze"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Silver.png" width="60px" alt="Pair Extraordinaire Silver"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Gold.png" width="60px" alt="Pair Extraordinaire Gold"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire.png"
+                                            width="60px" alt="Pair Extraordinaire Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Bronze.png"
+                                            width="60px" alt="Pair Extraordinaire Bronze"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Silver.png"
+                                            width="60px" alt="Pair Extraordinaire Silver"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pair-Extraordinaire/PNG/PairExtraordinaire_Gold.png"
+                                            width="60px" alt="Pair Extraordinaire Gold"></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -409,7 +448,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark.png" width="60px" alt="Pull Shark"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark.png"
+                            width="60px" alt="Pull Shark"></td>
                     <td>Pull Shark</td>
                     <td>Opened a pull request that has been merged</td>
                     <td>
@@ -424,10 +464,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark.png" width="60px" alt="Pull Shark Default"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Bronze.png" width="60px" alt="Pull Shark Bronze"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Silver.png" width="60px" alt="Pull Shark Silver"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Gold.png" width="60px" alt="Pull Shark Gold"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark.png"
+                                            width="60px" alt="Pull Shark Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Bronze.png"
+                                            width="60px" alt="Pull Shark Bronze"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Silver.png"
+                                            width="60px" alt="Pull Shark Silver"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Pull-Shark/PNG/PullShark_Gold.png"
+                                            width="60px" alt="Pull Shark Gold"></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -440,7 +484,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain.png" width="60px" alt="Galaxy Brain"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain.png"
+                            width="60px" alt="Galaxy Brain"></td>
                     <td>Galaxy Brain</td>
                     <td>Answered a discussion<br>(got an accepted answer)</td>
                     <td>
@@ -455,10 +500,14 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain.png" width="60px" alt="Galaxy Brain Default"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Bronze.png" width="60px" alt="Galaxy Brain Bronze"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Silver.png" width="60px" alt="Galaxy Brain Silver"></td>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Gold.png" width="60px" alt="Galaxy Brain Gold"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain.png"
+                                            width="60px" alt="Galaxy Brain Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Bronze.png"
+                                            width="60px" alt="Galaxy Brain Bronze"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Silver.png"
+                                            width="60px" alt="Galaxy Brain Silver"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Galaxy-Brain/PNG/GalaxyBrain_Gold.png"
+                                            width="60px" alt="Galaxy Brain Gold"></td>
                                 </tr>
                                 <tr>
                                     <td>2</td>
@@ -471,7 +520,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/YOLO/PNG/YOLO_Badge.png" width="60px" alt="YOLO"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/YOLO/PNG/YOLO_Badge.png"
+                            width="60px" alt="YOLO"></td>
                     <td>YOLO</td>
                     <td>Merged a pull request without a review</td>
                     <td>
@@ -483,7 +533,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/YOLO/PNG/YOLO_Badge.png" width="60px" alt="YOLO Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/YOLO/PNG/YOLO_Badge.png"
+                                            width="60px" alt="YOLO Default"></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -493,9 +544,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/GitHub-Sponsor/PNG/GitHubSponsorBadge.png" width="60px" alt="Public Sponsor"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/GitHub-Sponsor/PNG/GitHubSponsorBadge.png"
+                            width="60px" alt="Public Sponsor"></td>
                     <td>Public Sponsor</td>
-                    <td>Sponsored an open source contributor through <a href="https://github.com/sponsors">GitHub Sponsors</a></td>
+                    <td>Sponsored an open source contributor through <a href="https://github.com/sponsors">GitHub
+                            Sponsors</a></td>
                     <td>
                         <table>
                             <thead>
@@ -505,7 +558,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/GitHub-Sponsor/PNG/GitHubSponsorBadge.png" width="60px" alt="Public Sponsor Default"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/GitHub-Sponsor/PNG/GitHubSponsorBadge.png"
+                                            width="60px" alt="Public Sponsor Default"></td>
                                 </tr>
                                 <tr>
                                     <td>1</td>
@@ -517,44 +571,30 @@
                 <!-- Repeat similar blocks for other achievements -->
             </tbody>
         </table>
-        
-        
+
+
         <h2>👋 Achievement Skin Tone 👋</h2>
         <p>Some achievements' appearance depends on your Emoji Skin Tone Preference.</p>
-        <p>You can change your preferred Skin Tone by going to <a href="https://github.com/settings/appearance">appearance settings</a>.</p>
-      <div style="width: 100%;overflow-x: scroll;">
+        <p>You can change your preferred Skin Tone by going to <a
+                href="https://github.com/settings/appearance">appearance settings</a>.</p>
+        <div style="width: 100%;overflow-x: scroll;">
 
-        <div class="table-container">
-            <div class="header">
-                <div class="cell" style="flex: 0.4;">Badge</div>
-                <div class="cell">Name</div>
-                <div class="cell">Skin Tone Versions</div>
-            </div>
-            <div class="rows">
-                <div class="row">
-                    <div class="cell" ><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png" width="60" alt="Starstruck"></div>
+            <div class="table-container">
+                <div class="header">
+                    <div class="cell" style="flex: 0.4;">Badge</div>
+                    <div class="cell">Name</div>
+                    <div class="cell">Skin Tone Versions</div>
+                </div>
+                <div class="rows">
+                    <div class="row">
+                        <div class="cell"><img
+                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png"
+                                width="60" alt="Starstruck"></div>
 
-                    <div class="cell">Starstruck</div>
-                    <div class="cell">
-                        <div class="inner-table">
-                            <div class="header"  style="min-width: 100%;">
-                                <div class="cell">👋</div>
-                                <div class="cell">👋🏻</div>
-                                <div class="cell">👋🏼</div>
-                                <div class="cell">👋🏽</div>
-                                <div class="cell">👋🏾</div>
-                                <div class="cell">👋🏿</div>
-                            </div>
-                            <div class="rows">
-                                <div class="row" style="min-width: 100%;">
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png" width="60" alt="Skin Tone 1"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone2.png" width="60" alt="Skin Tone 2"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone3.png" width="60" alt="Skin Tone 3"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone4.png" width="60" alt="Skin Tone 4"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone5.png" width="60" alt="Skin Tone 5"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone6.png" width="60" alt="Skin Tone 6"></div>
-                                </div>
-                                <div class="row"  style="min-width: 100%;">
+                        <div class="cell">Starstruck</div>
+                        <div class="cell">
+                            <div class="inner-table">
+                                <div class="header" style="min-width: 100%;">
                                     <div class="cell">👋</div>
                                     <div class="cell">👋🏻</div>
                                     <div class="cell">👋🏼</div>
@@ -562,33 +602,47 @@
                                     <div class="cell">👋🏾</div>
                                     <div class="cell">👋🏿</div>
                                 </div>
+                                <div class="rows">
+                                    <div class="row" style="min-width: 100%;">
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone1.png"
+                                                width="60" alt="Skin Tone 1"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone2.png"
+                                                width="60" alt="Skin Tone 2"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone3.png"
+                                                width="60" alt="Skin Tone 3"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone4.png"
+                                                width="60" alt="Skin Tone 4"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone5.png"
+                                                width="60" alt="Skin Tone 5"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Star-Struck/PNG/Skin-Tones/StarStruck_SkinTone6.png"
+                                                width="60" alt="Skin Tone 6"></div>
+                                    </div>
+                                    <div class="row" style="min-width: 100%;">
+                                        <div class="cell">👋</div>
+                                        <div class="cell">👋🏻</div>
+                                        <div class="cell">👋🏼</div>
+                                        <div class="cell">👋🏽</div>
+                                        <div class="cell">👋🏾</div>
+                                        <div class="cell">👋🏿</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row" >
-                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png" width="60px" alt="Quickdraw"></div>
-                    <div class="cell">Quickdraw</div>
-                    <div class="cell">
-                        <div class="inner-table">
-                            <div class="header"  style="min-width: 100%;">
-                                <div class="cell">👋</div>
-                                <div class="cell">👋🏻</div>
-                                <div class="cell">👋🏼</div>
-                                <div class="cell">👋🏽</div>
-                                <div class="cell">👋🏾</div>
-                                <div class="cell">👋🏿</div>
-                            </div>
-                            <div class="rows">
-                                <div class="row"  style="min-width: 100%;">
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png" width="60px" alt="Quickdraw Skin Tone 1"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone2.png" width="60px" alt="Quickdraw Skin Tone 2"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone3.png" width="60px" alt="Quickdraw Skin Tone 3"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone4.png" width="60px" alt="Quickdraw Skin Tone 4"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone5.png" width="60px" alt="Quickdraw Skin Tone 5"></div>
-                                    <div class="cell"><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone6.png" width="60px" alt="Quickdraw Skin Tone 6"></div>
-                                </div>
-                                <div class="row" style="min-width: 100%;">
+                    <div class="row">
+                        <div class="cell"><img
+                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png"
+                                width="60px" alt="Quickdraw"></div>
+                        <div class="cell">Quickdraw</div>
+                        <div class="cell">
+                            <div class="inner-table">
+                                <div class="header" style="min-width: 100%;">
                                     <div class="cell">👋</div>
                                     <div class="cell">👋🏻</div>
                                     <div class="cell">👋🏼</div>
@@ -596,18 +650,47 @@
                                     <div class="cell">👋🏾</div>
                                     <div class="cell">👋🏿</div>
                                 </div>
+                                <div class="rows">
+                                    <div class="row" style="min-width: 100%;">
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone1.png"
+                                                width="60px" alt="Quickdraw Skin Tone 1"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone2.png"
+                                                width="60px" alt="Quickdraw Skin Tone 2"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone3.png"
+                                                width="60px" alt="Quickdraw Skin Tone 3"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone4.png"
+                                                width="60px" alt="Quickdraw Skin Tone 4"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone5.png"
+                                                width="60px" alt="Quickdraw Skin Tone 5"></div>
+                                        <div class="cell"><img
+                                                src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Quick-Draw/PNG/Skin-Tones/QuickDraw_SkinTone6.png"
+                                                width="60px" alt="Quickdraw Skin Tone 6"></div>
+                                    </div>
+                                    <div class="row" style="min-width: 100%;">
+                                        <div class="cell">👋</div>
+                                        <div class="cell">👋🏻</div>
+                                        <div class="cell">👋🏼</div>
+                                        <div class="cell">👋🏽</div>
+                                        <div class="cell">👋🏾</div>
+                                        <div class="cell">👋🏿</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Repeat similar blocks for other achievements -->
                 </div>
-                <!-- Repeat similar blocks for other achievements -->
             </div>
+
         </div>
-        
-      </div>  
-        
+
         <h2>✨ Highlights Badges ✨</h2>
-        
+
         <table>
             <thead>
                 <tr>
@@ -619,43 +702,59 @@
             <tbody>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_DarkMode.svg" alt="Pro Dark Mode"  id="pro-dark" class="badges-icons-dark" >
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_LightMode.svg" alt="Pro Light Mode" id="pro-light" class="badges-icons-light" >
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_DarkMode.svg"
+                            alt="Pro Dark Mode" id="pro-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Pro/SVG/GitHub-Pro_LightMode.svg"
+                            alt="Pro Light Mode" id="pro-light" class="badges-icons-light">
                     </td>
                     <td>Pro</td>
-                    <td>Use <a href="https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro">GitHub Pro</a></td>
+                    <td>Use <a
+                            href="https://docs.github.com/en/get-started/learning-about-github/githubs-products#github-pro">GitHub
+                            Pro</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_DarkMode.svg" alt="Developer Program Member Dark Mode"  id="developer-dark" class="badges-icons-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_LightMode.svg" alt="Developer Program Member Light Mode" id="developer-light" class="badges-icons-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_DarkMode.svg"
+                            alt="Developer Program Member Dark Mode" id="developer-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Developer-Program-Member/SVG/DeveloperProgramMember_LightMode.svg"
+                            alt="Developer Program Member Light Mode" id="developer-light" class="badges-icons-light">
                     </td>
                     <td>Developer Program Member</td>
-                    <td>Be a registered member of the <a href="https://docs.github.com/en/developers/overview/github-developer-program">GitHub Developer Program</a></td>
+                    <td>Be a registered member of the <a
+                            href="https://docs.github.com/en/developers/overview/github-developer-program">GitHub
+                            Developer Program</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_DarkMode.svg" alt="Security Bug Bounty Hunter Dark Mode"  id="security-dark" class="badges-icons-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_LightMode.svg" alt="Security Bug Bounty Hunter Light Mode" id="security-light" class="badges-icons-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_DarkMode.svg"
+                            alt="Security Bug Bounty Hunter Dark Mode" id="security-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Bug-Bounty-Hunter/SVG/Security-Bug-Bounty-Hunter_LightMode.svg"
+                            alt="Security Bug Bounty Hunter Light Mode" id="security-light" class="badges-icons-light">
                     </td>
                     <td>Security Bug Bounty Hunter</td>
-                    <td>Helped out hunting down security vulnerabilities at <a href="https://bounty.github.com/">GitHub Security</a></td>
+                    <td>Helped out hunting down security vulnerabilities at <a href="https://bounty.github.com/">GitHub
+                            Security</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_DarkMode.svg" alt="GitHub Campus Expert Dark Mode"  id="campus-dark" class="badges-icons-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_LightMode.svg" alt="GitHub Campus Expert Light Mode" id="campus-light" class="badges-icons-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_DarkMode.svg"
+                            alt="GitHub Campus Expert Dark Mode" id="campus-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/GitHub-Campus-Expert/SVG/GitHub-Campus-Expert_LightMode.svg"
+                            alt="GitHub Campus Expert Light Mode" id="campus-light" class="badges-icons-light">
                     </td>
                     <td>GitHub Campus Expert</td>
                     <td>Participate in the <a href="https://education.github.com/experts">GitHub Campus Program</a></td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_DarkMode.svg" alt="Security Advisory Credit Dark Mode"  id="advisory-dark" class="badges-icons-dark">
-                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_LightMode.svg" alt="Security Advisory Credit Light Mode" id="advisory-light" class="badges-icons-light">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_DarkMode.svg"
+                            alt="Security Advisory Credit Dark Mode" id="advisory-dark" class="badges-icons-dark">
+                        <img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Highlights/Security-Advisory-Credit/SVG/Security-Advisory-Credit_LightMode.svg"
+                            alt="Security Advisory Credit Light Mode" id="advisory-light" class="badges-icons-light">
                     </td>
                     <td>Security advisory credit</td>
-                    <td>Have your security advisory submitted to the <a href="https://github.com/advisories">GitHub Advisory Database</a> accepted</td>
+                    <td>Have your security advisory submitted to the <a href="https://github.com/advisories">GitHub
+                            Advisory Database</a> accepted</td>
                 </tr>
             </tbody>
         </table>
@@ -671,9 +770,12 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Mars-2020-Contributor/PNG/Mars2020ContributorBadge.png" alt="Mars 2020 Contributor" width="60px"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Mars-2020-Contributor/PNG/Mars2020ContributorBadge.png"
+                            alt="Mars 2020 Contributor" width="60px"></td>
                     <td>Mars 2020 Contributor</td>
-                    <td>Contributed code to a repository used in the <a href="https://github.com/readme/featured/nasa-ingenuity-helicopter">Mars 2020 Helicopter Mission</a></td>
+                    <td>Contributed code to a repository used in the <a
+                            href="https://github.com/readme/featured/nasa-ingenuity-helicopter">Mars 2020 Helicopter
+                            Mission</a></td>
                     <td>
                         <table>
                             <thead>
@@ -683,7 +785,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Mars-2020-Contributor/PNG/Mars2020ContributorBadge.png" width="60px" alt="Mars 2020 Contributor Badge"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/Mars-2020-Contributor/PNG/Mars2020ContributorBadge.png"
+                                            width="60px" alt="Mars 2020 Contributor Badge"></td>
                                 </tr>
                                 <tr>
                                     <td align="center">1</td>
@@ -693,9 +796,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/2020-Arctic-Code-Vault-Contributor/PNG/2020ArcticCodeVaultBadge.png" alt="Arctic Code Vault Contributor" width="60px"></td>
+                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/2020-Arctic-Code-Vault-Contributor/PNG/2020ArcticCodeVaultBadge.png"
+                            alt="Arctic Code Vault Contributor" width="60px"></td>
                     <td>Arctic Code Vault Contributor</td>
-                    <td>Contributed code to a repository in the <a href="https://archiveprogram.github.com/">2020 GitHub Archive Program</a></td>
+                    <td>Contributed code to a repository in the <a href="https://archiveprogram.github.com/">2020 GitHub
+                            Archive Program</a></td>
                     <td>
                         <table>
                             <thead>
@@ -705,7 +810,8 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/2020-Arctic-Code-Vault-Contributor/PNG/2020ArcticCodeVaultBadge.png" width="60px" alt="Arctic Code Vault Contributor Badge"></td>
+                                    <td><img src="https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/assets/Badges/2020-Arctic-Code-Vault-Contributor/PNG/2020ArcticCodeVaultBadge.png"
+                                            width="60px" alt="Arctic Code Vault Contributor Badge"></td>
                                 </tr>
                                 <tr>
                                     <td align="center">1</td>
@@ -716,139 +822,209 @@
                 </tr>
             </tbody>
         </table>
-       
-    
-        
+
+
+
     </div>
     <h1 style="text-align: center;">ℹ️ More Information ℹ️</h1>
 
-    <h4 style="text-align: center;">You can find more information about GitHub Badges under this <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#displaying-badges-on-your-profile">link</a>.</h4>
+    <h4 style="text-align: center;">You can find more information about GitHub Badges under this <a
+            href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#displaying-badges-on-your-profile">link</a>.
+    </h4>
 
     <br>
     <div class="certificate">
-        <div class="certificate-left" >
-          <h1 style="font-size: 50px;margin-bottom: 0px !important;">Showcase your expertise with GitHub Certifications</h1>
-          <p>Getting GitHub certified is a resounding endorsement that validates your skills, credibility, trust, and knowledge of the technologies and developer tools that are used by more than 100 million developers worldwide.</p>
+        <div class="certificate-left">
+            <h1 style="font-size: 50px;margin-bottom: 0px !important;">Showcase your expertise with GitHub
+                Certifications</h1>
+            <p>Getting GitHub certified is a resounding endorsement that validates your skills, credibility, trust, and
+                knowledge of the technologies and developer tools that are used by more than 100 million developers
+                worldwide.</p>
         </div>
         <div>
-          <img src="https://images.ctfassets.net/wfutmusr1t3h/6eWM76bx8skN2B4Jpvkcil/3ccdafea4229f02802abbd9fc6634a3b/Certifiedtocat_full__2_.svg?w=1280&q=75">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/6eWM76bx8skN2B4Jpvkcil/3ccdafea4229f02802abbd9fc6634a3b/Certifiedtocat_full__2_.svg?w=1280&q=75">
         </div>
     </div>
     <div class="ways">
-      <div class="ways1">
-          <img src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
-          <div class="ways-content">
-            <h1>GitHub Foundations</h1>
-            <p>Highlight your understanding of the foundational topics and concepts of collaborating, contributing, and working on GitHub. This exam covers collaboration, GitHub products, Git basics, and working within GitHub repositories.</p>
-            <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Foundations exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-  
-          </div>
-      </div>
-      <div class="ways2">
-        <img src="https://images.ctfassets.net/wfutmusr1t3h/7xYtTWmQ24xRlS68Do9qiG/a785c50083a579f2530863c230198e98/actions-river-image__1_.png?w=1280&q=75"></img>
-        <div class="ways-content">
-          <h1>GitHub Actions</h1>
-          <p>Certify your proficiency in automating workflows and accelerating development with GitHub Actions. Test your skills in streamlining workflows, automating tasks, and optimizing software pipelines, including CI/CD—all within customizable workflows.</p>
-          <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Actions exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-  
+        <div class="ways1">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
+            <div class="ways-content">
+                <h1>GitHub Foundations</h1>
+                <p>Highlight your understanding of the foundational topics and concepts of collaborating, contributing,
+                    and working on GitHub. This exam covers collaboration, GitHub products, Git basics, and working
+                    within GitHub repositories.</p>
+                <a href="https://examregistration.github.com/waitlist/copilot"
+                    class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Foundations
+                    exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                        class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path fill="currentColor"
+                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+                        </path>
+                        <path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></a>
+
+            </div>
         </div>
-    </div>
-    <div class="ways1">
-      <img src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
-      <div class="ways-content">
-        <h1>GitHub Advanced Security</h1>
-        <p>Highlight your code security knowledge with the GitHub Advanced Security certification. Validate your expertise in vulnerability identification, workflow security, and robust security implementation—elevating software integrity standards.</p>
-        <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Advanced Security exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-  
-      </div>
-  </div>
-  <div class="ways2">
-    <img src="https://images.ctfassets.net/wfutmusr1t3h/KdVTNopvz0GZy60xzXCq0/86148a36ddf27ea1d22226f0113b8711/admin-river-image__1_.png?w=1280&q=75"></img>
-    <div class="ways-content">
-      <h1>GitHub Administration</h1>
-      <p>Certify your ability to optimize and manage a healthy GitHub environment with the GitHub Admin exam. Highlight your expertise in repository management, workflow optimization, and efficient collaboration to support successful projects on GitHub.</p>
-      <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Administration exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-  
-    </div>
-  </div>
-  <div class="ways1">
-    <img src="https://images.ctfassets.net/wfutmusr1t3h/16DNDZjBQxyxijON2ciyMQ/291420cd4a3a38eaaee04c44da6aca80/gh-copilot__1_.jpg?w=1280&q=75"></img>
-    <div class="ways-content">
-      <h1>GitHub Copilot</h1>
-      <p>The GitHub Copilot certification exam evaluates your skill in using the AI-driven code completion tool in various programming languages, certifying your capability to optimize software development workflows efficiently.</p>
-      <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Coming Soon! Join the waitlist now for priority access<!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-    </div>
-  </div>
+        <div class="ways2">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/7xYtTWmQ24xRlS68Do9qiG/a785c50083a579f2530863c230198e98/actions-river-image__1_.png?w=1280&q=75"></img>
+            <div class="ways-content">
+                <h1>GitHub Actions</h1>
+                <p>Certify your proficiency in automating workflows and accelerating development with GitHub Actions.
+                    Test your skills in streamlining workflows, automating tasks, and optimizing software pipelines,
+                    including CI/CD—all within customizable workflows.</p>
+                <a href="https://examregistration.github.com/waitlist/copilot"
+                    class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Actions exam
+                    <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                        class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path fill="currentColor"
+                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+                        </path>
+                        <path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></a>
+
+            </div>
+        </div>
+        <div class="ways1">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
+            <div class="ways-content">
+                <h1>GitHub Advanced Security</h1>
+                <p>Highlight your code security knowledge with the GitHub Advanced Security certification. Validate your
+                    expertise in vulnerability identification, workflow security, and robust security
+                    implementation—elevating software integrity standards.</p>
+                <a href="https://examregistration.github.com/waitlist/copilot"
+                    class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Advanced
+                    Security exam <!-- --> <svg aria-hidden="true" role="presentation"
+                        xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none">
+                        <path fill="currentColor"
+                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+                        </path>
+                        <path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></a>
+
+            </div>
+        </div>
+        <div class="ways2">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/KdVTNopvz0GZy60xzXCq0/86148a36ddf27ea1d22226f0113b8711/admin-river-image__1_.png?w=1280&q=75"></img>
+            <div class="ways-content">
+                <h1>GitHub Administration</h1>
+                <p>Certify your ability to optimize and manage a healthy GitHub environment with the GitHub Admin exam.
+                    Highlight your expertise in repository management, workflow optimization, and efficient
+                    collaboration to support successful projects on GitHub.</p>
+                <a href="https://examregistration.github.com/waitlist/copilot"
+                    class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Administration
+                    exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+                        class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path fill="currentColor"
+                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+                        </path>
+                        <path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></a>
+
+            </div>
+        </div>
+        <div class="ways1">
+            <img
+                src="https://images.ctfassets.net/wfutmusr1t3h/16DNDZjBQxyxijON2ciyMQ/291420cd4a3a38eaaee04c44da6aca80/gh-copilot__1_.jpg?w=1280&q=75"></img>
+            <div class="ways-content">
+                <h1>GitHub Copilot</h1>
+                <p>The GitHub Copilot certification exam evaluates your skill in using the AI-driven code completion
+                    tool in various programming languages, certifying your capability to optimize software development
+                    workflows efficiently.</p>
+                <a href="https://examregistration.github.com/waitlist/copilot"
+                    class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Coming Soon! Join the waitlist now for
+                    priority access<!-- --> <svg aria-hidden="true" role="presentation"
+                        xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16"
+                        viewBox="0 0 16 16" fill="none">
+                        <path fill="currentColor"
+                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+                        </path>
+                        <path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+                    </svg></a>
+            </div>
+        </div>
     </div>
     <footer id="Contact" class="footer-2">
         <div class="footer-container">
-          <div class="footer-content">
-            <div class="footer-info">
-              <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
-            </div>
-      
-            <div class="footer-links">
-              <div class="footer-section">
-               <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
-               <div>
-                <a href="help.html" class="footer-link">Contact Us</a>
-                <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
-               </div>
-              </div>
-              <div class="footer-section">
-                <h6 class="footer-heading">GET INVOLVED</h6>
-                <div>
-                  <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
-                  <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
                 </div>
-              </div>
-            </div>
-      
-            <div class="footer-description">
-              <h5>
-                We focus on quality content to the right people at the right time⏱️. Recode Hive will help you with updates on what’s happening in the tech industry💻. We focus on everything starting from How To’s to Data Science.
-              </h5>
-              <a href="exploremore.html" class="footer-button">Explore</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="footer-bottom">
-          <div class="footer-container">
-            <p class="footer-copyright">
-              &copy; 2024 Recode-Hive. Made with 🖤️ by the community. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
 
-      <!-- Scroll to top -->
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+                        <div>
+                            <a href="help.html" class="footer-link">Contact Us</a>
+                            <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md"
+                                class="footer-link">Code of Conduct</a>
+                        </div>
+                    </div>
+                    <div class="footer-section">
+                        <h6 class="footer-heading">GET INVOLVED</h6>
+                        <div>
+                            <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+                                class="footer-link">Add Your Profile</a>
+                            <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization"
+                                class="footer-link">Join the Organization</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-description">
+                    <h5>
+                        We focus on quality content to the right people at the right time⏱️. Recode Hive will help you
+                        with updates on what’s happening in the tech industry💻. We focus on everything starting from
+                        How To’s to Data Science.
+                    </h5>
+                    <a href="exploremore.html" class="footer-button">Explore</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-container">
+                <p class="footer-copyright">
+                    &copy; 2024 Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
     <button id="scrollToTop" aria-label="Scroll to top">
         <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-          <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+            <path
+                d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
         </svg>
-      </button>
-  
+    </button>
+
     <script src="../scripts/ScrollToTop.js"></script>
     <script src="../scripts/dark-mode.js"></script>
-      <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobile-menu");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-    hamburger.addEventListener("click", function() {
-        hamburger.classList.toggle("active");
-        if (mobileMenu.classList.contains("show")) {
-            mobileMenu.classList.remove("show");
-            setTimeout(() => mobileMenu.style.display = "none", 300);
-        } else {
-            mobileMenu.style.display = "flex";
-            setTimeout(() => mobileMenu.classList.add("show"), 10);
-        }
-    });
-});
+            hamburger.addEventListener("click", function () {
+                hamburger.classList.toggle("active");
+                if (mobileMenu.classList.contains("show")) {
+                    mobileMenu.classList.remove("show");
+                    setTimeout(() => mobileMenu.style.display = "none", 300);
+                } else {
+                    mobileMenu.style.display = "flex";
+                    setTimeout(() => mobileMenu.classList.add("show"), 10);
+                }
+            });
+        });
 
 
-      </script>
+    </script>
 </body>
+
 </html>
