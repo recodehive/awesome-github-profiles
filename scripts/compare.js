@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     let contributors = [];
-    const token = ''; // Replace with your GitHub PAT
+    const token = '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'; // Replace with your GitHub PAT
 
     fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
         .then((response) => response.json())
