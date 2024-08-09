@@ -11,38 +11,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="navbar-left" onclick="window.location.href=`/index.html`">
-      <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
-      <span class="navbar-text">Recode Hive</span>
-    </div>
-    <div class="navbar-right">
-      <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
-      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
-      class="navbar-link">Add Profile</a>
-      <a href="#" class="navbar-link">Tools</a>
-      <a href="events.html" class="navbar-link">Events</a>
-      <a href="blog.html" class="navbar-link">Learn</a>
-      <a href="compare.html" class="navbar-link">Compare</a>
-
-     
-      <div class="toggle-switch">
-        <input type="checkbox" id="theme-toggle">
-        <label for="theme-toggle">
-          <div class="switch-button">
-            <span class="material-icons sun-icon">wb_sunny</span>
-            <span class="material-icons moon-icon">brightness_2</span>
-          </div>
-        </label>
+    <nav class="navbar">
+        <a href="../index.html" style="text-decoration: none; color: #333;">
+          <div class="navbar-left" onclick="window.location.href=`../index.html`">
+            <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+             <span class="navbar-text">Recode Hive</span>
+        </div>
+        </a>
+        <div class="navbar-right">
+          <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+          <a href="#" class="navbar-link">Tools</a>
+          <a href="#" class="navbar-link">Events</a>
+          <a href="blog.html" class="navbar-link">Learn</a>
+          <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+           class="navbar-link">Add Profile</a>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-toggle">
+                <label for="theme-toggle">
+                  <div class="switch-button">
+                    <span class="material-icons sun-icon">wb_sunny</span>
+                    <span class="material-icons moon-icon">brightness_2</span>
+                  </div>
+                </label>
+              </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
       </div>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>  
+    </nav>
     <div class="mobile-menu" id="mobile-menu">
 		<a href="githubbadge.html" class="navbar-links">Github-Badge</a>
 		<a href="#" class="navbar-links">Tools</a>
@@ -54,13 +52,13 @@
     <div class="container">
         <h1 class="main-heading">Events Timeline</h1>
         
-        <div class="timeline">
+        <div style="position: relative;" class="timeline">
             <!-- Event 1 -->
-            <div class="timeline-item">
+            <div class="timeline-item" style="position: relative;">
                 <div class="timeline-content">
                   <div class="banner">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/A7PchMiBeN4?si=2WnNqY6FwuCrLjQr" frameborder="0" allowfullscreen></iframe>
-                </div>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/AtoVNe1mVUA?start=792" frameborder="0" allowfullscreen></iframe>
+                  </div>
                 
                     <h2 class="event-title">GitHub Profile Review Live Session</h2>
                     <p class="event-date">Date: 18 Jul 2024</p>
@@ -71,14 +69,15 @@
                       </p>
                     <a href="#" class="event-link">Learn More</a>
                 </div>
-            </div>
+                <div class="line scroll-animate " id="scroll1"></div>
 
+            </div>
             <!-- Event 2 -->
             <div class="timeline-item">
                 <div class="timeline-content">
                   <div class="banner">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/A7PchMiBeN4?si=2WnNqY6FwuCrLjQr" frameborder="0" allowfullscreen></iframe>
-                </div>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Rm2lT9j6VxQ?start=522" frameborder="0" allowfullscreen></iframe>
+                  </div>
                     <h2 class="event-title">GitHub Profile Review Live Session : #2</h2>
                     <p class="event-date">Date: 21 Jul 2024</p>
                     <p class="event-description">Session Highlights:
@@ -86,16 +85,25 @@
                       💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.</p>
                     <a href="#" class="event-link">Learn More</a>
                 </div>
+                <div class="line1 scroll-animate" id="scroll2"></div>
+
             </div>
 
             <!-- Event 3 -->
             <div class="timeline-item">
-                <div class="timeline-content">
-                    <h2 class="event-title">Upcoming Events</h2>
-                    <p class="event-date">Date: TBA</p>
-                    <p class="event-description">Upcoming Events Will Be Add In Future .</p>
-                    <a href="#" class="event-link">Learn More</a>
+              <div class="timeline-content">
+                <div class="banner">
+                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/rNF66FCLmYM?start=90" frameborder="0" allowfullscreen></iframe>
                 </div>
+                  <h2 class="event-title">GitHub Profile Review Live Session : #3</h2>
+                  <p class="event-date">Date: 7 Aug 2024</p>
+                  <p class="event-description">Session Highlights:
+                    🔍 Live GitHub Profile Reviews: Get feedback on your GitHub profile.
+                    💡 Tips to Enhance Your GitHub: Learn valuable tips and tricks to make your profile stand out.</p>
+                  <a href="#" class="event-link">Learn More</a>
+              </div>
+                <div class="line scroll-animate" id="scroll3"></div>
+
             </div>
 
             <!-- Add more event containers as needed -->
@@ -147,6 +155,64 @@
     <script src="../scripts/script.js"></script>
     <script src="../scripts/dark-mode.js"></script>
 	  <script src="../scripts/hamburger.js"></script>
+    <script>
 
+      function active(){
+          const contentDiv = document.getElementById('scroll1');
+          contentDiv.style.height='103%'
+      }
+      function active1(){
+          const contentDiv = document.getElementById('scroll2');
+          contentDiv.style.height='100%'
+      }
+      function active2(){
+          const contentDiv = document.getElementById('scroll3');
+          contentDiv.style.height='108%'
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const contentDiv = document.getElementById('scroll1');
+        const contentDiv1 = document.getElementById('scroll2');
+        const contentDiv2 = document.getElementById('scroll3');
+
+        contentDiv.style.height='0%'
+
+          contentDiv1.style.height='0%'
+          contentDiv2.style.height='0%'
+
+        // Function to call when the content div comes into view
+        function handleIntersection(entries, observer) {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // Call your function here
+              if(entry.target.id=="scroll1"){
+                  active();
+              } if(entry.target.id=="scroll2"){
+                  active1()
+              } if(entry.target.id=="scroll3"){
+                active2()
+              }
+  
+              // Optionally, stop observing after the first intersection
+              observer.unobserve(entry.target);
+            }
+          });
+        }
+  
+        // Create an Intersection Observer instance
+        const observer = new IntersectionObserver(handleIntersection, {
+          root: null, // Use the viewport as the root
+          rootMargin: '-200px',
+          threshold: 0.1 // Trigger when 10% of the target is visible
+        });
+  
+        // Start observing the target element
+        observer.observe(contentDiv);
+        observer.observe(contentDiv1);
+        observer.observe(contentDiv2);
+
+        // Example function to call when content div is in view
+      
+      });
+    </script>
 </body>
 </html>
