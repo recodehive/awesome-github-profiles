@@ -149,6 +149,7 @@ body.dark-mode .blog-card .excerpt {
     font-size: 20px !important;
 }
 .ways img{
+    object-fit: contain !important;
     border-radius: 20px;
 }
 .ways1{
@@ -184,6 +185,7 @@ body.dark-mode .blog-card .excerpt {
 }
 @media only screen and (max-width:600px) {
     .ways img{
+        object-fit: inherit;
         scale: 0.60 !important;}
  }
 .ways a:hover{
