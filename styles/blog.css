@@ -119,6 +119,7 @@ body.dark-mode .blog-card .excerpt {
     .blog-card {
         width: 100%;
     }
+
     .ways-content {
         padding: 0 !important;
     }
@@ -364,21 +365,26 @@ body.dark-mode .blog-card .excerpt {
 
 @media only screen and (max-width:700px) {
     .line {
+        width: auto;
         grid-area: line;
     }
 
     .side-content {
+        padding: 0.5rem;
         height: auto;
+        width: auto;
         grid-area: side;
     }
 
     .main-popup-content {
+        width: auto;
         height: auto;
         grid-area: main;
+        padding: 0.5rem;
     }
 
     .main-popup-content h1 {
-        font-size: 30px !important;
+        font-size: 1.5rem !important;
         margin-bottom: 10px;
     }
 
@@ -393,8 +399,10 @@ body.dark-mode .blog-card .excerpt {
     }
 
     .popup-content {
-        margin: 10% auto;
+        width: 90%;
+        margin: 7% auto;
         display: grid;
+        grid-template-columns: 1fr 4fr;
         grid-template-areas:
             "line side"
             "line main";
