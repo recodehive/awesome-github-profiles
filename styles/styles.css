@@ -554,10 +554,11 @@ body.dark-mode .toggle-label {
 }
 
 /* Dark mode adjustments */
-body.dark-mode .navbar {
+body.dark-mode .navbar, body.dark-mode .modal-content {
   background-color: #333;
   color: #f0f0f0;
 }
+
 
 body.dark-mode .navbar-link {
   color: #f0f0f0;
