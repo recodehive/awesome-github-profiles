@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../styles/hamburger.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -133,5 +134,15 @@
     <script src="../scripts/ScrollToTop.js"></script>
     <script src="../scripts/dark-mode.js"></script>
     <script src="../scripts/hamburger.js"></script>
+    <script>
+      ScrollReveal({ 
+        //reset: true ,
+        distance : '60px' ,
+        duration:2500,
+        delay:500
+      });  
+          ScrollReveal().reveal('.title-text', { delay: 500 , origin:'left'});
+          ScrollReveal().reveal('.content .item', { delay: 700 , origin:'left' ,interval:300});
+    </script>
 </body>
 </html>

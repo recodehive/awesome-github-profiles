@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../styles/events.css">
 	  <link rel="stylesheet" href="../styles/hamburger.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <nav class="navbar">
@@ -55,7 +56,7 @@
         <div class="timeline">
             <!-- Event 1 -->
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content" id="left">
                   <div class="banner">
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/A7PchMiBeN4?si=2WnNqY6FwuCrLjQr" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -73,10 +74,10 @@
 
             <!-- Event 2 -->
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content" id="right">
                   <div class="banner">
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/A7PchMiBeN4?si=2WnNqY6FwuCrLjQr" frameborder="0" allowfullscreen></iframe>
-                </div>
+                  </div>
                     <h2 class="event-title">GitHub Profile Review Live Session : #2</h2>
                     <p class="event-date">Date: 21 Jul 2024</p>
                     <p class="event-description">Session Highlights:
@@ -88,7 +89,7 @@
 
             <!-- Event 3 -->
             <div class="timeline-item">
-                <div class="timeline-content">
+                <div class="timeline-content" id="left">
                     <h2 class="event-title">Upcoming Events</h2>
                     <p class="event-date">Date: TBA</p>
                     <p class="event-description">Upcoming Events Will Be Add In Future .</p>
@@ -145,6 +146,18 @@
     <script src="../scripts/script.js"></script>
     <script src="../scripts/dark-mode.js"></script>
 	  <script src="../scripts/hamburger.js"></script>
+    <script>
+      
 
+ScrollReveal({ 
+            //reset: true ,
+            distance : '60px' ,
+            duration:2500,
+            delay:400
+        });  
+        ScrollReveal().reveal('.main-heading', { delay: 500 , origin:'left'});
+        ScrollReveal().reveal('#left', { delay: 600 , origin:'left'});
+        ScrollReveal().reveal('#right', { delay: 600 , origin:'right'});
+    </script>
 </body>
 </html>
