@@ -439,3 +439,82 @@ body.dark-mode .saved-blogs {
 .saved-blogs:hover {
     text-decoration: underline;
 }
+
+
+/* Toast Notification Styles */
+#toast-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+  }
+  
+  .toast {
+    display: none;
+    min-width: 200px;
+    margin-bottom: 10px;
+    padding: 15px;
+    top: 30px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+    padding: 18px !important;
+  
+  }
+  .line{
+    position: absolute;
+    bottom: -20px;
+    z-index: 10000;
+    left: 0px;
+    height: 4px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: green;
+    animation: line-animate 2s ease-in-out forwards;
+  }
+  @keyframes line-animate {
+      from{
+        width: 0px;
+      }to{
+        width: 100%;
+      }
+  }
+  .toast.show {
+    display: block;
+    animation: fadeInOut 3s ease-out;
+  }
+  
+  .toast.like {
+    background: #12229d;
+    color: #fff;
+    
+    font-size: 12px;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 600;
+    min-width: 200px;
+    right: 0;
+    width: 22vw;
+    padding: 10px;/* Green for likes */
+  
+  }
+  
+  .toast.unlike {
+    background-color: #F44336; /* Red for unlikes */
+  }
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .toast .close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+  }
+  

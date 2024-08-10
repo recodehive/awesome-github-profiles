@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!savedBlogs.find(b => b.title === blog.title)) {
             savedBlogs.push(blog);
             localStorage.setItem('savedBlogs', JSON.stringify(savedBlogs));
-            alert('Blog saved for later!');
+            showToast("Blog Saved For Later","like")
         }
     }
 
@@ -77,3 +77,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// Function to create and show toast notifications
+function showToast(message, type) {
+    const toastContainer = document.getElementById('toast-container');
+  
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast ${type} show`;
+    toast.textContent = message;
+  
+    // Add close button
+    const closeBtn = document.createElement('span');
+    let line=document.createElement('div')
+    closeBtn.className = 'close-btn';
+    closeBtn.textContent = '×';
+    closeBtn.onclick = () => {
+      toast.remove();
+    };
+    line.className="line"
+    toast.appendChild(closeBtn);
+    toastContainer.appendChild(line)
+    // Append toast to container
+    toastContainer.appendChild(toast);
+  
+    // Remove toast after a delay
+    setTimeout(() => {
+      toast.classList.remove('show');
+      toastContainer.removeChild(line)
+    }, 3000);
+  }
