@@ -402,7 +402,8 @@ document.addEventListener('DOMContentLoaded', () => {
          contributors=contributors.sort((a,b)=>a.views-b.views)
           renderProfiles();
         });
-      }else{
+      }
+      else if(e.target.innerHTML=="Most Views"){
         fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
         .then((response) => response.json())
         .then((data) => {
@@ -419,6 +420,46 @@ document.addEventListener('DOMContentLoaded', () => {
           });
          })
          contributors=contributors.sort((a,b)=>b.views-a.views)
+          renderProfiles();
+        });
+      }else if(e.target.innerHTML=="Most Likes"){
+        console.log('sdsdsdsds')
+        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
+        .then((response) => response.json())
+        .then((data) => {
+          contributors = data.contributors;
+         contributors.map((data)=>{
+           const profileRef = firebase.database().ref(`profiles/${data.login}/likes`)
+           profileRef.on("value", (snapshot) => {
+             if (snapshot.exists()) {
+              data['likes']=snapshot.val()
+            } else {
+              // Handle new profile
+              profileRef.set(0);
+            }
+          });
+         })
+         contributors=contributors.sort((a,b)=>b.likes-a.likes)
+          renderProfiles();
+        });
+      }else{
+
+        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
+        .then((response) => response.json())
+        .then((data) => {
+          contributors = data.contributors;
+         contributors.map((data)=>{
+           const profileRef = firebase.database().ref(`profiles/${data.login}/likes`)
+           profileRef.on("value", (snapshot) => {
+             if (snapshot.exists()) {
+              data['likes']=snapshot.val()
+            } else {
+              // Handle new profile
+              profileRef.set(0);
+            }
+          });
+         })
+         contributors=contributors.sort((a,b)=>a.likes-b.likes)
           renderProfiles();
         });
       }
