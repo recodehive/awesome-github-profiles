@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (img.src === screenshotSrc) {
             imgContainer.classList.add("scroll-on-hover");
             imgContainer.dataset.imgHeight = img.naturalHeight;
+            img.style.opacity = '1';
           }
         };
 

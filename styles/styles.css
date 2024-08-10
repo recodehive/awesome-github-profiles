@@ -84,6 +84,10 @@ body {
   justify-content: center;
 }
 
+.profile-img {
+  opacity: 0;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -571,6 +575,15 @@ body.dark-mode .navbar-text {
 
 body.dark-mode .navbar-link:hover {
   background-color: #555;
+}
+
+.img-container {
+  background-image: url('../assets/loading.webp');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-radius: 10px;
 }
 
 .footer-2 {
