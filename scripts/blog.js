@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="excerpt">${blog.excerpt}</div>
                         <div class="blog-save">
                             <a class="read-more" href="${blog.link}">Read More</a>
-                            <div class="save-btn">${isBlogSaved(blog) ? 'Saved' : '<i class="fa fa-save"></i> Save Blog'}</div>
+                            <div class="save-btn">${isBlogSaved(blog) ? '<i class="fa fa-trash"></i> Unsave Blog' : '<i class="fa fa-save"></i> Save Blog'}</div>
                         </div>
                     </div>
                 `;
@@ -38,11 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 saveBtn.addEventListener('click', () => {
                     if (isBlogSaved(blog)) {
-                        alert('Blog already saved.');
+                        unsaveBlog(blog);
+                        saveBtn.innerHTML = '<i class="fa fa-save"></i> Save Blog';
+                        saveBtn.classList.remove('saved');
+                        showToast("Blog Unsaved", "like");
                     } else {
                         saveBlog(blog);
-                        saveBtn.textContent = 'Saved';
+                        saveBtn.innerHTML = '<i class="fa fa-trash"></i> Unsave Blog';
                         saveBtn.classList.add('saved');
+                        showToast("Blog Saved For Later", "like");
                     }
                 });
 
@@ -67,8 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!savedBlogs.find(b => b.title === blog.title)) {
             savedBlogs.push(blog);
             localStorage.setItem('savedBlogs', JSON.stringify(savedBlogs));
-            showToast("Blog Saved For Later","like")
         }
+    }
+
+    function unsaveBlog(blog) {
+        let savedBlogs = JSON.parse(localStorage.getItem('savedBlogs')) || [];
+        savedBlogs = savedBlogs.filter(b => b.title !== blog.title);
+        localStorage.setItem('savedBlogs', JSON.stringify(savedBlogs));
     }
 
     function isBlogSaved(blog) {
@@ -88,21 +97,22 @@ function showToast(message, type) {
   
     // Add close button
     const closeBtn = document.createElement('span');
-    let line=document.createElement('div')
+    let line = document.createElement('div');
     closeBtn.className = 'close-btn';
     closeBtn.textContent = '×';
     closeBtn.onclick = () => {
-      toast.remove();
+        toast.remove();
     };
-    line.className="line"
+    line.className = "line";
     toast.appendChild(closeBtn);
-    toastContainer.appendChild(line)
+    toastContainer.appendChild(line);
+  
     // Append toast to container
     toastContainer.appendChild(toast);
   
     // Remove toast after a delay
     setTimeout(() => {
-      toast.classList.remove('show');
-      toastContainer.removeChild(line)
+        toast.classList.remove('show');
+        toastContainer.removeChild(line);
     }, 3000);
-  }
+}
