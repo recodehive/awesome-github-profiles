@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 This is the all in one place of awesome-github-profiles.
 </div>
@@ -37,6 +37,7 @@ This is the all in one place of awesome-github-profiles.
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hemu21"><img src="https://avatars.githubusercontent.com/u/106808387?v=4?s=100" width="100px;" alt="Hemanth kumar "/><br /><sub><b>Hemanth kumar </b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AHemu21" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://bento.me/anjali-pamidi"><img src="https://avatars.githubusercontent.com/u/154777864?v=4?s=100" width="100px;" alt="Lakshmi Pavananjali"/><br /><sub><b>Lakshmi Pavananjali</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AAnjaliavv51" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://dhruvsoni.vercel.app"><img src="https://avatars.githubusercontent.com/u/114583978?v=4?s=100" width="100px;" alt="Soni Dhruv"/><br /><sub><b>Soni Dhruv</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Adhruv8433" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://chaitanyalonarkar.netlify.app/"><img src="https://avatars.githubusercontent.com/u/110454138?v=4?s=100" width="100px;" alt="Chaitanya Lonarkar"/><br /><sub><b>Chaitanya Lonarkar</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AChaitanyaLonarkar" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
