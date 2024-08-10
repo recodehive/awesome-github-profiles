@@ -199,6 +199,7 @@ body.dark-mode .profile p {
   position: relative;
   top: 0px;
   left: 7px;
+  cursor: pointer;
   width: 55px;
   /* Adjust width to fit switch button and icons */
   height: 30px;
