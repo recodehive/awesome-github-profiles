@@ -172,6 +172,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "mdazfar2",
+      "name": "Md Azfar Alam",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100375390?v=4",
+      "profile": "http://medium.com/@azfaralam",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
