@@ -163,6 +163,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "ChaitanyaLonarkar",
+      "name": "Chaitanya Lonarkar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/110454138?v=4",
+      "profile": "https://chaitanyalonarkar.netlify.app/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
