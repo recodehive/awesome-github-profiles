@@ -1311,10 +1311,10 @@ a {
   bottom: -20px;
   z-index: 10000;
   left: 0px;
-  height: 4px;
+  height: 5px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: green;
+  background-color: rgb(255, 255, 255);
   animation: line-animate 2s ease-in-out forwards;
 }
 @keyframes line-animate {
@@ -1330,7 +1330,7 @@ a {
 }
 
 .toast.like {
-  background: #12229d;
+  background: #333;
   color: #fff;
   
   font-size: 12px;
