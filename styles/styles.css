@@ -214,6 +214,10 @@ body.dark-mode .profile p {
   transition: background-color 0.5s ease;
 }
 
+.no-profiles-message h2 {
+  color: black;
+}
+
 /* Styling for Vertical Scrollbar */
 
 ::-webkit-scrollbar {
