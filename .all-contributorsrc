@@ -183,15 +183,19 @@
       ]
     },
     {
-
-      "login": "SakshamShandilya",
-      "name": "SAKSHAM SHANDILYA",
-      "avatar_url": "https://avatars.githubusercontent.com/u/90836873?v=4",
-      "profile": "http://www.plypicker.com",
       "login": "mdazfar2",
       "name": "Md Azfar Alam",
       "avatar_url": "https://avatars.githubusercontent.com/u/100375390?v=4",
       "profile": "http://medium.com/@azfaralam",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "Pallavi-star2002",
+      "name": "Pallavi-star2002",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67356946?v=4",
+      "profile": "https://pallavi-star2002.github.io/Pallavi.github.io/",
       "contributions": [
         "review"
       ]
