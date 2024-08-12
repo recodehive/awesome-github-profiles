@@ -45,6 +45,7 @@
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/apu52"><img src="https://avatars.githubusercontent.com/u/114172928?v=4?s=100" width="100px;" alt="Arpan Chowdhury"/><br /><sub><b>Arpan Chowdhury</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aapu52" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/PratikMane0112"><img src="https://avatars.githubusercontent.com/u/153143167?v=4?s=100" width="100px;" alt="Pratik Mane"/><br /><sub><b>Pratik Mane</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3APratikMane0112" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
