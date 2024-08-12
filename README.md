@@ -45,6 +45,7 @@
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Vaibhav-kesarwani"><img src="https://avatars.githubusercontent.com/u/116189379?s=400&u=ddbea26ab98fd97c22765a326179e1e3bee3ce2a&v=4?s=100" width="100px;" alt="Vaibhav-kesarwani"/><br /><sub><b>Vaibhav-kesarwani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AVaibhav-kesarwani" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://krishfoliohub-com.vercel.app"><img src="https://avatars.githubusercontent.com/u/105340895?v=4?s=100" width="100px;" alt="Krish Agrawal"/><br /><sub><b>Krish Agrawal</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AKrish3914" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://yogaprasad.vercel.app"><img src="https://avatars.githubusercontent.com/u/174566721?v=4?s=100" width="100px;" alt="Yogaprasad M K"/><br /><sub><b>Yogaprasad M K</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayogaprasadk" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
