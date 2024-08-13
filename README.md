@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-25-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -47,6 +47,7 @@
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Vaibhav-kesarwani"><img src="https://avatars.githubusercontent.com/u/116189379?s=400&u=ddbea26ab98fd97c22765a326179e1e3bee3ce2a&v=4?s=100" width="100px;" alt="Vaibhav-kesarwani"/><br /><sub><b>Vaibhav-kesarwani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AVaibhav-kesarwani" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://yogaprasad.vercel.app"><img src="https://avatars.githubusercontent.com/u/174566721?v=4?s=100" width="100px;" alt="Yogaprasad M K"/><br /><sub><b>Yogaprasad M K</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayogaprasadk" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SumithThota"><img src="https://avatars.githubusercontent.com/u/108344062?v=4?s=100" width="100px;" alt="Sumith Thota"/><br /><sub><b>Sumith Thota</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASumithThota" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/UppuluriKalyani"><img src="https://avatars.githubusercontent.com/u/105410881?v=4?s=100" width="100px;" alt="Uppuluri Kalyani"/><br /><sub><b>Uppuluri Kalyani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AUppuluriKalyani" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
