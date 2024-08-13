@@ -210,15 +210,19 @@
       ]
     },
     {
-
-      "login": "Krish3914",
-      "name": "Krish Agrawal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/105340895?v=4",
-      "profile": "https://krishfoliohub-com.vercel.app",
       "login": "yogaprasadk",
       "name": "Yogaprasad M K",
       "avatar_url": "https://avatars.githubusercontent.com/u/174566721?v=4",
       "profile": "http://yogaprasad.vercel.app",
+      "contributions": [
+        "review"
+      ]
+    },
+    {
+      "login": "SumithThota",
+      "name": "Sumith Thota",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108344062?v=4",
+      "profile": "https://github.com/SumithThota",
       "contributions": [
         "review"
       ]
