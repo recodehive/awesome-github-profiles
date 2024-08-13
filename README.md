@@ -48,6 +48,9 @@
       <td align="center" valign="top" width="14.28%"><a href="http://yogaprasad.vercel.app"><img src="https://avatars.githubusercontent.com/u/174566721?v=4?s=100" width="100px;" alt="Yogaprasad M K"/><br /><sub><b>Yogaprasad M K</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ayogaprasadk" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SumithThota"><img src="https://avatars.githubusercontent.com/u/108344062?v=4?s=100" width="100px;" alt="Sumith Thota"/><br /><sub><b>Sumith Thota</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASumithThota" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hrishita-Paul"><img src="https://avatars.githubusercontent.com/u/105964839?v=4?s=100" width="100px;" alt="Hrishita Paul"/><br /><sub><b>Hrishita Paul</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AHrishita-Paul" title="Reviewed Pull Requests">👀</a></td>
+
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/UppuluriKalyani"><img src="https://avatars.githubusercontent.com/u/105410881?v=4?s=100" width="100px;" alt="Uppuluri Kalyani"/><br /><sub><b>Uppuluri Kalyani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AUppuluriKalyani" title="Reviewed Pull Requests">👀</a></td>
+
     </tr>
   </tbody>
 </table>
