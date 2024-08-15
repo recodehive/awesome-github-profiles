@@ -262,6 +262,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "VaibhavArora314",
+      "name": "Vaibhav Arora",
+      "avatar_url": "https://avatars.githubusercontent.com/u/84830429?v=4",
+      "profile": "https://vaibhav31.vercel.app/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
