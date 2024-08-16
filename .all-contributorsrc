@@ -262,6 +262,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "tusquake",
+      "name": "Tushar Seth",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77339749?v=4",
+      "profile": "https://tusquake.github.io/Tussufolio/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
