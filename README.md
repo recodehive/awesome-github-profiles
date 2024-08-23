@@ -5,8 +5,10 @@
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 [![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
+
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
@@ -58,6 +60,7 @@
     </tr>
     <tr>
 
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sk66641"><img src="https://avatars.githubusercontent.com/u/145834771?v=4?s=100" width="100px;" alt="Sanu Kumar"/><br /><sub><b>Sanu Kumar</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ask66641" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/arghadipmanna101"><img src="https://avatars.githubusercontent.com/u/130065095?v=4?s=100" width="100px;" alt="Arghadip Manna"/><br /><sub><b>Arghadip Manna</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aarghadipmanna101" title="Reviewed Pull Requests">👀</a></td>
 
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Ayushi3023"><img src="https://avatars.githubusercontent.com/u/116361036?v=4?s=100" width="100px;" alt="Ayushi Awasthi"/><br /><sub><b>Ayushi Awasthi</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AAyushi3023" title="Reviewed Pull Requests">👀</a></td>
@@ -68,6 +71,7 @@
       <td align="center" valign="top" width="14.28%"><a href="http://tejas-links.netlify.app"><img src="https://avatars.githubusercontent.com/u/131871888?v=4?s=100" width="100px;" alt="Tejas Gupta"/><br /><sub><b>Tejas Gupta</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Amultiverseweb" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ayush-848"><img src="https://avatars.githubusercontent.com/u/126975547?v=4?s=100" width="100px;" alt="Ayush Deb"/><br /><sub><b>Ayush Deb</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aayush-848" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://rakesh9100.bio.link"><img src="https://avatars.githubusercontent.com/u/73993775?v=4?s=100" width="100px;" alt="Rakesh Roshan"/><br /><sub><b>Rakesh Roshan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ARakesh9100" title="Reviewed Pull Requests">👀</a></td>
+
 
     </tr>
   </tbody>
