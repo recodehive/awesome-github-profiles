@@ -15,6 +15,11 @@ body {
     min-height: 41vh !important;
 }
 
+#result-container{
+    margin-top: 20px;
+    height: 400px;
+}
+
 h1 {
     text-align: center;
     color: #333;
@@ -106,6 +111,10 @@ tr:nth-child(even) {
 
     .button {
         font-size: 14px;
+    }
+    
+    #result-container{
+        height: 300px;
     }
 }
 select{
