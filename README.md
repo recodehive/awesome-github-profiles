@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-35-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -59,6 +59,7 @@
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Krishi1211"><img src="https://avatars.githubusercontent.com/u/97182407?v=4?s=100" width="100px;" alt="Krishi Shah"/><br /><sub><b>Krishi Shah</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AKrishi1211" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Yeasir0032"><img src="https://avatars.githubusercontent.com/u/124646897?v=4?s=100" width="100px;" alt="Syed Yeasir Rahaman "/><br /><sub><b>Syed Yeasir Rahaman </b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AYeasir0032" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/SOMNATH0904"><img src="https://avatars.githubusercontent.com/u/130086832?v=4?s=100" width="100px;" alt="Somnath Shaw"/><br /><sub><b>Somnath Shaw</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASOMNATH0904" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/GarimaSingh0109"><img src="https://avatars.githubusercontent.com/u/130893914?v=4?s=100" width="100px;" alt="Garima Singh"/><br /><sub><b>Garima Singh</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AGarimaSingh0109" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
