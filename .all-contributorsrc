@@ -325,6 +325,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "Premkolte",
+      "name": "Prem Kolte",
+      "avatar_url": "https://avatars.githubusercontent.com/u/100456448?v=4",
+      "profile": "https://prem-kolte-portfolio.vercel.app/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
