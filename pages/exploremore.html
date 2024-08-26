@@ -118,11 +118,16 @@
       
         <div class="footer-bottom">
           <div class="footer-container">
-            <p class="footer-copyright">
-              &copy; 2024 Recode-Hive. Made with 🖤️ by the community. All rights reserved.
-            </p>
+              <p class="footer-copyright">
+                  &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+              </p>
           </div>
-        </div>
+      </div>
+      
+      <script>
+          document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+      </script>
+      
       </footer>
       
          <!-- Scroll to top -->
