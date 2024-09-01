@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-37-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -64,6 +64,7 @@
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://prem-kolte-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/100456448?v=4?s=100" width="100px;" alt="Prem Kolte"/><br /><sub><b>Prem Kolte</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3APremkolte" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sonu0421"><img src="https://avatars.githubusercontent.com/u/129993266?v=4?s=100" width="100px;" alt="Sonu Kumar"/><br /><sub><b>Sonu Kumar</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asonu0421" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/akashlogics"><img src="https://avatars.githubusercontent.com/u/151637838?v=4?s=100" width="100px;" alt="Akash R"/><br /><sub><b>Akash R</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aakashlogics" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
