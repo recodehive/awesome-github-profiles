@@ -344,6 +344,16 @@
         "review"
       ]
     }
+    {
+      "login": "akashlogics",
+      "name": "Akash R",
+      "avatar_url": "https://avatars.githubusercontent.com/u/151637838?s=400&u=0eb6666283d4f4c1169b1ba1b1f2eeabcaa70b88&v=4",
+      "ScreenShot": "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/akashlogics.png",
+      "profile": "https://github.com/akashlogics",
+      "contributions": [
+        "review"
+      ]
+    },
   ],
   "contributorsPerLine": 7,
   "skipCi": true,
