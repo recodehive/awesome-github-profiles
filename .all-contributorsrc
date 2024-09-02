@@ -343,7 +343,7 @@
       "contributions": [
         "review"
       ]
-    }
+    },
     {
       "login": "akashlogics",
       "name": "Akash R",
@@ -353,7 +353,7 @@
       "contributions": [
         "review"
       ]
-    },
+    }
   ],
   "contributorsPerLine": 7,
   "skipCi": true,
