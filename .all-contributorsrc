@@ -352,6 +352,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "akashlogics",
+      "name": "Akash R",
+      "avatar_url": "https://avatars.githubusercontent.com/u/151637838?v=4",
+      "profile": "https://github.com/akashlogics",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
