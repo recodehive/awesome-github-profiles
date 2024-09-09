@@ -14,11 +14,14 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+let currentPage=1;
+const profilesPerPage = 12; // Number of profiles per page
+
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
   const noProfilesMessage = document.querySelector(".no-profiles-message");
   noProfilesMessage.style.display="none"
-  function renderProfiles(filter = "") {
+  function renderProfiles(filter = "", page=1, profilesPerPage=12) {
   
     const container = document.querySelector(".profiles");
     container.innerHTML = "";
@@ -34,7 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
       return
     } 
-    contributors.forEach((contributor,index) => {
+
+     // Calculate start and end index for pagination
+    const startIndex = (page - 1) * profilesPerPage;
+    const endIndex = startIndex + profilesPerPage;
+
+    // Slice the filtered contributors based on the current page
+    const paginatedContributors = filteredContributors.slice(startIndex, endIndex);
+
+    paginatedContributors.forEach((contributor,index) => {
       noProfilesMessage.style.display = "none";
 
       if (contributor.login.toLowerCase().includes(filter.toLowerCase())) {
@@ -175,14 +186,43 @@ document.addEventListener("DOMContentLoaded", function () {
       
       }
     });
+
+    // Update pagination controls
+    updatePaginationControls(page, profilesPerPage, filteredContributors.length);
+
+
   }
+
+  function updatePaginationControls(currentPage, profilesPerPage, totalProfiles) {
+    const totalPages = Math.ceil(totalProfiles / profilesPerPage);
+    const pageInfo = document.getElementById("page-info");
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+  
+    // Disable previous button if on the first page
+    document.getElementById("prev-page").disabled = currentPage === 1;
+  
+    // Disable next button if on the last page
+    document.getElementById("next-page").disabled = currentPage === totalPages;
+  }
+
+  document.getElementById("prev-page").addEventListener("click", function () {
+    if (currentPage > 1) {
+      currentPage--;
+      renderProfiles("", currentPage, profilesPerPage);
+    }
+  });
+  
+  document.getElementById("next-page").addEventListener("click", function () {
+    currentPage++;
+    renderProfiles("", currentPage, profilesPerPage);
+  });
 
   // Fetch contributors data
   fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
     .then((response) => response.json())
     .then((data) => {
       contributors = data.contributors;
-      renderProfiles();
+      renderProfiles("", 1, profilesPerPage); //Start on page one
     });
 
   // Add event listener to the search bar

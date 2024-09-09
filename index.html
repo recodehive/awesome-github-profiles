@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/pagination.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
@@ -132,6 +133,14 @@
       <div class="profiles">
         <!-- Profiles will be dynamically loaded here -->
       </div>
+
+      <!-- Buttons for pagination -->
+      <div class="pagination">
+        <button id="prev-page" disabled>Previous</button>
+        <span id="page-info"></span>
+        <button id="next-page">Next</button>
+      </div>
+      
     </div>
     <footer id="Contact" class="footer-2">
       <div class="footer-container">
