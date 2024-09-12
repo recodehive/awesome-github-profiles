@@ -1,0 +1,44 @@
+name: Auto-Approve Pull Requests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-approve:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Auto-approve Pull Requests
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        import os
+        from github import Github
+
+        def approve_pr(pr):
+            pr.create_review(event='APPROVE', body='Automatically approved')
+            print(f"Approved PR #{pr.number}")
+
+        g = Github(os.getenv('GITHUB_TOKEN'))
+        repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))
+
+        if os.getenv('GITHUB_EVENT_NAME') == 'pull_request':
+            pr_number = os.getenv('GITHUB_EVENT_PULL_REQUEST_NUMBER')
+            pr = repo.get_pull(int(pr_number))
+            approve_pr(pr)
+        else:
+            for pr in repo.get_pulls(state='open'):
+                approve_pr(pr)
+
+        print("Auto-approval process completed successfully.")
+      shell: python
+
