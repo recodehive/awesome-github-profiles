@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-42-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-43-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -69,6 +69,9 @@
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/Sambit_Mondal"><img src="https://avatars.githubusercontent.com/u/138088550?v=4?s=100" width="100px;" alt="Sambit Mondal"/><br /><sub><b>Sambit Mondal</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASambit-Mondal" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Bhavishya2601"><img src="https://avatars.githubusercontent.com/u/147748752?v=4?s=100" width="100px;" alt="Bhavishya Garg"/><br /><sub><b>Bhavishya Garg</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Abhavishya2601" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jisha-tr"><img src="https://avatars.githubusercontent.com/u/82383735?v=4?s=100" width="100px;" alt="Jisha-tr"/><br /><sub><b>Jisha-tr</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AJisha-tr" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rajgorsmit"><img src="https://avatars.githubusercontent.com/u/78331752?v=4?s=100" width="100px;" alt="m"/><br /><sub><b>m</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arajgorsmit" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
