@@ -1,7 +1,9 @@
-name: Comment on Active Add Profile Issues
+name: Comment on Active "Add Profile" Issues
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 */3 * * *'
 
 jobs:
   comment-on-active-issues:
@@ -31,5 +33,7 @@ jobs:
                   issue_number: issue.number,
                   body: commentMessage
                 });
+                
+                console.log(`Commented on issue #${issue.number}`);
               }
             }
