@@ -19,11 +19,13 @@ jobs:
             const issueCreator = issue.user.login;
             const issueNumber = issue.number;
 
-            const commentMessage = `@all-contributors please add @${issueCreator} for review`;
+            if (issue.title.toLowerCase().includes('add profile')) {
+              const commentMessage = `@all-contributors please add @${issueCreator} for review`;
 
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issueNumber,
-              body: commentMessage
-            });
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: commentMessage
+              });
+            }
