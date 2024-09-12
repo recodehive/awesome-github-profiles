@@ -1,0 +1,29 @@
+name: Comment on New Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment-on-new-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Add Comment
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+            const issueCreator = issue.user.login;
+            const issueNumber = issue.number;
+
+            const commentMessage = `@all-contributors please add @${issueCreator} for review`;
+
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: commentMessage
+            });
