@@ -3,7 +3,7 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-43-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -72,6 +72,7 @@
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rajgorsmit"><img src="https://avatars.githubusercontent.com/u/78331752?v=4?s=100" width="100px;" alt="m"/><br /><sub><b>m</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arajgorsmit" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zeenatattar"><img src="https://avatars.githubusercontent.com/u/111846814?v=4?s=100" width="100px;" alt="Zeenat"/><br /><sub><b>Zeenat</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AZeenatattar" title="Reviewed Pull Requests">👀</a></td>
     </tr>
   </tbody>
 </table>
