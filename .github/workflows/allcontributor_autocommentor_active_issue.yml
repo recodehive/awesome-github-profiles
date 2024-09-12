@@ -1,0 +1,35 @@
+name: Comment on Active Add Profile Issues
+
+on:
+  workflow_dispatch:
+
+jobs:
+  comment-on-active-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Get Open Issues and Comment
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            });
+            
+            for (const issue of openIssues) {
+              if (issue.title.toLowerCase().includes('add profile')) {
+                const issueCreator = issue.user.login;
+                const commentMessage = `@all-contributors please add @${issueCreator} for review`;
+                
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: issue.number,
+                  body: commentMessage
+                });
+              }
+            }
