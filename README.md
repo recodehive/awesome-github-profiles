@@ -1,4 +1,4 @@
-<h1 align="center">Awesome Github Profiles</h1>
+<h2 align="center">Awesome Github Profile</h2>
 
 <div align="center">
   
