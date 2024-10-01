@@ -433,6 +433,15 @@
       "contributions": [
         "review"
       ]
+    },
+    {
+      "login": "shaurya35",
+      "name": "Shaurya Jha",
+      "avatar_url": "https://avatars.githubusercontent.com/u/106850641?v=4",
+      "profile": "https://shauryacreativefolio.netlify.app/",
+      "contributions": [
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7,
