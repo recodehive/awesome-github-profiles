@@ -3,8 +3,8 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-49-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
@@ -73,6 +73,7 @@
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rajgorsmit"><img src="https://avatars.githubusercontent.com/u/78331752?v=4?s=100" width="100px;" alt="m"/><br /><sub><b>m</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arajgorsmit" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ChhaviRohilla"><img src="https://avatars.githubusercontent.com/u/136676662?v=4?s=100" width="100px;" alt="Chhavi Rohilla"/><br /><sub><b>Chhavi Rohilla</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AChhaviRohilla" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://abhisheks008.bio.link/"><img src="https://avatars.githubusercontent.com/u/68724349?v=4?s=100" width="100px;" alt="Abhishek Sharma"/><br /><sub><b>Abhishek Sharma</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aabhisheks008" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://sourabhkumar.tech/"><img src="https://avatars.githubusercontent.com/u/81826285?v=4?s=100" width="100px;" alt="Sourabh Kumar"/><br /><sub><b>Sourabh Kumar</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asourabhkumar47" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Soumya-Kushwaha"><img src="https://avatars.githubusercontent.com/u/87495134?v=4?s=100" width="100px;" alt="Soumya Kushwaha"/><br /><sub><b>Soumya Kushwaha</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASoumya-Kushwaha" title="Reviewed Pull Requests">👀</a></td>
