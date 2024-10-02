@@ -400,6 +400,10 @@
     },
     {
 
+      "login": "samarsajad",
+      "name": "Samar Sajad",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142666229?v=4",
+      "profile": "https://github.com/samarsajad",
       "login": "ananyag309",
       "name": "Ananya Gupta",
       "avatar_url": "https://avatars.githubusercontent.com/u/145869907?v=4",
@@ -545,10 +549,6 @@
       "name": "Ashika Gupta",
       "avatar_url": "https://avatars.githubusercontent.com/u/136061047?v=4",
       "profile": "https://github.com/theashikagupta",
-
-
-
-
       "contributions": [
         "review"
       ]
