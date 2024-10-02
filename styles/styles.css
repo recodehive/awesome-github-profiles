@@ -613,6 +613,7 @@ body.dark-mode .navbar-link:hover {
 .footer-description {
   flex: 1 1 300px;
   max-width: 400px;
+  margin-right: 60px;
 }
 
 .footer-logo {
@@ -723,7 +724,7 @@ body.dark-mode .footer-button:hover {
 
   .footer-links,
   .footer-description {
-    width: 100%;
+    width: 80%;
     margin-bottom: 2rem;
   }
 
@@ -1156,7 +1157,7 @@ body.dark-mode .side-icons a {
   .side-icons {
     width: 42px;
     height: auto;
-    padding: 10px 0;
+    padding: 30px 0;
     gap: 10px;
   }
 
@@ -1167,6 +1168,9 @@ body.dark-mode .side-icons a {
 
   .side-icons a {
     font-size: 16px;
+  }
+  .footer-description {
+    max-width: 80%;
   }
 }
 
@@ -1337,7 +1341,7 @@ a {
 .toast.like {
   background: #333;
   color: #fff;
-  
+
   font-size: 12px;
   font-size: 15px;
   text-align: center;
