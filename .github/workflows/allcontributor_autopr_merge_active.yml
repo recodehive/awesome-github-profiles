@@ -1,0 +1,46 @@
+name: Merge Active All-Contributors PRs
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch: 
+
+jobs:
+  merge-active-prs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Merge active PRs
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const { data: pullRequests } = await github.rest.pulls.list({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            state: 'open',
+            sort: 'created',
+            direction: 'asc'
+          });
+
+          for (const pr of pullRequests) {
+            if (pr.user.login === 'allcontributors[bot]' && pr.mergeable_state === 'clean') {
+              try {
+                await github.rest.pulls.merge({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number,
+                  merge_method: 'squash'
+                });
+                console.log(`Successfully merged PR #${pr.number}`);
+              } catch (error) {
+                console.error(`Failed to merge PR #${pr.number}: ${error.message}`);
+              }
+            }
+          }
