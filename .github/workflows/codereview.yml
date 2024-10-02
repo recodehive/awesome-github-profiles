@@ -1,0 +1,48 @@
+name: Auto-Approve and Merge Pull Requests
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  auto-approve-and-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install PyGithub
+      run: pip install PyGithub
+
+    - name: Auto-approve and Merge Pull Requests
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        import os
+        from github import Github
+        def approve_and_merge_pr(pr):
+            pr.create_review(event='APPROVE', body='Automatically approved')
+            print(f"Approved PR #{pr.number}")
+            if pr.mergeable:
+                pr.merge(merge_method='squash')
+                print(f"Merged PR #{pr.number}")
+            else:
+                print(f"PR #{pr.number} is not mergeable")
+        g = Github(os.getenv('GITHUB_TOKEN'))
+        repo = g.get_repo(os.getenv('GITHUB_REPOSITORY'))
+        if os.getenv('GITHUB_EVENT_NAME') == 'pull_request':
+            pr_number = os.getenv('GITHUB_EVENT_PULL_REQUEST_NUMBER')
+            pr = repo.get_pull(int(pr_number))
+            approve_and_merge_pr(pr)
+        else:
+            for pr in repo.get_pulls(state='open'):
+                approve_and_merge_pr(pr)
+        print("Auto-approval and merge process completed successfully.")
+      shell: python
