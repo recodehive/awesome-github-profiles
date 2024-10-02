@@ -8,6 +8,9 @@
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
 
+## Running in your local directory ✨
+- npm install ( this will install all the required npm modules)
+
 
 ## Profiles ✨
 

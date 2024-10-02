@@ -1,5 +1,15 @@
 {
   "dependencies": {
     "puppeteer": "^22.15.0"
-  }
+  },
+  "name": "awesome-github-profiles",
+  "version": "1.0.0",
+  "description": "<h2 align=\"center\">Awesome Github Profile</h2>",
+  "main": "capture-screenshot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
