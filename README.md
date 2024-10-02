@@ -8,7 +8,8 @@
 🔍Welcome to the awesome github profiles repo project! 🌟.
 </div>
 
-
+## How to deploy/Run in local repository ✨
+npm install  ( this will bring back the node modules)
 ## Profiles ✨
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->

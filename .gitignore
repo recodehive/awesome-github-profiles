@@ -1,20 +1,15 @@
-# macOS
-.DS_Store
-
-# Windows
-Thumbs.db
-
-# Node.js 
+# Ignore node_modules directory
 node_modules/
-npm-debug.log
+
+# Ignore environment variables
 .env
 
-# Editor-specific configurations
-.vscode/
-.idea/
-
-# Log files
+# Ignore log files
 *.log
 
-# Build output (for future use with static site generators)
-_site/
+# Ignore build files
+dist/
+build/
+
+# Ignore specific file types
+*.tmp
