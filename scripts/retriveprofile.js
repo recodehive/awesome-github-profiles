@@ -401,7 +401,7 @@ function renderProfiles(filter = "") {
           profileRefLikes.transaction((currentViews) => (currentViews || 0) + 1);
         }
       
-        // Call renderProfiles to update the UI
+        // // Call renderProfiles to update the UI
         // renderProfiles();
       });
       
