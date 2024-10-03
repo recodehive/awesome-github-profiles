@@ -3,21 +3,37 @@
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-44-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-76-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 🔍Welcome to the awesome github profiles repo project! 🌟.
+
+<p>This README will guide you through the contribution process and provide essential information about the project.</p>
 </div>
 
 ## Running in your local directory ✨
+
 - npm install ( this will install all the required npm modules)
 
+<h3 style="color: #4A90E2;">Table of Contents</h3>
 
-## Profiles ✨
+<ul style="list-style-type: none;">
+  <li><a href="#profiles" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Profiles</a></li>
+  <li><a href="#code-of-conduct" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Code of Conduct</a></li>
+  <li><a href="#how-to-fork" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">How to Fork</a></li>
+  <li><a href="#tutorials" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Tutorials</a></li>
+  <li><a href="#contribute" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Contribute</a></li>
+  <li><a href="#special-thanks" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Special Thanks</a></li>
+  <li><a href="#contact-information" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Contact Information</a></li>
+</ul>
+
+<h2 id="profiles">Profiles ✨</h2>
+
+<p>Each profile in this repository is designed to showcase individual GitHub contributions effectively.</p>
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
-<table>
+<table id= "Profile">
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/dinxsh"><img src="https://avatars.githubusercontent.com/u/90450035?v=4?s=100" width="100px;" alt="Dinesh Talwadker"/><br /><sub><b>Dinesh Talwadker</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Adinxsh" title="Reviewed Pull Requests">👀</a></td>
@@ -76,24 +92,22 @@
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rajgorsmit"><img src="https://avatars.githubusercontent.com/u/78331752?v=4?s=100" width="100px;" alt="m"/><br /><sub><b>m</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arajgorsmit" title="Reviewed Pull Requests">👀</a></td>
      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Benji918"><img src="https://avatars.githubusercontent.com/u/70521283?v=4" width="100px;" alt="Benjamin"/><br /><sub><b>m</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arajgorsmit" title="Reviewed Pull Requests">👀</a></td>
-
-
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/bhaavvya"><img src="https://avatars.githubusercontent.com/u/110487270?v=4?s=100" width="100px;" alt="Bhavya"/><br /><sub><b>Bhavya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Abhaavvya" title="Reviewed Pull Requests">👀</a></td>
-
-      <td align="center" valign="top" width="14.28%"><a href="https://portfolio-sigma-jade-52.vercel.app/"><img src="https://avatars.githubusercontent.com/u/106860359?v=4?s=100" width="100px;" alt="Roshni Kumari"/><br /><sub><b>Roshni Kumari</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ARSN601KRI" title="Reviewed Pull Requests">👀</a></td>
+     <td align="center" valign="top" width="14.28%"><a href="https://github.com/bhaavvya"><img src="https://avatars.githubusercontent.com/u/110487270?v=4?s=100" width="100px;" alt="Bhavya"/><br /><sub><b>Bhavya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Abhaavvya" title="Reviewed Pull Requests">👀</a></td>
+     <td align="center" valign="top" width="14.28%"><a href="https://portfolio-sigma-jade-52.vercel.app/"><img src="https://avatars.githubusercontent.com/u/106860359?v=4?s=100" width="100px;" alt="Roshni Kumari"/><br /><sub><b>Roshni Kumari</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ARSN601KRI" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/payalkumari10"><img src="https://avatars.githubusercontent.com/u/123013327?v=4?s=100" width="100px;" alt="PAYAL KUMARI"/><br /><sub><b>PAYAL KUMARI</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3APayalKumari10" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sanayamahajan-23"><img src="https://avatars.githubusercontent.com/u/112759683?v=4?s=100" width="100px;" alt="sanaya mahajan"/><br /><sub><b>sanaya mahajan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asanayamahajan-23" title="Reviewed Pull Requests">👀</a></td>
-
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/samarsajad"><img src="https://avatars.githubusercontent.com/u/142666229?v=4?s=100" width="100px;" alt="Samar Sajad"/><br /><sub><b>Samar Sajad</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asamarsajad" title="Reviewed Pull Requests">👀</a></td>
+      </tr>
+      <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/ananya-gupta-30aa9b28b/"><img src="https://avatars.githubusercontent.com/u/145869907?v=4?s=100" width="100px;" alt="Ananya Gupta"/><br /><sub><b>Ananya Gupta</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aananyag309" title="Reviewed Pull Requests">👀</a></td>
-
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Maheshwari-Love"><img src="https://avatars.githubusercontent.com/u/142833275?v=4?s=100" width="100px;" alt="Maheshwari Love"/><br /><sub><b>Maheshwari Love</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AMaheshwari-Love" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vysuvysavya"><img src="https://avatars.githubusercontent.com/u/163625527?v=4?s=100" width="100px;" alt="Vysavya"/><br /><sub><b>Vysavya</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avysuvysavya" title="Reviewed Pull Requests">👀</a></td>
-
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/abhibhande"><img src="https://avatars.githubusercontent.com/u/68599334?v=4?s=100" width="100px;" alt="Abhishek Bhande"/><br /><sub><b>Abhishek Bhande</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aabhibhande" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/HimanshuNarware"><img src="https://avatars.githubusercontent.com/u/83147410?v=4?s=100" width="100px;" alt="Himanshu Narware"/><br /><sub><b>Himanshu Narware</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AHimanshuNarware" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zeenatattar"><img src="https://avatars.githubusercontent.com/u/111846814?v=4?s=100" width="100px;" alt="Zeenat"/><br /><sub><b>Zeenat</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AZeenatattar" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/rohitroy_r"><img src="https://avatars.githubusercontent.com/u/68563695?v=4?s=100" width="100px;" alt="Rohit Roy"/><br /><sub><b>Rohit Roy</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arohitroy-github" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Varsani2520"><img src="https://avatars.githubusercontent.com/u/137641079?v=4?s=100" width="100px;" alt="v_a_r_s_a_n_i"/><br /><sub><b>v_a_r_s_a_n_i</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AVarsani2520" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/4darsh_dev"><img src="https://avatars.githubusercontent.com/u/109789509?v=4?s=100" width="100px;" alt="ADARSH MAURYA"/><br /><sub><b>ADARSH MAURYA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3A4darsh-Dev" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://sanchitbajaj02.github.io/portfolio"><img src="https://avatars.githubusercontent.com/u/55249639?v=4?s=100" width="100px;" alt="Sanchit Bajaj"/><br /><sub><b>Sanchit Bajaj</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASanchitbajaj02" title="Reviewed Pull Requests">👀</a></td>
@@ -101,6 +115,8 @@
       <td align="center" valign="top" width="14.28%"><a href="https://abhisheks008.bio.link/"><img src="https://avatars.githubusercontent.com/u/68724349?v=4?s=100" width="100px;" alt="Abhishek Sharma"/><br /><sub><b>Abhishek Sharma</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Aabhisheks008" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://sourabhkumar.tech/"><img src="https://avatars.githubusercontent.com/u/81826285?v=4?s=100" width="100px;" alt="Sourabh Kumar"/><br /><sub><b>Sourabh Kumar</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Asourabhkumar47" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Soumya-Kushwaha"><img src="https://avatars.githubusercontent.com/u/87495134?v=4?s=100" width="100px;" alt="Soumya Kushwaha"/><br /><sub><b>Soumya Kushwaha</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ASoumya-Kushwaha" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Jagpreet153"><img src="https://avatars.githubusercontent.com/u/119691733?v=4?s=100" width="100px;" alt="Jagpreet Singh Khurana"/><br /><sub><b>Jagpreet Singh Khurana</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AJagpreet153" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/hirapurekannu72"><img src="https://avatars.githubusercontent.com/u/146826102?v=4?s=100" width="100px;" alt="hirapurekannu72"/><br /><sub><b>hirapurekannu72</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ahirapurekannu72" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Krish-Depani"><img src="https://avatars.githubusercontent.com/u/72994417?v=4?s=100" width="100px;" alt="Krish Depani"/><br /><sub><b>Krish Depani</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AKrish-Depani" title="Reviewed Pull Requests">👀</a></td>
@@ -108,24 +124,16 @@
       <td align="center" valign="top" width="14.28%"><a href="https://julururohith.blogspot.com/"><img src="https://avatars.githubusercontent.com/u/94969985?v=4?s=100" width="100px;" alt="J VENKATA LAKSHMI SAI ROHITH"/><br /><sub><b>J VENKATA LAKSHMI SAI ROHITH</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ARohith2201" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://gkrcoder.vercel.app"><img src="https://avatars.githubusercontent.com/u/98611148?v=4?s=100" width="100px;" alt="Gaurav Kesh Roushan"/><br /><sub><b>Gaurav Kesh Roushan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AGauravKesh" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://shauryacreativefolio.netlify.app/"><img src="https://avatars.githubusercontent.com/u/106850641?v=4?s=100" width="100px;" alt="Shaurya Jha"/><br /><sub><b>Shaurya Jha</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Ashaurya35" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+    <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Luson045"><img src="https://avatars.githubusercontent.com/u/131430087?v=4?s=100" width="100px;" alt="Luson Basumatary"/><br /><sub><b>Luson Basumatary</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3ALuson045" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://irfan-shaikh-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/138690953?v=4?s=100" width="100px;" alt="iitzIrFan"/><br /><sub><b>iitzIrFan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AiitzIrFan" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/vijay__19"><img src="https://avatars.githubusercontent.com/u/138502362?v=4?s=100" width="100px;" alt="VIJAY KUMAR CHANDRA"/><br /><sub><b>VIJAY KUMAR CHANDRA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avijaychandra1910" title="Reviewed Pull Requests">👀</a></td>
-
-    </tr>
-    <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/vijay__19"><img src="https://avatars.githubusercontent.com/u/138502362?v=4?s=100" width="100px;" alt="VIJAY KUMAR CHANDRA"/><br /><sub><b>VIJAY KUMAR CHANDRA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avijaychandra1910" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/theashikagupta"><img src="https://avatars.githubusercontent.com/u/136061047?v=4?s=100" width="100px;" alt="Ashika Gupta"/><br /><sub><b>Ashika Gupta</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Atheashikagupta" title="Reviewed Pull Requests">👀</a></td>
-
       <td align="center" valign="top" width="14.28%"><a href="https://linktr.ee/vijay__19"><img src="https://avatars.githubusercontent.com/u/138502362?v=4?s=100" width="100px;" alt="VIJAY KUMAR CHANDRA"/><br /><sub><b>VIJAY KUMAR CHANDRA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avijaychandra1910" title="Reviewed Pull Requests">👀</a></td>
     </tr>
-
-
-    </tr>
-
-
-
-  </tbody>
+</tbody>
 </table>
 
 <!-- markdownlint-restore -->
@@ -133,41 +141,133 @@
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-- ["How To Create A GitHub Profile README"](https://www.aboutmonica.com/blog/how-to-create-a-github-profile-readme) - *Monica Powell*
-- ["How to Stand Out on Github with Profile READMEs"](https://medium.com/better-programming/how-to-stand-out-on-github-with-profile-readmes-dfd2102a3490?source=friends_link&sk=61df9c4b63b329ad95528b8d7c00061f) - *Jessica Lim*
-- ["What's on your GitHub Profile"](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3) - *Waylon Walker*
-- ["3 Ways to Spice up your Github Profile README 🔥"](https://dev.to/jayehernandez/3-ways-to-spice-up-your-github-profile-readme-1276) - *Jaye Hernandez*
-- ["Dynamically Generated Github Stats For Your Profile ReadMe"](https://dev.to/anuraghazra/dynamically-generated-github-stats-for-your-profile-readme-o4g) - *Anurag Hazra*
-- ["How to create an awesome GIF for your GitHub Profile README"](https://dev.to/satvikchachra/how-to-add-an-awesome-readme-to-your-github-profile-361n) - *Satvik Chachra*
-- ["Create a special repository in your GitHub Profile 🔨, supported and unsupported features"](https://torrocus.com/blog/special-github-repository/) - *Alex Malaszkiewicz*
-- ["How to create a Github Profile README with Dynamic Github Stats"](https://codewithghazi.com/how-to-create-a-github-profile-readme-with-dynamic-github-stats/) - *Ghazi Khan*
-- ["How I Built A Self-Updating README On My Github Profile"](https://www.mokkapps.de/blog/how-i-built-a-self-updating-readme-on-my-git-hub-profile/) - *Michael Hoffmann (Mokkapps)*
-- ["Building a self-updating profile README for GitHub"](https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/) - *Simon Willison*
-- ["How to create an interactive README for your GitHub profile"](https://kavishhukmani.me/github-profile-interactive-readme-tutorial/) - *Kavish Hukmani*
-- ["什么？Github 居然可以这么玩？"](https://zhuanlan.zhihu.com/p/161705999) - *Tw93*
-- ["Getting started with Markdown Badges"](https://dev.to/ileriayo/mardown-badges-2og0) - *Ileriayo Adebiyi*
-- ["Show your latest dev.to posts automatically on your GitHub profile readme"](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8)  - *Gautam krishna R*
-- ["How I Built A Self-Updating README by Webhooks and Netlify Functions"](https://github.com/RaoHai/RaoHai/blob/master/How-I-Built-A-Self-Updating-README-by-Webhooks-and-Netlify-Functions.md/) - *Rao Hai*
-- ["Build a Stunning README For Your GitHub Profile"](https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7) - *Martin Heinz*
-- ["How I added my Spotify statistics to my GitHub readme 📜"](https://dev.to/gargakshit/how-i-added-my-spotify-statistics-to-my-github-readme-4jdd) - *Akshit Garg*
-- ["Static Readme Regeneration"](https://dev.to/aralroca/static-readme-regeneration-4pf2) - *Aral Roca*
-- ["How to Create a Self-Updating README.md for Your GitHub Profile"](https://medium.com/@th.guibert/how-to-create-a-self-updating-readme-md-for-your-github-profile-f8b05744ca91) - *Thomas Guibert*
-- ["一文玩转github主页"](https://blog.holic-x.com/wv-blog/post/7ad96a5d.html) - *holic-x*
+## Code of Conduct
 
-## Tutorials
-- ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - *MTECHVIRAL*
-- ["How To Create a Github Profile ReadMe"](https://www.youtube.com/watch?v=DOiGs2NiDbU) - *James Q Quick*
-- ["How to create a GitHub profile README"](https://www.youtube.com/watch?v=vND_UY7xk24) - *Code With Confidence*
-- ["How To Create A GitHub Profile README"](https://www.youtube.com/watch?v=Y1z7_GfEPiE) - *Program With Erik*
-- ["Next Level GitHub Profile README"](https://youtu.be/ECuqb5Tv9qI) - *codeSTACKr*
+To foster a positive and inclusive community, please adhere to the following guidelines:
 
-## Contribute
+- **Be Respectful:** Treat everyone with respect. Engage in constructive conversations.
+- **No Harassment:** Harassment, bullying, or discrimination will not be tolerated.
+- **Report Issues:** If you witness or experience any unacceptable behavior, please report it to the project maintainers.
+
+Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understanding.
+
+## How to Fork
+
+Forking allows you to create a personal copy of the repository, where you can experiment and make changes without affecting the original project. Here’s how to do it:
+
+### Navigate to the Repository:
+
+- Go to the Awesome GitHub Profiles repository.
+
+### Click on Fork:
+
+- On the top right corner, click the "Fork" button.
+
+### Select Your Account:
+
+- Choose your GitHub account to create the fork.
+
+### Clone Your Fork:
+
+- Use the command below to clone your fork to your local machine:
+  ```bash
+  git clone https://github.com/YOUR_USERNAME/Awesome-Github-Profiles.git
+  ```
+
+<h2 id="tutorials">Tutorials</h2>
+
+- ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - _MTECHVIRAL_
+- ["How To Create a Github Profile ReadMe"](https://www.youtube.com/watch?v=DOiGs2NiDbU) - _James Q Quick_
+- ["How to create a GitHub profile README"](https://www.youtube.com/watch?v=vND_UY7xk24) - _Code With Confidence_
+- ["How To Create A GitHub Profile README"](https://www.youtube.com/watch?v=Y1z7_GfEPiE) - _Program With Erik_
+- ["Next Level GitHub Profile README"](https://youtu.be/ECuqb5Tv9qI) - _codeSTACKr_
+- ["How To Create A GitHub Profile README"](https://www.aboutmonica.com/blog/how-to-create-a-github-profile-readme) - _Monica Powell_
+- ["How to Stand Out on Github with Profile READMEs"](https://medium.com/better-programming/how-to-stand-out-on-github-with-profile-readmes-dfd2102a3490?source=friends_link&sk=61df9c4b63b329ad95528b8d7c00061f) - _Jessica Lim_
+- ["What's on your GitHub Profile"](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3) - _Waylon Walker_
+- ["3 Ways to Spice up your Github Profile README 🔥"](https://dev.to/jayehernandez/3-ways-to-spice-up-your-github-profile-readme-1276) - _Jaye Hernandez_
+- ["Dynamically Generated Github Stats For Your Profile ReadMe"](https://dev.to/anuraghazra/dynamically-generated-github-stats-for-your-profile-readme-o4g) - _Anurag Hazra_
+- ["How to create an awesome GIF for your GitHub Profile README"](https://dev.to/satvikchachra/how-to-add-an-awesome-readme-to-your-github-profile-361n) - _Satvik Chachra_
+- ["Create a special repository in your GitHub Profile 🔨, supported and unsupported features"](https://torrocus.com/blog/special-github-repository/) - _Alex Malaszkiewicz_
+- ["How to create a Github Profile README with Dynamic Github Stats"](https://codewithghazi.com/how-to-create-a-github-profile-readme-with-dynamic-github-stats/) - _Ghazi Khan_
+- ["How I Built A Self-Updating README On My Github Profile"](https://www.mokkapps.de/blog/how-i-built-a-self-updating-readme-on-my-git-hub-profile/) - _Michael Hoffmann (Mokkapps)_
+- ["Building a self-updating profile README for GitHub"](https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/) - _Simon Willison_
+- ["How to create an interactive README for your GitHub profile"](https://kavishhukmani.me/github-profile-interactive-readme-tutorial/) - _Kavish Hukmani_
+- ["什么？Github 居然可以这么玩？"](https://zhuanlan.zhihu.com/p/161705999) - _Tw93_
+- ["Getting started with Markdown Badges"](https://dev.to/ileriayo/mardown-badges-2og0) - _Ileriayo Adebiyi_
+- ["Show your latest dev.to posts automatically on your GitHub profile readme"](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8) - _Gautam krishna R_
+- ["How I Built A Self-Updating README by Webhooks and Netlify Functions"](https://github.com/RaoHai/RaoHai/blob/master/How-I-Built-A-Self-Updating-README-by-Webhooks-and-Netlify-Functions.md/) - _Rao Hai_
+- ["Build a Stunning README For Your GitHub Profile"](https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7) - _Martin Heinz_
+- ["How I added my Spotify statistics to my GitHub readme 📜"](https://dev.to/gargakshit/how-i-added-my-spotify-statistics-to-my-github-readme-4jdd) - _Akshit Garg_
+- ["Static Readme Regeneration"](https://dev.to/aralroca/static-readme-regeneration-4pf2) - _Aral Roca_
+- ["How to Create a Self-Updating README.md for Your GitHub Profile"](https://medium.com/@th.guibert/how-to-create-a-self-updating-readme-md-for-your-github-profile-f8b05744ca91) - _Thomas Guibert_
+- ["一文玩转 github 主页"](https://blog.holic-x.com/wv-blog/post/7ad96a5d.html) - _holic-x_
+
+
+<h2 id="contribute">Contribute</h2>
 
 Contributions are always welcome!
-Please read the [contribution guidelines](contributing.md) first.
+To ensure a smooth collaboration process, Follow these steps:
 
-## Special Thanks 🙇
-- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/dinxsh), [Nishant](https://github.com/dinxsh), [Ayushman](https://github.com/dinxsh)for being a core for this repo!
+<!---Please read the [contribution guidelines](contributing.md) first. --->
+<!--- Uncomment it when there is a file named  contributing.md --->
+
+1. **Fork the Repository:**
+
+   - Click the "Fork" button on the top right of the repository page. This creates a copy of the repository under your GitHub account.
+
+2. **Clone Your Fork:**
+
+   - Run the following command in your terminal:
+     ```bash
+     git clone https://github.com/YOUR_USERNAME/Awesome-Github-Profiles.git
+     ```
+   - This command downloads your fork to your local machine.
+
+3. **Create a Branch:**
+
+   - Navigate into the cloned repository:
+     ```bash
+     cd Awesome-Github-Profiles
+     ```
+   - Create a new branch for your feature or fix:
+     ```bash
+     git checkout -b your-feature-branch
+     ```
+
+4. **Make Your Changes:**
+
+   - Implement your changes in your local repository. Make sure your code is clean and follows the project's coding style guidelines.
+
+5. **Test Your Changes:**
+
+   - If applicable, run tests to ensure that your changes do not break existing functionality.
+
+6. **Commit Your Changes:**
+
+   - Commit your changes with a clear and descriptive message:
+     ```bash
+     git commit -m "Add a feature or fix a bug"
+     ```
+
+7. **Push to Your Fork:**
+
+   - Push your changes back to your forked repository:
+     ```bash
+     git push origin your-feature-branch
+     ```
+
+8. **Create a Pull Request:**
+   - Navigate to the original repository where you want to propose your changes.
+   - Click on "New Pull Request" and follow the instructions to submit your changes for review.
+
+<h2 id="special-thanks">Special Thanks 🙇</h2>
+
+- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/dinxsh), [Nishant](https://github.com/dinxsh), [Ayushman](https://github.com/dinxsh) for being a core for this repo!
+
+## Contact Information
+
+If you have questions, suggestions, or feedback, please reach out via email at email@example.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).
+
+We value open communication and are happy to help!
