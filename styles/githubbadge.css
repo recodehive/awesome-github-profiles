@@ -108,6 +108,16 @@ body.theme-dark .container{
 body.theme-dark .center {
   background-color: black !important;
 }
+body.dark-mode .themed-text {
+  color: white;
+}
+
+body:not(.dark-mode) .themed-text {
+  color: black;
+}
+body.dark-mode .themed-text {
+  color: white;
+}
 /* Light Mode Styles */
 .darkmodeimg {
   display: none;
