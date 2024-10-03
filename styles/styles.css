@@ -12,6 +12,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  margin-bottom: 400px;
 }
 
 .main-heading {
@@ -285,6 +286,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  margin-bottom: 700px;
 }
 
 .main-heading {
@@ -584,16 +586,20 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  padding: 5px 20px; /* Smaller padding */
+  margin: 0;
+  font-size: 12px; /* Small font */
+  line-height: 1.5;
+  margin-bottom: 95px;
+  margin-top: -80px;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: 5px 20px;
+  margin-bottom: 3px;
 }
 
 .footer-info {
@@ -614,6 +620,7 @@ body.dark-mode .navbar-link:hover {
   flex: 1 1 300px;
   max-width: 400px;
   margin-right: 60px;
+
 }
 
 .footer-logo {
@@ -678,11 +685,13 @@ body.dark-mode .navbar-link:hover {
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 0;
+  margin-top: -90px;
 }
 
 .footer-copyright {
   text-align: center;
   font-size: 0.875rem;
+  margin-top: 50px;
 }
 
 /* Dark mode styles */
