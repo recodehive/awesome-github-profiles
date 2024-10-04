@@ -268,6 +268,6 @@ To ensure a smooth collaboration process, Follow these steps:
 
 ## Contact Information
 
-If you have questions, suggestions, or feedback, please reach out via email at email@example.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).
+If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).
 
 We value open communication and are happy to help!
