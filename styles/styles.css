@@ -823,7 +823,7 @@ body.dark-mode .footer-button:hover {
   position: relative;
 }
 
-.icon-content a i {
+.icon-content a i,.icon-content a svg {
   font-size: 24px;
   position: relative;
   z-index: 2;
@@ -851,9 +851,13 @@ body.dark-mode .footer-button:hover {
   /* Scale the fill to full height on hover */
 }
 
-.icon-content a:hover i {
+.icon-content a:hover i{
   color: #fff;
   /* Change icon color to white on hover */
+}
+
+.icon-content a:hover svg{
+  filter: invert();
 }
 
 .icon-content a[data-social="facebook"] .filled {
@@ -865,7 +869,7 @@ body.dark-mode .footer-button:hover {
 }
 
 .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #24292e;
 }
 
 .icon-content a[data-social="youtube"] .filled {
@@ -882,11 +886,15 @@ body.dark-mode .footer-button:hover {
 }
 
 /* Dark mode styles */
-body.dark-mode .side-icons .icon-content a {
+body.dark-mode .side-icons .icon-content a{
   background-color: #333;
   /* Dark background for icons in dark mode */
   color: #ddd;
   /* Light icon color in dark mode */
+}
+
+body.dark-mode .side-icons .icon-content a svg{
+  filter: invert();
 }
 
 body.dark-mode .side-icons .icon-content a:hover .filled {
@@ -894,7 +902,7 @@ body.dark-mode .side-icons .icon-content a:hover .filled {
   /* Slightly lighter dark mode background fill */
 }
 
-body.dark-mode .side-icons .icon-content a:hover i {
+body.dark-mode .side-icons .icon-content a:hover i{
   color: #fff;
   /* White icon color on hover in dark mode */
 }
@@ -911,7 +919,7 @@ body.dark-mode .side-icons .icon-content a[data-social="linkedin"] .filled {
 }
 
 body.dark-mode .side-icons .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #444c56;
   /* Darker shade for Twitter in dark mode */
 }
 
@@ -931,7 +939,9 @@ body.dark-mode .side-icons .icon-content a:hover {
   /* Slightly stronger shadow in dark mode */
 }
 
-
+.icon-content a svg:hover{
+  fill: white;
+}
 
 /* Base styles */
 body {
