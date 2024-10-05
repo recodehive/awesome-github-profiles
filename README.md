@@ -244,21 +244,32 @@ To ensure a smooth collaboration process, Follow these steps:
 
    - If applicable, run tests to ensure that your changes do not break existing functionality.
 
-6. **Commit Your Changes:**
+6. **Stage Your Changes:**
+
+   - Use the `git add` command to stage the changes you want to commit.
+     ```bash
+     git add .  # Stages all modified files
+     ```
+   - You can also stage specific files by replacing `.` with the file names:
+     ```bash
+     git add <file1> <file2>
+     ```
+
+7. **Commit Your Changes:**
 
    - Commit your changes with a clear and descriptive message:
      ```bash
      git commit -m "Add a feature or fix a bug"
      ```
 
-7. **Push to Your Fork:**
+8. **Push to Your Fork:**
 
    - Push your changes back to your forked repository:
      ```bash
      git push origin your-feature-branch
      ```
 
-8. **Create a Pull Request:**
+9. **Create a Pull Request:**
    - Navigate to the original repository where you want to propose your changes.
    - Click on "New Pull Request" and follow the instructions to submit your changes for review.
 
