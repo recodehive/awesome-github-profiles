@@ -442,7 +442,7 @@ body.dark-mode .saved-blogs {
 
 
 /* Toast Notification Styles */
-#toast-container {
+/* #toast-container {
     position: fixed;
     top: 10px;
     right: 10px;
@@ -496,12 +496,12 @@ body.dark-mode .saved-blogs {
     min-width: 200px;
     right: 0;
     width: 22vw;
-    padding: 10px;/* Green for likes */
+    padding: 10px;
   
   }
   
   .toast.unlike {
-    background-color: #F44336; /* Red for unlikes */
+    background-color: #F44336;
   }
   
   @keyframes fadeInOut {
@@ -517,4 +517,4 @@ body.dark-mode .saved-blogs {
     right: 10px;
     cursor: pointer;
   }
-  
+   */
