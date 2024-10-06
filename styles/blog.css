@@ -39,6 +39,42 @@ body.dark-mode .blog-card .save-btn {
     color: #fff;
 }
 
+.saved-blogs {
+    display: flex; 
+    align-items: center; 
+    background-color: #f0f0f0; /* Gray background */
+    color: #333; /* Dark text color */
+    padding: 10px 20px; 
+    border-radius: 25px; /* Rounded corners */
+    text-decoration: none; /* No underline by default */
+    font-family: Arial, sans-serif; 
+    transition: background-color 0.3s, transform 0.3s; /* Transition effects */
+    position: relative; /* For positioning the arrow */
+}
+.dark-mode .saved-blogs {
+    background-color: #333; /* Dark mode background color */
+    color: #fff; /* Dark mode text color */
+}
+.dark-mode .saved-blogs:hover {
+    background: linear-gradient(135deg, #444, #333); /* Dark mode tag hover background */
+}
+
+
+.saved-blogs i {
+    margin-left: 10px; /* Space between text and arrow */
+    transition: transform 0.3s; /* Transition for arrow movement */
+}
+
+.saved-blogs:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+    transform: scale(1.02); /* Slight scale effect on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+
+.saved-blogs:hover i {
+    transform: translateX(5px); /* Move arrow to the right on hover */
+}
+
 body.dark-mode .saved-blogs {
     color: #d5d5d5;
 }
@@ -115,6 +151,54 @@ body.dark-mode .saved-blogs {
 .blog-card .read-more:hover {
     background-color: #0056b3;
 }
+
+#categoryTags {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc); /* Light mode tag background */
+    color: #333333; /* Light mode text color */
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.dark-mode .tag {
+    background: linear-gradient(135deg, #333, #222); /* Dark mode tag background */
+    color: #fff; /* Dark mode text color */
+}
+.dark-mode .tag:hover {
+    background: linear-gradient(135deg, #444, #333); /* Dark mode tag hover background */
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+
+.tag.active {
+    background: linear-gradient(135deg, #ffc107, #ff9800); /* Active tag styling */
+    color: #fff; /* Active tag text color */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .tag {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+}
+
+
 
 @media (max-width:976px) {
     .blog-card {

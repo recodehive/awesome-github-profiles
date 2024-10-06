@@ -47,16 +47,21 @@
           <div></div>
           <div></div>
         </div>
-      </nav> 
-	<div class="mobile-menu" id="mobile-menu">
-		<a href="events.html" class="navbar-links">Events</a>
-            <a href="githubbadge.html" class="navbar-links">Github-Badge</a>
-            <a href="blog.html" class="navbar-links">Blog</a>
-            <a href="#" class="navbar-links">Add Profile</a>
-            <a href="blog.html" class="navbar-links">Learn</a>
-          <a href="#" class="navbar-links">Tools</a>
-	</div>
+    </nav> 
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="events.html" class="navbar-links">Events</a>
+              <a href="githubbadge.html" class="navbar-links">Github-Badge</a>
+              <a href="blog.html" class="navbar-links">Blog</a>
+              <a href="#" class="navbar-links">Add Profile</a>
+              <a href="blog.html" class="navbar-links">Learn</a>
+            <a href="#" class="navbar-links">Tools</a>
+    </div>
     <h1 style="text-align: center;">Saved Blogs</h1>
+    <div id="categoryTags">
+      <span class="tag" data-category="all">All Categories</span>
+      <span class="tag" data-category="dev">Dev Labs Github</span>
+      <span class="tag" data-category="tech">Tech</span>
+    </div>
     <div class="blog-container" id="savedBlogsContainer"></div>
     <footer id="Contact" class="footer-2">
         <div class="footer-container">
@@ -103,8 +108,23 @@
           document.getElementById("dynamic-year").textContent = new Date().getFullYear();
       </script>
       
-      </footer>
+    </footer>
     <script>
+        const tags = document.querySelectorAll('.tag');
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const selectedCategory = tag.getAttribute('data-category');
+                const blogCards = document.querySelectorAll('.blog-card');
+                blogCards.forEach(card => {
+                    const category = card.querySelector('.category').innerText.toLowerCase();
+                    if (selectedCategory === 'all' || category.includes(selectedCategory)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
         document.addEventListener('DOMContentLoaded', () => {
             const savedBlogsContainer = document.getElementById('savedBlogsContainer');
             let savedBlogs = JSON.parse(localStorage.getItem('savedBlogs')) || [];
