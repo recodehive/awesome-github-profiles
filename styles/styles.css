@@ -286,7 +286,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  margin-bottom: 700px;
+  margin-bottom: 70px;
 }
 
 .main-heading {
@@ -1309,33 +1309,61 @@ a {
 /* Toast Notification Styles */
 #toast-container {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  height: 50px;
+  width: 24vw;
+  top: 90px;
+  right: 50px;
   z-index: 1000;
 }
 
+/* Style for the toast message */
 .toast {
   display: none;
   min-width: 200px;
   margin-bottom: 10px;
   padding: 15px;
-  top: 30px;
   color: #fff;
   border-radius: 5px;
   font-size: 14px;
   position: relative;
   padding: 18px !important;
-
 }
-.line{
-  position: absolute;
-  bottom: -20px;
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  #toast-container {
+    width: 90vw;  /* Make the width take up most of the screen on mobile */
+    top: 55px;
+    right: 0;
+    left: 0;  /* Center the toast container horizontally */
+    margin: 0 auto;  /* Automatically center with equal margin */
+  }
+
+  .toast {
+    min-width: 90vw;  /* Make the toast width responsive to screen size */
+    max-width: 90vw;
+    font-size: 12px;  /* Adjust font size for smaller screens */
+  }
+}
+
+.line.show{
+  position: relative;
+  /* bottom: -20px; */
+  top: 95px;
   z-index: 10000;
-  left: 0px;
   height: 5px;
+  width: 24vw;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgb(255, 255, 255);
+}
+.line.like{
+
+  background-color: #0e5711;
+  animation: line-animate 2s ease-in-out forwards;
+}
+.line.unlike{
+
+  background-color: #F44336;
   animation: line-animate 2s ease-in-out forwards;
 }
 @keyframes line-animate {
@@ -1347,11 +1375,14 @@ a {
 }
 .toast.show {
   display: block;
+  /* position: absolute; */
+  /* top: 50px; */
+  /* right: 50px; */
   animation: fadeInOut 3s ease-out;
 }
 
 .toast.like {
-  background: #333;
+  background: #0e5711;
   color: #fff;
 
   font-size: 12px;
@@ -1366,7 +1397,17 @@ a {
 }
 
 .toast.unlike {
-  background-color: #F44336; /* Red for unlikes */
+  background-color: #F44336;
+  color: #fff;
+
+  font-size: 12px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  min-width: 200px;
+  right: 0;
+  width: 22vw;
+  padding: 10px; /* Red for unlikes */
 }
 
 @keyframes fadeInOut {

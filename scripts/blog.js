@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         unsaveBlog(blog);
                         saveBtn.innerHTML = '<i class="fa fa-save"></i> Save Blog';
                         saveBtn.classList.remove('saved');
-                        showToast("Blog Unsaved", "like");
+                        showToast("Blog Unsaved", "unlike");
                     } else {
                         saveBlog(blog);
                         saveBtn.innerHTML = '<i class="fa fa-trash"></i> Unsave Blog';
@@ -103,9 +103,9 @@ function showToast(message, type) {
     closeBtn.onclick = () => {
         toast.remove();
     };
-    line.className = "line";
+    // line.className = `line ${type} show`;
     toast.appendChild(closeBtn);
-    toastContainer.appendChild(line);
+    // toastContainer.appendChild(line);
   
     // Append toast to container
     toastContainer.appendChild(toast);
@@ -113,6 +113,6 @@ function showToast(message, type) {
     // Remove toast after a delay
     setTimeout(() => {
         toast.classList.remove('show');
-        toastContainer.removeChild(line);
+        // toastContainer.removeChild(line);
     }, 3000);
 }
