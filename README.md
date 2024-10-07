@@ -1,11 +1,11 @@
-<h2 align="center">Awesome Github Profile</h2>
+<h2 align="center">awesome-github-profiles</h2>
 
 <div align="center">
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-76-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-🔍Welcome to the awesome github profiles repo project! 🌟.
+🔍Welcome to the awesome-github-profiles repo project! 🌟.
 
 <p>This README will guide you through the contribution process and provide essential information about the project.</p>
 </div>
@@ -161,7 +161,7 @@ Forking allows you to create a personal copy of the repository, where you can ex
 
 ### Navigate to the Repository:
 
-- Go to the Awesome GitHub Profiles repository.
+- Go to the awesome-gitHub-profiles repository.
 
 ### Click on Fork:
 
@@ -175,7 +175,7 @@ Forking allows you to create a personal copy of the repository, where you can ex
 
 - Use the command below to clone your fork to your local machine:
   ```bash
-  git clone https://github.com/YOUR_USERNAME/Awesome-Github-Profiles.git
+  git clone https://github.com/YOUR_USERNAME/awesome-github-profiles.git
   ```
 
 <h2 id="tutorials">Tutorials</h2>
@@ -223,7 +223,7 @@ To ensure a smooth collaboration process, Follow these steps:
 
    - Run the following command in your terminal:
      ```bash
-     git clone https://github.com/YOUR_USERNAME/Awesome-Github-Profiles.git
+     git clone https://github.com/YOUR_USERNAME/awesome-github-profiles.git
      ```
    - This command downloads your fork to your local machine.
 
@@ -231,7 +231,7 @@ To ensure a smooth collaboration process, Follow these steps:
 
    - Navigate into the cloned repository:
      ```bash
-     cd Awesome-Github-Profiles
+     cd awesome-github-profiles
      ```
    - Create a new branch for your feature or fix:
      ```bash
