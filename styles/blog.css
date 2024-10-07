@@ -340,7 +340,7 @@ body.dark-mode .saved-blogs {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1000;
+    z-index: 1500;
     /* Sit on top */
     left: 0;
     top: 0;
