@@ -130,6 +130,8 @@
       <td align="center" valign="top" width="14.28%"><a href="https://irfan-shaikh-portfolio.vercel.app/"><img src="https://avatars.githubusercontent.com/u/138690953?v=4?s=100" width="100px;" alt="iitzIrFan"/><br /><sub><b>iitzIrFan</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AiitzIrFan" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/vijaychandra1910"><img src="https://avatars.githubusercontent.com/u/138502362?v=4?s=100" width="100px;" alt="VIJAY KUMAR CHANDRA"/><br /><sub><b>VIJAY KUMAR CHANDRA</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Avijaychandra1910" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/theashikagupta"><img src="https://avatars.githubusercontent.com/u/136061047?v=4?s=100" width="100px;" alt="Ashika Gupta"/><br /><sub><b>Ashika Gupta</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Atheashikagupta" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/rugved0102"><img src="https://avatars.githubusercontent.com/u/122914094?v=4?s=100" width="100px;" alt="Rugved"/><br /><sub><b>Rugved</b></sub></a><br /><a href="https://github.com/rugved0102/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3Arugved0102" title="Reviewed Pull Requests">👀</a></td>
+
       
 
       
