@@ -11,6 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => response.json())
         .then((data) => {
             contributors = data.contributors;
+             // const nameArray = contributors.map((i) => {
+            //     console.log(i.name);
+            //     return i.name;
+            // })
+            contributors = contributors.sort((a, b) => (a.name).localeCompare(b.name));
 
             // Populate dropdowns with contributor names
             const select1 = document.getElementById('contributorSelect1');
