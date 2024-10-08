@@ -474,12 +474,6 @@
         "review"
       ]
     },
- {
-      "login": "jaydeeprawat17",
-      "name": "Jaydeep Rawat",
-      "avatar_url": "https://avatars.githubusercontent.com/u/144578298?v=4",
-      "profile": "https://github.com/Jaydeeprawat17"
-  },
     {
       "login": "shaurya35",
       "name": "Shaurya Jha",
@@ -599,6 +593,12 @@
       "name": "Chhavi Rohilla",
       "avatar_url": "https://avatars.githubusercontent.com/u/136676662?v=4",
       "profile": "https://github.com/ChhaviRohilla"
+  },
+ {
+      "login": "jaydeeprawat17",
+      "name": "Jaydeep Rawat",
+      "avatar_url": "https://avatars.githubusercontent.com/u/144578298?v=4",
+      "profile": "https://github.com/jaydeeprawat17"
   },
   {
       "login": "iitzIrFan",
