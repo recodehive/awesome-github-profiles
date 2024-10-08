@@ -1,15 +1,25 @@
 {
-  "dependencies": {
-    "puppeteer": "^22.15.0"
-  },
-  "name": "awesome-github-profiles",
-  "version": "1.0.0",
-  "description": "<h2 align=\"center\">Awesome Github Profile</h2>",
-  "main": "capture-screenshot.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "awesome-github-profiles",
+    "version": "1.0.0",
+    "description": "A tool to capture screenshots of GitHub profiles automatically",
+    "main": "capture-screenshot.js",
+    "author": "Your Name <your.email@example.com>",
+    "license": "ISC",
+    "keywords": ["GitHub", "profile", "screenshot", "automation", "puppeteer"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/awesome-github-profiles.git"
+    },
+    "dependencies": {
+        "puppeteer": "^22.15.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.50.0"
+    },
+    "scripts": {
+        "start": "node capture-screenshot.js",
+        "build": "echo 'Building the project...'",
+        "lint": "eslint . --fix",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
 }
