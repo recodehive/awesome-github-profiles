@@ -16,6 +16,8 @@
 
 *.css @sanjay-kv 
 
+*.html @sanjay-kv
+
 # Reademe Files:
 *.md @sanjay-kv
 
