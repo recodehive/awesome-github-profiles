@@ -413,3 +413,23 @@ form.sign-in-form {
   text-decoration: none;
 }
 
+.input-field-password {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-field-password input[type="password"] {
+  width: 100%;
+  padding-right: 2.5rem; /* Add some space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px; /* Position the icon inside the input */
+  cursor: pointer;
+}
+
+.toggle-password i {
+  color: #333; /* Icon color */
+}
