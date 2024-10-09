@@ -15,7 +15,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let currentPage=1;
-const profilesPerPage = 18; // Number of profiles per page
+const profilesPerPage = 20; // Number of profiles per page
 
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
