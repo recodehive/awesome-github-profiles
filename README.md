@@ -274,6 +274,7 @@ To ensure a smooth collaboration process, Follow these steps:
 9. **Create a Pull Request:**
    - Navigate to the original repository where you want to propose your changes.
    - Click on "New Pull Request" and follow the instructions to submit your changes for review.
+For even more detailed instructions on how to contribute, you can always check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
