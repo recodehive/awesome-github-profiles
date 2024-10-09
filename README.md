@@ -69,7 +69,7 @@ This is the all in one place of awesome-github-profiles.
 ## Contribute
 
 Contributions are always welcome!
-Please read the [contribution guidelines](contributing.md) first.
+Please read the [Contribution Guidelines](./CONTRIBUTING.md) first.
 
 ## Special Thanks 🙇
 - [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/dinxsh), [Nishant](https://github.com/dinxsh), [Ayushman](https://github.com/dinxsh)for being a core for this repo!
