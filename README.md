@@ -229,9 +229,10 @@ To ensure a smooth collaboration process, Follow these steps:
 
 3. **Create a Branch:**
 
-   - Navigate into the cloned repository:
+   - Navigate into the cloned repository and switch to the `gh-pages` branch:
      ```bash
      cd awesome-github-profiles
+     git checkout gh-pages
      ```
    - Create a new branch for your feature or fix:
      ```bash
