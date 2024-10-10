@@ -88,6 +88,7 @@ form.sign-in-form {
 }
 
 .input-field input {
+  
   background: none;
   outline: none;
   border: none;
@@ -100,6 +101,24 @@ form.sign-in-form {
 .input-field input::placeholder {
   color: #aaa;
   font-weight: 500;
+  padding-right: 2.5rem;
+  
+}
+.toggle-password {
+  position: absolute;
+  right: 15px; /* Align the icon to the right */
+  cursor: pointer;
+}
+
+.toggle-password i {
+  color: #acacac; /* Style for the eye icon */
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for eye icon */
+.toggle-password:hover i {
+  color: #333;
 }
 
 .social-text {
