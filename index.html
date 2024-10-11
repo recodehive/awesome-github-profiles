@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/pagination.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -32,8 +33,9 @@
         <a href="./pages/events.html" class="navbar-link">Events</a>
         <a href="pages/blog.html" class="navbar-link">Learn</a>
         <a href="./pages/compare.html" class="navbar-link">Compare</a>
+        <a href="login.html" class="navbar-link">Login</a>
 
-       
+      
         <div class="toggle-switch">
           <input type="checkbox" id="theme-toggle">
           <label for="theme-toggle">
@@ -49,15 +51,27 @@
         <div></div>
         <div></div>
       </div>
-    </nav> 
-   
+    </nav>
+  
     <div class="mobile-menu" id="mobile-menu">
       <a href="pages/githubbadge.html" class="navbar-links">Github-Badge</a>
       <a href="#" class="navbar-links">Tools</a>
-      <a href="/events.html" class="navbar-links">Events</a>
+      <a href="./pages/events.html" class="navbar-links">Events</a>
       <a href="pages/blog.html" class="navbar-links">Blog</a>
       <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
       <a href="pages/blog.html" class="navbar-links">Learn</a>
+      <a href="login.html">Login</a>
+      
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
   </div>
 
     <div class="side-icons">
@@ -75,7 +89,7 @@
       </div>
       <div class="icon-content">
         <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
-          <i class="fab fa-twitter"></i> 
+          <i class="fab fa-x-twitter"></i> 
           <div class="filled"></div>
         </a>
       </div>
@@ -86,7 +100,7 @@
         </a>
       </div>
       <div class="icon-content">
-        <a href="https://github.com/recodehive" target="_blank" aria-label="GitHub" data-social="github">
+        <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
           <i class="fab fa-github"></i>
           <div class="filled"></div>
         </a>
@@ -143,19 +157,18 @@
       
     </div>
     <footer id="Contact" class="footer-2">
-      <div class="footer-container" >
+      <div class="footer-container">
         <div class="footer-content">
           <div class="footer-info">
             <img src="assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
           </div>
-    
           <div class="footer-links">
             <div class="footer-section">
-             <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
-             <div>
-              <a href="pages/help.html" class="footer-link">Contact Us</a>
-              <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
-             </div>
+              <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+              <div>
+                <a href="pages/help.html" class="footer-link">Contact Us</a>
+                <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
+              </div>
             </div>
             <div class="footer-section">
               <h6 class="footer-heading">GET INVOLVED</h6>
@@ -165,11 +178,8 @@
               </div>
             </div>
           </div>
-    
           <div class="footer-description">
-            <h5>
-              We focus on quality content for the right people at the right time⏱️. What we are trying to do is help you to brand personal skills through GitHub readme.md, So we listing the best profiles & opportunity to list your profile to the world 🌎.
-            </h5>
+            <h5>We focus on quality content for the right people at the right time⏱️. What we are trying to do is help you brand personal skills through GitHub readme.md, listing the best profiles, and giving you the opportunity to list your profile to the world 🌎.</h5>
             <a href="pages/exploremore.html" class="footer-button">Explore</a>
           </div>
         </div>
@@ -177,11 +187,13 @@
     
       <div class="footer-bottom">
         <div class="footer-container">
-            <p class="footer-copyright">
-                &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
-            </p>
+          <p class="footer-copyright">
+            &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+          </p>
         </div>
-    </div>
+      </div>
+    </footer>
+    
     
     <script>
         document.getElementById("dynamic-year").textContent = new Date().getFullYear();
@@ -198,6 +210,19 @@
 <!-- Toast Notification Container -->
 <div id="toast-container"></div>
 
+<!-- Profile Add Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeModal">&times;</span>
+    <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+    <h2>Join the Recode Hive Community</h2>
+    <p>Become part of an exclusive community of developers. Showcase your GitHub profile and connect with like-minded individuals to explore new opportunities.</p>
+    <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+       class="add-profile-button">Add Your Profile</a>
+  </div>
+</div>
+
+    <script src="scripts/profileModal.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
@@ -206,6 +231,8 @@
     <script src="scripts/dark-mode.js"></script>
     <script src="scripts/hamburger.js"></script>
     <script src="scripts/revealelementsonscroll.js"></script>
+    <!-- Added script for new Twitter logo -->
+    <script src="https://kit.fontawesome.com/856f4a44d7.js" crossorigin="anonymous"></script>
 
   </body>
 </html>

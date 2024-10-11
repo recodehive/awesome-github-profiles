@@ -286,7 +286,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
-  margin-bottom: 700px;
+  margin-bottom: 70px;
 }
 
 .main-heading {
@@ -582,70 +582,63 @@ body.dark-mode .navbar-text {
 body.dark-mode .navbar-link:hover {
   background-color: #555;
 }
-
 .footer-2 {
   background-color: #dedede;
-  margin-top: 80px;
+  padding: 40px 0;
 }
 
 .footer-container {
-  padding: 5px 20px; /* Smaller padding */
-  margin: 0;
-  font-size: 12px; /* Small font */
+  padding: 0 20px;
+  font-size: 14px;
   line-height: 1.5;
-  margin-bottom: 95px;
-  margin-top: -80px;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 5px 20px;
-  margin-bottom: 3px;
+  padding: 20px 0;
 }
 
 .footer-info {
   flex: 0 1 200px;
-  margin-top: 2rem;
-  margin-right: 2rem;
+  margin-bottom: 20px;
 }
 
 .footer-links {
-  flex: 1 1 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
-  max-width: 500px;
   gap: 50px;
 }
 
 .footer-description {
   flex: 1 1 300px;
-  max-width: 400px;
-  margin-right: 60px;
-
+  max-width: 500px;
+  margin-right: 30px;
 }
 
 .footer-logo {
-  max-width: 100% !important;
+  max-width: 150px;
   height: auto;
   cursor: pointer;
 }
 
 .footer-section {
-  margin-right: 3rem;
+  margin-right: 20px;
 }
 
 .footer-heading {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  color: #000;
 }
 
 .footer-link {
   display: block;
   color: #000;
+  font-size: 0.875rem;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -660,25 +653,13 @@ body.dark-mode .navbar-link:hover {
   margin-bottom: 1rem;
 }
 
-.footer-link:hover {
-  display: inline-block;
-  text-decoration: underline;
-}
-
-.footer-description h5 {
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
-}
-
 .footer-button {
-  display: inline-block;
   background-color: #000;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
 .footer-button:hover {
@@ -686,15 +667,14 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 0;
-  margin-top: -90px;
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  text-align: center;
 }
 
 .footer-copyright {
-  text-align: center;
   font-size: 0.875rem;
-  margin-top: 50px;
+  margin: 0;
 }
 
 /* Dark mode styles */
@@ -723,48 +703,17 @@ body.dark-mode .footer-button:hover {
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
+    text-align: center;
   }
 
   .footer-links {
-    gap: 0px !important;
+    gap: 20px;
+    justify-content: center;
   }
 
-  .footer-info {
-    width: 250px;
-    margin-bottom: 2rem;
+  .footer-info, .footer-description {
+    margin-bottom: 20px;
   }
-
-  .footer-links,
-  .footer-description {
-    width: 80%;
-    margin-bottom: 2rem;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    margin-bottom: 10px !important;
-  }
-
-
-  .footer-section {
-    margin-right: 0;
-    /* margin-bottom: 1rem; */
-  }
-
-  .footer-heading {
-    margin-top: 25px !important;
-  }
-
-  .footer-info {
-    flex: 0 1;
-    margin-bottom: 10px;
-  }
-
-  .footer-description {
-    flex: 1 1;
-    margin-bottom: 0px !important;
-  }
-
 }
 
 .img-container {
@@ -865,7 +814,7 @@ body.dark-mode .footer-button:hover {
 }
 
 .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #030303;
 }
 
 .icon-content a[data-social="youtube"] .filled {
@@ -1309,33 +1258,61 @@ a {
 /* Toast Notification Styles */
 #toast-container {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  height: 50px;
+  width: 24vw;
+  top: 90px;
+  right: 50px;
   z-index: 1000;
 }
 
+/* Style for the toast message */
 .toast {
   display: none;
   min-width: 200px;
   margin-bottom: 10px;
   padding: 15px;
-  top: 30px;
   color: #fff;
   border-radius: 5px;
   font-size: 14px;
   position: relative;
   padding: 18px !important;
-
 }
-.line{
-  position: absolute;
-  bottom: -20px;
+
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  #toast-container {
+    width: 90vw;  /* Make the width take up most of the screen on mobile */
+    top: 55px;
+    right: 0;
+    left: 0;  /* Center the toast container horizontally */
+    margin: 0 auto;  /* Automatically center with equal margin */
+  }
+
+  .toast {
+    min-width: 90vw;  /* Make the toast width responsive to screen size */
+    max-width: 90vw;
+    font-size: 12px;  /* Adjust font size for smaller screens */
+  }
+}
+
+.line.show{
+  position: relative;
+  /* bottom: -20px; */
+  top: 95px;
   z-index: 10000;
-  left: 0px;
   height: 5px;
+  width: 24vw;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: rgb(255, 255, 255);
+}
+.line.like{
+
+  background-color: #0e5711;
+  animation: line-animate 2s ease-in-out forwards;
+}
+.line.unlike{
+
+  background-color: #F44336;
   animation: line-animate 2s ease-in-out forwards;
 }
 @keyframes line-animate {
@@ -1347,11 +1324,14 @@ a {
 }
 .toast.show {
   display: block;
+  /* position: absolute; */
+  /* top: 50px; */
+  /* right: 50px; */
   animation: fadeInOut 3s ease-out;
 }
 
 .toast.like {
-  background: #333;
+  background: #0e5711;
   color: #fff;
 
   font-size: 12px;
@@ -1366,7 +1346,17 @@ a {
 }
 
 .toast.unlike {
-  background-color: #F44336; /* Red for unlikes */
+  background-color: #F44336;
+  color: #fff;
+
+  font-size: 12px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 600;
+  min-width: 200px;
+  right: 0;
+  width: 22vw;
+  padding: 10px; /* Red for unlikes */
 }
 
 @keyframes fadeInOut {
