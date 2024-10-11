@@ -104,23 +104,6 @@ form.sign-in-form {
   padding-right: 2.5rem;
   
 }
-.toggle-password {
-  position: absolute;
-  right: 15px; /* Align the icon to the right */
-  cursor: pointer;
-}
-
-.toggle-password i {
-  color: #acacac; /* Style for the eye icon */
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-
-/* Hover effect for eye icon */
-.toggle-password:hover i {
-  color: #333;
-}
-
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
@@ -431,24 +414,6 @@ form.sign-in-form {
   transition: 0.3s;
   text-decoration: none;
 }
-
-.input-field-password {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.input-field-password input[type="password"] {
-  width: 100%;
-  padding-right: 2.5rem; /* Add some space for the eye icon */
-}
-
 .toggle-password {
-  position: absolute;
-  right: 10px; /* Position the icon inside the input */
   cursor: pointer;
-}
-
-.toggle-password i {
-  color: #333; /* Icon color */
 }
