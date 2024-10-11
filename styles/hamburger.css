@@ -21,7 +21,7 @@
   }
 
   .hamburger.active div:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
+    transform: translateY(14px) rotate(45deg);
   }
 
   .hamburger.active div:nth-child(2) {
@@ -38,7 +38,7 @@
     align-items: center;
     background-color: #ffffff;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 52px;
     left: 0;
     opacity: 0;
