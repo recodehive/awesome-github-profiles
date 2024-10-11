@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
                         .classList.remove("hidden");
 
                     // Fill the table with data
+                    document.getElementById("avatarImg1").src = data1.avatar_url;
+                    document.getElementById("avatarImg2").src = data2.avatar_url;
+
                     document.getElementById("login1").textContent = data1.login;
                     document.getElementById("login2").textContent = data2.login;
 
