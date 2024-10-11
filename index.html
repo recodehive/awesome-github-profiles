@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/pagination.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -60,6 +61,17 @@
       <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
       <a href="pages/blog.html" class="navbar-links">Learn</a>
       <a href="login.html">Login</a>
+      
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
   </div>
 
     <div class="side-icons">
@@ -198,6 +210,19 @@
 <!-- Toast Notification Container -->
 <div id="toast-container"></div>
 
+<!-- Profile Add Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeModal">&times;</span>
+    <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+    <h2>Join the Recode Hive Community</h2>
+    <p>Become part of an exclusive community of developers. Showcase your GitHub profile and connect with like-minded individuals to explore new opportunities.</p>
+    <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+       class="add-profile-button">Add Your Profile</a>
+  </div>
+</div>
+
+    <script src="scripts/profileModal.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>

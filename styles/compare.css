@@ -129,3 +129,12 @@ select{
     color: white;
     background-color: black;
 }
+#avatarImg1{
+    width: 200px;
+    height: 200px;
+}
+
+#avatarImg2{
+    width: 200px;
+    height: 200px;
+}
