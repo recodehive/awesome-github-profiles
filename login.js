@@ -1,24 +1,6 @@
 // Wait until the DOM is fully loaded before executing
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Toggle password visibility for both sign-in and sign-up forms
-  const togglePasswordIcons = document.querySelectorAll('.toggle-password');
-
-  togglePasswordIcons.forEach(iconWrapper => {
-    iconWrapper.addEventListener('click', function () {
-      const passwordField = this.previousElementSibling;
-      const icon = this.querySelector('i');
-
-      // Toggle password visibility
-      const isPasswordVisible = passwordField.type === 'password';
-      passwordField.type = isPasswordVisible ? 'text' : 'password';
-
-      // Toggle icon between eye and eye-slash
-      icon.classList.toggle('fa-eye', !isPasswordVisible);
-      icon.classList.toggle('fa-eye-slash', isPasswordVisible);
-    });
-  });
-
   // Toggle between sign-in and sign-up mode
   const sign_in_btn = document.querySelector("#sign-in-btn");
   const sign_up_btn = document.querySelector("#sign-up-btn");
@@ -73,6 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Signup successful!');
     // Redirect to dashboard page
     window.location.href = 'index.html';
+  });
+
+  // Toggle password visibility for sign-up form
+  const forms = document.querySelectorAll('form');
+
+  forms.forEach(form => {
+    const togglePassword = form.querySelector('#toggle-password');
+    const passwordInput = form.querySelector('#password-input');
+  
+    togglePassword.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePassword.classList.add('fa-lock-open');
+        togglePassword.classList.remove('fa-lock');
+      } else {
+        passwordInput.type = 'password';
+        togglePassword.classList.add('fa-lock');
+        togglePassword.classList.remove('fa-lock-open');
+      }
+    });
   });
 
   // Check password strength for sign-up form
