@@ -438,8 +438,8 @@ body.dark-mode .profile p {
 /* Switch Button */
 .switch-button {
   position: absolute;
-  top: 2px;
-  left: 3px;
+  top: 1.5px;
+  left: 2px;
   width: 27px;
   height: 27px;
   background-color: #fff;
@@ -454,7 +454,7 @@ body.dark-mode .profile p {
   user-select: none;
   font-size: 25px;
   position: absolute;
-  top: 50%;
+  top: 14.5px;
   transform: translateY(-50%);
   transition: opacity 0.5s ease, color 0.5s ease;
 }
@@ -471,7 +471,8 @@ body.dark-mode .profile p {
 /* Moon Icon */
 .moon-icon {
   color: #bdc3c7;
-  right: 1px;
+  right: -2px;
+  top: 14px;
   /* Position from the right edge */
   opacity: 0;
   /* Initially hidden */
@@ -502,7 +503,7 @@ body.dark-mode .profile p {
 }
 
 #theme-toggle:checked+label .switch-button {
-  transform: translateX(30px);
+  transform: translateX(34px);
   /* Adjust to fit switch width */
   background-color: black;
 }
