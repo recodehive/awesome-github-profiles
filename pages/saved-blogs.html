@@ -18,10 +18,10 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="navbar-left" onclick="window.location.href=`/index.html`">
+      <a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
           <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
           <span class="navbar-text">Recode Hive</span>
-        </div>
+          <a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
         <div class="navbar-right">
           <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
           <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
@@ -57,6 +57,12 @@
             <a href="#" class="navbar-links">Tools</a>
     </div>
     <h1 style="text-align: center;">Saved Blogs</h1>
+    <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px; margin-left: 20px;">
+      <a class="saved-blogs" href="blog.html" style="text-decoration: none;">
+        <i class="fas fa-arrow-left" aria-hidden="true" style="margin-right: 10px;"></i> <!-- left Arrow Icon -->
+        All Blogs
+      </a>
+    </div>    
     <div id="categoryTags">
       <span class="tag" data-category="all">All Categories</span>
       <span class="tag" data-category="dev">Dev Labs Github</span>
