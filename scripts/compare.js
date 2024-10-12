@@ -77,6 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">GitHub</a>` : "N/A";
                     document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">GitHub</a>` : "N/A";
 
+                    // Call the function with an array of two usernames
+                    fetchStarsForUsers([data1.login, data2.login])
+                        .then(stars => {
+                            document.getElementById("stars1").textContent = stars[0] || "N/A";
+                            document.getElementById("stars2").textContent = stars[1] || "N/A";
+                        })
+                        .catch(error => console.error('Error fetching data:', error));
+
                     const themeToggleCheckbox = document.querySelector("#theme-toggle");
                     theme = localStorage.getItem("theme") || "light";
                     themeToggleCheckbox.addEventListener("change", () => {
@@ -270,3 +278,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Function to fetch repositories from GitHub API with pagination
+async function fetchAllRepos(username) {
+    let page = 1;
+    let repos = [];
+    let moreRepos = true;
+
+    // Keep fetching until there are no more repositories
+    while (moreRepos) {
+        const url = `https://api.github.com/users/${username}/repos?per_page=100&page=${page}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // If there are repos in the current page, add them to the repos array
+        if (data.length > 0) {
+            repos = repos.concat(data);
+            page++;
+        } else {
+            moreRepos = false; // No more repos, stop fetching
+        }
+    }
+    return repos;
+}
+
+// Function to calculate total stars for both usernames and return an array
+async function fetchStarsForUsers(usernames) {
+    const starsArray = await Promise.all(
+        usernames.map(async (username) => {
+            const repos = await fetchAllRepos(username);
+            const totalStars = repos.reduce((acc, repo) => acc + repo.stargazers_count, 0);
+            return totalStars;
+        })
+    );
+    return starsArray;
+}
