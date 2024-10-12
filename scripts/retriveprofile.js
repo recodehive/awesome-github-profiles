@@ -522,7 +522,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Close the modal if clicked outside of it
-
+  window.onclick = function (event) {
+    close()
+  };
 });
 
 
