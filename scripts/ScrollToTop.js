@@ -52,3 +52,29 @@ function updateProgressBar() {
 
   document.getElementById("progressBar").style.width = scrollPercent + "%";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navbarLinks = document.querySelectorAll(".navbar-link");
+
+  // Function to check if the user is already on the current page
+  function isSamePage(link) {
+    return window.location.pathname === link.pathname;
+  }
+
+  // Smooth scroll to top function
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  navbarLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+      if (isSamePage(this)) {
+        event.preventDefault();  // Prevent default link behavior if it's the same page
+        scrollToTop();
+      }
+    });
+  });
+});
