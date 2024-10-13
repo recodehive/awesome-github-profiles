@@ -750,6 +750,7 @@ body.dark-mode .footer-button:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  z-index: 1000000;
 }
 
 .icon-content {
