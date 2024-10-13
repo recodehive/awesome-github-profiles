@@ -149,34 +149,31 @@ document.addEventListener("DOMContentLoaded", function () {
         div.addEventListener('click', (e) => {
           e.preventDefault();  // Prevent the default action
           e.stopPropagation(); // Prevent event bubbling
-        
-          const targetId = e.target.id;
-        
-          // Get current 'isLike' list from LocalStorage
-          let item = JSON.parse(localStorage.getItem('isLike')) || [];
-        
-          if (item.includes(targetId)) {
-            // If the target ID is already in the 'isLike' list, remove it
-            const idx = item.indexOf(targetId);
-            item.splice(idx, 1);
-        
-            // Update LocalStorage
-            if (item.length === 0) {
-              localStorage.removeItem('isLike');
-            } else {
-              localStorage.setItem('isLike', JSON.stringify(item));
-            }
-            showToast("You UnLiked the Profile","like")
-            // Decrement the like count
-            profileRefLikes.transaction((currentViews) => (currentViews || 1) - 1);
-          } else {
-            // If the target ID is not in the 'isLike' list, add it
-            item.push(targetId);
-            localStorage.setItem('isLike', JSON.stringify(item));
-            showToast("You Liked the Profile","like")
 
-            // Increment the like count
-            profileRefLikes.transaction((currentViews) => (currentViews || 0) + 1);
+          const targetId = div.id;  // Use div.id for the profile ID
+          const heartIcon = div.querySelector(".fa-heart");
+
+          // Get current 'isLike' list from LocalStorage
+          let likedProfiles = JSON.parse(localStorage.getItem('isLike')) || [];
+
+          if (likedProfiles.includes(targetId)) {
+            // If already liked, unlike it (remove from localStorage and decrement count)
+            likedProfiles = likedProfiles.filter(id => id !== targetId);
+            localStorage.setItem('isLike', JSON.stringify(likedProfiles));
+            showToast("You UnLiked the Profile", "like");
+
+            // Change the heart icon color back and decrement the like count
+            heartIcon.classList.remove("like-red");
+            profileRefLikes.transaction((currentLikes) => (currentLikes || 1) - 1);
+          } else {
+            // If not liked yet, like it (add to localStorage and increment count)
+            likedProfiles.push(targetId);
+            localStorage.setItem('isLike', JSON.stringify(likedProfiles));
+            showToast("You Liked the Profile", "like");
+
+            // Change the heart icon color to red and increment the like count
+            heartIcon.classList.add("like-red");
+            profileRefLikes.transaction((currentLikes) => (currentLikes || 0) + 1);
           }
         
           // Call renderProfiles to update the UI
@@ -234,8 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProfiles(searchBar.value);
   });
 });
-
-
 
 document.addEventListener("mouseover", function (e) {
   if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
