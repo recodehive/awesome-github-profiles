@@ -1277,6 +1277,10 @@ a {
   position: relative;
   padding: 18px !important;
 }
+.fa-search{
+  position: relative;
+  right: 40px;
+}
 
 /* Media query for mobile view */
 @media (max-width: 768px) {
@@ -1293,7 +1297,22 @@ a {
     max-width: 90vw;
     font-size: 12px;  /* Adjust font size for smaller screens */
   }
+
+  .search-input{
+    padding-right: 35px;
+  }
+  .fa-search{
+    position: relative;
+    right: 35px;
+  }
+  .fa-caret-down.dropdown{
+    position: relative;
+    right: 15px;
+  }
 }
+
+
+
 
 .line.show{
   position: relative;
@@ -1371,4 +1390,20 @@ a {
   top: 5px;
   right: 10px;
   cursor: pointer;
+}
+
+#progressBarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: #333; 
+  z-index: 9999; 
+}
+#progressBar {
+  height: 100%;
+  width: 0%; 
+  background: white;
+  transition: width 0.2s ease; 
 }
