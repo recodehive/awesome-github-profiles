@@ -20,13 +20,13 @@
     </a>
     <div class="navbar-right">
       <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
-        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
         class="navbar-link">Add Profile</a>
-        <a href="#" class="navbar-link">Tools</a>
-        <a href="events.html" class="navbar-link">Events</a>
-        <a href="blog.html" class="navbar-link">Learn</a>
-        <a href="compare.html" class="navbar-link">Compare</a>
-        
+      <a href="#" class="navbar-link">Tools</a>
+      <a href="events.html" class="navbar-link">Events</a>
+      <a href="blog.html" class="navbar-link">Learn</a>
+      <a href="compare.html" class="navbar-link">Compare</a>
+
       <div class="toggle-switch">
         <input type="checkbox" id="theme-toggle">
         <label for="theme-toggle">
@@ -155,19 +155,20 @@
 
     <div class="footer-bottom">
       <div class="footer-container">
-          <p class="footer-copyright">
-              &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
-          </p>
+        <p class="footer-copyright">
+          &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+        </p>
       </div>
-  </div>
-  
-  <script>
+    </div>
+
+    <script>
       document.getElementById("dynamic-year").textContent = new Date().getFullYear();
-  </script>
-  
+    </script>
+
   </footer>
 
   <script src="../scripts/script.js"></script>
+  <script src="../scripts/ScrollToTop.js"></script>
   <script src="../scripts/dark-mode.js"></script>
   <script src="../scripts/hamburger.js"></script>
   <script>
@@ -228,6 +229,53 @@
       // Example function to call when content div is in view
 
     });
+    document.addEventListener('DOMContentLoaded', () => {
+      const contentDiv1 = document.getElementById('scroll1');
+      const contentDiv2 = document.getElementById('scroll2');
+      const contentDiv3 = document.getElementById('scroll3');
+
+      // Set initial height to 0% for the line divs
+      contentDiv1.style.height = '0%';
+      contentDiv2.style.height = '0%';
+      contentDiv3.style.height = '0%';
+
+      // Function to expand the line when it comes into view
+      function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.height = '100%'; // Set height to 100% when the element is in view
+            observer.unobserve(entry.target);   // Stop observing after it animates
+          }
+        });
+      }
+
+      // IntersectionObserver configuration
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // Adjust margin if needed
+        threshold: 0.1 // Trigger when 10% of the target is visible
+      });
+
+      // Start observing the elements
+      observer.observe(contentDiv1);
+      observer.observe(contentDiv2);
+      observer.observe(contentDiv3);
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    // Select the "Events" link from the navbar
+    const eventsLink = document.querySelector('.navbar-link[href="events.html"]');
+
+    // Add an event listener to the "Events" link
+    eventsLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default behavior of the link
+
+      // Smooth scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Enables smooth scrolling
+      });
+    });
+  });
   </script>
 </body>
 
