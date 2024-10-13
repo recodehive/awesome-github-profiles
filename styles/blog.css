@@ -348,7 +348,7 @@ body.dark-mode .saved-blogs {
     /* Full width */
     height: 100%;
     /* Full height */
-    overflow: auto;
+    overflow: hidden;
     /* Enable scroll if needed */
     background-color: rgba(0, 0, 0, 0.5);
     /* Black with opacity */
