@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/modal.css">
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/pagination.css" />
+    <link rel="stylesheet" href="styles/speech.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
@@ -128,7 +129,29 @@
           class="search-input"
           placeholder="Search Nickname or Username..."
         />
+        
+          
         <i class="fas fa-search" style="position: relative;right: 40px;"></i>
+        <button class="mic-button">
+           <i class="fa fa-microphone"></i> 
+          <svg id="animated-voice" width="1rem" height="1rem" viewBox="0 0 100 100">
+            <g stroke="#fff" stroke-width="15">
+              <path d="M20,20 20,80">
+                <animate attributeName="d" values="M20,40 20,60;M20,20 20,80;M20,40 20,60" dur="1s" repeatCount="indefinite" />
+              </path>
+              <path d="M50,10 50,90">
+                <animate attributeName="d" values="M50,10 50,90;M50,40 50,60;M50,10 50,90" dur="1s" repeatCount="indefinite" />
+              </path>
+              <path d="M80,20 80,80">
+                <animate attributeName="d" values="M80,40 80,60;M80,20 80,80;M80,40 80,60" dur="1s" repeatCount="indefinite" />
+              </path>
+            </g>
+          </svg>
+        
+        </button>
+        
+        
+        
         <i class="fa-solid fa-caret-down dropdown" id="caret-down"></i>
       </div>
       <!-- Modal Structure -->
@@ -231,6 +254,7 @@
     <script src="scripts/dark-mode.js"></script>
     <script src="scripts/hamburger.js"></script>
     <script src="scripts/revealelementsonscroll.js"></script>
+    <script src="scripts/speechRecognition.js"></script>
     <!-- Added script for new Twitter logo -->
     <script src="https://kit.fontawesome.com/856f4a44d7.js" crossorigin="anonymous"></script>
 

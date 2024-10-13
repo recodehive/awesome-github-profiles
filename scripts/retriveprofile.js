@@ -230,7 +230,12 @@ document.addEventListener("DOMContentLoaded", function () {
   searchBar.addEventListener("input", () => {
     renderProfiles(searchBar.value);
   });
+  searchBar.addEventListener("click", () => {
+    renderProfiles(searchBar.value);
+  });
 });
+
+
 
 document.addEventListener("mouseover", function (e) {
   if (e.target.tagName === "IMG" && e.target.closest(".scroll-on-hover")) {
