@@ -633,7 +633,7 @@ body.dark-mode .navbar-link:hover {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #000;
+  /* color: #000; */
 }
 
 .footer-link {
@@ -689,6 +689,10 @@ body.dark-mode .footer-link {
 
 body.dark-mode .footer-info img {
   filter: brightness(0) invert(1);
+}
+
+body.dark-mode .footer-heading {
+  color: #fff;
 }
 
 body.dark-mode .footer-button {
