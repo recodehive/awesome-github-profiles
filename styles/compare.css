@@ -130,11 +130,25 @@ select{
     background-color: black;
 }
 #avatarImg1{
+    --s: 10px;
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #ffffff00;
+    outline: 1px solid #ffffff;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #ffffff00 25%, #ffffff 0);
+    /* border-radius: 50%; */
     width: 200px;
     height: 200px;
 }
 
 #avatarImg2{
+    --s: 10px;
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #ffffff00;
+    outline: 1px solid #ffffff;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #ffffff00 25%, #ffffff 0);
+    /* border-radius: 50%; */
     width: 200px;
     height: 200px;
 }
