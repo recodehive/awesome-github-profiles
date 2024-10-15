@@ -17,6 +17,89 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <style>
+      body{margin:0;padding:0;font-family: Poppins,sans-serif;}
+      * {box-sizing: border-box;}
+      
+      input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        outline:none;
+      
+      }
+      
+      input[type=submit] {
+        background-color: #0D92F4;
+        color: white;
+        padding: 10px 20px;
+        border: 2px solid #0D92F4;;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      input[type=submit]:hover {
+          border:2px solid #075d9c;
+        background-color:#F4F4F4;;
+        color:#075d9c;
+      }
+      
+      .container {
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form{
+         width:70%;
+          padding-block: 10px;
+          padding-inline: 20px;
+          background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(242, 232, 234, 0) 91.2% );
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-radius: 10px;;
+          display: flex;
+          flex-direction: column;
+         gap:20px;
+      }
+      h3{
+          text-align: center;
+          font-size: 32px;
+          margin-bottom:0;
+          color:#091057;
+          
+      }
+      p{
+          text-align: center;
+          font-size:14px;
+      }
+      label{
+          font-weight: bold;
+          color:#091057;
+          font-size:small;
+        
+      }
+      
+        
+      .form0{
+          display:flex;
+          gap:32px;
+      }
+      .form2{
+      width:50%;
+      text-align: left;
+      }
+      .form1{
+        text-align: left;
+          width:50%;
+      }
+      </style>
   </head>
   <body>
     <nav class="navbar">
@@ -134,7 +217,39 @@
            </div>
        </div>
     
-   
+       <div class="container">
+        <form id="contact-form">
+          
+         <div>
+          <h3>Contact Form</h3>
+          <p>Please take a moment to get in touch, we will get back to you shortly</p>
+         </div>
+          <div class="form0">
+      
+         
+         <div class="form1">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="from_name" >
+      
+          <label for="email">Email</label>
+          <input type="email" id="email" name="user_email" >
+          <label for="phone">Phone Number</label>
+          <input type="number" id="phone" name="number" >
+      
+      
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" >
+      
+         </div>
+          <div class="form2">
+              <label for="msg">Message</label>
+          <textarea id="subject" name="message" placeholder="Write something.." style="height:210px;"></textarea>
+      
+          <input type="submit" value="Send Message" class="btn">
+          </div>
+      </div>
+        </form>
+      </div>
     <footer id="Contact" class="footer-2">
       <div class="footer-container">
         <div class="footer-content">
@@ -196,7 +311,36 @@
     <script src="../scripts/retriveprofile.js"></script>
     <script src="../scripts/hamburger.js"></script>
     <script src="../scripts/dark-mode.js"></script>
-
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.0/dist/email.min.js">
+        </script>
+    <script type="text/javascript">
+       emailjs.init('9FwALyT04urfo1wyj');
+    
+    // Handle form submission
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent page reload on submit
+    
+      emailjs.sendForm(
+        'service_8ogy99w', // Your service ID
+        'template_j3ccezl', // Your template ID
+        this // 'this' refers to the form element
+      )
+      .then(() => {
+        alert('Message sent successfully!');
+        form.reset(); // Reset form fields after submission
+      })
+      .catch((error) => {
+        alert('Failed to send message. Please try again.');
+        console.error('Error:', error);
+      });
+    });
+    </script>
+    
+   
+      
+    
     <script>
 
         function active(){
