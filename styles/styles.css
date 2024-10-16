@@ -1319,7 +1319,8 @@ a {
     width: 55%;
   }
   .fa-search{
-    margin-left: 0.2rem;
+    margin-left: 0.3rem;
+    font-size: 0.9rem;
   }
 }
 
