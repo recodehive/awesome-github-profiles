@@ -49,7 +49,6 @@ body {
 
 .tag:hover {
   background-color: #ebebeb;
-
 }
 
 .search-bar {
@@ -64,7 +63,6 @@ body {
   border-radius: 25px;
   box-shadow: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, all 0.3s;
-  ;
 }
 
 .search-input:focus {
@@ -314,7 +312,6 @@ body.dark-mode ::-webkit-scrollbar-button {
 
 .tag:hover {
   background-color: #ebebeb;
-
 }
 
 .search-bar {
@@ -486,23 +483,22 @@ body.dark-mode .profile p {
   height: 0;
 }
 
-
 /* Checkbox Checked State */
-#theme-toggle:checked+label {
+#theme-toggle:checked + label {
   background-color: #555;
 }
 
-#theme-toggle:checked+label .sun-icon {
+#theme-toggle:checked + label .sun-icon {
   opacity: 0;
   /* Hide sun icon when checked */
 }
 
-#theme-toggle:checked+label .moon-icon {
+#theme-toggle:checked + label .moon-icon {
   opacity: 1;
   /* Show moon icon when checked */
 }
 
-#theme-toggle:checked+label .switch-button {
+#theme-toggle:checked + label .switch-button {
   transform: translateX(34px);
   /* Adjust to fit switch width */
   background-color: black;
@@ -565,11 +561,11 @@ body.dark-mode .toggle-label {
 }
 
 /* Dark mode adjustments */
-body.dark-mode .navbar, body.dark-mode .modal-content {
+body.dark-mode .navbar,
+body.dark-mode .modal-content {
   background-color: #333;
   color: #f0f0f0;
 }
-
 
 body.dark-mode .navbar-link {
   color: #f0f0f0;
@@ -630,12 +626,17 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-heading {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  /* color: #000; */
+  margin-bottom: 0.75rem;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
 }
-
+.footer-heading:hover {
+  color: #000; /* Darker on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted effect */
+}
 .footer-link {
   display: block;
   color: #000;
@@ -645,7 +646,10 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-link:hover {
+  color: #000; /* Darker on hover */
   text-decoration: underline;
+  transform: translateX(5px); /* Slight shift to the right */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
 .footer-description h5 {
@@ -716,7 +720,8 @@ body.dark-mode .footer-button:hover {
     justify-content: center;
   }
 
-  .footer-info, .footer-description {
+  .footer-info,
+  .footer-description {
     margin-bottom: 20px;
   }
 }
@@ -885,8 +890,6 @@ body.dark-mode .side-icons .icon-content a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   /* Slightly stronger shadow in dark mode */
 }
-
-
 
 /* Base styles */
 body {
@@ -1160,7 +1163,6 @@ body.dark-mode .side-icons a {
   opacity: 0;
   visibility: hidden;
   z-index: 9999;
-
 }
 
 #scrollToTop:hover {
@@ -1260,7 +1262,6 @@ a {
   cursor: pointer;
 }
 
-
 /* Toast Notification Styles */
 #toast-container {
   position: fixed;
@@ -1283,7 +1284,7 @@ a {
   position: relative;
   padding: 18px !important;
 }
-.fa-search{
+.fa-search {
   position: relative;
   right: 40px;
 }
@@ -1291,36 +1292,33 @@ a {
 /* Media query for mobile view */
 @media (max-width: 768px) {
   #toast-container {
-    width: 90vw;  /* Make the width take up most of the screen on mobile */
+    width: 90vw; /* Make the width take up most of the screen on mobile */
     top: 55px;
     right: 0;
-    left: 0;  /* Center the toast container horizontally */
-    margin: 0 auto;  /* Automatically center with equal margin */
+    left: 0; /* Center the toast container horizontally */
+    margin: 0 auto; /* Automatically center with equal margin */
   }
 
   .toast {
-    min-width: 90vw;  /* Make the toast width responsive to screen size */
+    min-width: 90vw; /* Make the toast width responsive to screen size */
     max-width: 90vw;
-    font-size: 12px;  /* Adjust font size for smaller screens */
+    font-size: 12px; /* Adjust font size for smaller screens */
   }
 
-  .search-input{
+  .search-input {
     padding-right: 35px;
   }
-  .fa-search{
+  .fa-search {
     position: relative;
     right: 35px;
   }
-  .fa-caret-down.dropdown{
+  .fa-caret-down.dropdown {
     position: relative;
     right: 15px;
   }
 }
 
-
-
-
-.line.show{
+.line.show {
   position: relative;
   /* bottom: -20px; */
   top: 95px;
@@ -1330,22 +1328,21 @@ a {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-.line.like{
-
+.line.like {
   background-color: #0e5711;
   animation: line-animate 2s ease-in-out forwards;
 }
-.line.unlike{
-
-  background-color: #F44336;
+.line.unlike {
+  background-color: #f44336;
   animation: line-animate 2s ease-in-out forwards;
 }
 @keyframes line-animate {
-    from{
-      width: 0px;
-    }to{
-      width: 100%;
-    }
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
 }
 .toast.show {
   display: block;
@@ -1366,12 +1363,11 @@ a {
   min-width: 200px;
   right: 0;
   width: 22vw;
-  padding: 10px;/* Green for likes */
-
+  padding: 10px; /* Green for likes */
 }
 
 .toast.unlike {
-  background-color: #F44336;
+  background-color: #f44336;
   color: #fff;
 
   font-size: 12px;
@@ -1385,10 +1381,18 @@ a {
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .toast .close-btn {
@@ -1404,12 +1408,12 @@ a {
   left: 0;
   width: 100%;
   height: 7px;
-  background-color: #333; 
-  z-index: 9999; 
+  background-color: #333;
+  z-index: 9999;
 }
 #progressBar {
   height: 100%;
-  width: 0%; 
+  width: 0%;
   background: white;
-  transition: width 0.2s ease; 
+  transition: width 0.2s ease;
 }
