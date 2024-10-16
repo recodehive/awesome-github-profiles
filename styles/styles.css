@@ -620,8 +620,8 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-logo {
-  max-width: 150px;
-  height: auto;
+  width: 150px;
+  height: 40px;
   cursor: pointer;
 }
 
@@ -630,12 +630,17 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-heading {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #000;
+  margin-bottom: 0.75rem;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
 }
-
+.footer-heading:hover {
+  color: #000; /* Darker on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted effect */
+}
 .footer-link {
   display: block;
   color: #000;
@@ -645,7 +650,10 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-link:hover {
+  color: #000; /* Darker on hover */
   text-decoration: underline;
+  transform: translateX(5px); /* Slight shift to the right */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
 .footer-description h5 {
