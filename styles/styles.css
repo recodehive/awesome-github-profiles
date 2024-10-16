@@ -1318,7 +1318,19 @@ a {
   }
 }
 
-.line.show {
+@media(max-width: 530px){
+  .search-input{
+    font-size: 12px;
+    width: 55%;
+  }
+  .fa-search{
+    margin-left: 0.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+.line.show{
   position: relative;
   /* bottom: -20px; */
   top: 95px;
