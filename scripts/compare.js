@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const login1 = document.getElementById('contributorSelect1').value;
         const login2 = document.getElementById('contributorSelect2').value;
 
+        document.getElementById('submitBtn').classList.add('hidden');
+        document.getElementById('loader').classList.remove('hidden');
+
         if (login1 && login2 && login1 !== login2) {
             Promise.all([
                 fetch(`https://api.github.com/users/${login1}`, {
@@ -44,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }).then(response => response.json()),
             ])
                 .then(([data1, data2]) => {
+
+                    document.getElementById('loader').classList.add('hidden');
+                    document.getElementById('submitBtn').classList.remove('hidden');
                     // Show the table
                     document
                         .getElementById("comparisonTable")
@@ -92,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .catch((error) => {
                     console.error("Error:", error);
+                    document.getElementById('loader').classList.add('hidden');
+                    document.getElementById('submitBtn').classList.remove('hidden');
                 });
         } else {
             alert("Please select two different contributors.");
