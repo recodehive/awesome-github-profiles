@@ -1,6 +1,8 @@
-/* General Styles */
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
 body {
-    font-family: Arial, sans-serif;
+    
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
@@ -160,6 +162,7 @@ select{
     width: 200px;
     height: 200px;
 }
+
 /* CSS for spinner */
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
@@ -185,6 +188,10 @@ select{
   }
   
   #progressBarContainer {
+
+
+#progressBarContainer {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -199,4 +206,6 @@ select{
     width: 0%;
     background: white;
     transition: width 0.2s ease;
+
 }
+

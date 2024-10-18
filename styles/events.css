@@ -1,3 +1,6 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 .timeline {
   position: relative;
   max-width: 1200px;
@@ -280,4 +283,82 @@ body.dark-mode .navbar-text {
 .scroll-animate {
   transition: all 1.5s ease-out;
   background-color: #3b9cdd !important;
+}
+
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+}
+
+#scrollToTop:hover {
+  background-color: #3e3e3e;
+}
+
+#scrollToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollToTop .arrow-icon {
+  fill: white;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+#scrollToTop:hover {
+  transform: translateY(-5px);
+  /* Move button up on hover */
+}
+
+#scrollToTop:hover .arrow-icon {
+  transform: translateY(-2px);
+  /* Move arrow up on hover */
+}
+
+body.dark-mode #scrollToTop {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode #scrollToTop:hover {
+  background-color: #b6b6b6ff;
+}
+
+body.dark-mode #scrollToTop .arrow-icon {
+  fill: black;
+}
+
+#progressBarContainer {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background-color: #333;
+  z-index: 9999;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: white;
+  transition: width 0.2s ease;
 }

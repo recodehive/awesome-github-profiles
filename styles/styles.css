@@ -1,5 +1,7 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 body {
-  font-family: "Roboto", sans-serif;
   background-color: #f0f0f0;
   color: #333;
   margin: 0;
@@ -435,8 +437,8 @@ body.dark-mode .profile p {
 /* Switch Button */
 .switch-button {
   position: absolute;
-  top: 1.5px;
-  left: 2px;
+  top: 2px;
+  left: 3px;
   width: 27px;
   height: 27px;
   background-color: #fff;
@@ -451,7 +453,7 @@ body.dark-mode .profile p {
   user-select: none;
   font-size: 25px;
   position: absolute;
-  top: 14.5px;
+  top: 50%;
   transform: translateY(-50%);
   transition: opacity 0.5s ease, color 0.5s ease;
 }
@@ -468,8 +470,7 @@ body.dark-mode .profile p {
 /* Moon Icon */
 .moon-icon {
   color: #bdc3c7;
-  right: -2px;
-  top: 14px;
+  right: 1px;
   /* Position from the right edge */
   opacity: 0;
   /* Initially hidden */
@@ -498,12 +499,41 @@ body.dark-mode .profile p {
   /* Show moon icon when checked */
 }
 
+
 #theme-toggle:checked + label .switch-button {
   transform: translateX(34px);
   /* Adjust to fit switch width */
   background-color: black;
 }
+/* Hide the checkbox itself */
+#theme-toggle-mobile {
+  opacity: 0;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 
+
+/* Checkbox Checked State */
+#theme-toggle-mobile:checked+label {
+  background-color: #555;
+}
+
+#theme-toggle-mobile:checked+label .sun-icon {
+  opacity: 0;
+  /* Hide sun icon when checked */
+}
+
+#theme-toggle-mobile:checked+label .moon-icon {
+  opacity: 1;
+  /* Show moon icon when checked */
+}
+
+#theme-toggle-mobile:checked+label .switch-button {
+  transform: translateX(30px);
+  /* Adjust to fit switch width */
+  background-color: black;
+}
 body.dark-mode .toggle-label {
   color: #f0f0f0;
 }
@@ -760,7 +790,6 @@ body.dark-mode .footer-button:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  z-index: 1000000;
 }
 
 .icon-content {
@@ -1318,7 +1347,19 @@ a {
   }
 }
 
-.line.show {
+@media(max-width: 530px){
+  .search-input{
+    font-size: 12px;
+    width: 55%;
+  }
+  .fa-search{
+    margin-left: 0.3rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+.line.show{
   position: relative;
   /* bottom: -20px; */
   top: 95px;
@@ -1403,6 +1444,7 @@ a {
 }
 
 #progressBarContainer {
+
   position: fixed;
   top: 0;
   left: 0;
@@ -1417,3 +1459,4 @@ a {
   background: white;
   transition: width 0.2s ease;
 }
+
