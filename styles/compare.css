@@ -163,7 +163,35 @@ select{
     height: 200px;
 }
 
+/* CSS for spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #08b461;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #progressBarContainer {
+
+
 #progressBarContainer {
+
     position: fixed;
     top: 0;
     left: 0;
@@ -178,4 +206,6 @@ select{
     width: 0%;
     background: white;
     transition: width 0.2s ease;
+
 }
+
