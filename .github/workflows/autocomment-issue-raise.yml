@@ -17,9 +17,9 @@ jobs:
         COMMENT=$(cat <<EOF
         {
           "body": "Thank you for creating this issue! 🎉 We'll look into it asap and assign you based on FCFS 
-          -[ ] In the meantime, please make sure to Join recode org [Invite link](https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization)
-          -[ ] The main code file is located in gh-pages branch 
-          -[ ] Watch the complete youtube [GitHub Tutorial](https://stream.recodehive.com/github) 
+          -[] In the meantime, please make sure to Join recode org [Invite link](https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization)
+          -[] The main code file is located in gh-pages branch 
+          -[] Watch the complete youtube [GitHub Tutorial](https://stream.recodehive.com/github) 
           Your contributions are highly appreciated! 
           😊 Don't forgot to follow me @sanjay-kv `More surprise when you raise PR`"
 
