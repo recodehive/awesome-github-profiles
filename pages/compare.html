@@ -19,6 +19,9 @@
 
   </head>
   <body>
+    <div id="progressBarContainer">
+      <div id="progressBar"></div>
+    </div>
     <nav class="navbar">
       <a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
         <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
@@ -78,6 +81,10 @@
         </div>
 
         <button id="submitBtn" class="button">Submit</button>
+        <div id="loader" class="hidden">
+          <div class="spinner"></div>
+        </div>
+
 
         <div id="comparisonTable" class="comparison hidden">
             <h2>Contributor Comparison</h2>
@@ -207,6 +214,9 @@
     <script src="../scripts/dark-mode.js"></script>
     <script src="../scripts/compare.js"></script>
     <script src="../scripts/hamburger.js"></script>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
   </body>
 </html>

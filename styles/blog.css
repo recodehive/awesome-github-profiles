@@ -1,5 +1,8 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
 body {
-    font-family: Arial, sans-serif;
+    
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -265,6 +268,12 @@ body.dark-mode .saved-blogs {
     margin-top: 20px;
     margin-bottom: 20px !important;
 }
+.dark-mode .ways1 a{
+    color: white !important;
+}
+.dark-mode .ways2 a{
+    color: white !important;
+}
 
 .ways2 {
     width: 80%;
@@ -359,7 +368,7 @@ body.dark-mode .saved-blogs {
     background-color: #fefefe;
     display: flex;
     max-width: 700px;
-    margin: 15% auto;
+    margin: 10% auto;
     /* 15% from the top and centered */
 
     border: 1px solid #888;
@@ -367,6 +376,40 @@ body.dark-mode .saved-blogs {
     /* Could be more or less, depending on screen size */
     position: relative;
     border-radius: 20px;
+}
+
+.main-popup-content .card-footer a:hover{
+    color: blue !important;
+    /* padding: 10px; */
+}
+
+/* Dark Mode */
+.dark-mode .main-popup-content, 
+.dark-mode .side-content{
+    background-color: black;
+}
+
+.dark-mode .main-popup-content i,
+.dark-mode .main-popup-content span,
+.dark-mode .main-popup-content h1,
+.dark-mode .main-popup-content p,
+.dark-mode .main-popup-content a,
+.dark-mode .main-popup-content .card-footer,
+.dark-mode .main-popup-content .side-content {
+    color: white !important;
+}
+
+/* Light Mode */
+.main-popup-content {
+    background-color: white;
+}
+
+.main-popup-content i,
+.main-popup-content span,
+.main-popup-content h1,
+.main-popup-content a,
+.main-popup-content .card-footer{
+    color: black !important;
 }
 
 .line {
@@ -456,7 +499,7 @@ body.dark-mode .saved-blogs {
 
 .side-content svg {
     position: relative;
-    top: 70px;
+    top: 100px;
 }
 
 @media only screen and (max-width:700px) {
@@ -489,13 +532,13 @@ body.dark-mode .saved-blogs {
     }
 }
 
-.dark-mode .main-popup-content h1 {
+/* .dark-mode .main-popup-content h1 {
     color: black !important;
 }
 
 .dark-mode .card-footer p {
     color: black !important;
-}
+} */
 
 .blog-save {
     display: flex;
@@ -602,3 +645,20 @@ body.dark-mode .saved-blogs {
     cursor: pointer;
   }
    */
+
+#progressBarContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #333;
+    z-index: 9999;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: white;
+    transition: width 0.2s ease;
+}

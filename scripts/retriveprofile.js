@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // If already liked, unlike it (remove from localStorage and decrement count)
             likedProfiles = likedProfiles.filter(id => id !== targetId);
             localStorage.setItem('isLike', JSON.stringify(likedProfiles));
-            showToast("You UnLiked the Profile", "like");
+            showToast("You Unliked the Profile", "like");
 
             // Change the heart icon color back and decrement the like count
             heartIcon.classList.remove("like-red");

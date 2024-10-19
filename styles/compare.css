@@ -1,6 +1,8 @@
-/* General Styles */
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
 body {
-    font-family: Arial, sans-serif;
+    
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
@@ -130,11 +132,80 @@ select{
     background-color: black;
 }
 #avatarImg1{
+    --s: 10px;
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #ffffff00;
+    outline: 1px solid #ffffff;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #ffffff00 25%, #ffffff 0);
+    /* border-radius: 50%; */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none; 
     width: 200px;
     height: 200px;
 }
 
 #avatarImg2{
+    --s: 10px;
+    padding: var(--s);
+    border: calc(2*var(--s)) solid #ffffff00;
+    outline: 1px solid #ffffff;
+    outline-offset: calc(-1*var(--s));
+    background: conic-gradient(from 90deg at 1px 1px, #ffffff00 25%, #ffffff 0);
+    /* border-radius: 50%; */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none; 
     width: 200px;
     height: 200px;
 }
+
+/* CSS for spinner */
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #08b461;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #progressBarContainer {
+
+
+#progressBarContainer {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #333;
+    z-index: 9999;
+}
+
+#progressBar {
+    height: 100%;
+    width: 0%;
+    background: white;
+    transition: width 0.2s ease;
+
+}
+
