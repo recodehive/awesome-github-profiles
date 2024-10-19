@@ -611,7 +611,8 @@ body.dark-mode .navbar-link:hover {
 }
 .footer-2 {
   background-color: #dedede;
-  padding: 40px 0;
+  padding: 30px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
 }
 
 .footer-container {
@@ -637,12 +638,16 @@ body.dark-mode .navbar-link:hover {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 50px;
+  margin-right: 50px;
+  margin-top: -30px;
 }
 
 .footer-description {
+  margin-top: -20px;
   flex: 1 1 300px;
   max-width: 500px;
-  margin-right: 30px;
+  margin-right: 100px;
+  margin-bottom: 10px;
 }
 
 .footer-logo {
@@ -656,10 +661,11 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-heading {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.75rem;
   color: #333;
+  cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
 }
 .footer-heading:hover {
@@ -673,19 +679,19 @@ body.dark-mode .navbar-link:hover {
   font-size: 0.875rem;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 .footer-link:hover {
   color: #000; /* Darker on hover */
-  text-decoration: underline;
   transform: translateX(5px); /* Slight shift to the right */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
 .footer-description h5 {
-  font-size: 1rem;
-  font-weight: normal;
-  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1.6rem;
 }
 
 .footer-button {
@@ -695,6 +701,7 @@ body.dark-mode .navbar-link:hover {
   border-radius: 0.25rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .footer-button:hover {
@@ -705,11 +712,13 @@ body.dark-mode .navbar-link:hover {
   border-top: 1px solid #ccc;
   padding: 10px 0;
   text-align: center;
+  font-weight: bold;
+  margin-bottom: -30px;
+  cursor: pointer;
 }
 
 .footer-copyright {
   font-size: 0.875rem;
-  margin: 0;
 }
 
 /* Dark mode styles */
