@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome GitHub Tools</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="shortcut icon" href="assets/recode-hive.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/pagination.css" />
+    <link rel="stylesheet" href="styles/speech.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles/hamburger.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <style>
+     
+   /* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #24292e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Main Content */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Categories Section */
+.categories {
+  margin-bottom: 40px;
+}
+
+.categories h2 {
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 2px solid #24292e;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+}
+
+.categories li {
+  display: inline-block;
+  margin: 5px;
+}
+
+.categories a {
+  text-decoration: none;
+  background-color: #24292e;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.categories a:hover {
+  background-color: #0366d6;
+}
+
+/* Tool Listings */
+.tool-listings {
+  margin-bottom: 40px;
+}
+
+.tool-listings h2 {
+  font-size: 1.5rem;
+  color: #24292e;
+  border-bottom: 2px solid #24292e;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.tool-listing {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.tool-listing:hover {
+  transform: translateY(-5px);
+}
+
+.tool-listing h3 {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+}
+
+.tool-listing p {
+  margin: 0 0 10px;
+}
+
+.tool-listing a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0366d6;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.tool-listing a:hover {
+  background-color: #0053a4;
+}
+
+.tool-listing .tags {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Search Bar */
+.search-bar {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 600px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+  border-color: #0366d6;
+  outline: none;
+}
+
+/* Filtering Section */
+.filtering {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.filtering select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s;
+}
+
+.filtering select:focus {
+  border-color: #0366d6;
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .categories a,
+  .tool-listing a {
+    padding: 8px 12px;
+  }
+
+  .tool-listing {
+    padding: 10px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+    <nav class="navbar">
+      <div class="navbar-left" onclick="window.location.href=index.html">
+        <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+        <span class="navbar-text">Recode Hive</span>
+      </div>
+      <div class="navbar-right">
+        <a href="pages/githubbadge.html" class="navbar-link">Github-Badge</a>
+        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+        class="navbar-link">Add Profile</a>
+        <a href="#" class="navbar-link">Tools</a>
+        <a href="./pages/events.html" class="navbar-link">Events</a>
+        <a href="./pages/blog.html" class="navbar-link">Learn</a>
+        <a href="./pages/compare.html" class="navbar-link">Compare</a>
+        <a href="login.html" class="navbar-link">Login</a>
+
+      
+        <div class="toggle-switch">
+          <input type="checkbox" id="theme-toggle">
+          <label for="theme-toggle">
+            <div class="switch-button">
+              <span class="material-icons sun-icon">wb_sunny</span>
+              <span class="material-icons moon-icon">brightness_2</span>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="pages/githubbadge.html" class="navbar-links">Github-Badge</a>
+      <a href="#" class="navbar-links">Tools</a>
+      <a href="./pages/events.html" class="navbar-links">Events</a>
+      <a href="pages/blog.html" class="navbar-links">Blog</a>
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
+      <a href="pages/blog.html" class="navbar-links">Learn</a>
+      <a href="login.html">Login</a>
+      
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle-mobile">
+        <label for="theme-toggle-mobile">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+    <div class="side-icons">
+      <div class="icon-content">
+        <a href="https://www.facebook.com/recodehive" target="_blank" aria-label="Facebook" data-social="facebook">
+          <i class="fab fa-facebook-f"></i>
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
+          <i class="fab fa-linkedin-in"></i>
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
+          <i class="fab fa-x-twitter"></i> 
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
+          <i class="fab fa-youtube"></i>
+          <div class="filled"></div>
+        </a>
+      </div>
+      <div class="icon-content">
+        <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
+          <i class="fab fa-github"></i>
+          <div class="filled"></div>
+        </a>
+      </div>
+    </div>
+    
+    <header>
+        <h1>Awesome GitHub Tools</h1>
+        <p>A collection of useful resources and tools for GitHub users, developers, and open-source enthusiasts.</p>
+    </header>
+    <main>
+        <section class="categories">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#github-tools">GitHub Tools</a></li>
+                <li><a href="#development-tools">Development Tools</a></li>
+                <li><a href="#productivity-tools">Productivity Tools</a></li>
+                <li><a href="#security-tools">Security Tools</a></li>
+            </ul>
+        </section>
+        <section class="tool-listings" id="github-tools">
+            <h2>GitHub Tools</h2>
+            <div class="tool-listing">
+                <h3>GitHub Repository Size Analyzer</h3>
+                <p>Analyze repository size and optimize storage.</p>
+                <a href="https://github.blog/developer-skills/github/measuring-the-many-sizes-of-a-git-repository/" target="_blank">Visit Tool</a>
+                <span class="tags">GitHub, Repository, Analytics</span>
+            </div>
+            <div class="tool-listing">
+                <h3>GitHub Issue Tracker</h3>
+                <p>Track and manage issues in your GitHub repository.</p>
+                <a href="https://github.com/issues" target="_blank">Visit Tool</a>
+                <span class="tags">GitHub, Issue Tracker</span>
+            </div>
+        </section>
+        <section class="tool-listings" id="development-tools">
+            <h2>Development Tools</h2>
+            <div class="tool-listing">
+                <h3>Visual Studio Code</h3>
+                <p>A lightweight, open-source code editor.</p>
+                <a href="https://code.visualstudio.com/" target="_blank">Visit Tool</a>
+                <span class="tags">Code Editor, IDE</span>
+            </div>
+            <div class="tool-listing">
+                <h3>Debuggy</h3>
+                <p>A debugging tool for developers.</p>
+                <a href="https://debuggy.io/" target="_blank">Visit Tool</a>
+                <span class="tags">Debugging, Development</span>
+            </div>
+        </section>
+        <section class="tool-listings" id="productivity-tools">
+            <h2>Productivity Tools</h2>
+            <div class="tool-listing">
+                <h3>Trello</h3>
+                <p>A project management tool.</p>
+                <a href="https://trello.com/" target="_blank">Visit Tool</a>
+                <span class="tags">Project Management, Collaboration</span>
+            </div>
+            <div class="tool-listing">
+                <h3>RescueTime</h3>
+                <p>A time management tool.</p>
+                <a href="https://www.rescuetime.com/" target="_blank">Visit Tool</a>
+                <span class="tags">Time Management, Productivity</span>
+            </div>
+        </section>
+        <section class="tool-listings" id="security-tools">
+            <h2>Security Tools</h2>
+            <div class="tool-listing">
+                <h3>OWASP ZAP</h3>
+                <p>A web application security scanner.</p>
+                <a href="https://www.zaproxy.org/" target="_blank">Visit Tool</a>
+                <span class="tags">Security, Vulnerability Scanner</span>
+            </div>
+            <div class="tool-listing">
+                <h3>Code Analysis Tool</h3>
+                <p>Analyze code for security vulnerabilities.</p>
+                <a href="https://www.codacy.com" target="_blank">Visit Tool</a>
+                <span class="tags">Code Analysis, Security</span>
+            </div>
+        </section>
+        <section class="search-bar">
+            <input type="search" id="search-input" placeholder="Search tools...">
+        </section>
+        <section class="filtering">
+            <select id="filter-select">
+                <option value="all">All</option>
+                <option value="github-tools">GitHub Tools</option>
+                <option value="development-tools">Development Tools</option>
+                <option value="productivity-tools">Productivity Tools</option>
+                <option value="security-tools">Security Tools</option>
+            </select>
+        </section>
+    </main>
+    <footer id="Contact" class="footer-2">
+        <div class="footer-container">
+          <div class="footer-content">
+            <div class="footer-info">
+              <img src="assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
+            </div>
+            <div class="footer-links">
+              <div class="footer-section">
+                <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+                <div>
+                  <a href="pages/help.html" class="footer-link">Contact Us</a>
+                  <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
+                </div>
+              </div>
+              <div class="footer-section">
+                <h6 class="footer-heading">GET INVOLVED</h6>
+                <div>
+                  <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
+                  <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-description">
+              <h5>We focus on quality content for the right people at the right time⏱. What we are trying to do is help you brand personal skills through GitHub readme.md, listing the best profiles, and giving you the opportunity to list your profile to the world 🌎.</h5>
+              <a href="pages/exploremore.html" class="footer-button">Explore</a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="footer-container">
+            <p class="footer-copyright">
+              &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤 by the community. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+      
+      
+      <script>
+          document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+      </script>
+      
+      </footer>
+  
+      <!-- Scroll to top -->
+      <button id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+          <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+        </svg>
+      </button>
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+  
+  <!-- Profile Add Modal -->
+  <div id="profileModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" id="closeModal">&times;</span>
+      <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+      <h2>Join the Recode Hive Community</h2>
+      <p>Become part of an exclusive community of developers. Showcase your GitHub profile and connect with like-minded individuals to explore new opportunities.</p>
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+         class="add-profile-button">Add Your Profile</a>
+    </div>
+  </div>
+  
+      <script src="scripts/profileModal.js"></script>
+  
+      <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+      <script src="scripts/ScrollToTop.js"></script>
+      <script src="scripts/retriveprofile.js"></script>
+      <script src="scripts/dark-mode.js"></script>
+      <script src="scripts/hamburger.js"></script>
+      <script src="scripts/revealelementsonscroll.js"></script>
+      <script src="scripts/speechRecognition.js"></script>
+      <!-- Added script for new Twitter logo -->
+      <script src="https://kit.fontawesome.com/856f4a44d7.js" crossorigin="anonymous"></script>
+      <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  
+
+  
+    
+  
+    
+    
+   <script>
+    
+    // Search functionality
+    const searchInput = document.getElementById('search-input');
+    searchInput.addEventListener('input', (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    const toolListings = document.querySelectorAll('.tool-listing');
+    toolListings.forEach((tool) => {
+    const toolName = tool.querySelector('h3').textContent.toLowerCase();
+    if (toolName.includes(searchTerm)) {
+    tool.style.display = 'block';
+    } else {
+    tool.style.display = 'none';
+    }
+    });
+    });
+    
+    // Filtering functionality
+    const filterSelect = document.getElementById('filter-select');
+    filterSelect.addEventListener('change', (e) => {
+    const filterValue = e.target.value;
+    const toolListings = document.querySelectorAll('.tool-listing');
+    toolListings.forEach((tool) => {
+    const toolTags = tool.querySelector('.tags').textContent;
+    if (toolTags.includes(filterValue)) {
+    tool.style.display = 'block';
+    } else {
+    tool.style.display = 'none';
+    }
+    });
+    });
+</script>
+<script src="script.js"></script>
+</body>
+</html>
