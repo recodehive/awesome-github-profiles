@@ -540,7 +540,7 @@ body.dark-mode .toggle-label {
 
 .navbar {
   position: sticky;
-  top: 0;
+  top: 7px;
   z-index: 1007;
   display: flex;
   justify-content: space-between;
@@ -559,12 +559,12 @@ body.dark-mode .toggle-label {
 .navbar-icon {
   width: 30px;
   height: 30px;
-  margin-right: 10px;
 }
 
 .navbar-text {
   font-size: 18px;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .navbar-right {
@@ -854,7 +854,7 @@ body.dark-mode .footer-button:hover {
 }
 
 .icon-content a[data-social="twitter"] .filled {
-  background-color: #030303;
+  background-color: #1da1f2;
 }
 
 .icon-content a[data-social="youtube"] .filled {
