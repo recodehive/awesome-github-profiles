@@ -708,8 +708,13 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-copyright {
+  color: #000;
   font-size: 0.875rem;
   margin: 0;
+}
+
+.footer-copyright:hover {
+  text-decoration: underline;
 }
 
 /* Dark mode styles */
