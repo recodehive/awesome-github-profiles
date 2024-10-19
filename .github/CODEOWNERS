@@ -12,12 +12,12 @@
 # This should make it easy to add new rules without breaking existing ones.
 
 # Global rule:
-*.js           @sanjay-kv
+*.js           @sanjay-kv @HimangshuSharma01
 
-*.css @sanjay-kv 
+*.css @sanjay-kv  @HimangshuSharma01
 
-*.html @sanjay-kv
+*.html @sanjay-kv @HimangshuSharma01
 
 # Reademe Files:
-*.md @sanjay-kv
+*.md @sanjay-kv @HimangshuSharma01
 
