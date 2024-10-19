@@ -157,22 +157,46 @@
               </path>
             </g>
           </svg>
-        
         </button>
-        
-        
-        
+
+        <button class="filter-button">
+          <i class="fas fa-filter"></i>
+        </button>
         <i class="fa-solid fa-caret-down dropdown" id="caret-down"></i>
       </div>
-      <!-- Modal Structure -->
-      <div id="myModal" class="modal1" style="left: 62%;">
-        <div class="modal-content">
-          <p class="views">Least Views</p>
-          <p class="views">Most Views</p>
-          <p class="views">Least Likes</p>
-          <p class="views">Most Likes</p>
+
+      <div class="filter-options" style="display: none;">
+        <div class="filter-section">
+          <h4>Skills</h4>
+          <div class="skill-tags">
+            <!-- Skill tags will be dynamically added here -->
+          </div>
+        </div>
+        <div class="filter-section">
+          <h4>Roles</h4>
+          <select id="role-filter">
+            <option value="">All Roles</option>
+            <option value="Developer">Developer</option>
+            <option value="Designer">Designer</option>
+            <option value="Data Scientist">Data Scientist</option>
+            <!-- Add more roles as needed -->
+          </select>
         </div>
       </div>
+
+      <!-- Modal Structure -->
+        <div id="myModal" class="modal1" style="left: 62%;">
+  <div class="modal-content">
+    <p class="views">Least Views</p>
+    <p class="views">Most Views</p>
+    <p class="views">Least Likes</p>
+    <p class="views">Most Likes</p>
+    <p class="views">Most Followers</p>
+    <p class="views">Least Followers</p>
+    <p class="views">Sort by Region</p>
+  </div>
+</div>
+   
       
 
       <div class="no-profiles-message"><h2>No profiles found</h2></div>

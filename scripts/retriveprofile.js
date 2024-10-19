@@ -410,102 +410,90 @@ function renderProfiles(filter = "") {
   });
 }
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('myModal');
   const caretDown = document.getElementById('caret-down');
   const closeButton = document.getElementById('close-button');
   const views = document.getElementsByClassName('views');
 
+  // Existing code for rendering profiles, pagination, etc.
+  // ... (keep all existing functions and code here)
 
-  Array.from(views).map((ele)=>{
-    ele.addEventListener(('click'),(e)=>{
-      close()
-      if(e.target.innerHTML=="Least Views"){
-   
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRef = firebase.database().ref(`profiles/${data.login}/views`)
-           profileRef.on("value", (snapshot) => {
-             if (snapshot.exists()) {
-              data['views']=snapshot.val()
-            } else {
-              // Handle new profile
-              profileRef.set(0);
-            }
-          });
-         })
-         contributors=contributors.sort((a,b)=>a.views-b.views)
-          renderProfiles();
-        });
-      }
-      else if(e.target.innerHTML=="Most Views"){
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRef = firebase.database().ref(`profiles/${data.login}/views`)
-           profileRef.on("value", (snapshot) => {
-             if (snapshot.exists()) {
-              data['views']=snapshot.val()
-            } else {
-              // Handle new profile
-              profileRef.set(0);
-            }
-          });
-         })
-         contributors=contributors.sort((a,b)=>b.views-a.views)
-          renderProfiles();
-        });
-      }else if(e.target.innerHTML=="Most Likes"){
-        console.log('sdsdsdsds')
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRef = firebase.database().ref(`profiles/${data.login}/likes`)
-           profileRef.on("value", (snapshot) => {
-             if (snapshot.exists()) {
-              data['likes']=snapshot.val()
-            } else {
-              // Handle new profile
-              profileRef.set(0);
-            }
-          });
-         })
-         contributors=contributors.sort((a,b)=>b.likes-a.likes)
-          renderProfiles();
-        });
-      }else{
+  // Sorting functionality
+  Array.from(views).forEach((ele) => {
 
-        fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
-        .then((response) => response.json())
-        .then((data) => {
-          contributors = data.contributors;
-         contributors.map((data)=>{
-           const profileRef = firebase.database().ref(`profiles/${data.login}/likes`)
-           profileRef.on("value", (snapshot) => {
-             if (snapshot.exists()) {
-              data['likes']=snapshot.val()
-            } else {
-              // Handle new profile
-              profileRef.set(0);
-            }
-          });
-         })
-         contributors=contributors.sort((a,b)=>a.likes-b.likes)
-          renderProfiles();
-        });
+
+    ele.addEventListener('click', (e) => {
+      close();
+      switch (e.target.innerHTML) {
+        case "Least Views":
+          sortProfiles('views', 'asc');
+          break;
+        case "Most Views":
+          sortProfiles('views', 'desc');
+          break;
+        case "Least Likes":
+          sortProfiles('likes', 'asc');
+          break;
+        case "Most Likes":
+          sortProfiles('likes', 'desc');
+          break;
+        case "Most Followers":
+          sortProfiles('followers', 'desc');
+          break;
+        case "Least Followers":
+          sortProfiles('followers', 'asc');
+          break;
+        case "Sort by Region":
+          sortByRegion();
+          break;
       }
-    })
-  })
-  caretDown.addEventListener('click', (event) => {
+    });
+  });
+
+  function sortProfiles(criteria, order) {
+    fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
+      .then((response) => response.json())
+      .then((data) => {
+        contributors = data.contributors;
+        const promises = contributors.map(contributor => 
+          fetch(`https://api.github.com/users/${contributor.login}`)
+            .then(res => res.json())
+            .then(userData => {
+              contributor[criteria] = userData[criteria] || 0;
+              return contributor;
+            })
+        );
+        
+        Promise.all(promises).then(() => {
+          contributors.sort((a, b) => order === 'asc' ? a[criteria] - b[criteria] : b[criteria] - a[criteria]);
+          renderProfiles("", 1, profilesPerPage);
+        });
+      });
+  }
+
+  function sortByRegion() {
+    fetch("https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/.all-contributorsrc")
+      .then((response) => response.json())
+      .then((data) => {
+        contributors = data.contributors;
+        const promises = contributors.map(contributor => 
+          fetch(`https://api.github.com/users/${contributor.login}`)
+            .then(res => res.json())
+            .then(userData => {
+              contributor.location = userData.location || 'Unknown';
+              return contributor;
+            })
+        );
+        
+        Promise.all(promises).then(() => {
+          contributors.sort((a, b) => a.location.localeCompare(b.location));
+          renderProfiles("", 1, profilesPerPage);
+        });
+      });
+  }
+
+ caretDown.addEventListener('click', (event) => {
     if(modal.style.display=="block"){
       modal.style.display="none"
       return 
@@ -526,23 +514,6 @@ document.addEventListener('DOMContentLoaded', () => {
     close()
   };
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Function to create and show toast notifications
 function showToast(message, type) {
@@ -575,3 +546,85 @@ function showToast(message, type) {
 }
 
 
+// ... (keep existing code) ...
+
+let currentFilters = {
+  skills: [],
+  role: ""
+};
+
+function renderProfiles(filter = "", page = 1, profilesPerPage = 12) {
+  const container = document.querySelector(".profiles");
+  container.innerHTML = "";
+  const noProfilesMessage = document.querySelector(".no-profiles-message");
+
+  const filteredContributors = contributors.filter(contributor => {
+    const nameMatch = contributor.login.toLowerCase().includes(filter.toLowerCase());
+    const skillMatch = currentFilters.skills.length === 0 || 
+      currentFilters.skills.some(skill => contributor.skills.includes(skill));
+    const roleMatch = !currentFilters.role || contributor.role === currentFilters.role;
+    return nameMatch && skillMatch && roleMatch;
+  });
+
+  // ... (keep existing pagination logic) ...
+
+  filteredContributors.slice(startIndex, endIndex).forEach((contributor) => {
+    // ... (keep existing profile rendering logic) ...
+
+    // Add skill tags to the profile card
+    const skillTags = document.createElement("div");
+    skillTags.className = "skill-tags";
+    contributor.skills.forEach(skill => {
+      const tag = document.createElement("span");
+      tag.className = "skill-tag";
+      tag.textContent = skill;
+      tag.addEventListener("click", () => addSkillFilter(skill));
+      skillTags.appendChild(tag);
+    });
+    card.appendChild(skillTags);
+
+    // ... (keep existing code for views and likes) ...
+  });
+
+  updatePaginationControls(page, profilesPerPage, filteredContributors.length);
+}
+
+function addSkillFilter(skill) {
+  if (!currentFilters.skills.includes(skill)) {
+    currentFilters.skills.push(skill);
+    updateFilterUI();
+    renderProfiles();
+  }
+}
+
+function updateFilterUI() {
+  const skillTags = document.querySelector(".skill-tags");
+  skillTags.innerHTML = "";
+  currentFilters.skills.forEach(skill => {
+    const tag = document.createElement("span");
+    tag.className = "skill-tag active";
+    tag.textContent = skill;
+    tag.addEventListener("click", () => removeSkillFilter(skill));
+    skillTags.appendChild(tag);
+  });
+}
+
+function removeSkillFilter(skill) {
+  currentFilters.skills = currentFilters.skills.filter(s => s !== skill);
+  updateFilterUI();
+  renderProfiles();
+}
+
+// Add event listener for role filter
+document.getElementById("role-filter").addEventListener("change", function() {
+  currentFilters.role = this.value;
+  renderProfiles();
+});
+
+// Add event listener for filter button
+document.querySelector(".filter-button").addEventListener("click", function() {
+  const filterOptions = document.querySelector(".filter-options");
+  filterOptions.style.display = filterOptions.style.display === "none" ? "block" : "none";
+});
+
+// ... (keep existing code) ...

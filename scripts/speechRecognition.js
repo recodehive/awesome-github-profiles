@@ -55,5 +55,36 @@ function startSearch() {
     });
   }
   
+  // ... (keep existing code) ...
+
+recognition.onresult = function (event) {
+  const transcript = event.results[0][0].transcript.toLowerCase();
+  const confidence = event.results[0][0].confidence;
+
+  input.value = transcript;
+  console.log(transcript);
+  input.focus();
+
+  // Check for skill or role keywords
+  const skills = ["javascript", "python", "react", "node.js"]; // Add more skills
+  const roles = ["developer", "designer", "data scientist"]; // Add more roles
+
+  skills.forEach(skill => {
+    if (transcript.includes(skill)) {
+      addSkillFilter(skill);
+    }
+  });
+
+  roles.forEach(role => {
+    if (transcript.includes(role)) {
+      document.getElementById("role-filter").value = role;
+      currentFilters.role = role;
+      renderProfiles();
+    }
+  });
+};
+
+// ... (keep existing code) ...
   startSearch();
+  
   
