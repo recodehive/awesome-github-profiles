@@ -1,5 +1,6 @@
-*{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+progressBar* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 body {
   background-color: #f0f0f0;
@@ -11,7 +12,7 @@ body {
 
 .container {
   max-width: 1200px;
-  margin: 100px ;
+  margin: 100px;
   padding: 200px;
   text-align: center;
   margin-top: 20%;
@@ -502,7 +503,6 @@ body.dark-mode .profile p {
   /* Show moon icon when checked */
 }
 
-
 #theme-toggle:checked + label .switch-button {
   transform: translateX(34px);
   /* Adjust to fit switch width */
@@ -516,23 +516,22 @@ body.dark-mode .profile p {
   height: 0;
 }
 
-
 /* Checkbox Checked State */
-#theme-toggle-mobile:checked+label {
+#theme-toggle-mobile:checked + label {
   background-color: #555;
 }
 
-#theme-toggle-mobile:checked+label .sun-icon {
+#theme-toggle-mobile:checked + label .sun-icon {
   opacity: 0;
   /* Hide sun icon when checked */
 }
 
-#theme-toggle-mobile:checked+label .moon-icon {
+#theme-toggle-mobile:checked + label .moon-icon {
   opacity: 1;
   /* Show moon icon when checked */
 }
 
-#theme-toggle-mobile:checked+label .switch-button {
+#theme-toggle-mobile:checked + label .switch-button {
   transform: translateX(30px);
   /* Adjust to fit switch width */
   background-color: black;
@@ -1356,19 +1355,18 @@ a {
   }
 }
 
-@media(max-width: 530px){
-  .search-input{
+@media (max-width: 530px) {
+  .search-input {
     font-size: 12px;
     width: 55%;
   }
-  .fa-search{
+  .fa-search {
     margin-left: 0.3rem;
     font-size: 0.9rem;
   }
 }
 
-
-.line.show{
+.line.show {
   position: relative;
   /* bottom: -20px; */
   top: 95px;
@@ -1453,7 +1451,6 @@ a {
 }
 
 #progressBarContainer {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -1465,7 +1462,17 @@ a {
 #progressBar {
   height: 100%;
   width: 0%;
-  background: white;
+  .navbar {
+    background: linear-gradient(
+      135deg,
+      #2b0751,
+      #52057b,
+      #832ab9,
+      #ff2a6d,
+      #ff5e7a,
+      #ff9e99
+    );
+  }
+
   transition: width 0.2s ease;
 }
-
