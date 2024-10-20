@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+  .tool-listing {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
