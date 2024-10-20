@@ -566,86 +566,6 @@ body.dark-mode .saved-blogs {
 .saved-blogs:hover {
     text-decoration: underline;
 }
-
-
-/* Toast Notification Styles */
-/* #toast-container {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-  }
-  
-  .toast {
-    display: none;
-    min-width: 200px;
-    margin-bottom: 10px;
-    padding: 15px;
-    top: 30px;
-    color: #fff;
-    border-radius: 5px;
-    font-size: 14px;
-    position: relative;
-    padding: 18px !important;
-  
-  }
-  .line{
-    position: absolute;
-    bottom: -20px;
-    z-index: 10000;
-    left: 0px;
-    height: 4px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: green;
-    animation: line-animate 2s ease-in-out forwards;
-  }
-  @keyframes line-animate {
-      from{
-        width: 0px;
-      }to{
-        width: 100%;
-      }
-  }
-  .toast.show {
-    display: block;
-    animation: fadeInOut 3s ease-out;
-  }
-  
-  .toast.like {
-    background: #12229d;
-    color: #fff;
-    
-    font-size: 12px;
-    font-size: 15px;
-    text-align: center;
-    font-weight: 600;
-    min-width: 200px;
-    right: 0;
-    width: 22vw;
-    padding: 10px;
-  
-  }
-  
-  .toast.unlike {
-    background-color: #F44336;
-  }
-  
-  @keyframes fadeInOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  
-  .toast .close-btn {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-    cursor: pointer;
-  }
-   */
-
 #progressBarContainer {
     position: fixed;
     top: 0;
@@ -661,4 +581,300 @@ body.dark-mode .saved-blogs {
     width: 0%;
     background: white;
     transition: width 0.2s ease;
+}
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+body img {
+    max-width: 100%;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 30%;
+    transition: transform 0.2s;
+}
+
+body.dark-mode .blog-card {
+    background-color: #333;
+}
+
+body.dark-mode .blog-card .excerpt,
+body.dark-mode .blog-card .save-btn {
+    color: #fff;
+}
+
+.saved-blogs {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.dark-mode .saved-blogs {
+    background-color: #333;
+    color: #fff;
+}
+
+.saved-blogs i {
+    margin-left: 10px;
+    transition: transform 0.3s;
+}
+
+.saved-blogs:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.02);
+}
+
+.saved-blogs:hover i {
+    transform: translateX(5px);
+}
+
+.blog-card .image-wrapper {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.blog-card img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.blog-card img:hover {
+    transform: scale(1.05);
+}
+
+.blog-card-content {
+    padding: 20px 10px;
+}
+
+.blog-card .category {
+    color: #ff4383;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.blog-card .blogtitle {
+    font-size: 18px;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.blog-card .blogtitle:hover {
+    color: #ff4383;
+}
+
+.blog-card .meta {
+    color: #999;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.blog-card .excerpt {
+    font-size: 14px;
+    color: #333;
+    margin: 15px 0;
+}
+
+.blog-card .read-more {
+    display: block;
+    width: fit-content;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.blog-card .read-more:hover {
+    background-color: #0056b3;
+}
+
+#categoryTags {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background: linear-gradient(135deg, #f0f0f0, #dcdcdc);
+    color: #333;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dark-mode .tag {
+    background: linear-gradient(135deg, #333, #222);
+    color: #fff;
+}
+
+.tag:hover {
+    background: linear-gradient(135deg, #e0e0e0, #c0c0c0);
+    transform: translateY(-2px);
+}
+
+.tag.active {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .blog-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card {
+        width: 100%;
+    }
+}
+
+.certificate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certificate-left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ways {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ways-content {
+    padding: 40px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.ways-content h1 {
+    font-size: 36px;
+}
+
+.ways-content p {
+    font-size: 18px;
+}
+
+.ways img {
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .ways img {
+        object-fit: inherit;
+        transform: scale(0.60);
+    }
+
+    .certificate-left {
+        width: 80%;
+    }
+
+    .ways-content h1 {
+        font-size: 24px;
+    }
+
+    .ways-content p {
+        font-size: 16px;
+    }
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fff;
+    max-width: 700px;
+    margin: 10% auto;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.popup-close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    color: #aaa;
+}
+
+.popup-close:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.popup-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.popup-button:hover {
+    background-color: #45a049;
 }
