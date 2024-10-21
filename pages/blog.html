@@ -1,242 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
-    <link rel="shortcut icon" href="../assets/blog-png.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/blog.css">
-    <link rel="stylesheet" href="../styles/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Blogs</title>
+	<link rel="shortcut icon" href="../assets/blog-png.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/blog.css">
+	<link rel="stylesheet" href="../styles/styles.css">
 	<link rel="stylesheet" href="../styles/hamburger.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
+
 <body>
 	<div id="preloader">
 		<div class="loader-wrapper">
-			<img src="recode-hive.png" alt="Logo" class="logo">  
+			<img src="recode-hive.png" alt="Logo" class="logo">
 			<div class="loader"></div>
 		</div>
-	</div> 
+	</div>
 	<style>
-	  #preloader {
-	  position: fixed;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  background-color: #ffffff;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-	  z-index: 9999;
-  }
-  
-  /* Loader and Logo Wrapper */
-  .loader-wrapper {
-	  position: relative;
-	  display: flex;
-	  justify-content: center;
-	  align-items: center;
-  }
-  
-  /* Logo styling */
-  .logo {
-	  width: 100px;  /* Adjust the size to your preference */
-	  height: auto;
-	  z-index: 2;  /* Ensure the logo appears above the spinner */
-	  animation: fadeIn 2s ease forwards;
-  }
-  
-  /* Fixed Diamond-shaped spinner with rotating color */
-  .loader {
-	  width: 120px;
-	  height: 120px;
-	  background-color: transparent;
-	  border: 10px solid transparent;  /* Transparent border for all sides */
-	  border-top: 10px solid #b0b0b0;  /* Lighter gray border */
-	  border-right: 10px solid #404040;  /* Darker gray (black) border */
-	  border-radius: 10px;
-	  position: absolute;
-	  transform: rotate(45deg);  /* Rotate the square to create a diamond shape */
-	  animation: spinColor 1.5s linear infinite;  /* Only color will spin */
-	  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
-  }
-  
-  /* Spinner color animation */
-  @keyframes spinColor {
-	  0% {
-		  border-top-color: #b0b0b0;  /* Lighter gray */
-		  border-right-color: #404040;  /* Darker gray */
-	  }
-	  50% {
-		  border-top-color: #404040;  /* Transition to darker gray */
-		  border-right-color: #b0b0b0;  /* Lighter gray */
-	  }
-	  100% {
-		  border-top-color: #b0b0b0;  /* Back to original */
-		  border-right-color: #404040;  /* Darker gray */
-	  }
-  }
-  
-  /* Fade-in effect for the logo */
-  @keyframes fadeIn {
-	  0% {
-		  opacity: 0;
-	  }
-	  100% {
-		  opacity: 1;
-	  }
-  }
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+
+		/* Loader and Logo Wrapper */
+		.loader-wrapper {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* Logo styling */
+		.logo {
+			width: 100px;
+			/* Adjust the size to your preference */
+			height: auto;
+			z-index: 2;
+			/* Ensure the logo appears above the spinner */
+			animation: fadeIn 2s ease forwards;
+		}
+
+		/* Fixed Diamond-shaped spinner with rotating color */
+		.loader {
+			width: 120px;
+			height: 120px;
+			background-color: transparent;
+			border: 10px solid transparent;
+			/* Transparent border for all sides */
+			border-top: 10px solid #b0b0b0;
+			/* Lighter gray border */
+			border-right: 10px solid #404040;
+			/* Darker gray (black) border */
+			border-radius: 10px;
+			position: absolute;
+			transform: rotate(45deg);
+			/* Rotate the square to create a diamond shape */
+			animation: spinColor 1.5s linear infinite;
+			/* Only color will spin */
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+			/* Subtle shadow for depth */
+		}
+
+		/* Spinner color animation */
+		@keyframes spinColor {
+			0% {
+				border-top-color: #b0b0b0;
+				/* Lighter gray */
+				border-right-color: #404040;
+				/* Darker gray */
+			}
+
+			50% {
+				border-top-color: #404040;
+				/* Transition to darker gray */
+				border-right-color: #b0b0b0;
+				/* Lighter gray */
+			}
+
+			100% {
+				border-top-color: #b0b0b0;
+				/* Back to original */
+				border-right-color: #404040;
+				/* Darker gray */
+			}
+		}
+
+		/* Fade-in effect for the logo */
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
 	</style>
 	<script>
-	  window.addEventListener('load', function() {
-		  const preloader = document.getElementById('preloader');
-		  const content = document.getElementById('content');
-  
-		  // Set a small timeout for better user experience
-		  setTimeout(function() {
-			  // Hide preloader
-			  preloader.style.opacity = '0';
-			  preloader.style.transition = 'opacity 1s ease-in-out';
-  
-			  // Show content after preloader fades out
-			  setTimeout(function() {
-				  preloader.style.display = 'none';
-				  content.style.display = 'block';
-			  }, 1000); // Delay for content display after preloader fade-out
-		  }, 500); // Initial delay before preloader starts fading out
-	  });
-  </script>
+		window.addEventListener('load', function () {
+			const preloader = document.getElementById('preloader');
+			const content = document.getElementById('content');
+
+			// Set a small timeout for better user experience
+			setTimeout(function () {
+				// Hide preloader
+				preloader.style.opacity = '0';
+				preloader.style.transition = 'opacity 1s ease-in-out';
+
+				// Show content after preloader fades out
+				setTimeout(function () {
+					preloader.style.display = 'none';
+					content.style.display = 'block';
+				}, 1000); // Delay for content display after preloader fade-out
+			}, 500); // Initial delay before preloader starts fading out
+		});
+	</script>
 	<div id="progressBarContainer">
 		<div id="progressBar"></div>
 	</div>
-    <!-- Navbar -->
+	<!-- Navbar -->
 	<nav class="navbar">
-        <a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
-          <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
-          <span class="navbar-text">Recode Hive</span>
+		<a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
+			<img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+			<span class="navbar-text">Recode Hive</span>
 		</a>
-        <div class="navbar-right">
-          <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
-          <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
-          class="navbar-link">Add Profile</a>
-          <a href="#" class="navbar-link">Tools</a>
-          <a href="events.html" class="navbar-link">Events</a>
-          <a href="blog.html" class="navbar-link">Learn</a>
-          <a href="compare.html" class="navbar-link">Compare</a>
-  
-         
-          <div class="toggle-switch">
-            <input type="checkbox" id="theme-toggle">
-            <label for="theme-toggle">
-              <div class="switch-button">
-                <span class="material-icons sun-icon">wb_sunny</span>
-                <span class="material-icons moon-icon">brightness_2</span>
-              </div>
-            </label>
-          </div>
-        </div>
-        <div class="hamburger" id="hamburger">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </nav> 
+		<div class="navbar-right">
+			<a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+			<a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+				class="navbar-link">Add Profile</a>
+			<a href="#" class="navbar-link">Tools</a>
+			<a href="events.html" class="navbar-link">Events</a>
+			<a href="blog.html" class="navbar-link">Learn</a>
+			<a href="compare.html" class="navbar-link">Compare</a>
+
+
+			<div class="toggle-switch">
+				<input type="checkbox" id="theme-toggle">
+				<label for="theme-toggle">
+					<div class="switch-button">
+						<span class="material-icons sun-icon">wb_sunny</span>
+						<span class="material-icons moon-icon">brightness_2</span>
+					</div>
+				</label>
+			</div>
+		</div>
+		<div class="hamburger" id="hamburger">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</nav>
 	<div class="mobile-menu" id="mobile-menu">
 		<a href="events.html" class="navbar-links">Events</a>
-            <a href="githubbadge.html" class="navbar-links">Github-Badge</a>
-            <a href="blog.html" class="navbar-links">Blog</a>
-            <a href="#" class="navbar-links">Add Profile</a>
-            <a href="blog.html" class="navbar-links">Learn</a>
-          <a href="#" class="navbar-links">Tools</a>
+		<a href="githubbadge.html" class="navbar-links">Github-Badge</a>
+		<a href="blog.html" class="navbar-links">Blog</a>
+		<a href="#" class="navbar-links">Add Profile</a>
+		<a href="blog.html" class="navbar-links">Learn</a>
+		<a href="#" class="navbar-links">Tools</a>
 	</div>
 	<div id="toast-container"></div>
 
-    <!-- blog page -->
+	<!-- blog page -->
 	<h1 style="text-align: center;">Blogs</h1>
-    <div style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
-        <a class="saved-blogs" href="saved-blogs.html" style="text-decoration: none;">
-            Saved Blogs
-            <i class="fas fa-arrow-right" aria-hidden="true"></i> <!-- Right Arrow Icon -->
-        </a>
-    </div>
+	<div style="width: 100%; display: flex; justify-content: center; margin-bottom: 20px;">
+		<a class="saved-blogs" href="saved-blogs.html" style="text-decoration: none;">
+			Saved Blogs
+			<i class="fas fa-arrow-right" aria-hidden="true"></i> <!-- Right Arrow Icon -->
+		</a>
+	</div>
+	<div class="search-bar-container">
+		<input type="text" id="search-input" placeholder="Search Blog...">
+		<button id="search-btn">Search</button>
+	</div>
+
 	<div id="categoryTags">
 		<span class="tag" data-category="all">All Categories</span>
 		<span class="tag" data-category="dev">Dev Labs Github</span>
 		<span class="tag" data-category="tech">Tech</span>
 	</div>
-    <div class="blog-container" id="blogContainer"></div>
+	<div class="blog-container" id="blogContainer"></div>
 
-    <div class="certificate">
-        <div class="certificate-left" >
-          <h1 style="font-size: 50px;margin-bottom: 0px !important;">Showcase your expertise with GitHub Certifications</h1>
-          <p>Getting GitHub certified is a resounding endorsement that validates your skills, credibility, trust, and knowledge of the technologies and developer tools that are used by more than 100 million developers worldwide.</p>
-        </div>
+	<div class="certificate">
+		<div class="certificate-left">
+			<h1 style="font-size: 50px;margin-bottom: 0px !important;">Showcase your expertise with GitHub
+				Certifications</h1>
+			<p>Getting GitHub certified is a resounding endorsement that validates your skills, credibility, trust, and
+				knowledge of the technologies and developer tools that are used by more than 100 million developers
+				worldwide.</p>
+		</div>
 		<div class="hoverImageWrapper">
-            <img class="hoverImage" src="https://images.ctfassets.net/wfutmusr1t3h/6eWM76bx8skN2B4Jpvkcil/3ccdafea4229f02802abbd9fc6634a3b/Certifiedtocat_full__2_.svg?w=1280&q=75" alt="Tilt Effect Image">
-        </div>
+			<img class="hoverImage"
+				src="https://images.ctfassets.net/wfutmusr1t3h/6eWM76bx8skN2B4Jpvkcil/3ccdafea4229f02802abbd9fc6634a3b/Certifiedtocat_full__2_.svg?w=1280&q=75"
+				alt="Tilt Effect Image">
+		</div>
 
-    </div>
-    <div class="ways">
-      <div class="ways1">
-          <img src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
-          <div class="ways-content">
-            <h1>GitHub Foundations</h1>
-            <p>Highlight your understanding of the foundational topics and concepts of collaborating, contributing, and working on GitHub. This exam covers collaboration, GitHub products, Git basics, and working within GitHub repositories.</p>
-            <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Foundations exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
+	</div>
+	<div class="ways">
+		<div class="ways1">
+			<img
+				src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
+			<div class="ways-content">
+				<h1>GitHub Foundations</h1>
+				<p>Highlight your understanding of the foundational topics and concepts of collaborating, contributing,
+					and working on GitHub. This exam covers collaboration, GitHub products, Git basics, and working
+					within GitHub repositories.</p>
+				<a href="https://examregistration.github.com/waitlist/copilot"
+					class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Foundations
+					exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+						class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path fill="currentColor"
+							d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+						</path>
+						<path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+					</svg></a>
 
-          </div>
-      </div>
-      <div class="ways2">
-        <img src="https://images.ctfassets.net/wfutmusr1t3h/7xYtTWmQ24xRlS68Do9qiG/a785c50083a579f2530863c230198e98/actions-river-image__1_.png?w=1280&q=75"></img>
-        <div class="ways-content">
-          <h1>GitHub Actions</h1>
-          <p>Certify your proficiency in automating workflows and accelerating development with GitHub Actions. Test your skills in streamlining workflows, automating tasks, and optimizing software pipelines, including CI/CD—all within customizable workflows.</p>
-          <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Actions exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
+			</div>
+		</div>
+		<div class="ways2">
+			<img
+				src="https://images.ctfassets.net/wfutmusr1t3h/7xYtTWmQ24xRlS68Do9qiG/a785c50083a579f2530863c230198e98/actions-river-image__1_.png?w=1280&q=75"></img>
+			<div class="ways-content">
+				<h1>GitHub Actions</h1>
+				<p>Certify your proficiency in automating workflows and accelerating development with GitHub Actions.
+					Test your skills in streamlining workflows, automating tasks, and optimizing software pipelines,
+					including CI/CD—all within customizable workflows.</p>
+				<a href="https://examregistration.github.com/waitlist/copilot"
+					class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Actions exam
+					<!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+						class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path fill="currentColor"
+							d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+						</path>
+						<path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+					</svg></a>
 
-        </div>
-    </div>
-    <div class="ways1">
-      <img src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
-      <div class="ways-content">
-        <h1>GitHub Advanced Security</h1>
-        <p>Highlight your code security knowledge with the GitHub Advanced Security certification. Validate your expertise in vulnerability identification, workflow security, and robust security implementation—elevating software integrity standards.</p>
-        <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Advanced Security exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
+			</div>
+		</div>
+		<div class="ways1">
+			<img
+				src="https://images.ctfassets.net/wfutmusr1t3h/1GLjOPbAzxSyIZy7Cvu2Do/4220986cedca60a0cb3eaa1ed21ca5fc/foundations-river-image__1_.png?w=1280&q=75"></img>
+			<div class="ways-content">
+				<h1>GitHub Advanced Security</h1>
+				<p>Highlight your code security knowledge with the GitHub Advanced Security certification. Validate your
+					expertise in vulnerability identification, workflow security, and robust security
+					implementation—elevating software integrity standards.</p>
+				<a href="https://examregistration.github.com/waitlist/copilot"
+					class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Advanced
+					Security exam <!-- --> <svg aria-hidden="true" role="presentation"
+						xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16"
+						viewBox="0 0 16 16" fill="none">
+						<path fill="currentColor"
+							d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+						</path>
+						<path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+					</svg></a>
 
-      </div>
-  </div>
-  <div class="ways2">
-    <img src="https://images.ctfassets.net/wfutmusr1t3h/KdVTNopvz0GZy60xzXCq0/86148a36ddf27ea1d22226f0113b8711/admin-river-image__1_.png?w=1280&q=75"></img>
-    <div class="ways-content">
-      <h1>GitHub Administration</h1>
-      <p>Certify your ability to optimize and manage a healthy GitHub environment with the GitHub Admin exam. Highlight your expertise in repository management, workflow optimization, and efficient collaboration to support successful projects on GitHub.</p>
-      <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Administration exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
+			</div>
+		</div>
+		<div class="ways2">
+			<img
+				src="https://images.ctfassets.net/wfutmusr1t3h/KdVTNopvz0GZy60xzXCq0/86148a36ddf27ea1d22226f0113b8711/admin-river-image__1_.png?w=1280&q=75"></img>
+			<div class="ways-content">
+				<h1>GitHub Administration</h1>
+				<p>Certify your ability to optimize and manage a healthy GitHub environment with the GitHub Admin exam.
+					Highlight your expertise in repository management, workflow optimization, and efficient
+					collaboration to support successful projects on GitHub.</p>
+				<a href="https://examregistration.github.com/waitlist/copilot"
+					class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Prepare for the GitHub Administration
+					exam <!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg"
+						class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+						<path fill="currentColor"
+							d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+						</path>
+						<path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+					</svg></a>
 
-    </div>
-  </div>
-  <div class="ways1">
-    <img src="https://images.ctfassets.net/wfutmusr1t3h/16DNDZjBQxyxijON2ciyMQ/291420cd4a3a38eaaee04c44da6aca80/gh-copilot__1_.jpg?w=1280&q=75"></img>
-    <div class="ways-content">
-      <h1>GitHub Copilot</h1>
-      <p>The GitHub Copilot certification exam evaluates your skill in using the AI-driven code completion tool in various programming languages, certifying your capability to optimize software development workflows efficiently.</p>
-      <a href="https://examregistration.github.com/waitlist/copilot" class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Coming Soon! Join the waitlist now for priority access<!-- --> <svg aria-hidden="true" role="presentation" xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16" viewBox="0 0 16 16" fill="none"><path fill="currentColor" d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"></path><path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path></svg></a>
-    </div>
-</div>
-    </div>
+			</div>
+		</div>
+		<div class="ways1">
+			<img
+				src="https://images.ctfassets.net/wfutmusr1t3h/16DNDZjBQxyxijON2ciyMQ/291420cd4a3a38eaaee04c44da6aca80/gh-copilot__1_.jpg?w=1280&q=75"></img>
+			<div class="ways-content">
+				<h1>GitHub Copilot</h1>
+				<p>The GitHub Copilot certification exam evaluates your skill in using the AI-driven code completion
+					tool in various programming languages, certifying your capability to optimize software development
+					workflows efficiently.</p>
+				<a href="https://examregistration.github.com/waitlist/copilot"
+					class="link-mktg color-fg-default text-semibold pt-3 f3-mktg">Coming Soon! Join the waitlist now for
+					priority access<!-- --> <svg aria-hidden="true" role="presentation"
+						xmlns="http://www.w3.org/2000/svg" class="octicon arrow-symbol-mktg" width="16" height="16"
+						viewBox="0 0 16 16" fill="none">
+						<path fill="currentColor"
+							d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z">
+						</path>
+						<path stroke="currentColor" d="M1.75 8H11" stroke-width="1.5" stroke-linecap="round"></path>
+					</svg></a>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- Popup -->
 	<div id="scrollPopup" class="popup">
-	<div class="popup-content">
-		<span id="closePopup" class="popup-close">&times;</span>
-		<div class="line">
-			<svg style="border-radius: 50%;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		width="90%" viewBox="0 0 87 97" enable-background="new 0 0 87 97" xml:space="preserve">
-	<path fill="#FEFEFD" opacity="1.000000" stroke="none" 
-		d="
+		<div class="popup-content">
+			<span id="closePopup" class="popup-close">&times;</span>
+			<div class="line">
+				<svg style="border-radius: 50%;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90%" viewBox="0 0 87 97"
+					enable-background="new 0 0 87 97" xml:space="preserve">
+					<path fill="#FEFEFD" opacity="1.000000" stroke="none" d="
 	M52.000000,98.000000 
 		C34.666668,98.000000 17.833340,98.000000 1.000007,98.000000 
 		C1.000005,65.666672 1.000005,33.333351 1.000002,1.000020 
@@ -280,9 +366,8 @@
 		C68.522446,74.155159 69.774460,74.568176 70.998337,74.998405 
 		C70.998337,74.998405 71.019554,74.971756 71.151154,75.454742 
 		C71.414780,75.645233 71.678406,75.835732 71.989746,75.994003 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M42.814728,56.917915 
 		C44.735630,55.059280 46.656532,53.200645 48.972717,51.012482 
 		C49.650890,50.513050 49.786469,50.263187 49.774742,49.933372 
@@ -304,9 +389,8 @@
 		C28.978693,75.439896 28.373775,74.887688 27.768858,74.335480 
 		C29.222521,67.827606 36.038979,65.334488 40.020294,59.993690 
 		C41.259991,58.715710 42.037357,57.816811 42.814728,56.917915 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.182907,68.981102 
 		C71.083313,59.311069 70.983711,49.641037 70.902718,39.198132 
 		C70.695831,37.416405 70.470345,36.407555 70.244850,35.398701 
@@ -348,9 +432,8 @@
 		C73.411659,38.436325 73.411659,36.521362 73.411659,34.606403 
 		C73.111237,34.589077 72.810814,34.571751 72.510391,34.554420 
 		C72.344063,35.279682 72.177734,36.004944 72.006462,37.502506 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M71.102127,69.315094 
 		C71.460381,62.397255 71.754677,55.814041 72.004555,49.229149 
 		C72.075020,47.372215 72.015312,45.510338 72.015312,43.650730 
@@ -363,113 +446,96 @@
 		C71.523613,71.735229 71.645828,71.584991 71.611847,71.528252 
 		C71.496826,71.336136 71.326492,71.177132 71.177292,71.005478 
 		C71.125305,70.553352 71.073326,70.101219 71.102127,69.315094 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.050812,35.649429 
 		C70.470345,36.407555 70.695831,37.416405 70.820099,38.739754 
 		C69.066147,39.707073 67.413437,40.359898 65.412491,41.013546 
 		C66.661766,39.309631 68.259270,37.604893 70.050812,35.649429 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.411789,71.936386 
 		C70.897736,72.363312 71.008820,72.817070 71.217659,73.608368 
 		C71.254623,74.114944 71.193832,74.283974 71.079758,74.717094 
 		C69.774460,74.568176 68.522446,74.155159 67.270432,73.742142 
 		C68.192596,73.149162 69.114761,72.556190 70.411789,71.936386 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M26.534929,29.033798 
 		C27.132116,29.767504 27.409191,30.565678 27.852219,31.642452 
 		C27.230253,31.921240 26.442335,31.921423 25.654419,31.921606 
 		C25.841219,30.980492 26.028017,30.039377 26.534929,29.033798 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M42.469231,56.940559 
 		C42.037357,57.816811 41.259991,58.715710 40.196754,59.708122 
 		C40.648506,58.855492 41.386116,57.909348 42.469231,56.940559 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M72.032196,76.391556 
 		C72.688026,75.972412 73.402725,75.895660 74.467712,75.729088 
 		C74.731407,78.052788 73.909119,78.633606 72.032196,76.391556 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.989815,32.523407 
 		C65.127777,32.055767 65.288239,31.970661 65.980881,31.854958 
 		C66.907700,31.948702 67.302330,32.073048 67.696968,32.197395 
 		C67.696968,32.197395 67.585091,32.435738 67.596397,32.566551 
 		C67.005562,33.195911 66.403427,33.694454 65.529816,34.306137 
 		C65.176338,33.914837 65.094330,33.410389 64.989815,32.523407 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.088943,35.224846 
 		C63.799076,36.048664 63.145828,36.827751 62.202377,37.706924 
 		C62.516640,36.931377 63.121101,36.055744 64.088943,35.224846 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M56.451111,42.940811 
 		C56.153450,43.675556 55.490784,44.434837 54.546173,45.321686 
 		C54.871525,44.621288 55.478817,43.793316 56.451111,42.940811 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M75.514763,31.715729 
 		C75.029381,30.830894 74.757973,29.694450 74.312820,28.249352 
 		C74.668968,29.115170 75.198853,30.289646 75.514763,31.715729 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M53.084148,46.223557 
 		C52.795620,47.045216 52.143719,47.824841 51.201920,48.705208 
 		C51.514935,47.931137 52.117855,47.056328 53.084148,46.223557 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M30.151054,32.347000 
 		C30.445093,32.078926 30.893473,32.016117 31.673735,32.038616 
 		C31.438877,32.266705 30.872133,32.409485 30.151054,32.347000 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M60.577812,39.016644 
 		C60.778534,39.260124 60.645523,39.512142 60.151550,39.734528 
 		C59.998711,39.496342 60.149872,39.269768 60.577812,39.016644 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M49.583733,50.016121 
 		C49.786469,50.263187 49.650890,50.513050 49.150513,50.729111 
 		C49.000263,50.491360 49.153500,50.265896 49.583733,50.016121 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.094955,71.265602 
 		C71.326492,71.177132 71.496826,71.336136 71.611847,71.528252 
 		C71.645828,71.584991 71.523613,71.735229 71.325287,71.944260 
 		C71.122597,71.872498 71.067604,71.699112 71.094955,71.265602 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M71.085358,75.213249 
 		C71.350899,75.068733 71.605530,75.265152 71.862747,75.793625 
 		C71.678406,75.835732 71.414780,75.645233 71.085358,75.213249 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.090919,33.378983 
 		C68.682999,33.485107 69.293556,33.898174 69.915916,34.619164 
 		C69.321617,34.513367 68.715500,34.099644 68.090919,33.378983 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.077522,32.140816 
 		C67.302330,32.073048 66.907700,31.948702 66.219208,31.722935 
 		C55.527794,31.404108 45.130329,31.182026 34.732578,30.974014 
@@ -480,21 +546,20 @@
 		C70.823547,29.093361 72.270447,30.175806 73.722847,30.763971 
 		C73.552231,31.204060 73.381615,31.644148 73.211006,32.084236 
 		C71.626694,32.084236 70.042389,32.084236 68.077522,32.140816 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M72.008934,37.116356 
 		C72.177734,36.004944 72.344063,35.279682 72.510391,34.554420 
 		C72.810814,34.571751 73.111237,34.589077 73.411659,34.606403 
 		C73.411659,36.521362 73.411659,38.436325 73.411659,40.351288 
 		C73.146149,40.391731 72.880646,40.432175 72.615135,40.472618 
 		C72.412247,39.482582 72.209351,38.492542 72.008934,37.116356 
-	z"/>
-	</svg>
-	<svg style="opacity: 0.75;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	width="90%" viewBox="0 0 87 97" enable-background="new 0 0 87 97" xml:space="preserve">
-	<path fill="#FEFEFD" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+				</svg>
+				<svg style="opacity: 0.75;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90%" viewBox="0 0 87 97"
+					enable-background="new 0 0 87 97" xml:space="preserve">
+					<path fill="#FEFEFD" opacity="1.000000" stroke="none" d="
 	M52.000000,98.000000 
 	C34.666668,98.000000 17.833340,98.000000 1.000007,98.000000 
 	C1.000005,65.666672 1.000005,33.333351 1.000002,1.000020 
@@ -538,9 +603,8 @@
 	C68.522446,74.155159 69.774460,74.568176 70.998337,74.998405 
 	C70.998337,74.998405 71.019554,74.971756 71.151154,75.454742 
 	C71.414780,75.645233 71.678406,75.835732 71.989746,75.994003 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M42.814728,56.917915 
 	C44.735630,55.059280 46.656532,53.200645 48.972717,51.012482 
 	C49.650890,50.513050 49.786469,50.263187 49.774742,49.933372 
@@ -562,9 +626,8 @@
 	C28.978693,75.439896 28.373775,74.887688 27.768858,74.335480 
 	C29.222521,67.827606 36.038979,65.334488 40.020294,59.993690 
 	C41.259991,58.715710 42.037357,57.816811 42.814728,56.917915 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.182907,68.981102 
 	C71.083313,59.311069 70.983711,49.641037 70.902718,39.198132 
 	C70.695831,37.416405 70.470345,36.407555 70.244850,35.398701 
@@ -606,9 +669,8 @@
 	C73.411659,38.436325 73.411659,36.521362 73.411659,34.606403 
 	C73.111237,34.589077 72.810814,34.571751 72.510391,34.554420 
 	C72.344063,35.279682 72.177734,36.004944 72.006462,37.502506 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M71.102127,69.315094 
 	C71.460381,62.397255 71.754677,55.814041 72.004555,49.229149 
 	C72.075020,47.372215 72.015312,45.510338 72.015312,43.650730 
@@ -621,113 +683,96 @@
 	C71.523613,71.735229 71.645828,71.584991 71.611847,71.528252 
 	C71.496826,71.336136 71.326492,71.177132 71.177292,71.005478 
 	C71.125305,70.553352 71.073326,70.101219 71.102127,69.315094 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.050812,35.649429 
 	C70.470345,36.407555 70.695831,37.416405 70.820099,38.739754 
 	C69.066147,39.707073 67.413437,40.359898 65.412491,41.013546 
 	C66.661766,39.309631 68.259270,37.604893 70.050812,35.649429 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.411789,71.936386 
 	C70.897736,72.363312 71.008820,72.817070 71.217659,73.608368 
 	C71.254623,74.114944 71.193832,74.283974 71.079758,74.717094 
 	C69.774460,74.568176 68.522446,74.155159 67.270432,73.742142 
 	C68.192596,73.149162 69.114761,72.556190 70.411789,71.936386 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M26.534929,29.033798 
 	C27.132116,29.767504 27.409191,30.565678 27.852219,31.642452 
 	C27.230253,31.921240 26.442335,31.921423 25.654419,31.921606 
 	C25.841219,30.980492 26.028017,30.039377 26.534929,29.033798 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M42.469231,56.940559 
 	C42.037357,57.816811 41.259991,58.715710 40.196754,59.708122 
 	C40.648506,58.855492 41.386116,57.909348 42.469231,56.940559 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M72.032196,76.391556 
 	C72.688026,75.972412 73.402725,75.895660 74.467712,75.729088 
 	C74.731407,78.052788 73.909119,78.633606 72.032196,76.391556 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.989815,32.523407 
 	C65.127777,32.055767 65.288239,31.970661 65.980881,31.854958 
 	C66.907700,31.948702 67.302330,32.073048 67.696968,32.197395 
 	C67.696968,32.197395 67.585091,32.435738 67.596397,32.566551 
 	C67.005562,33.195911 66.403427,33.694454 65.529816,34.306137 
 	C65.176338,33.914837 65.094330,33.410389 64.989815,32.523407 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.088943,35.224846 
 	C63.799076,36.048664 63.145828,36.827751 62.202377,37.706924 
 	C62.516640,36.931377 63.121101,36.055744 64.088943,35.224846 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M56.451111,42.940811 
 	C56.153450,43.675556 55.490784,44.434837 54.546173,45.321686 
 	C54.871525,44.621288 55.478817,43.793316 56.451111,42.940811 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M75.514763,31.715729 
 	C75.029381,30.830894 74.757973,29.694450 74.312820,28.249352 
 	C74.668968,29.115170 75.198853,30.289646 75.514763,31.715729 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M53.084148,46.223557 
 	C52.795620,47.045216 52.143719,47.824841 51.201920,48.705208 
 	C51.514935,47.931137 52.117855,47.056328 53.084148,46.223557 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M30.151054,32.347000 
 	C30.445093,32.078926 30.893473,32.016117 31.673735,32.038616 
 	C31.438877,32.266705 30.872133,32.409485 30.151054,32.347000 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M60.577812,39.016644 
 	C60.778534,39.260124 60.645523,39.512142 60.151550,39.734528 
 	C59.998711,39.496342 60.149872,39.269768 60.577812,39.016644 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M49.583733,50.016121 
 	C49.786469,50.263187 49.650890,50.513050 49.150513,50.729111 
 	C49.000263,50.491360 49.153500,50.265896 49.583733,50.016121 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.094955,71.265602 
 	C71.326492,71.177132 71.496826,71.336136 71.611847,71.528252 
 	C71.645828,71.584991 71.523613,71.735229 71.325287,71.944260 
 	C71.122597,71.872498 71.067604,71.699112 71.094955,71.265602 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M71.085358,75.213249 
 	C71.350899,75.068733 71.605530,75.265152 71.862747,75.793625 
 	C71.678406,75.835732 71.414780,75.645233 71.085358,75.213249 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.090919,33.378983 
 	C68.682999,33.485107 69.293556,33.898174 69.915916,34.619164 
 	C69.321617,34.513367 68.715500,34.099644 68.090919,33.378983 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.077522,32.140816 
 	C67.302330,32.073048 66.907700,31.948702 66.219208,31.722935 
 	C55.527794,31.404108 45.130329,31.182026 34.732578,30.974014 
@@ -738,21 +783,20 @@
 	C70.823547,29.093361 72.270447,30.175806 73.722847,30.763971 
 	C73.552231,31.204060 73.381615,31.644148 73.211006,32.084236 
 	C71.626694,32.084236 70.042389,32.084236 68.077522,32.140816 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M72.008934,37.116356 
 	C72.177734,36.004944 72.344063,35.279682 72.510391,34.554420 
 	C72.810814,34.571751 73.111237,34.589077 73.411659,34.606403 
 	C73.411659,36.521362 73.411659,38.436325 73.411659,40.351288 
 	C73.146149,40.391731 72.880646,40.432175 72.615135,40.472618 
 	C72.412247,39.482582 72.209351,38.492542 72.008934,37.116356 
-	z"/>
-	</svg>
-	<svg style="opacity: 0.55;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	width="90%" viewBox="0 0 87 97" enable-background="new 0 0 87 97" xml:space="preserve">
-	<path fill="#FEFEFD" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+				</svg>
+				<svg style="opacity: 0.55;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90%" viewBox="0 0 87 97"
+					enable-background="new 0 0 87 97" xml:space="preserve">
+					<path fill="#FEFEFD" opacity="1.000000" stroke="none" d="
 	M52.000000,98.000000 
 	C34.666668,98.000000 17.833340,98.000000 1.000007,98.000000 
 	C1.000005,65.666672 1.000005,33.333351 1.000002,1.000020 
@@ -796,9 +840,8 @@
 	C68.522446,74.155159 69.774460,74.568176 70.998337,74.998405 
 	C70.998337,74.998405 71.019554,74.971756 71.151154,75.454742 
 	C71.414780,75.645233 71.678406,75.835732 71.989746,75.994003 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M42.814728,56.917915 
 	C44.735630,55.059280 46.656532,53.200645 48.972717,51.012482 
 	C49.650890,50.513050 49.786469,50.263187 49.774742,49.933372 
@@ -820,9 +863,8 @@
 	C28.978693,75.439896 28.373775,74.887688 27.768858,74.335480 
 	C29.222521,67.827606 36.038979,65.334488 40.020294,59.993690 
 	C41.259991,58.715710 42.037357,57.816811 42.814728,56.917915 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.182907,68.981102 
 	C71.083313,59.311069 70.983711,49.641037 70.902718,39.198132 
 	C70.695831,37.416405 70.470345,36.407555 70.244850,35.398701 
@@ -864,9 +906,8 @@
 	C73.411659,38.436325 73.411659,36.521362 73.411659,34.606403 
 	C73.111237,34.589077 72.810814,34.571751 72.510391,34.554420 
 	C72.344063,35.279682 72.177734,36.004944 72.006462,37.502506 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M71.102127,69.315094 
 	C71.460381,62.397255 71.754677,55.814041 72.004555,49.229149 
 	C72.075020,47.372215 72.015312,45.510338 72.015312,43.650730 
@@ -879,113 +920,96 @@
 	C71.523613,71.735229 71.645828,71.584991 71.611847,71.528252 
 	C71.496826,71.336136 71.326492,71.177132 71.177292,71.005478 
 	C71.125305,70.553352 71.073326,70.101219 71.102127,69.315094 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.050812,35.649429 
 	C70.470345,36.407555 70.695831,37.416405 70.820099,38.739754 
 	C69.066147,39.707073 67.413437,40.359898 65.412491,41.013546 
 	C66.661766,39.309631 68.259270,37.604893 70.050812,35.649429 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.411789,71.936386 
 	C70.897736,72.363312 71.008820,72.817070 71.217659,73.608368 
 	C71.254623,74.114944 71.193832,74.283974 71.079758,74.717094 
 	C69.774460,74.568176 68.522446,74.155159 67.270432,73.742142 
 	C68.192596,73.149162 69.114761,72.556190 70.411789,71.936386 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M26.534929,29.033798 
 	C27.132116,29.767504 27.409191,30.565678 27.852219,31.642452 
 	C27.230253,31.921240 26.442335,31.921423 25.654419,31.921606 
 	C25.841219,30.980492 26.028017,30.039377 26.534929,29.033798 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M42.469231,56.940559 
 	C42.037357,57.816811 41.259991,58.715710 40.196754,59.708122 
 	C40.648506,58.855492 41.386116,57.909348 42.469231,56.940559 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M72.032196,76.391556 
 	C72.688026,75.972412 73.402725,75.895660 74.467712,75.729088 
 	C74.731407,78.052788 73.909119,78.633606 72.032196,76.391556 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.989815,32.523407 
 	C65.127777,32.055767 65.288239,31.970661 65.980881,31.854958 
 	C66.907700,31.948702 67.302330,32.073048 67.696968,32.197395 
 	C67.696968,32.197395 67.585091,32.435738 67.596397,32.566551 
 	C67.005562,33.195911 66.403427,33.694454 65.529816,34.306137 
 	C65.176338,33.914837 65.094330,33.410389 64.989815,32.523407 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.088943,35.224846 
 	C63.799076,36.048664 63.145828,36.827751 62.202377,37.706924 
 	C62.516640,36.931377 63.121101,36.055744 64.088943,35.224846 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M56.451111,42.940811 
 	C56.153450,43.675556 55.490784,44.434837 54.546173,45.321686 
 	C54.871525,44.621288 55.478817,43.793316 56.451111,42.940811 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M75.514763,31.715729 
 	C75.029381,30.830894 74.757973,29.694450 74.312820,28.249352 
 	C74.668968,29.115170 75.198853,30.289646 75.514763,31.715729 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M53.084148,46.223557 
 	C52.795620,47.045216 52.143719,47.824841 51.201920,48.705208 
 	C51.514935,47.931137 52.117855,47.056328 53.084148,46.223557 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M30.151054,32.347000 
 	C30.445093,32.078926 30.893473,32.016117 31.673735,32.038616 
 	C31.438877,32.266705 30.872133,32.409485 30.151054,32.347000 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M60.577812,39.016644 
 	C60.778534,39.260124 60.645523,39.512142 60.151550,39.734528 
 	C59.998711,39.496342 60.149872,39.269768 60.577812,39.016644 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M49.583733,50.016121 
 	C49.786469,50.263187 49.650890,50.513050 49.150513,50.729111 
 	C49.000263,50.491360 49.153500,50.265896 49.583733,50.016121 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.094955,71.265602 
 	C71.326492,71.177132 71.496826,71.336136 71.611847,71.528252 
 	C71.645828,71.584991 71.523613,71.735229 71.325287,71.944260 
 	C71.122597,71.872498 71.067604,71.699112 71.094955,71.265602 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M71.085358,75.213249 
 	C71.350899,75.068733 71.605530,75.265152 71.862747,75.793625 
 	C71.678406,75.835732 71.414780,75.645233 71.085358,75.213249 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.090919,33.378983 
 	C68.682999,33.485107 69.293556,33.898174 69.915916,34.619164 
 	C69.321617,34.513367 68.715500,34.099644 68.090919,33.378983 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.077522,32.140816 
 	C67.302330,32.073048 66.907700,31.948702 66.219208,31.722935 
 	C55.527794,31.404108 45.130329,31.182026 34.732578,30.974014 
@@ -996,21 +1020,20 @@
 	C70.823547,29.093361 72.270447,30.175806 73.722847,30.763971 
 	C73.552231,31.204060 73.381615,31.644148 73.211006,32.084236 
 	C71.626694,32.084236 70.042389,32.084236 68.077522,32.140816 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M72.008934,37.116356 
 	C72.177734,36.004944 72.344063,35.279682 72.510391,34.554420 
 	C72.810814,34.571751 73.111237,34.589077 73.411659,34.606403 
 	C73.411659,36.521362 73.411659,38.436325 73.411659,40.351288 
 	C73.146149,40.391731 72.880646,40.432175 72.615135,40.472618 
 	C72.412247,39.482582 72.209351,38.492542 72.008934,37.116356 
-	z"/>
-	</svg>
-	<svg style="opacity: 0.35;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	width="90%" viewBox="0 0 87 97" enable-background="new 0 0 87 97" xml:space="preserve">
-	<path fill="#FEFEFD" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+				</svg>
+				<svg style="opacity: 0.35;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90%" viewBox="0 0 87 97"
+					enable-background="new 0 0 87 97" xml:space="preserve">
+					<path fill="#FEFEFD" opacity="1.000000" stroke="none" d="
 	M52.000000,98.000000 
 	C34.666668,98.000000 17.833340,98.000000 1.000007,98.000000 
 	C1.000005,65.666672 1.000005,33.333351 1.000002,1.000020 
@@ -1054,9 +1077,8 @@
 	C68.522446,74.155159 69.774460,74.568176 70.998337,74.998405 
 	C70.998337,74.998405 71.019554,74.971756 71.151154,75.454742 
 	C71.414780,75.645233 71.678406,75.835732 71.989746,75.994003 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M42.814728,56.917915 
 	C44.735630,55.059280 46.656532,53.200645 48.972717,51.012482 
 	C49.650890,50.513050 49.786469,50.263187 49.774742,49.933372 
@@ -1078,9 +1100,8 @@
 	C28.978693,75.439896 28.373775,74.887688 27.768858,74.335480 
 	C29.222521,67.827606 36.038979,65.334488 40.020294,59.993690 
 	C41.259991,58.715710 42.037357,57.816811 42.814728,56.917915 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.182907,68.981102 
 	C71.083313,59.311069 70.983711,49.641037 70.902718,39.198132 
 	C70.695831,37.416405 70.470345,36.407555 70.244850,35.398701 
@@ -1122,9 +1143,8 @@
 	C73.411659,38.436325 73.411659,36.521362 73.411659,34.606403 
 	C73.111237,34.589077 72.810814,34.571751 72.510391,34.554420 
 	C72.344063,35.279682 72.177734,36.004944 72.006462,37.502506 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M71.102127,69.315094 
 	C71.460381,62.397255 71.754677,55.814041 72.004555,49.229149 
 	C72.075020,47.372215 72.015312,45.510338 72.015312,43.650730 
@@ -1137,113 +1157,96 @@
 	C71.523613,71.735229 71.645828,71.584991 71.611847,71.528252 
 	C71.496826,71.336136 71.326492,71.177132 71.177292,71.005478 
 	C71.125305,70.553352 71.073326,70.101219 71.102127,69.315094 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.050812,35.649429 
 	C70.470345,36.407555 70.695831,37.416405 70.820099,38.739754 
 	C69.066147,39.707073 67.413437,40.359898 65.412491,41.013546 
 	C66.661766,39.309631 68.259270,37.604893 70.050812,35.649429 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.411789,71.936386 
 	C70.897736,72.363312 71.008820,72.817070 71.217659,73.608368 
 	C71.254623,74.114944 71.193832,74.283974 71.079758,74.717094 
 	C69.774460,74.568176 68.522446,74.155159 67.270432,73.742142 
 	C68.192596,73.149162 69.114761,72.556190 70.411789,71.936386 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M26.534929,29.033798 
 	C27.132116,29.767504 27.409191,30.565678 27.852219,31.642452 
 	C27.230253,31.921240 26.442335,31.921423 25.654419,31.921606 
 	C25.841219,30.980492 26.028017,30.039377 26.534929,29.033798 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M42.469231,56.940559 
 	C42.037357,57.816811 41.259991,58.715710 40.196754,59.708122 
 	C40.648506,58.855492 41.386116,57.909348 42.469231,56.940559 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M72.032196,76.391556 
 	C72.688026,75.972412 73.402725,75.895660 74.467712,75.729088 
 	C74.731407,78.052788 73.909119,78.633606 72.032196,76.391556 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.989815,32.523407 
 	C65.127777,32.055767 65.288239,31.970661 65.980881,31.854958 
 	C66.907700,31.948702 67.302330,32.073048 67.696968,32.197395 
 	C67.696968,32.197395 67.585091,32.435738 67.596397,32.566551 
 	C67.005562,33.195911 66.403427,33.694454 65.529816,34.306137 
 	C65.176338,33.914837 65.094330,33.410389 64.989815,32.523407 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.088943,35.224846 
 	C63.799076,36.048664 63.145828,36.827751 62.202377,37.706924 
 	C62.516640,36.931377 63.121101,36.055744 64.088943,35.224846 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M56.451111,42.940811 
 	C56.153450,43.675556 55.490784,44.434837 54.546173,45.321686 
 	C54.871525,44.621288 55.478817,43.793316 56.451111,42.940811 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M75.514763,31.715729 
 	C75.029381,30.830894 74.757973,29.694450 74.312820,28.249352 
 	C74.668968,29.115170 75.198853,30.289646 75.514763,31.715729 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M53.084148,46.223557 
 	C52.795620,47.045216 52.143719,47.824841 51.201920,48.705208 
 	C51.514935,47.931137 52.117855,47.056328 53.084148,46.223557 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M30.151054,32.347000 
 	C30.445093,32.078926 30.893473,32.016117 31.673735,32.038616 
 	C31.438877,32.266705 30.872133,32.409485 30.151054,32.347000 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M60.577812,39.016644 
 	C60.778534,39.260124 60.645523,39.512142 60.151550,39.734528 
 	C59.998711,39.496342 60.149872,39.269768 60.577812,39.016644 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M49.583733,50.016121 
 	C49.786469,50.263187 49.650890,50.513050 49.150513,50.729111 
 	C49.000263,50.491360 49.153500,50.265896 49.583733,50.016121 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.094955,71.265602 
 	C71.326492,71.177132 71.496826,71.336136 71.611847,71.528252 
 	C71.645828,71.584991 71.523613,71.735229 71.325287,71.944260 
 	C71.122597,71.872498 71.067604,71.699112 71.094955,71.265602 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M71.085358,75.213249 
 	C71.350899,75.068733 71.605530,75.265152 71.862747,75.793625 
 	C71.678406,75.835732 71.414780,75.645233 71.085358,75.213249 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.090919,33.378983 
 	C68.682999,33.485107 69.293556,33.898174 69.915916,34.619164 
 	C69.321617,34.513367 68.715500,34.099644 68.090919,33.378983 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.077522,32.140816 
 	C67.302330,32.073048 66.907700,31.948702 66.219208,31.722935 
 	C55.527794,31.404108 45.130329,31.182026 34.732578,30.974014 
@@ -1254,21 +1257,20 @@
 	C70.823547,29.093361 72.270447,30.175806 73.722847,30.763971 
 	C73.552231,31.204060 73.381615,31.644148 73.211006,32.084236 
 	C71.626694,32.084236 70.042389,32.084236 68.077522,32.140816 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M72.008934,37.116356 
 	C72.177734,36.004944 72.344063,35.279682 72.510391,34.554420 
 	C72.810814,34.571751 73.111237,34.589077 73.411659,34.606403 
 	C73.411659,36.521362 73.411659,38.436325 73.411659,40.351288 
 	C73.146149,40.391731 72.880646,40.432175 72.615135,40.472618 
 	C72.412247,39.482582 72.209351,38.492542 72.008934,37.116356 
-	z"/>
-	</svg>
-	<svg style="opacity: 0.15;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	width="90%" viewBox="0 0 87 97" enable-background="new 0 0 87 97" xml:space="preserve">
-	<path fill="#FEFEFD" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+				</svg>
+				<svg style="opacity: 0.15;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="90%" viewBox="0 0 87 97"
+					enable-background="new 0 0 87 97" xml:space="preserve">
+					<path fill="#FEFEFD" opacity="1.000000" stroke="none" d="
 	M52.000000,98.000000 
 	C34.666668,98.000000 17.833340,98.000000 1.000007,98.000000 
 	C1.000005,65.666672 1.000005,33.333351 1.000002,1.000020 
@@ -1312,9 +1314,8 @@
 	C68.522446,74.155159 69.774460,74.568176 70.998337,74.998405 
 	C70.998337,74.998405 71.019554,74.971756 71.151154,75.454742 
 	C71.414780,75.645233 71.678406,75.835732 71.989746,75.994003 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M42.814728,56.917915 
 	C44.735630,55.059280 46.656532,53.200645 48.972717,51.012482 
 	C49.650890,50.513050 49.786469,50.263187 49.774742,49.933372 
@@ -1336,9 +1337,8 @@
 	C28.978693,75.439896 28.373775,74.887688 27.768858,74.335480 
 	C29.222521,67.827606 36.038979,65.334488 40.020294,59.993690 
 	C41.259991,58.715710 42.037357,57.816811 42.814728,56.917915 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.182907,68.981102 
 	C71.083313,59.311069 70.983711,49.641037 70.902718,39.198132 
 	C70.695831,37.416405 70.470345,36.407555 70.244850,35.398701 
@@ -1380,9 +1380,8 @@
 	C73.411659,38.436325 73.411659,36.521362 73.411659,34.606403 
 	C73.111237,34.589077 72.810814,34.571751 72.510391,34.554420 
 	C72.344063,35.279682 72.177734,36.004944 72.006462,37.502506 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M71.102127,69.315094 
 	C71.460381,62.397255 71.754677,55.814041 72.004555,49.229149 
 	C72.075020,47.372215 72.015312,45.510338 72.015312,43.650730 
@@ -1395,113 +1394,96 @@
 	C71.523613,71.735229 71.645828,71.584991 71.611847,71.528252 
 	C71.496826,71.336136 71.326492,71.177132 71.177292,71.005478 
 	C71.125305,70.553352 71.073326,70.101219 71.102127,69.315094 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.050812,35.649429 
 	C70.470345,36.407555 70.695831,37.416405 70.820099,38.739754 
 	C69.066147,39.707073 67.413437,40.359898 65.412491,41.013546 
 	C66.661766,39.309631 68.259270,37.604893 70.050812,35.649429 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M70.411789,71.936386 
 	C70.897736,72.363312 71.008820,72.817070 71.217659,73.608368 
 	C71.254623,74.114944 71.193832,74.283974 71.079758,74.717094 
 	C69.774460,74.568176 68.522446,74.155159 67.270432,73.742142 
 	C68.192596,73.149162 69.114761,72.556190 70.411789,71.936386 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M26.534929,29.033798 
 	C27.132116,29.767504 27.409191,30.565678 27.852219,31.642452 
 	C27.230253,31.921240 26.442335,31.921423 25.654419,31.921606 
 	C25.841219,30.980492 26.028017,30.039377 26.534929,29.033798 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M42.469231,56.940559 
 	C42.037357,57.816811 41.259991,58.715710 40.196754,59.708122 
 	C40.648506,58.855492 41.386116,57.909348 42.469231,56.940559 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M72.032196,76.391556 
 	C72.688026,75.972412 73.402725,75.895660 74.467712,75.729088 
 	C74.731407,78.052788 73.909119,78.633606 72.032196,76.391556 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.989815,32.523407 
 	C65.127777,32.055767 65.288239,31.970661 65.980881,31.854958 
 	C66.907700,31.948702 67.302330,32.073048 67.696968,32.197395 
 	C67.696968,32.197395 67.585091,32.435738 67.596397,32.566551 
 	C67.005562,33.195911 66.403427,33.694454 65.529816,34.306137 
 	C65.176338,33.914837 65.094330,33.410389 64.989815,32.523407 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M64.088943,35.224846 
 	C63.799076,36.048664 63.145828,36.827751 62.202377,37.706924 
 	C62.516640,36.931377 63.121101,36.055744 64.088943,35.224846 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M56.451111,42.940811 
 	C56.153450,43.675556 55.490784,44.434837 54.546173,45.321686 
 	C54.871525,44.621288 55.478817,43.793316 56.451111,42.940811 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M75.514763,31.715729 
 	C75.029381,30.830894 74.757973,29.694450 74.312820,28.249352 
 	C74.668968,29.115170 75.198853,30.289646 75.514763,31.715729 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M53.084148,46.223557 
 	C52.795620,47.045216 52.143719,47.824841 51.201920,48.705208 
 	C51.514935,47.931137 52.117855,47.056328 53.084148,46.223557 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M30.151054,32.347000 
 	C30.445093,32.078926 30.893473,32.016117 31.673735,32.038616 
 	C31.438877,32.266705 30.872133,32.409485 30.151054,32.347000 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M60.577812,39.016644 
 	C60.778534,39.260124 60.645523,39.512142 60.151550,39.734528 
 	C59.998711,39.496342 60.149872,39.269768 60.577812,39.016644 
-	z"/>
-	<path fill="#FADDDA" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#FADDDA" opacity="1.000000" stroke="none" d="
 	M49.583733,50.016121 
 	C49.786469,50.263187 49.650890,50.513050 49.150513,50.729111 
 	C49.000263,50.491360 49.153500,50.265896 49.583733,50.016121 
-	z"/>
-	<path fill="#D65145" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#D65145" opacity="1.000000" stroke="none" d="
 	M71.094955,71.265602 
 	C71.326492,71.177132 71.496826,71.336136 71.611847,71.528252 
 	C71.645828,71.584991 71.523613,71.735229 71.325287,71.944260 
 	C71.122597,71.872498 71.067604,71.699112 71.094955,71.265602 
-	z"/>
-	<path fill="#F9E5E1" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#F9E5E1" opacity="1.000000" stroke="none" d="
 	M71.085358,75.213249 
 	C71.350899,75.068733 71.605530,75.265152 71.862747,75.793625 
 	C71.678406,75.835732 71.414780,75.645233 71.085358,75.213249 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.090919,33.378983 
 	C68.682999,33.485107 69.293556,33.898174 69.915916,34.619164 
 	C69.321617,34.513367 68.715500,34.099644 68.090919,33.378983 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M68.077522,32.140816 
 	C67.302330,32.073048 66.907700,31.948702 66.219208,31.722935 
 	C55.527794,31.404108 45.130329,31.182026 34.732578,30.974014 
@@ -1512,36 +1494,35 @@
 	C70.823547,29.093361 72.270447,30.175806 73.722847,30.763971 
 	C73.552231,31.204060 73.381615,31.644148 73.211006,32.084236 
 	C71.626694,32.084236 70.042389,32.084236 68.077522,32.140816 
-	z"/>
-	<path fill="#E5422D" opacity="1.000000" stroke="none" 
-	d="
+	z" />
+					<path fill="#E5422D" opacity="1.000000" stroke="none" d="
 	M72.008934,37.116356 
 	C72.177734,36.004944 72.344063,35.279682 72.510391,34.554420 
 	C72.810814,34.571751 73.111237,34.589077 73.411659,34.606403 
 	C73.411659,36.521362 73.411659,38.436325 73.411659,40.351288 
 	C73.146149,40.391731 72.880646,40.432175 72.615135,40.472618 
 	C72.412247,39.482582 72.209351,38.492542 72.008934,37.116356 
-	z"/>
-	</svg>
-		</div>
-		<div class="main-popup-content">
-			<div class="call">
-				<i class="fa-solid fa-video">&nbsp; 1 : 1 Call</i>
-				<span class="icon"><i class="fa-solid fa-clock"></i> 30 mins</span>
+	z" />
+				</svg>
 			</div>
-			<h1 style="font-size: 50px;">Github Profile Review</h1>
-			<div class="card-footer">
-				<p>Checkout my offerings and book a slot at</p>
-				<a href="https://topmate.io/sanjaykv">topmate.io/sanjaykv</a>
+			<div class="main-popup-content">
+				<div class="call">
+					<i class="fa-solid fa-video">&nbsp; 1 : 1 Call</i>
+					<span class="icon"><i class="fa-solid fa-clock"></i> 30 mins</span>
+				</div>
+				<h1 style="font-size: 50px;">Github Profile Review</h1>
+				<div class="card-footer">
+					<p>Checkout my offerings and book a slot at</p>
+					<a href="https://topmate.io/sanjaykv">topmate.io/sanjaykv</a>
+				</div>
 			</div>
-		</div>
-		<div class="side-content">
-			<img src="../screenshots/sanjay-kv-image.png" height="150" width="150" style="border-radius: 50%;">
-			<div>
-				<svg style="border-radius: 0%;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-		width="100%" viewBox="0 0 312 86" enable-background="new 0 0 312 86" xml:space="preserve">
-	<path fill="#FDFDFD" opacity="1.000000" stroke="none" 
-		d="
+			<div class="side-content">
+				<img src="../screenshots/sanjay-kv-image.png" height="150" width="150" style="border-radius: 50%;">
+				<div>
+					<svg style="border-radius: 0%;" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" viewBox="0 0 312 86"
+						enable-background="new 0 0 312 86" xml:space="preserve">
+						<path fill="#FDFDFD" opacity="1.000000" stroke="none" d="
 	M232.000000,87.000000 
 		C154.666687,87.000000 77.833382,87.000000 1.000051,87.000000 
 		C1.000034,58.333366 1.000034,29.666729 1.000017,1.000071 
@@ -1637,9 +1618,8 @@
 		C258.492676,47.188354 258.492676,43.789433 258.492676,40.254868 
 		C260.761688,40.060349 262.830872,39.882957 265.253693,39.675247 
 		C264.870941,37.478519 264.567505,35.736931 263.361908,33.804592 
-	z"/>
-	<path fill="#DB4537" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#DB4537" opacity="1.000000" stroke="none" d="
 	M66.320168,22.032896 
 		C72.164230,23.962543 75.829506,28.231415 78.956177,33.995991 
 		C79.177658,35.321060 78.838493,36.139637 78.928619,36.907841 
@@ -1656,9 +1636,8 @@
 		C47.525314,46.573124 50.377556,51.033798 55.087543,52.816795 
 		C59.968407,54.664486 64.089706,53.389095 67.600258,48.989830 
 		C65.148956,46.568813 62.703575,44.153645 60.764908,41.227253 
-	z"/>
-	<path fill="#0F0F0F" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#0F0F0F" opacity="1.000000" stroke="none" d="
 	M215.825790,57.582588 
 		C213.361710,57.582588 210.897629,57.582588 207.829254,57.582588 
 		C207.829254,52.970566 208.196991,48.657330 207.651215,44.462955 
@@ -1679,9 +1658,8 @@
 		C210.084290,31.136875 215.590073,34.986694 215.964981,42.090508 
 		C216.210144,46.736080 216.029083,51.404144 215.920792,56.641769 
 		C215.802643,57.221401 215.825790,57.582588 215.825790,57.582588 
-	z"/>
-	<path fill="#0C0C0C" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#0C0C0C" opacity="1.000000" stroke="none" d="
 	M169.216171,52.948635 
 		C164.163223,59.128468 160.821518,59.663956 151.535461,55.835690 
 		C151.535461,59.593491 151.535461,63.163963 151.535461,66.923325 
@@ -1698,9 +1676,8 @@
 		C160.083435,39.604889 156.548492,39.404633 154.644501,39.983532 
 		C153.306107,40.390465 152.027649,42.751492 151.725189,44.421555 
 		C151.191238,47.369736 151.350937,50.490215 155.845261,51.854813 
-	z"/>
-	<path fill="#0F0F0F" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#0F0F0F" opacity="1.000000" stroke="none" d="
 	M268.729034,37.873985 
 		C272.797119,32.818314 278.029755,32.327595 283.457458,33.313332 
 		C290.051422,34.510883 293.023315,39.538792 292.003998,47.584450 
@@ -1714,9 +1691,8 @@
 		C276.867798,39.582424 275.720123,40.700333 273.805145,42.565620 
 		C278.324097,42.565620 281.434875,42.565620 284.676361,42.565620 
 		C284.026459,38.759731 281.708008,38.059780 278.015503,38.464520 
-	z"/>
-	<path fill="#111111" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#111111" opacity="1.000000" stroke="none" d="
 	M226.974899,41.869888 
 		C224.834808,41.750946 222.694717,41.632004 220.057816,41.485451 
 		C220.874069,37.758430 220.639740,33.828686 226.103836,33.976036 
@@ -1737,9 +1713,8 @@
 		C234.093399,50.884033 235.328751,48.772640 236.780716,46.928623 
 		C236.404572,46.613262 236.028442,46.297897 235.652298,45.982536 
 		C233.816895,46.477955 231.981476,46.973373 229.433624,47.805370 
-	z"/>
-	<path fill="#0B0B0B" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#0B0B0B" opacity="1.000000" stroke="none" d="
 	M124.447906,58.203873 
 		C114.828232,56.494144 110.692825,49.985607 113.211197,41.106709 
 		C115.138687,34.311035 124.272911,30.918539 132.515549,33.936981 
@@ -1750,9 +1725,8 @@
 		C121.996857,39.292278 120.761086,41.926872 120.823189,45.521194 
 		C120.878250,48.708984 121.411613,51.507053 125.384598,51.900204 
 		C129.517746,52.309200 131.588684,50.444401 131.726135,45.527527 
-	z"/>
-	<path fill="#090909" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#090909" opacity="1.000000" stroke="none" d="
 	M98.397659,31.235332 
 		C100.103874,29.694296 101.558861,28.446314 103.837936,26.491486 
 		C104.252022,29.965034 104.460495,31.713823 104.683769,33.586742 
@@ -1766,9 +1740,8 @@
 		C94.565231,40.098293 93.299728,39.226410 92.034225,38.354523 
 		C93.069603,37.107964 94.072136,35.832108 95.150200,34.623634 
 		C96.105316,33.552963 97.144417,32.557213 98.397659,31.235332 
-	z"/>
-	<path fill="#0B0B0B" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#0B0B0B" opacity="1.000000" stroke="none" d="
 	M263.812988,33.899967 
 		C264.567505,35.736931 264.870941,37.478519 265.253693,39.675247 
 		C262.830872,39.882957 260.761688,40.060349 258.492676,40.254868 
@@ -1780,9 +1753,8 @@
 		C246.281265,36.146793 254.585205,28.028912 258.111786,28.266544 
 		C258.215973,29.839525 258.322388,31.445456 258.459656,33.517723 
 		C260.199921,33.619560 261.780914,33.712074 263.812988,33.899967 
-	z"/>
-	<path fill="#160D0D" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#160D0D" opacity="1.000000" stroke="none" d="
 	M51.884140,62.928894 
 		C57.161396,61.985130 62.719646,62.469475 67.451096,60.719006 
 		C76.934021,57.210655 80.354424,49.060009 78.928619,36.907841 
@@ -1790,31 +1762,27 @@
 		C84.239098,39.976997 83.875008,46.561600 81.331131,53.090111 
 		C78.566116,60.186150 73.134705,65.012085 65.532967,65.659439 
 		C61.050541,66.041168 56.378128,64.192001 51.884140,62.928894 
-	z"/>
-	<path fill="#E0E0E0" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#E0E0E0" opacity="1.000000" stroke="none" d="
 	M226.895538,42.145367 
 		C229.271744,40.721851 231.526886,39.467739 233.907272,38.532295 
 		C234.294952,38.379951 235.868515,39.745899 235.786865,40.219025 
 		C235.629517,41.130840 234.828751,42.409927 234.032913,42.643131 
 		C231.690735,43.329468 229.220444,43.578533 226.397232,43.965225 
 		C226.268188,43.428062 226.542191,42.924458 226.895538,42.145367 
-	z"/>
-	<path fill="#4B2B28" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#4B2B28" opacity="1.000000" stroke="none" d="
 	M66.080811,21.703184 
 		C61.086525,22.376432 55.852886,22.719969 50.172634,23.024132 
 		C54.802475,19.493620 60.245781,19.671640 66.080811,21.703184 
-	z"/>
-	<path fill="#F4F4F4" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#F4F4F4" opacity="1.000000" stroke="none" d="
 	M215.952454,57.847885 
 		C215.825790,57.582588 215.802643,57.221401 215.944489,57.109032 
 		C216.564224,57.408478 217.042114,57.820293 217.520004,58.232109 
 		C217.039703,58.192463 216.559402,58.152821 215.952454,57.847885 
-	z"/>
-	<path fill="#FAF3F0" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#FAF3F0" opacity="1.000000" stroke="none" d="
 	M60.511551,41.482864 
 		C62.703575,44.153645 65.148956,46.568813 67.600258,48.989830 
 		C64.089706,53.389095 59.968407,54.664486 55.087543,52.816795 
@@ -1822,180 +1790,237 @@
 		C48.148270,36.643433 51.393024,32.732544 56.157486,31.469051 
 		C60.986641,30.188402 65.081436,31.831894 68.252838,36.652576 
 		C65.754280,38.179047 63.259594,39.703148 60.511551,41.482864 
-	z"/>
-	<path fill="#EFEFEF" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#EFEFEF" opacity="1.000000" stroke="none" d="
 	M155.454025,51.788353 
 		C151.350937,50.490215 151.191238,47.369736 151.725189,44.421555 
 		C152.027649,42.751492 153.306107,40.390465 154.644501,39.983532 
 		C156.548492,39.404633 160.083435,39.604889 160.820328,40.784691 
 		C162.113449,42.855068 162.367050,45.991413 162.041672,48.552376 
 		C161.618057,51.886620 158.658066,52.112305 155.454025,51.788353 
-	z"/>
-	<path fill="#DDDDDD" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#DDDDDD" opacity="1.000000" stroke="none" d="
 	M278.395020,38.367867 
 		C281.708008,38.059780 284.026459,38.759731 284.676361,42.565620 
 		C281.434875,42.565620 278.324097,42.565620 273.805145,42.565620 
 		C275.720123,40.700333 276.867798,39.582424 278.395020,38.367867 
-	z"/>
-	<path fill="#E2E2E2" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#E2E2E2" opacity="1.000000" stroke="none" d="
 	M229.789856,47.637085 
 		C231.981476,46.973373 233.816895,46.477955 235.652298,45.982536 
 		C236.028442,46.297897 236.404572,46.613262 236.780716,46.928623 
 		C235.328751,48.772640 234.093399,50.884033 232.314789,52.324821 
 		C231.634018,52.876305 229.711426,51.894825 228.354721,51.611904 
 		C228.714355,50.343060 229.073990,49.074215 229.789856,47.637085 
-	z"/>
-	<path fill="#EEEEEE" opacity="1.000000" stroke="none" 
-		d="
+	z" />
+						<path fill="#EEEEEE" opacity="1.000000" stroke="none" d="
 	M131.696198,45.921227 
 		C131.588684,50.444401 129.517746,52.309200 125.384598,51.900204 
 		C121.411613,51.507053 120.878250,48.708984 120.823189,45.521194 
 		C120.761086,41.926872 121.996857,39.292278 126.004082,39.173599 
 		C130.251938,39.047794 131.722916,41.691902 131.696198,45.921227 
-	z"/>
-	</svg>
+	z" />
+					</svg>
+				</div>
 			</div>
 		</div>
+
+	</div>
+	</div>
+
+
+	<!-- footer -->
+	<footer id="Contact" class="footer-2">
+		<div class="footer-container">
+			<div class="footer-content">
+				<div class="footer-info">
+					<img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
+				</div>
+
+				<div class="footer-links">
+					<div class="footer-section">
+						<h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+						<div>
+							<a href="help.html" class="footer-link">Contact Us</a>
+							<a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md"
+								class="footer-link">Code of Conduct</a>
+						</div>
+					</div>
+					<div class="footer-section">
+						<h6 class="footer-heading">GET INVOLVED</h6>
+						<div>
+							<a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+								class="footer-link">Add Your Profile</a>
+							<a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization"
+								class="footer-link">Join the Organization</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-description">
+					<h5>
+						We deliver quality content for the right people at the right time ⏱️. We aspire to showcase your
+						personal skills through GitHub README.md. We highlight the best profiles and provide an
+						opportunity for you to present your profile to the world 🌎
+					</h5>
+					<a href="exploremore.html" class="footer-button">Explore</a>
+				</div>
+			</div>
 		</div>
-		
-	</div>
-	</div>
 
-
-<!-- footer -->
-    <footer id="Contact" class="footer-2">
-        <div class="footer-container">
-          <div class="footer-content">
-            <div class="footer-info">
-              <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
-            </div>
-      
-            <div class="footer-links">
-              <div class="footer-section">
-               <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
-               <div>
-                <a href="help.html" class="footer-link">Contact Us</a>
-                <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
-               </div>
-              </div>
-              <div class="footer-section">
-                <h6 class="footer-heading">GET INVOLVED</h6>
-                <div>
-                  <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
-                  <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
-                </div>
-              </div>
-            </div>
-      
-            <div class="footer-description">
-              <h5>
-                We deliver quality content for the right people at the right time ⏱️. We aspire to showcase your personal skills through GitHub README.md. We highlight the best profiles and provide an opportunity for you to present your profile to the world 🌎
-              </h5>
-              <a href="exploremore.html" class="footer-button">Explore</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="footer-bottom">
+		<div class="footer-bottom">
 			<div class="footer-container">
 				<p class="footer-copyright">
-					&copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+					&copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights
+					reserved.
 				</p>
 			</div>
 		</div>
-		
+
 		<script>
 			document.getElementById("dynamic-year").textContent = new Date().getFullYear();
 		</script>
-		
-      </footer>
-        <!-- Scroll to top -->
-    <button id="scrollToTop" aria-label="Scroll to top">
-        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
-          <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
-        </svg>
-      </button>
 
-      <script src="../scripts/ScrollToTop.js"></script>
-      <script src="../scripts/blog.js"></script>
-      <script src="../scripts/retriveprofile.js"></script>
-    <script src="../scripts/dark-mode.js"></script>
+	</footer>
+	<!-- Scroll to top -->
+	<button id="scrollToTop" aria-label="Scroll to top">
+		<svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+			<path
+				d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
+		</svg>
+	</button>
+
+	<script src="../scripts/ScrollToTop.js"></script>
+	<script src="../scripts/blog.js"></script>
+	<script src="../scripts/retriveprofile.js"></script>
+	<script src="../scripts/dark-mode.js"></script>
 	<script src="../scripts/hamburger.js"></script>
-    <script>
+	<script>
 		const tags = document.querySelectorAll('.tag');
-        tags.forEach(tag => {
-            tag.addEventListener('click', () => {
-                const selectedCategory = tag.getAttribute('data-category');
-                const blogCards = document.querySelectorAll('.blog-card');
-                blogCards.forEach(card => {
-                    const category = card.querySelector('.category').innerText.toLowerCase();
-                    if (selectedCategory === 'all' || category.includes(selectedCategory)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    document.addEventListener('DOMContentLoaded', function() {
-    const popup = document.getElementById('scrollPopup');
-    const closePopup = document.getElementById('closePopup');
+		tags.forEach(tag => {
+			tag.addEventListener('click', () => {
+				const selectedCategory = tag.getAttribute('data-category');
+				const blogCards = document.querySelectorAll('.blog-card');
+				blogCards.forEach(card => {
+					const category = card.querySelector('.category').innerText.toLowerCase();
+					if (selectedCategory === 'all' || category.includes(selectedCategory)) {
+						card.style.display = 'block';
+					} else {
+						card.style.display = 'none';
+					}
+				});
+			});
+		});
+		document.addEventListener('DOMContentLoaded', function () {
+			const popup = document.getElementById('scrollPopup');
+			const closePopup = document.getElementById('closePopup');
 
-    function checkScrollEnd() {
-        // Check if user has scrolled to the bottom
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            popup.style.display = 'block'; // Show popup
-        }
-    }
+			function checkScrollEnd() {
+				if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+					popup.style.display = 'block';
+				}
+			}
 
-    // Close the popup when the user clicks on <span> (x)
-    closePopup.onclick = function() {
-        popup.style.display = 'none';
-    }
+			closePopup.onclick = function () {
+				popup.style.display = 'none';
+			}
 
-    // Close the popup when the user clicks anywhere outside of the popup
-    window.onclick = function(event) {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
-    }
+			window.onclick = function (event) {
+				if (event.target === popup) {
+					popup.style.display = 'none';
+				}
+			}
 
-    // Add event listener to check if scrolled to end
-    window.addEventListener('scroll', checkScrollEnd);
-});
+			window.addEventListener('scroll', checkScrollEnd);
+		});
 
-    </script>
-	 <script>
-        
-        // Initialize Tilt.js
- window.document.addEventListener("DOMContentLoaded",function () {
-      const imageElement = document.querySelector('.hoverImage');
-      if (imageElement) {
-        const handleMouseMove = (e) => {
-          let rect = imageElement.getBoundingClientRect();
-          let x = e.clientX - rect.left;
-          let y = e.clientY - rect.top;
-  
-          let dx = (x - rect.width / 2) / (rect.width / 2);
-          let dy = (y - rect.height / 2) / (rect.height / 2);
-  
-          imageElement.style.transform = `perspective(500px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg)`;
-        };
+	</script>
+	<script>
+		window.document.addEventListener("DOMContentLoaded", function () {
+			const imageElement = document.querySelector('.hoverImage');
+			if (imageElement) {
+				const handleMouseMove = (e) => {
+					let rect = imageElement.getBoundingClientRect();
+					let x = e.clientX - rect.left;
+					let y = e.clientY - rect.top;
 
-        const handleMouseLeave = () => {
-          imageElement.style.transform = "";
-        };
+					let dx = (x - rect.width / 2) / (rect.width / 2);
+					let dy = (y - rect.height / 2) / (rect.height / 2);
 
-        imageElement.addEventListener('mousemove', handleMouseMove);
-        imageElement.addEventListener('mouseleave', handleMouseLeave);
-      }
-    })
-      </script>
-			<div class="gtranslate_wrapper"></div>
-			<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-			<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+					imageElement.style.transform = `perspective(500px) rotateY(${dx * 5}deg) rotateX(${-dy * 5}deg)`;
+				};
+
+				const handleMouseLeave = () => {
+					imageElement.style.transform = "";
+				};
+
+				imageElement.addEventListener('mousemove', handleMouseMove);
+				imageElement.addEventListener('mouseleave', handleMouseLeave);
+			}
+		})
+	</script>
+	<div class="gtranslate_wrapper"></div>
+	<script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+	<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+	<style>
+		.search-bar-container {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 20px;
+			padding: 10px 0;
+		}
+
+		#search-input {
+			padding: 10px;
+			font-size: 16px;
+			border: 1px solid #ddd;
+			border-radius: 4px 0 0 4px;
+			width: 300px;
+			outline: none;
+			transition: border-color 0.3s;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		#search-input:focus {
+			border-color: #0056b3;
+		}
+
+		#search-btn {
+			padding: 10px;
+			font-size: 16px;
+			background-color: black;
+			color: #fff;
+			border: none;
+			border-radius: 0 4px 4px 0;
+			cursor: pointer;
+			transition: background-color 0.3s;
+			outline: none;
+		}
+
+		#search-btn:hover {
+			background-color: white;
+			color: black;
+		}
+	</style>
+	<script>
+		document.getElementById('search-input').addEventListener('input', function () {
+			const query = this.value.trim();
+
+			if (query.length > 0) {
+				performSearch(query);
+			} else {
+				clearSearchResults();
+			}
+		});
+
+		function performSearch(query) {
+			console.log('Searching for:', query);
+		}
+
+		function clearSearchResults() {
+			console.log('Clearing search results');
+		}
+	</script>
 </body>
+
 </html>
