@@ -15,22 +15,23 @@ body img {
 .blog-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    justify-content: space-between; /* Ensures equal spacing between cards */
+    align-items: stretch; /* Ensures all cards are of equal height */
+    padding: 30px;
 }
 
 .blog-card {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 15px;
     padding: 20px;
-    overflow: hidden;
     cursor: pointer;
-    width: 27%;
-    height: fit-content;
+    width: 30%; /* Adjusted width to allow for 3 cards per row */
+    height: auto; /* Makes sure the card height is flexible */
     transition: transform 0.2s;
+    margin:20px 0; /* Adds vertical spacing between rows */
+    display: flex;
+    flex-direction: column; /* Ensures content inside card takes full height */
 }
 
 body.dark-mode .blog-card {
@@ -41,6 +42,10 @@ body.dark-mode .blog-card .excerpt,
 body.dark-mode .blog-card .save-btn {
     color: #fff;
 }
+
+
+
+
 
 .saved-blogs {
     display: flex; 
