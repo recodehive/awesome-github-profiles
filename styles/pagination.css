@@ -11,21 +11,24 @@
 .pagination button {
   font-size: medium;
   margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #007bff;
+  padding: 6px 10px;
+  background-color: #3a99ff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  height: 35px;
+  width: 45px;
 }
 
 .pagination button:hover {
-  background-color: #3a90d5; /* Background color on hover */
+  background-color: #006ac0; /* Background color on hover */
   transform: scale(1.05); /* Slightly enlarge button on hover */
 }
 
 .pagination button:disabled {
   background-color: #c0c0c0;
+  color: rgb(77, 77, 77);
   cursor: not-allowed;
 }
 
