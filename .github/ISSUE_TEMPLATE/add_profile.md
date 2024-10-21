@@ -5,4 +5,4 @@ title: "Add Profile"
 labels: ➕ profile
 ---
 
-### A pull request should be created from this issue if not kindly ping @dinxsh ⚠️
+### A pull request should be created from this issue if not kindly ping @sanjay-kv ⚠️
