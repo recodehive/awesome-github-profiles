@@ -7,26 +7,7 @@
   "commitType": "docs",
   "commitConvention": "angular",
   "contributors": [
-    {
-      "login": "Shariq2003",
-      "name": "Shariq",
-      "avatar_url": "https://avatars.githubusercontent.com/u/109452033?v=4",
-      "ScreenShot": "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/shariq.png",
-      "profile": "https://github.com/Shariq2003",
-      "contributions": [
-        "review"
-      ]
-    },
-    {
-      "login": "Tusharb331",
-      "name": "Tushar Bansal",
-      "avatar_url": "https://avatars.githubusercontent.com/u/120712500?v=4",
-      "ScreenShot": "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/tushar-bansal.png",
-      "profile": "https://github.com/Tusharb331",
-      "contributions": [
-              "review"
-            ]
-    },
+    
     {
       "login": "dinxsh",
       "name": "Dinesh Talwadker",
@@ -67,6 +48,16 @@
         "review"
       ]
     },
+    {
+      "login": "HimangshuSharma01",
+      "name": "Himangshu Sharma",
+      "avatar_url": "https://avatars.githubusercontent.com/u/120270398?v=4",
+      "profile": "https://github.com/HimangshuSharma01",
+      "contributions": [
+        "review"
+      ]
+    },
+
     {
       "login": "thevijayshankersharma",
       "name": "Vijay Shanker Sharma",
@@ -624,7 +615,28 @@
     "name": "Elisabeth Erkekoglou",
     "avatar_url": "https://avatars.githubusercontent.com/u/86532060",
     "profile": "https://github.com/elic4vet"
-  }
+  },
+  {
+    "login": "Shariq2003",
+    "name": "Shariq",
+    "avatar_url": "https://avatars.githubusercontent.com/u/109452033?v=4",
+    "ScreenShot": "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/shariq.png",
+    "profile": "https://github.com/Shariq2003",
+    "contributions": [
+      "review"
+    ]
+  },
+  {
+    "login": "Tusharb331",
+    "name": "Tushar Bansal",
+    "avatar_url": "https://avatars.githubusercontent.com/u/120712500?v=4",
+    "ScreenShot": "https://raw.githubusercontent.com/recodehive/awesome-github-profiles/main/screenshots/tushar-bansal.png",
+    "profile": "https://github.com/Tusharb331",
+    "contributions": [
+            "review"
+          ]
+  } 
+
   ],
   "contributorsPerLine": 7,
   "skipCi": true,
