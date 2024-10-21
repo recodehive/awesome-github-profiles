@@ -45,9 +45,30 @@ document.addEventListener("DOMContentLoaded", function () {
                         'Authorization': `token ${token}`
                     }
                 }).then(response => response.json()),
+                fetch(`https://api.github.com/users/${login1}/repos`,{
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json()),
+                fetch(`https://api.github.com/users/${login2}/repos`,{
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json()),
             ])
-                .then(([data1, data2]) => {
+                .then(([data1, data2,repoData1,repoData2]) => {
+                    console.log(data1,data2,repoData1);
 
+                    let stars1=0,stars2 = 0
+                    for( var i = 0;i<repoData1.length;i+=1)
+                    {
+                        stars1 += repoData1[i].watchers_count
+                    }
+                    for( var i = 0;i<repoData2.length;i+=1)
+                    {
+                        stars2 += repoData2[i].watchers_count
+                    }
+                    
                     document.getElementById('loader').classList.add('hidden');
                     document.getElementById('submitBtn').classList.remove('hidden');
                     // Show the table
@@ -80,8 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("following1").textContent = data1.following || "N/A";
                     document.getElementById("following2").textContent = data2.following || "N/A";
 
-                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">GitHub</a>` : "N/A";
-                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">GitHub</a>` : "N/A";
+                    document.getElementById("stars1").textContent = stars1 ;
+                    document.getElementById("stars2").textContent = stars2 ;
+
+                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">${data1.html_url}</a>` : "N/A";
+                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">${data2.html_url}</a>` : "N/A";
 
                     const themeToggleCheckbox = document.querySelector("#theme-toggle");
                     theme = localStorage.getItem("theme") || "light";

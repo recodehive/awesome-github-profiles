@@ -131,6 +131,14 @@ select{
     color: white;
     background-color: black;
 }
+.dark-mode #link1 a{
+    color: #ddd;
+    text-decoration: none;
+}
+.dark-mode #link2 a{
+    color: #ddd;
+    text-decoration: none;
+}
 #avatarImg1{
     --s: 10px;
     padding: var(--s);
