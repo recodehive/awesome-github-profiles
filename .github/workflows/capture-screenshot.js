@@ -6,7 +6,7 @@ async function takeScreenshot(username) {
   const url = `https://github.com/${username}`;
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath: '/usr/bin/google-chrome-stable', // Path to Chrome executable
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe', // Path to Chrome executable
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
   const page = await browser.newPage();
