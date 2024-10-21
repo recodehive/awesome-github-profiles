@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updatePaginationControls(currentPage, profilesPerPage, totalProfiles) {
     const totalPages = Math.ceil(totalProfiles / profilesPerPage);
     const pageInfo = document.getElementById("page-info");
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+    pageInfo.textContent = `${currentPage} / ${totalPages}`;
   
     // Disable previous button if on the first page
     document.getElementById("prev-page").disabled = currentPage === 1;
