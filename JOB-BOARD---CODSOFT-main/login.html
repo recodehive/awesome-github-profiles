@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="jsonhandel.js"></script>
+    <title>Login/Signup</title>
+</head>
+
+<body class="logbody">
+    
+    <a id="back" href="index.html">back</a>
+    <div class="container fcc">
+
+        <div id="signregbtn" class="signregbtn fcc">
+            <button type="button" id="login" class="changesonlogin leftsign">Log In</button>
+            <button type="button" id="register-button" class="changesonlogin rightsign">Register</button>
+        </div>
+
+        <div id="signincred" class="signincred">
+            <input type="text" class="loginput" id="loginmailplc" placeholder="Enter your e-mail id">
+            <input type="password" class="loginput" id="loginpassplc" placeholder="password..">
+            <div style="display: flex;"><input id="logcheck" style="cursor:pointer;" type="checkbox">
+                <p>I agree with all the terms and conditions</p>
+            </div>
+            <button onclick="logb()" class="leftsign" id="leftsign">Log in</button>
+        </div>
+
+        <div id="regscreen" class="regscreen">
+            <button type="button" id="loginfromreg" class="changesonlogin leftreg">Log In</button>
+            <button type="button" class="changesonlogin rightreg">Register</button>
+        </div>
+
+        <div id="regcred" class="regcred fcc">
+            <input type="text" class="loginput" id="regmailplc" placeholder="Enter your e-mail id">
+            <input type="password" class="loginput" id="regpassplc" placeholder="password..">
+            <input type="password" class="loginput" id="regrepassplc" placeholder="enter your password again..">
+            <div style="display: flex;"><input id="regcheck" style="cursor:pointer;" type="checkbox">
+                <p>I agree with all the terms and conditions</p>
+            </div>
+            <button onclick="dashb()" class="reg" id="reg">Create Account</button>
+        </div>
+    </div>
+
+
+    
+    <div id="popupForm" class="popup-form-container">
+        <h2>Fill out the form</h2>
+        <form>
+            <label for="popname">Name:</label>
+            <input type="text" id="popname" name="popname" required>
+
+            <label for="popdob">Date of Birth:</label>
+            <input type="date" id="popdob" name="popdob" required>
+
+            <label for="popdegree">Degree:</label>
+            <input type="text" id="popdegree" name="popdegree" required>
+
+            <label for="popcollege">Graduated from which college:</label>
+            <input type="text" id="popcollege" name="popcollege" required>
+
+            <label for="popexperience">Experience (in years):</label>
+            <input type="number" id="popexperience" name="popexperience" required>
+
+            <label for="popcv">Upload CV (URL):</label>
+            <input type="url" id="popcv" name="popcv" required>
+
+        </form>
+        <button class="rightreg" id="popsubmit">SAVE</button>
+    </div>
+
+
+    <script>
+        const log = document.getElementById('signincred');
+        const reg = document.getElementById('regcred');
+        const btnl = document.getElementById("register-button");
+        const logreg = document.getElementById('signregbtn');
+        const reglog = document.getElementById('regscreen');
+        const btnr = document.getElementById("loginfromreg");
+
+        btnl.addEventListener('click', () => {
+            log.style.display = 'none';
+            reg.style.display ='flex';
+            reglog.style.display = 'flex';
+            logreg.style.display = 'none';
+        });
+
+        btnr.addEventListener('click', () => {
+            log.style.display = 'flex';
+            reg.style.display ='none';
+            reglog.style.display = 'none';
+            logreg.style.display = 'flex';
+        });
+    </script>
+
+</body>
+
+</html>

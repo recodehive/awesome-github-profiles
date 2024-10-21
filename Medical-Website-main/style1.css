@@ -1,0 +1,62 @@
+*{
+    scroll-behavior: smooth;
+}
+.color-teal{
+    color: teal;
+}
+.icon-lg{
+    font-size: 50px;
+}
+.remove-bullets{
+    text-decoration: none;
+}
+.remove-text-decoration{
+    list-style: none;
+}
+#about-us{
+    margin-top: 20px;
+}
+p{
+    font-size: 20px;
+}
+.filter {
+    padding: 10px;
+    border: none;
+    background-color: inherit;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+.doctor{
+    text-decoration: none;
+    color: inherit;
+}
+.doctor:hover{
+    text-decoration: underline;
+}
+.contact{
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(20, 205, 208);
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+}
+.card{
+    margin-bottom: 3rem;
+}
+.contactus{
+    color: aliceblue;
+    font-size: small;
+    opacity: 0.7;
+}
+.writetous{
+    border: none;
+    border-radius: 7px;
+    padding: 5px;
+    color: black;
+    background-color: white;
+    margin-top: -10px;
+    float: right;
+}

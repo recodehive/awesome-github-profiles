@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="postform.css">
+    <script src="postj.js"></script>
+    <title>Job Application Form</title>
+</head>
+<body>
+    <a onclick="goback()" href="">Back</a>
+    <div class="mainform">
+        <h2>Job Application Form</h2>
+        <div if="form" method="post">
+            <div>
+                <label for="companyName">Company Name:</label><br>
+                <input type="text" id="companyName" name="companyName"><br>
+            </div>
+            <div>
+                <label for="companyType">Company Type:</label><br>
+                <input type="text" id="companyType" name="companyType"><br>
+            </div>
+            <div>
+                <label for="jobid">Job ID:</label><br>
+                <input type="text" id="jobid" name="jobid"><br>
+            </div>
+            <div>
+                <label for="postName">Post Name:</label><br>
+                <input type="text" id="postName" name="postName"><br>
+            </div>
+            <div>
+                <label for="salary">Salary:</label><br>
+                <input type="text" id="salary" name="salary"><br>
+            </div>
+            <div>
+                <label for="fullTime">Full Time:</label>
+                <input type="radio" id="fullTime" name="employmentType" value="fullTime">
+                <label for="partTime">Part Time:</label>
+                <input type="radio" id="partTime" name="employmentType" value="partTime"><br>
+            </div>
+            <div>
+                <label for="experi">Experience :</label><br>
+                <input type="text" id="experi" name="experi"><br>
+            </div>
+            <div>
+                <label for="companyUrl">Company URL:</label><br>
+                <input type="url" id="companyUrl" name="companyUrl"><br>
+            </div>
+            <div>
+                <label for="jobDescription">Job Description:</label><br>
+                <textarea id="jobDescription" name="jobDescription" rows="4" cols="50"></textarea><br>
+            </div>
+            <div>
+                <label>Skills Required:</label><br>
+                <input type="checkbox" id="webdev" name="skillsRequired[]" value="webdev">
+                <label for="webdev">Web dev</label><br>
+                <input type="checkbox" id="appdev" name="skillsRequired[]" value="appdev">
+                <label for="appdev">Application development</label><br>
+                <input type="checkbox" id="ds" name="skillsRequired[]" value="ds">
+                <label for="ds">Data science</label><br>
+                <input type="checkbox" id="da" name="skillsRequired[]" value="da">
+                <label for="da">Data analysis</label><br>
+                <input type="checkbox" id="uix" name="skillsRequired[]" value="uix">
+                <label for="uix">UI/UX</label><br>
+                <input type="checkbox" id="ved" name="skillsRequired[]" value="ved">
+                <label for="ved">Video Editing</label><br>
+                <input type="checkbox" id="se" name="skillsRequired[]" value="se">
+                <label for="se">Software Engineer</label><br>
+                <input type="checkbox" id="prog" name="skillsRequired[]" value="prog">
+                <label for="prog">Programming</label><br>
+            </div>
+            <div>
+                <label for="deadline">Form will be open till :</label><br>
+                <input type="date" id="deadline" name="deadline"><br>
+            </div>
+
+            <button onclick="submit()" id="submit" value="Submit">Submit</button>
+        </div>
+    </div>
+</body>
+</html>

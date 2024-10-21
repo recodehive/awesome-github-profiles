@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" /> 
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
+        integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Swasthya Point</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+
+
+<style>
+    /* Custom Styles for the blog cards */
+    .blog-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .blog-card img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+    }
+
+    .blog-card h3 {
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .blog-card p {
+        text-align: center;
+        font-size: 16px;
+        color: #555;
+    }
+
+    .faq-section h4 {
+        font-size: 18px;
+        margin: 20px 0 10px;
+    }
+
+    .faq-section p {
+        font-size: 16px;
+        color: #444;
+    }
+</style>
+</head>
+
+<body>
+
+<!-----------------header section ---------------> 
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo"><img src="img/swasthya-logo.png" alt="Swasthya Point"></a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blogs</a>
+        <a href="nearby.html">Nearby</a>
+        <a href="appointment.html">Book Your Appointment</a>
+        <div class="dark-btn-navbar">
+            <label id="dark-change"></label>
+        </div>
+    </nav>
+</header>
+
+
+<style>
+    .blog-section {
+        padding-top: 190px; 
+        margin-top: 5px;
+       
+        background-color: #f4f4f9;
+    }
+
+    .blog-card {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .blog-card img {
+        padding-top: 15px;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+    }
+
+    .blog-card h3 {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .blog-card p {
+
+        text-align: center;
+        font-size: 16px;
+        color: #555;
+        margin-top: 10px;
+        line-height: 1.6;
+    }
+    .patient-quote {
+        font-size: 1.6rem;
+        font-style: italic;
+        background-color: #f4f4f9;
+        padding: 15px;
+        border-left: 4px solid #007bff;
+        margin: 20px 0;
+        border-radius: 8px;
+        color: #444;
+    }
+
+    .quote-author {
+        font-size: 2rem;
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .success-stats {
+        font-size: 3rem;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .stat-box {
+        background-color: #f4f4f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 45%;
+    }
+
+    .stat-box h4 {
+        font-size: 24px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .stat-box p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .call-to-action {
+        margin-top: 30px;
+    }
+
+    .call-to-action p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .call-to-action a {
+        font-size: 16px;
+        color: #fff;
+        background-color: #007bff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .call-to-action a:hover {
+        background-color: #0056b3;
+    }
+
+    /* FAQ section styles */
+    .faq-section {
+        margin-top: 30px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .faq-item {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .faq-question {
+        background-color: #f9f9f9;
+        border: none;
+        outline: none;
+        font-size: 18px;
+        cursor: pointer;
+        padding: 10px;
+        text-align: left;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .faq-question:hover {
+        background-color: #e6e6e6;
+    }
+
+    .faq-icon {
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: #fff;
+        padding: 0 10px;
+        color: #555;
+    }
+
+    .faq-answer p {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .faq-answer.active {
+        padding-top: 10px;
+    }
+
+    .faq-icon.rotate {
+        transform: rotate(180deg);
+    }
+    .modal {
+    z-index: 1050; /* Bootstrap default modal z-index */
+}
+
+
+.immune-points {
+    font-size: 2rem;
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.immune-points li {
+    font-size: 3rem;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin: 10px 0; /* Space between items */
+    font-size: 16px; /* Font size for list items */
+}
+
+.immune-points li i {
+    font-size: 3rem;
+    margin-right: 10px; /* Space between icon and text */
+    color: #28a745; /* Change icon color (green) */
+    font-size: 20px; /* Adjust icon size */
+}
+
+
+.comparison-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.comparison-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.comparison-section .slogan {
+    font-size: 2rem;
+    color: #4CAF50; /* Green color */
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.healthy-eating, .unhealthy-eating {
+    width: 45%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin: 1rem;
+}
+
+h3 {
+    font-size: 3rem;
+    color: #4CAF50; /* Green color */
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 3rem;
+}
+
+li {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+li i {
+    color: #4CAF50; /* Green color for icons */
+    margin-right: 10px;
+}
+
+
+</style>
+
+<body>
+
+<header>
+    <input type="checkbox" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#" class="logo"><img src="img/swasthya-logo.png" alt="Swasthya Point"></a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blogs</a>
+        <a href="nearby.html">Nearby</a>
+        <a href="appointment.html">Book Your Appointment</a>
+        <div class="dark-btn-navbar">
+            <label id="dark-change"></label>
+        </div>
+    </nav>
+</header>
+<main>
+
+
+  <!-- Section 1: Medical GIF -->
+<section class="blog-section" id="medical-gif" style="padding-top: 120px;">
+    <div class="blog-card" data-aos="fade-up">
+        <img src="img/medical-w.gif" alt="Medical">
+        <h3>Your Health is Our Priority</h3>
+        <p>At Swasthya Point, we focus on delivering personalized healthcare. Our goal is to help you live a healthier, happier life with access to top-tier healthcare providers and personalized treatment plans.</p>
+        <h4>Why Choose Us?</h4>
+        <ul>
+            <li><i class="fas fa-user-md"></i> <strong>Expert Medical Professionals:</strong> Our team consists of experienced doctors and healthcare specialists.</li>
+            <li><i class="fas fa-heartbeat"></i> <strong>Comprehensive Services:</strong> We offer a wide range of medical services, from routine check-ups to advanced treatments.</li>
+            <li><i class="fas fa-comments"></i> <strong>Patient-Centered Approach:</strong> We prioritize your needs and preferences in all treatment plans.</li>
+            <li><i class="fas fa-calendar-check"></i> <strong>Convenient Appointments:</strong> Schedule your visits at a time that works best for you.</li>
+            <li><i class="fas fa-info-circle"></i> <strong>Health Education:</strong> We provide resources and guidance to help you make informed health decisions.</li>
+        </ul>
+    </div>
+</section>
+
+
+
+<!-- Section: Healthy vs. Unhealthy Eating -->
+<section class="comparison-section" id="healthy-vs-unhealthy">
+    <h2>Healthy Eating vs. Unhealthy Eating</h2>
+    <p class="slogan">"Choose Nourishment, Not Just Fillers!"</p>
+    
+    <div class="comparison-container">
+        <div class="healthy-eating">
+            <h3>Healthy Eating</h3>
+            <ul>
+                <li><i class="fas fa-apple-alt"></i> <strong>Fruits & Vegetables:</strong> Fresh and nutritious.</li>
+                <li><i class="fas fa-fish"></i> <strong>Lean Proteins:</strong> Chicken, fish, and legumes.</li>
+                <li><i class="fas fa-bread-slice"></i> <strong>Whole Grains:</strong> Brown rice, quinoa, and oats.</li>
+                <li><i class="fas fa-water"></i> <strong>Hydration:</strong> Drink plenty of water.</li>
+                <li><i class="fas fa-salad"></i> <strong>Healthy Fats:</strong> Avocados and nuts.</li>
+            </ul>
+        </div>
+        
+        <div class="unhealthy-eating">
+            <h3>Unhealthy Eating</h3>
+            <ul>
+                <li><i class="fas fa-ban"></i> <strong>Processed Foods:</strong> Chips, candies, and snacks.</li>
+                <li><i class="fas fa-hamburger"></i> <strong>Fast Food:</strong> Burgers and fries.</li>
+                <li><i class="fas fa-candy-cane"></i> <strong>Excess Sugar:</strong> Soft drinks and desserts.</li>
+                <li><i class="fas fa-coffee"></i> <strong>Caffeine Overload:</strong> Energy drinks and excessive coffee.</li>
+                <li><i class="fas fa-drumstick-bite"></i> <strong>Fried Foods:</strong> Chips and fried chicken.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+
+  
+<!-- Section 3: Immune Boosting -->
+<section class="blog-section" id="immune-boosting">
+    <div class="blog-card" data-aos="fade-up">
+        <img src="img/immune-w.jpg" alt="Immune Boosting">
+        <h3>Boost Your Immune System</h3>
+        <p>Protect yourself from illnesses by boosting your immune system. Regular exercise, quality sleep, staying hydrated, and consuming immune-boosting foods like citrus fruits and green vegetables can strengthen your body's defense mechanisms. Learn how these simple lifestyle changes can keep you healthier.</p>
+        
+        <!-- Points with Icons -->
+        <ul class="immune-points">
+            <li><i class="fas fa-seedling"></i> Eat a Balanced Diet</li>
+            <li><i class="fas fa-running"></i> Exercise Regularly</li>
+            <li><i class="fas fa-bed"></i> Get Enough Sleep</li>
+            <li><i class="fas fa-water"></i> Stay Hydrated</li>
+            <li><i class="fas fa-apple-alt"></i> Incorporate Fruits and Vegetables</li>
+            <li><i class="fas fa-pills"></i> Consider Supplements</li> <!-- Updated -->
+            <li><i class="fas fa-smile"></i> Manage Stress</li>
+            <li><i class="fas fa-hand-holding-heart"></i> Avoid Smoking and Excessive Alcohol</li>
+        </ul>
+    </div>
+</section>
+
+
+
+
+
+    <!-- Section 4: Patient Stories -->
+<section class="blog-section" id="patient-stories">
+    <div class="blog-card" data-aos="fade-up">
+        <img src="img/patientstory-w.jpg" alt="Patient Stories" style="width: 100%; max-width: 500px;">
+        <h3>Inspiring Patient Stories</h3>
+
+        <!-- Introduction Paragraph -->
+        <p>Discover how our patients have triumphed over their health challenges, achieving remarkable recoveries. These stories of strength and resilience highlight the importance of the right treatment, positive mindset, and modern medical care in restoring not just health, but also hope.</p>
+        
+        <!-- Feature: Highlighted Success Story -->
+        <blockquote class="patient-quote">
+            “I was on the verge of giving up, but the support I received here changed everything. Today, I feel healthier than ever.” 
+            <span class="quote-author">– Sarah R., Recovered Cancer Patient</span>
+        </blockquote>
+        
+        <!-- Additional Content: Statistics -->
+        <div class="success-stats">
+            <div class="stat-box" data-aos="fade-right">
+                <h4>95%</h4>
+                <p>of patients reported significant improvement in their quality of life after personalized treatment plans.</p>
+            </div>
+            <div class="stat-box" data-aos="fade-left">
+                <h4>80+</h4>
+                <p>patients have shared their recovery stories, showing that no challenge is insurmountable.</p>
+            </div>
+        </div>
+ 
+
+
+
+
+ <!-- Modal Popup for Contact Form -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="contactModalLabel">Share Your Story</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal Body with Form -->
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="story" class="form-label">Your Story</label>
+                        <textarea class="form-control" id="story" rows="3" placeholder="Share your experience with us"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer with Submit Button -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Bootstrap JS for the Modal functionality -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+    </div>
+
+
+
+</section>
+
+
+    <!-- Section 5: Health News Update -->
+    <section class="blog-section" id="health-news">
+        <div class="blog-card" data-aos="fade-up">
+            <img src="img/newsupdate-w.jpg" alt="Health News">
+            <h3>Health News Update</h3>
+            <p>Stay informed about the latest developments in healthcare. From breakthroughs in medical research to the newest health tips, this section will keep you updated on the latest advancements in medicine, treatments, and wellness trends across the globe.</p>
+        </div>
+    </section>
+
+   
+
+ <!-- Section 6: FAQ -->
+<section class="blog-section" id="faq">
+    <div class="blog-card faq-section" data-aos="fade-up">
+        <img src="img/faq-w.gif" alt="FAQ" style="width: 150px;">
+        <h3>Frequently Asked Questions</h3>
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                What is a balanced diet? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>A balanced diet is one that provides your body with all the essential nutrients, including proteins, carbohydrates, fats, vitamins, and minerals, in the right proportions.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                How often should I visit the doctor? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>It is recommended to visit a doctor at least once a year for a general health check-up. However, if you have any chronic conditions, you should consult your healthcare provider more frequently.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                How can I boost my immune system naturally? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Boosting your immune system naturally involves maintaining a healthy diet rich in vitamins, exercising regularly, staying hydrated, and managing stress levels. Adequate sleep and avoiding smoking or excessive alcohol intake are also important.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                What should I include in my daily health routine? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Your daily health routine should include balanced meals, regular physical activity, staying hydrated, proper hygiene, and mental health practices like meditation or relaxation. Regular check-ups are also key to preventing potential issues.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                What are the signs that I should seek immediate medical attention? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Signs that require immediate medical attention include chest pain, difficulty breathing, sudden vision loss, intense headache, severe abdominal pain, or any injury causing uncontrollable bleeding. In such cases, it's best to visit an emergency room or consult a healthcare provider.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+            <button class="faq-question">
+                How do I manage stress for better health? <span class="faq-icon">&#x25BC;</span>
+            </button>
+            <div class="faq-answer">
+                <p>Managing stress involves regular physical activity, maintaining a healthy diet, ensuring good sleep quality, and practicing relaxation techniques like deep breathing, meditation, or yoga. Connecting with friends and family can also help reduce stress.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- JavaScript to handle the FAQ accordion behavior -->
+<script>
+    document.querySelectorAll('.faq-question').forEach((button) => {
+        button.addEventListener('click', () => {
+            const faqAnswer = button.nextElementSibling;
+            const faqIcon = button.querySelector('.faq-icon');
+
+            // Toggle the visibility of the answer
+            faqAnswer.classList.toggle('active');
+
+            // Rotate the icon
+            faqIcon.classList.toggle('rotate');
+
+            // Adjust height for smooth open/close transition
+            if (faqAnswer.style.maxHeight) {
+                faqAnswer.style.maxHeight = null;
+            } else {
+                faqAnswer.style.maxHeight = faqAnswer.scrollHeight + 'px';
+            }
+        });
+    });
+</script>
+
+
+
+</main>
+
+<footer class="bg-goy">
+    <div class="container">
+        <div class="row py-4 justify-content-center">
+            <div class="col-md-5 text-white">
+                <h5>Medical</h5>
+                <p>Putting your health first. Connect with top-tier healthcare providers, receive personalized treatment recommendations, and manage your health journey effortlessly.</p>
+            </div>
+            <div class="col-md-4 text-white">
+                <h5>New York</h5>
+                <p>709 Honey Creek Dr. <br> Delhi <br> NY 10028</p>
+                <p>1-888-299-2000 <br> medical.in </p>
+            </div>
+            <div class="col-md-3 text-white">
+                <h5>Aligarh</h5>
+                <p>4851 Willow Greene Drive <br> Montgomery <br> AL 36109</p>
+                <p>1-888-299-2000 <br> med </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</body>
+
+</html>

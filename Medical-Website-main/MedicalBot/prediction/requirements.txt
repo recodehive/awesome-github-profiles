@@ -1,0 +1,15 @@
+flask
+Flask==2.0.2
+Flask-Cors==3.0.10
+numpy
+Werkzeug==2.0.2
+wheel==0.37.1
+wrapt==1.14.1
+tensorflow
+Jinja2==3.0.3
+MarkupSafe==2.0.1
+nltk
+pandas
+flask
+gunicorn
+

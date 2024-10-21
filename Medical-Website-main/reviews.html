@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Swasthya Point</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-background: #ffffff;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #89CFF0, #00BFFF, #0CAFFF, #1F75FE, #1560bd);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+        .main-head {
+            background-color: var(--primary-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color var(--transition-speed) ease;
+        }
+
+        /* Header styles */
+header {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .navbar {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        margin: 0.25rem;
+    }
+}
+
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .review-container {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .review-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            background-color: #f1f1f1;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 0.8rem 1.5rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            
+        }
+
+        .tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            transform: translateY(100%);
+            transition: transform var(--transition-speed) ease;
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        .tab:hover::before,
+        .tab.active::before {
+            transform: translateY(0);
+        }
+
+        .tab:hover,
+        .tab.active {
+            color: #2980b9;
+            size: 20px;
+        }
+
+        .content-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+    /* background-color: rgba(255, 255, 255, 0.3); Adjust transparency */
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+
+
+        .content-form, .review-form {
+            flex: 1 1 100%;
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .content-form:hover, .review-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .star-rating {
+            display: inline-block;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            float: right;
+            padding: 0 2px;
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color var(--transition-speed) ease;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffca08;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .content-item, .review-item {
+            background-color: var(--card-background);
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-speed) ease;
+            box-shadow: var(--card-shadow);
+        }
+
+        .content-item:hover, .review-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-item img, .review-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .content-item img:hover, .review-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .moderation-panel {
+            background-color: #e9ecef;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .moderation-controls {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .moderation-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-weight: 600;
+        }
+
+        .approve-btn {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .reject-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .moderation-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+/**** FOOTER ****/
+
+
+footer {
+            background-color: #002147;
+            color: #ffffff;
+            padding: 0 0 0 0;
+            margin-top: 2rem; 
+        } 
+
+        .footer-container {
+            /* margin-top: 40px; */
+            display: flex;
+            justify-content:space-around;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            flex: 1;
+            margin-top: 30px;
+            margin-left: 100px;
+            margin-right: 20px;
+            /* margin-bottom: 1rem; */
+            min-width: 100px;
+            font-size: 30px;
+        }
+
+        .footer_deep {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--header-text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+/* 
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        } */
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem;
+                animation: slideDown 0.3s ease-out;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .dropdown-close-btn {
+                display: block;
+                text-align: right;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dark-mode {
+            --primary-color: #2c3e50;
+            --secondary-color: #27ae60;
+            --background-color: #1a1a1a;
+            --text-color: #f4f4f4;
+            --card-background: #2c2c2c;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode .main-head {
+            background-color: #34495e;
+        }
+
+        .dark-mode .tab-container {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode .tab::before {
+            background-color: #34495e;
+        }
+
+        .dark-mode .content-form,
+        .dark-mode .review-form {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode .form-group input,
+        .dark-mode .form-group select,
+        .dark-mode .form-group textarea {
+            background-color: #3a3a3a;
+            color: #f4f4f4;
+            border-color: #4a4a4a;
+        }
+
+        .dark-mode .moderation-panel {
+            background-color: #2c2c2c;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo"><img src="img/swasthya-logo.png" alt="Swasthya Point"></a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blogs</a>
+            <a href="nearby.html">Nearby</a>
+            <a href="appointment.html">Book Your Appointment</a>
+            <div class="dark-btn-navbar">
+                <label id="dark-change"></label>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <main>
+        <section id="user-content" class="review-container">
+            <div class="tab-container">
+                <button class="tab active" data-tab="share-content" style="font-size: 20px;">Share Medical Experience</button>
+                <button class="tab" data-tab="view-content" style="font-size: 20px;">View Experiences</button>
+            </div>
+
+            <div class="content-container">
+                <div id="share-content" class="content-form content-section active">
+                    <h2>SShare Your Medical Experience</h2>
+                    <form id="contentForm">
+                        <div class="form-group">
+                            <label for="contentTitle">Title of Your Experience:</label>
+                            <input type="text" id="contentTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentLocation">Hospital/Clinic Name:</label>
+                            <input type="text" id="contentLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentType">ype of Medical Service:</label>
+                            <select id="contentType" required>
+                                <option value="">Select type</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="treatment">Treatment</option>
+                                <option value="surgery">Surgery</option>
+                                <option value="emergency">Emergency Care</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentText">Share Your Experience:</label>
+                            <textarea id="contentText" rows="6" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="contentImage">Upload an Image:</label>
+                            <input type="file" id="contentImage" accept="image/*">
+                        </div>
+                        <button type="submit" class="submit-btn">Share Experience</button>
+                    </form>
+                </div>
+
+                <div id="view-content" class="content-section">
+                    <h2>Medical Experiences</h2>
+                    <div id="contentList" class="content-grid">
+                        <!-- User-generated content will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="moderation-panel fade-in">
+                <h2>Moderation Panel</h2>
+                <div id="moderationList">
+                    <!-- Pending content for moderation will be added here -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5">☆</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4">☆</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3">☆</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2">☆</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1">☆</label>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Medical</h3>
+            <p class="footer_deep">Putting your health first. Connect with top-tier healthcare providers, receive personalized treatment recommendations, and manage your health journey effortlessly.</p>
+        </div>
+        <div class="footer-column">
+            <h3>New York</h3>
+            <div class="footer_deep">
+                <p>709 Honey Creek Dr.</p>
+                <p>Delhi</p>
+                <p>NY 10028</p>
+                <p>1-888-299-2000</p>
+                <p><a href="https://medical.in">medical.in</a></p>
+            </div>
+        </div>
+        <div class="footer-column">
+            <h3>Aligarh</h3>
+            <div class="footer_deep">
+                <p>4851 Willow Greene Drive</p>
+                <p>Montgomery</p>
+                <p>AL 36109</p>
+                <p>1-888-299-2000</p>
+                <p><a href="https://med.com">med.com</a></p>
+            </div>
+        </div>
+    </div>
+   
+</footer>
+
+
+    <script>
+        // Function to handle tab switching
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    const tabId = tab.getAttribute('data-tab');
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        }
+
+        // Function to load content from localStorage
+        function loadContent() {
+            const content = JSON.parse(localStorage.getItem('userContent')) || [];
+            const contentList = document.getElementById('contentList');
+            contentList.innerHTML = ''; // Clear existing content
+
+            content.forEach(item => {
+                if (item.status === 'approved') {
+                    const contentElement = createContentElement(item);
+                    contentList.appendChild(contentElement);
+                }
+            });
+        }
+
+        // Update the createContentElement function
+        function createContentElement(item) {
+            const contentElement = document.createElement('div');
+            contentElement.className = 'content-item fade-in';
+            contentElement.innerHTML = `
+                <h3>${item.title}</h3>
+                <p><strong>Hospital/Clinic:</strong> ${item.location}</p>
+                <p><strong>Service Type:</strong> ${item.experienceType}</p>
+                <p><strong>Rating:</strong> ${item.rating} stars</p>
+                ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+                <p>${item.text}</p>
+            `;
+            return contentElement;
+        }
+
+
+        // Function to save new content
+        function saveContent(item) {
+            const content = JSON.parse(localStorage.getItem('userContent')) || [];
+            content.unshift(item); // Add new content to the beginning of the array
+            localStorage.setItem('userContent', JSON.stringify(content));
+        }
+
+        // Function to load content for moderation
+        function loadModerationContent() {
+            const content = JSON.parse(localStorage.getItem('userContent')) || [];
+            const moderationList = document.getElementById('moderationList');
+            moderationList.innerHTML = ''; // Clear existing content
+
+            content.forEach((item, index) => {
+                if (item.status === 'pending') {
+                    const contentElement = createModerationContentElement(item, index);
+                    moderationList.appendChild(contentElement);
+                }
+            });
+        }
+
+function loadModerationContent() {
+    const content = JSON.parse(localStorage.getItem('userContent')) || [];
+    const moderationList = document.getElementById('moderationList');
+    moderationList.innerHTML = ''; // Clear existing content
+
+    content.forEach((item, index) => {
+        if (item.status === 'pending') {
+            const contentElement = createModerationContentElement(item, index);
+            moderationList.appendChild(contentElement);
+        }
+    });
+}
+
+        // Function to create a moderation content element
+   
+        function createModerationContentElement(item, index) {
+    const contentElement = document.createElement('div');
+    contentElement.className = 'content-item fade-in';
+    contentElement.innerHTML = `
+        <h3>${item.title}</h3>
+        <p><strong>Location:</strong> ${item.location}</p>
+        <p><strong>Type:</strong> ${item.experienceType}</p>
+        <p><strong>Rating:</strong> ${item.rating} stars</p>
+        ${item.image ? `<img src="${item.image}" alt="${item.title}">` : ''}
+        <p>${item.text}</p>
+        <div class="moderation-controls">
+            <button class="moderation-btn approve-btn" onclick="approveContent(${index})">Approve</button>
+            <button class="moderation-btn reject-btn" onclick="rejectContent(${index})">Reject</button>
+        </div>
+    `;
+    return contentElement;
+}
+
+        // Functions to approve and reject content
+        function approveContent(index) {
+            const content = JSON.parse(localStorage.getItem('userContent')) || [];
+            content[index].status = 'approved';
+            localStorage.setItem('userContent', JSON.stringify(content));
+            loadModerationContent();
+            loadContent();
+            showNotification('Content approved successfully!');
+        }
+
+
+
+        function rejectContent(index) {
+            const content = JSON.parse(localStorage.getItem('userContent')) || [];
+            content.splice(index, 1);
+            localStorage.setItem('userContent', JSON.stringify(content));
+            loadModerationContent();
+            showNotification('Content rejected and removed.');
+        }
+        
+
+        // Event listener for content form submission
+        document.getElementById('contentForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const title = document.getElementById('contentTitle').value;
+    const location = document.getElementById('contentLocation').value;
+    const experienceType = document.getElementById('contentType').value;
+    const text = document.getElementById('contentText').value;
+    const rating = document.querySelector('input[name="rating"]:checked').value;
+    const imageFile = document.getElementById('contentImage').files[0];
+
+    const newContent = { 
+        type: 'experience',
+        title, 
+        location, 
+        experienceType, 
+        text,
+        rating,
+        status: 'pending'
+    };
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    newContent.image = reader.result;
+                    saveContent(newContent);
+                    showNotification('Experience submitted for moderation!');
+                    loadModerationContent();
+                    e.target.reset();
+                }
+                reader.readAsDataURL(imageFile);
+            } else {
+                saveContent(newContent);
+                showNotification('Experience submitted for moderation!');
+                loadModerationContent();
+                e.target.reset();
+            }
+        });
+
+        // Function to show notification
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.position = 'fixed';
+            notification.style.top = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = 'var(--secondary-color)';
+            notification.style.color = 'white';
+            notification.style.padding = '10px 20px';
+            notification.style.borderRadius = '5px';
+            notification.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            notification.style.zIndex = '1000';
+            notification.style.opacity = '0';
+            notification.style.transition = 'opacity 0.3s ease';
+
+            document.body.appendChild(notification);
+
+            // Fade in
+            setTimeout(() => {
+                notification.style.opacity = '1';
+            }, 10);
+
+            // Fade out and remove
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize page
+        window.addEventListener('load', () => {
+            setupTabs();
+            loadContent();
+            loadModerationContent();
+        });
+
+        // Handle hamburger menu
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburger = document.getElementById("hamburger");
+            const navList = document.getElementById("nav-list");
+            const closeBtn = document.getElementById("closeBtn");
+
+            hamburger.addEventListener("click", function () {
+                navList.classList.toggle("active");
+            });
+
+            closeBtn.addEventListener("click", function () {
+                navList.classList.remove("active");
+            });
+        });
+
+        // Handle dark mode toggle
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+
+        modeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                modeToggle.innerHTML = '🌙';
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                modeToggle.innerHTML = '☀️';
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            modeToggle.innerHTML = '🌙';
+        }
+    </script>
+</body>
+</html>

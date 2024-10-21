@@ -1,0 +1,423 @@
+body{
+    margin: 0;
+}
+.fcc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    width: max(6vw,4vh);
+    height: max(6vw,4vh);
+}
+.logoCompname{
+    display: flex;
+    font-size: max(2vw,2vh);
+}
+.logoCompname p{
+    margin-top: max(2vw,2vh);
+}
+.easelinks a{
+    color: rgb(0, 0, 0);
+    padding: 1vw;
+    border-radius: 20px;
+    text-decoration: none;
+}
+header button{
+    margin: 2vw;
+    background-color: white;
+    transition: all .3s ease-in-out;
+    border-radius: 30px;
+    font-size: 1.3vw;
+    padding: 0.7vw;
+    border-color: transparent;
+}
+header button:hover{
+    color: white;
+    transition: all .3s ease-in-out;
+    background-color: rgba(235, 149, 37);
+}
+.font{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main{
+    width: 100%;
+    height: 100px;
+}
+.bgimg{
+    position: absolute;
+    background-image: url("img/bdindex.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vw;
+    z-index: -20;
+}
+.intro .introf{
+    color: #7e3333;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3vw;
+    margin: 8vw;
+}
+.intro .introb{
+    position: absolute;
+    width: 80%;
+    border-radius: 50px;
+    height: max(30vw,20vh);
+    background-color: rgba(204, 201, 201, 0.438);
+    filter: blur(7px);
+    z-index: -2;
+}
+.category{
+    padding: 2VW;
+    background-color: rgba(150, 171, 171, 0.37);
+    margin: 0;
+}
+.cats{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(23vw, 1fr));
+    justify-content: space-around;
+}
+.cats div{
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    height: 15VW;
+    margin-left: 15%;
+    margin-bottom: 10%;
+    padding-top: 10%;
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cat p{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vw;
+    text-align: center;
+}
+.cat svg{
+    width: 4vw;
+}
+.howitworks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.working img{
+    width: 10vw;
+}
+.arrow{
+    margin-top: max(-12vw, -12vh);
+}
+.working svg{
+    width: 10vw;
+}
+.working p{
+    margin-top: 0;
+    text-align: center;
+    font-size: 2vw;
+}
+.working div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.working h5{
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+.why p,.why h2, .why li{
+    font-size: 2vw;
+}
+.tcomp{
+    background-color: rgba(150, 171, 171, 0.37);
+}
+.tcomp .topc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3vw;
+}
+.tcomp .top4comp{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.top4comp .top4c{
+    padding-top: 3vw;
+    padding-bottom: 1vw;
+    width: 20vw;
+    border-radius: 3vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8vw;
+    text-align: center;
+    margin-bottom: 3vw;
+}
+.top4c svg{
+    width: 7vw;
+}
+.tata svg{
+    width: 9vw;
+}
+.infosys svg{
+    width: 14vw;
+}
+.qa div{
+    padding-left: 1.5vw;
+    border-radius: 2vw;
+    border-top: 1px solid rgba(128, 128, 128, 0.407) ;
+    border-left: 1px solid rgba(128, 128, 128, 0.407) ;
+    font-size: 1.5vw;
+    width: 60%;
+}
+.qa h6{
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin-bottom: 0;
+}
+.qa p{
+    color: grey;
+    font-weight: bold;
+    margin-top: 0;
+}
+.cv div{
+    margin: 3vw;
+    text-align: center;
+}
+.cv div form label{
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+    border-radius: 1vw;
+    padding: 1dvw;
+    border: 1px solid grey;
+}
+.cv div form label:hover{
+    box-shadow: inset 0 0 2vw rgba(0,0,0,0.3);
+    color: white;
+    transition: all .3s ease-in-out;
+    background-color: rgba(0, 255, 0, 0.678);
+}
+.cv div form label svg{
+    width: 2vw;
+    padding-right: 1vw;
+    transform: translatey(10%);
+}
+.contact{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.contact div{
+    display: flex;
+    flex-direction: column;
+    margin: 2vw;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+}
+.contact div div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    padding: 1vw;
+    width: 25vw;
+    border-radius: 1vw;
+}
+.contact div div input:focus {
+    outline: 0px;
+}
+@media  screen and (max-width: 480px) {
+    .con{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .con input{
+        width: 100% !important;
+    }
+}
+.boxshadow div{
+    transition: 0.5s ease;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.426);
+}
+.boxshadow div:hover{
+    transition: 0.5s ease;
+    box-shadow: 10px 10px 7px rgba(128, 128, 128, 0.426);
+}
+
+
+/* helooooooooooo guzuuuuuuuu this one is for login page */
+
+
+.logbody{
+    height: 100%;
+    width: 100%;
+    background-color: #aeaeae4e;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30vh;
+    align-items: center;
+}
+.container{
+    transition: 0.5s ease-in-out;
+    height: 70%;
+    background-color: white;
+    flex-direction: column;
+    border-radius: max(1vw, 1vh);
+}
+.signregbtn{
+    width: 50%;
+    margin-top: max(4vw, 3vh);
+    box-shadow: 0 0 15px 1px rgb(20, 230, 27);
+    transition: .5s;
+    border-radius: 20px;
+}
+.leftsign{
+    background-image: linear-gradient(to right,#11998E, #38EF7D);
+    transition: .5s;
+    font-size: max(1vw,1vh);
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.rightsign{
+    background-color: transparent;
+    font-size: max(1vw,1vh);
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+}
+.changesonlogin{
+    cursor: pointer;
+    border: 0;
+    outline: none;
+}
+.signincred{
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: max(3vw, 3vh);
+    margin-top: 3vh;
+}
+.loginput{
+    border: none;
+    border-bottom: 1px solid rgb(136, 136, 136);
+    margin-top: 3vh;
+    border-radius: 5px;
+    padding-left: 1vw;
+}
+header #loglink button:hover{
+    cursor: pointer !important;
+}
+.reg{
+    background-image: linear-gradient(to right,#FF5F6D, #FFC371);
+    transition: .5s;
+    font-size: max(1vw,1vh);
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.regscreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-top: max(4vw, 3vh);
+    box-shadow: 0 0 15px 1px #FF5F6D;
+    transition: .5s;
+    border-radius: 20px;
+}
+.leftreg{
+    background-color: transparent;
+    font-size: max(1vw,1vh);
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+}
+.rightreg{
+    background-image: linear-gradient(to right,#FF5F6D, #FFC371);
+    transition: .5s;
+    font-size: max(1vw,1vh);
+    padding: 8px;
+    width: 50%;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+.regcred{
+    transition: 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: max(3vw, 3vh);
+    margin-top: 3vh;
+}
+.regcred{
+    display: none;
+}
+.regscreen{
+    display: none;
+}
+#back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3vw;
+    background-color: grey;
+    padding: 1vw;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+#submitfornewl:hover{
+    cursor: pointer !important;
+}
+#popupForm{
+    padding: 2vw 4vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 3;
+}
+#popupForm form{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+#popupForm form input{
+    margin-bottom: 2vw;
+    border-radius: 10px;
+    padding-left: 2px;
+    padding: 1vw;
+    border: none;
+    border-bottom: 1px solid grey;
+    background-color: rgba(128, 128, 128, 0.288);
+}
+#popsubmit{
+    padding: 1vw;
+    width: 30%;
+}

@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Swasthya Point</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --header-bg: #1a1a2e;
+            --header-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+/* Header styles */
+header {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+.navbar {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    .navbar {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar a {
+        margin: 0.25rem;
+    }
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+
+        
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--header-text);
+            cursor: pointer;
+        }
+
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+
+        .hero {
+            margin-top: 5px;
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .cms-controls {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .cms-controls button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .cms-controls button:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .blog-filters select {
+            padding: 0.7rem;
+            margin: 0 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            background-color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-filters select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .blog-post h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 1rem;
+        }
+
+        .category {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tags {
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #333;
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .tag:hover {
+            background-color: #d0d0d0;
+        }
+
+        .content {
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: auto;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #2980b9;
+        }
+
+        .comments-section {
+            margin-top: 1.5rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        .comment {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .comment:hover {
+            background-color: #f0f0f0;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .comment-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .comment-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .comment-form button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #002147;
+            color: var(--header-text);
+            padding: 0 0 0 0;
+            margin-top: 2rem; 
+        } 
+
+        .footer-container {
+            /* margin-top: 40px; */
+            display: flex;
+            justify-content:space-around;
+            flex-wrap: wrap;
+        }
+        .footer-column {
+            flex: 1;
+            margin-top: 30px;
+            margin-left: 100px;
+            margin-right: 20px;
+            /* margin-bottom: 1rem; */
+            min-width: 100px;
+            font-size: 30px;
+        }
+
+        .footer_deep {
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+
+
+        .footer-column a:hover {
+            color: var(--secondary-color);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--header-text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+
+        /* New styles for modals */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            width: 80%;
+            max-width: 600px;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Form styles */
+        .modal-form input[type="text"],
+        .modal-form textarea {
+            width: 100%;
+            padding: 0.7rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .modal-form input[type="text"]:focus,
+        .modal-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+
+        .modal-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .modal-form button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* List styles for categories and tags */
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .item-list li {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 0.7rem 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .item-list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.3rem 0.7rem;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .delete-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-1px);
+        }
+   
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><img src="img/swasthya-logo.png" alt="Swasthya Point"></a>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Blogs</a>
+            <a href="nearby.html">Nearby</a>
+            <a href="appointment.html">Book Your Appointment</a>
+            <div class="dark-btn-navbar">
+                <label id="dark-change"></label>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Discover Health Tips, Medical Insights, and Wellness Inspiration</h2>
+            <p>Welcome to the Swasthya Point Blog, your trusted source for all things health and wellness!</p>
+        </section>
+
+        <div class="container">
+            <div class="cms-controls">
+                <button id="newPostBtn">New Post</button>
+                <button id="manageCategoriesBtn">Manage Categories</button>
+                <button id="manageTagsBtn">Manage Tags</button>
+            </div>
+
+            <div class="blog-filters">
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                </select>
+                <select id="tagFilter">
+                    <option value="">All Tags</option>
+                </select>
+            </div>
+
+            <div class="blog-container">
+                <!-- Blog posts will be dynamically generated here -->
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Medical</h3>
+                <p class="footer_deep">Putting your health first. Connect with top-tier healthcare providers, receive personalized treatment recommendations, and manage your health journey effortlessly.</p>
+            </div>
+            <div class="footer-column">
+                <h3>New York</h3>
+                <div class="footer_deep">
+                    <p>709 Honey Creek Dr.</p>
+                    <p>Delhi</p>
+                    <p>NY 10028</p>
+                    <p>1-888-299-2000</p>
+                    <p><a href="https://medical.in">medical.in</a></p>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Aligarh</h3>
+                <div class="footer_deep">
+                    <p>4851 Willow Greene Drive</p>
+                    <p>Montgomery</p>
+                    <p>AL 36109</p>
+                    <p>1-888-299-2000</p>
+                    <p><a href="https://med.com">med.com</a></p>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+
+
+    <style></style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
+<script>
+// Initialize data in localStorage if it doesn't exist
+if (!localStorage.getItem('blogPosts')) {
+localStorage.setItem('blogPosts', JSON.stringify([
+    {
+        id: 1,
+        title: "10 Essential Health Tips for 2024",
+        content: "As we enter 2024, maintaining good health remains a top priority...",
+        author: "Dr. Sarah Johnson",
+        date: "May 15, 2024",
+        category: "Wellness",
+        tags: ["2024", "health", "tips"],
+        comments: []
+    },
+    // Add more sample posts here
+]));
+}
+
+if (!localStorage.getItem('categories')) {
+localStorage.setItem('categories', JSON.stringify(["Wellness", "Nutrition", "Mental Health", "Fitness", "Medical Advances"]));
+}
+
+if (!localStorage.getItem('tags')) {
+localStorage.setItem('tags', JSON.stringify(["2024", "health", "tips", "nutrition", "mental health", "fitness", "medical research"]));
+}
+
+// Function to get data from localStorage
+function getLocalData(key) {
+return JSON.parse(localStorage.getItem(key));
+}
+
+// Function to set data in localStorage
+function setLocalData(key, data) {
+localStorage.setItem(key, JSON.stringify(data));
+}
+
+function renderPosts() {
+const container = document.querySelector('.blog-container');
+container.innerHTML = '';
+const posts = getLocalData('blogPosts');
+
+posts.forEach(post => {
+    const article = document.createElement('article');
+    article.className = 'blog-post';
+    article.innerHTML = `
+        <h2>${post.title}</h2>
+        <div class="meta">Posted on ${post.date} by ${post.author}</div>
+        <div class="category">${post.category}</div>
+        <div class="tags">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+        <div class="content">
+            <p>${post.content.substring(0, 150)}...</p>
+        </div>
+        <a href="#" class="read-more" data-id="${post.id}">Read More</a>
+        <div class="comments-section">
+            <h3>Comments (${post.comments.length})</h3>
+            <div class="comments">
+                ${post.comments.slice(0, 2).map(comment => `
+                    <div class="comment">
+                        <p>${comment.text}</p>
+                        <small>${comment.date}</small>
+                    </div>
+                `).join('')}
+            </div>
+            <form class="comment-form" data-post-id="${post.id}">
+                <textarea placeholder="Add a comment"></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+        </div>
+    `;
+    container.appendChild(article);
+});
+
+// Add event listeners for read more links
+document.querySelectorAll('.read-more').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const postId = parseInt(e.target.getAttribute('data-id'));
+        viewFullPost(postId);
+    });
+});
+
+// Add event listeners for comment forms
+document.querySelectorAll('.comment-form').forEach(form => {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const postId = parseInt(e.target.getAttribute('data-post-id'));
+        const comment = e.target.querySelector('textarea').value;
+        addComment(postId, comment);
+        e.target.reset();
+    });
+});
+}
+
+function populateFilters() {
+const categoryFilter = document.getElementById('categoryFilter');
+const tagFilter = document.getElementById('tagFilter');
+const categories = getLocalData('categories');
+const tags = getLocalData('tags');
+
+categoryFilter.innerHTML = '<option value="">All Categories</option>';
+tagFilter.innerHTML = '<option value="">All Tags</option>';
+
+categories.forEach(category => {
+    const option = document.createElement('option');
+    option.value = category;
+    option.textContent = category;
+    categoryFilter.appendChild(option);
+});
+
+tags.forEach(tag => {
+    const option = document.createElement('option');
+    option.value = tag;
+    option.textContent = tag;
+    tagFilter.appendChild(option);
+});
+
+// Add event listeners for filters
+categoryFilter.addEventListener('change', filterPosts);
+tagFilter.addEventListener('change', filterPosts);
+}
+
+function filterPosts() {
+const selectedCategory = document.getElementById('categoryFilter').value;
+const selectedTag = document.getElementById('tagFilter').value;
+const posts = getLocalData('blogPosts');
+
+const filteredPosts = posts.filter(post => {
+    const categoryMatch = !selectedCategory || post.category === selectedCategory;
+    const tagMatch = !selectedTag || post.tags.includes(selectedTag);
+    return categoryMatch && tagMatch;
+});
+
+renderFilteredPosts(filteredPosts);
+}
+
+function renderFilteredPosts(filteredPosts) {
+const container = document.querySelector('.blog-container');
+container.innerHTML = '';
+
+filteredPosts.forEach(post => {
+    // Render filtered posts (similar to renderPosts function)
+    const article = document.createElement('article');
+    article.className = 'blog-post';
+    article.innerHTML = `
+        <h2>${post.title}</h2>
+        <div class="meta">Posted on ${post.date} by ${post.author}</div>
+        <div class="category">${post.category}</div>
+        <div class="tags">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+        <div class="content">
+            <p>${post.content.substring(0, 150)}...</p>
+        </div>
+        <a href="#" class="read-more" data-id="${post.id}">Read More</a>
+        <div class="comments-section">
+            <h3>Comments (${post.comments.length})</h3>
+            <div class="comments">
+                ${post.comments.slice(0, 2).map(comment => `
+                    <div class="comment">
+                        <p>${comment.text}</p>
+                        <small>${comment.date}</small>
+                    </div>
+                `).join('')}
+            </div>
+            <form class="comment-form" data-post-id="${post.id}">
+                <textarea placeholder="Add a comment"></textarea>
+                <button type="submit">Post Comment</button>
+            </form>
+        </div>
+    `;
+    container.appendChild(article);
+});
+
+// Re-add event listeners
+addEventListeners();
+}
+
+function viewFullPost(postId) {
+const posts = getLocalData('blogPosts');
+const post = posts.find(p => p.id === postId);
+if (post) {
+    const modal = document.createElement('div');
+    modal.className = 'modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>${post.title}</h2>
+            <div class="meta">Posted on ${post.date} by ${post.author}</div>
+            <div class="category">${post.category}</div>
+            <div class="tags">${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}</div>
+            <div class="content">
+                <p>${post.content}</p>
+            </div>
+            <div class="comments-section">
+                <h3>Comments (${post.comments.length})</h3>
+                <div class="comments">
+                    ${post.comments.map(comment => `
+                        <div class="comment">
+                            <p>${comment.text}</p>
+                            <small>${comment.date}</small>
+                        </div>
+                    `).join('')}
+                </div>
+                <form class="comment-form" data-post-id="${post.id}">
+                    <textarea placeholder="Add a comment"></textarea>
+                    <button type="submit">Post Comment</button>
+                </form>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Close modal when clicking on the close button or outside the modal
+    modal.querySelector('.close').addEventListener('click', () => {
+        document.body.removeChild(modal);
+    });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            document.body.removeChild(modal);
+        }
+    });
+
+    // Add event listener for comment form in modal
+    modal.querySelector('.comment-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const comment = e.target.querySelector('textarea').value;
+        addComment(postId, comment);
+        e.target.reset();
+    });
+}
+}
+
+function addComment(postId, commentText) {
+const posts = getLocalData('blogPosts');
+const postIndex = posts.findIndex(p => p.id === postId);
+if (postIndex !== -1) {
+    posts[postIndex].comments.push({
+        text: commentText,
+        date: new Date().toLocaleString()
+    });
+    setLocalData('blogPosts', posts);
+    renderPosts();
+}
+}
+
+function createNewPost() {
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Create New Post</h2>
+                    <form id="newPostForm" class="modal-form">
+                        <input type="text" id="postTitle" placeholder="Enter post title" required>
+                        <textarea id="postContent" placeholder="Enter post content" required rows="5"></textarea>
+                        <input type="text" id="postAuthor" placeholder="Enter author name" required>
+                        <input type="text" id="postCategory" placeholder="Enter post category" required>
+                        <input type="text" id="postTags" placeholder="Enter tags (comma-separated)" required>
+                        <button type="submit">Create Post</button>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+
+
+// Close modal when clicking on the close button or outside the modal
+modal.querySelector('.close').addEventListener('click', () => {
+    document.body.removeChild(modal);
+});
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        document.body.removeChild(modal);
+    }
+});
+
+// Add event listener for form submission
+modal.querySelector('#newPostForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = document.getElementById('postTitle').value;
+    const content = document.getElementById('postContent').value;
+    const author = document.getElementById('postAuthor').value;
+    const category = document.getElementById('postCategory').value;
+    const tags = document.getElementById('postTags').value.split(',').map(tag => tag.trim());
+
+    const posts = getLocalData('blogPosts');
+    const newPost = {
+        id: posts.length + 1,
+        title,
+        content,
+        author,
+        date: new Date().toLocaleDateString(),
+        category,
+        tags,
+        comments: []
+    };
+
+    posts.push(newPost);
+    setLocalData('blogPosts', posts);
+
+    // Update categories and tags
+    let categories = getLocalData('categories');
+    let allTags = getLocalData('tags');
+
+    if (!categories.includes(category)) {
+        categories.push(category);
+        setLocalData('categories', categories);
+    }
+
+    tags.forEach(tag => {
+        if (!allTags.includes(tag)) {
+            allTags.push(tag);
+        }
+    });
+    setLocalData('tags', allTags);
+
+    renderPosts();
+    populateFilters();
+    document.body.removeChild(modal);
+});
+}
+
+function manageCategories() {
+            const categories = getLocalData('categories');
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Manage Categories</h2>
+                    <ul id="categoryList" class="item-list">
+                        ${categories.map(category => `<li>${category} <button class="delete-btn delete-category" data-category="${category}">Delete</button></li>`).join('')}
+                    </ul>
+                    <form id="addCategoryForm" class="modal-form">
+                        <input type="text" id="newCategory" placeholder="Enter new category" required>
+                        <button type="submit">Add Category</button>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+
+// Close modal when clicking on the close button or outside the modal
+modal.querySelector('.close').addEventListener('click', () => {
+    document.body.removeChild(modal);
+});
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        document.body.removeChild(modal);
+    }
+});
+
+// Add event listener for adding new category
+modal.querySelector('#addCategoryForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newCategory = document.getElementById('newCategory').value;
+    if (!categories.includes(newCategory)) {
+        categories.push(newCategory);
+        setLocalData('categories', categories);
+        populateFilters();
+        document.body.removeChild(modal);
+        manageCategories(); // Reopen the modal with updated list
+                }
+            });
+
+            // Add event listeners for deleting categories
+            modal.querySelectorAll('.delete-category').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const categoryToDelete = e.target.getAttribute('data-category');
+                    const updatedCategories = categories.filter(category => category !== categoryToDelete);
+                    setLocalData('categories', updatedCategories);
+                    populateFilters();
+                    document.body.removeChild(modal);
+                    manageCategories(); // Reopen the modal with updated list
+                });
+            });
+        }
+
+        function manageTags() {
+            const tags = getLocalData('tags');
+            const modal = document.createElement('div');
+            modal.className = 'modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Manage Tags</h2>
+                    <ul id="tagList" class="item-list">
+                        ${tags.map(tag => `<li>${tag} <button class="delete-btn delete-tag" data-tag="${tag}">Delete</button></li>`).join('')}
+                    </ul>
+                    <form id="addTagForm" class="modal-form">
+                        <input type="text" id="newTag" placeholder="Enter new tag" required>
+                        <button type="submit">Add Tag</button>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(modal);
+            modal.style.display = 'block';
+            // Close modal when clicking on the close button or outside the modal
+            modal.querySelector('.close').addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                }
+            });
+
+            // Add event listener for adding new tag
+            modal.querySelector('#addTagForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const newTag = document.getElementById('newTag').value;
+                if (!tags.includes(newTag)) {
+                    tags.push(newTag);
+                    setLocalData('tags', tags);
+                    populateFilters();
+                    document.body.removeChild(modal);
+                    manageTags(); // Reopen the modal with updated list
+                }
+            });
+
+            // Add event listeners for deleting tags
+            modal.querySelectorAll('.delete-tag').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const tagToDelete = e.target.getAttribute('data-tag');
+                    const updatedTags = tags.filter(tag => tag !== tagToDelete);
+                    setLocalData('tags', updatedTags);
+                    populateFilters();
+                    document.body.removeChild(modal);
+                    manageTags(); // Reopen the modal with updated list
+                });
+            });
+        }
+
+        // UI Enhancements and Animations
+        function addUIEnhancements() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Fade in blog posts on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.blog-post').forEach(post => {
+                observer.observe(post);
+            });
+
+            // Add hover effect to blog posts
+            document.querySelectorAll('.blog-post').forEach(post => {
+                post.addEventListener('mouseenter', () => {
+                    post.style.transform = 'translateY(-5px)';
+                    post.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+                });
+                post.addEventListener('mouseleave', () => {
+                    post.style.transform = 'translateY(0)';
+                    post.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+                });
+            });
+
+            // Add parallax effect to hero section
+            window.addEventListener('scroll', () => {
+                const hero = document.querySelector('.hero');
+                const scrollPosition = window.pageYOffset;
+                hero.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
+            });
+        }
+
+        // Mobile menu toggle
+        function setupMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('nav-list');
+
+            hamburger.addEventListener('click', () => {
+                navList.classList.toggle('show');
+            });
+        }
+
+        // Header scroll effect
+        function setupHeaderScroll() {
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Initialize the blog
+        function initializeBlog() {
+            renderPosts();
+            populateFilters();
+            addUIEnhancements();
+            setupMobileMenu();
+            setupHeaderScroll();
+        }
+
+        // CMS control functions
+        document.getElementById('newPostBtn').addEventListener('click', createNewPost);
+        document.getElementById('manageCategoriesBtn').addEventListener('click', manageCategories);
+        document.getElementById('manageTagsBtn').addEventListener('click', manageTags);
+
+        // Initialize the blog when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', initializeBlog);
+    </script>
+</body>
+</html>

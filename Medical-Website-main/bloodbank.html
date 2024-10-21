@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="blog.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.min.css"
+            integrity="sha512-LFWtdAXHQuwUGH9cImO9blA3a3GfQNkpF2uRlhaOpSbDevNyK1rmAjs13mtpjvWyi+flP7zYWboqY+8Mkd42xA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Swasthya Point</title>
+        <style>
+            /* General styles for contact form inputs */
+            .form-control {
+                background-color: #fff;
+                /* White background */
+                border: 1px solid #ced4da;
+                /* Light border */
+                border-radius: 0.5rem;
+                /* Rounded corners */
+                transition: border-color 0.3s;
+                /* Smooth border transition */
+            }
+
+            .form-control:focus {
+                outline: none;
+                /* Remove default outline */
+                box-shadow: none;
+                /* Remove any shadow */
+                border-color: #007bff;
+                /* Change border color on focus */
+            }
+
+            /* Add custom styles for buttons */
+            .btn {
+                background-color: #007bff;
+                /* Primary color */
+                border: none;
+                /* Remove border */
+                color: #fff;
+                /* White text */
+                transition: background-color 0.3s;
+                /* Smooth background transition */
+            }
+
+            .btn:hover {
+                background-color: #0056b3;
+                /* Darker shade on hover */
+            }
+            .our_radio_service{
+                size: 20px;
+            }
+
+            /* Responsive design */
+            @media (max-width: 768px) {
+                .container {
+                    padding: 20px;
+                    /* Adjust padding on smaller screens */
+                }
+            }
+            .list-group-item {
+                background-color: transparent; 
+                color: inherit;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <!-- header section starts -->
+
+        <header>
+
+            <input type="checkbox" name="" id="toggler">
+            <label for="toggler" class="fas fa-bars"></label>
+            <a href="#" class="logo"><img src="img/swasthya-logo.png"></a>
+
+            <nav class="navbar">
+
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="blog.html">Blogs</a>
+                <a href="nearby.html">Nearby</a>
+                <a href="appointment.html"><span>Book Your Appointment</span></a>
+
+                <div class="dark-btn-navbar">
+                    <label id="dark-change"></label>
+                </div>
+                <!--telehealth reminders and schedules--><a href="https://yourcompany.setmore.com">Schedule
+                    Appointment</a>
+                <a href="https://yourcompany.setmore.com">Schedule Appointment</a>
+                <a href="#setmore_widget"><span>Schedule And Reminder</span></a>
+                <a href="user_login.html">User Login</a>
+                <a href="#">Doctor Login</a>
+                <a href="#">Admin Login</a>
+            </nav>
+
+        </header>
+
+        <!-- header section ends -->
+
+
+        <!-- home section starts -->
+
+        <section class="home" id="home">
+
+            <div class="content">
+                <h3>Your Health, Our Priority</h3>
+                <span>Personalized Care for Every Patient</span>
+                <p>We believe in a patient-centered approach, offering a wide range of medical services tailored to meet
+                    your unique health needs.</p>
+                <a href="#" class="btn">EXPLORE</a>
+            </div>
+
+            <div style="height: 100vh; filter: brightness(0.7);">
+
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    style="height: 100%;">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner" style="height: 100%;">
+                        <div class="carousel-item active">
+                            <img src="./img/HD-wallpaper-medical-hospital.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/medicine-healthcare-people-conce.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./img/surgery-1822458_640.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- home section ends-->
+
+        <!-- about section starts -->
+
+        <section class="about container-fluid py-5" id="about">
+            <div class="container">
+                <h1 class="heading text-center mb-5"> 
+                    <span class="text-primary">Blood Bank</span> 
+                </h1>
+        
+                <div class="row">
+                    <div class="col-md-12" data-aos="fade-left" data-aos-duration="500">
+                        <h3 class="mb-4 fs-2">Advanced Blood Bank Services</h3>
+                        <p class="mb-5 fs-5">At Swasthya Point, we provide comprehensive blood bank services to ensure safe and timely access to blood products for patients in need. Our state-of-the-art facility adheres to the highest standards of quality and safety, enabling us to meet the transfusion needs of our community.</p>
+                        
+                        <h4 class="our_radio_service mb-4 text-primary fs-3">Our Blood Bank Services</h4>
+                        <p class="mb-4 fs-5">We offer a full range of blood bank services to support patient care:</p>
+        
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">1. Blood Donation</h5>
+                                <p class="fs-5">We organize regular blood donation drives and provide facilities for voluntary blood donations to ensure a steady supply of blood for those in need.</p>
+                                <p class="fs-6"><strong>Donation Types:</strong> Whole blood, platelets, and plasma donations.</p>
+                            </li>
+        
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">2. Blood Collection and Testing</h5>
+                                <p class="fs-5">Our trained staff collects blood samples and conducts thorough testing to ensure the safety and compatibility of blood products before transfusion.</p>
+                                <p class="fs-6"><strong>Testing Includes:</strong> Infectious disease screening, blood typing, and cross-matching.</p>
+                            </li>
+        
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">3. Component Separation</h5>
+                                <p class="fs-5">We utilize advanced technology to separate blood into its components—such as red blood cells, plasma, and platelets—allowing for more targeted treatment options for patients.</p>
+                                <p class="fs-6"><strong>Benefits:</strong> Efficient use of blood products and tailored therapies for various medical conditions.</p>
+                            </li>
+        
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">4. Blood Transfusion Services</h5>
+                                <p class="fs-5">Our blood transfusion services ensure that patients receive safe and appropriate blood products based on their medical requirements.</p>
+                                <p class="fs-6"><strong>Protocols:</strong> Strict adherence to transfusion guidelines and monitoring of patients during transfusion.</p>
+                            </li>
+        
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">5. Blood Storage and Preservation</h5>
+                                <p class="fs-5">We maintain optimal storage conditions for blood products to ensure their viability and safety until they are needed for transfusion.</p>
+                                <p class="fs-6"><strong>Storage Facilities:</strong> Controlled temperature and environment for maximum preservation.</p>
+                            </li>
+        
+                            <li class="list-group-item mb-4">
+                                <h5 class="font-weight-bold fs-4">6. Patient Support and Education</h5>
+                                <p class="fs-5">We provide educational resources and support for patients and their families regarding blood donation, transfusion processes, and safety measures.</p>
+                                <p class="fs-6"><strong>Topics Covered:</strong> Importance of blood donation, transfusion reactions, and recovery.</p>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-4 fs-5">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+
+          
+        <!-- about section ends -->
+
+
+                <!-- Contact Start -->
+                <div class="container-xxl py-5">
+                    <div class="container">
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-map-marker-alt text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Address</p>
+                                        <h5 class="mb-0">Swasthya Point Delhi, India</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-phone-alt text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Call Us Now</p>
+                                        <h5 class="mb-0">+91 9876543210</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="h-100 bg-light rounded d-flex align-items-center p-5">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white"
+                                        style="width: 55px; height: 55px;">
+                                        <i class="fa fa-envelope-open text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="mb-2">Mail Us Now</p>
+                                        <h5 class="mb-0"> swasthyapoint2024@gmail.com</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <div class="bg-light rounded p-5">
+                                    <p class="d-inline-block border rounded-pill py-1 px-4">Contact Us</p>
+                                    <h1 class="mb-4">Have Any Query? Please Contact Us!</h1>
+
+                                    <form>
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <div class="form">
+                                                    <input type="text" class="form-control" id="name" name="name"
+                                                        placeholder="Your Name" required>
+                                                    <label for="name">Your Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form">
+                                                    <input type="email" class="form-control" id="email" name="email"
+                                                        placeholder="Your Email" required>
+                                                    <label for="email">Your Email</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form">
+                                                    <input type="tel" class="form-control" id="phone" name="phone"
+                                                        placeholder="Your Phone Number" required style=" height: 50px; font-size: 15px;">
+                                                    <label for="phone">Your Phone Number</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form">
+                                                    <input type="text" class="form-control" id="city" name="city"
+                                                        placeholder="Your City" required>
+                                                    <label for="city">Your City</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form">
+                                                    <input type="text" class="form-control" id="subject" name="subject"
+                                                        placeholder="Subject" required>
+                                                    <label for="subject">Subject</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form">
+                                                    <textarea class="form-control" placeholder="Leave a message here"
+                                                        id="message" name="message" style="height: 100px ; font-size: 15px;"
+                                                        required></textarea>
+                                                    <label for="message">Message</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <button class="btn btn-primary w-100 py-3" id="contact">Send
+                                                    Message</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="h-100" style="min-height: 400px;">
+                                    <iframe class="rounded w-100 h-100"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.77249238306!2d77.06889927915427!3d28.527582456103037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d4567aef7fd%3A0xddb0beddcd6d3c74!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sin!4v1603794290143!5m2!1sen!2sin"
+                                        frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact End -->
+
+
+            </div>
+            <footer>
+                <p class="m-0" style="text-align: center; padding-top: 10px;">&copy; 2024 Swasthya Point</p>
+              </footer>
+        </div>
+        </div>
+        </div>
+        </section>
+        <script>
+            var content = document.getElementsByTagName('body')[0];
+            var darkMode = document.getElementById('dark-change');
+            darkMode.addEventListener('click', function () {
+                darkMode.classList.toggle('active');
+                content.classList.toggle('night');
+            })
+        </script>
+
+        <script>
+            // Get the form and submit button
+const form = document.querySelector('form');
+const submitButton = document.querySelector('#contact');
+
+// Add an event listener to the submit button
+submitButton.addEventListener('click', function(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Get the input fields
+    const nameInput = document.querySelector('#name');
+    const emailInput = document.querySelector('#email');
+    const phoneInput = document.querySelector('#phone');
+    const cityInput = document.querySelector('#city');
+    const subjectInput = document.querySelector('#subject');
+    const messageInput = document.querySelector('#message');
+
+    // Clear the input fields
+    nameInput.value = '';
+    emailInput.value = '';
+    phoneInput.value = '';
+    cityInput.value = '';
+    subjectInput.value = '';
+    messageInput.value = '';
+
+    // Display an alert
+    alert('Your details have been submitted!');
+});
+        </script>
+      
+
+
+        </main>
+
+        <footer class="bg-goy">
+            <div class="container">
+                <div class="row  py-4 jus d-flex justify-content-center">
+                    <div class="col-md-5 text-white ">
+                        <h5>Medical</h5>
+                        <p>Putting your health first. Connect with top-tier healthcare providers, receive personalized
+                            treatment recommendations, and manage your health journey effortlessly</p>
+                    </div>
+                    <div class="col-md-4 text-white ">
+                        <h5>New York</h5>
+                        <p>709 Honey Creek Dr. <br> Delhi <br> NY 10028</p>
+                        <p>1-888-299-2000 <br> medical.in </p>
+                    </div>
+                    <div class="col-md-3 text-white">
+                        <h5>Aligarh</h5>
+                        <p>4851 Willow Greene Drive <br> Montgomery <br> AL 36109</p>
+                        <p>1-888-299-2000 <br> med </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <script> configObj = {
+                "buttonD": "M8 17.333h5.333v4C13.333 22.806 14.527 24 16 24c1.473 0 2.667-1.194 2.667-2.667v-4H24L16 8l-8 9.333z", "buttonT": "translate(-1088 -172) translate(832 140) translate(32 32) translate(224)",
+                "shadowSize": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+                "roundnessSize": "999px",
+                "buttonDToBottom": "32px",
+                "buttonDToRight": "32px",
+                "selectedBackgroundColor": "#13324b",
+                "selectedIconColor": "#b3ddff",
+                "buttonWidth": "56px",
+                "buttonHeight": "56px",
+                "svgWidth": "48px",
+                "svgHeight": "48px"
+            };
+            function createButton(obj, pageSimulator) {
+                const body = document.querySelector("body");
+                backToTopButton = document.createElement("span");
+                backToTopButton.classList.add("softr-back-to-top-button");
+                backToTopButton.id = "softr-back-to-top-button";
+                pageSimulator ? pageSimulator.appendChild(backToTopButton) : body.appendChild(backToTopButton);
+                backToTopButton.style.width = obj.buttonWidth;
+                backToTopButton.style.height = obj.buttonHeight;
+                backToTopButton.style.marginRight = obj.buttonDToRight;
+                backToTopButton.style.marginBottom = obj.buttonDToBottom;
+                backToTopButton.style.borderRadius = obj.roundnessSize;
+                backToTopButton.style.boxShadow = obj.shadowSize;
+                backToTopButton.style.color = obj.selectedBackgroundColor;
+                backToTopButton.style.backgroundColor = obj.selectedBackgroundColor;
+                pageSimulator ? backToTopButton.style.position = "absolute" : backToTopButton.style.position = "fixed";
+                backToTopButton.style.outline = "none";
+                backToTopButton.style.bottom = "0px";
+                backToTopButton.style.right = "0px";
+                backToTopButton.style.cursor = "pointer";
+                backToTopButton.style.textAlign = "center";
+                backToTopButton.style.border = "solid 2px currentColor";
+                backToTopButton.innerHTML = '<svg class="back-to-top-button-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" > <g fill="none" fill-rule="evenodd"> <path d="M0 0H32V32H0z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> <path class="back-to-top-button-img" fill-rule="nonzero" d="M11.384 13.333h9.232c.638 0 .958.68.505 1.079l-4.613 4.07c-.28.246-.736.246-1.016 0l-4.613-4.07c-.453-.399-.133-1.079.505-1.079z" transform="translate(-1028 -172) translate(832 140) translate(32 32) translate(164) matrix(1 0 0 -1 0 32)" /> </g> </svg>';
+                backToTopButtonSvg = document.querySelector(".back-to-top-button-svg");
+                backToTopButtonSvg.style.verticalAlign = "middle";
+                backToTopButtonSvg.style.margin = "auto";
+                backToTopButtonSvg.style.justifyContent = "center";
+                backToTopButtonSvg.style.width = obj.svgWidth;
+                backToTopButtonSvg.style.height = obj.svgHeight;
+                backToTopButton.appendChild(backToTopButtonSvg);
+                backToTopButtonImg = document.querySelector(".back-to-top-button-img");
+                backToTopButtonImg.style.fill = obj.selectedIconColor;
+                backToTopButtonSvg.appendChild(backToTopButtonImg);
+                backToTopButtonImg.setAttribute("d", obj.buttonD);
+                backToTopButtonImg.setAttribute("transform", obj.buttonT); if (!pageSimulator) {
+                    backToTopButton.style.display = "none";
+                    window.onscroll = function () {
+                        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) { backToTopButton.style.display = "block"; }
+                        else { backToTopButton.style.display = "none"; }
+                    };
+                    backToTopButton.onclick = function () { document.body.scrollTop = 0; document.documentElement.scrollTop = 0; };
+                }
+            }; document.addEventListener("DOMContentLoaded", function () { createButton(configObj, null); });</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/umd/photoswipe-lightbox.umd.min.js"
+            integrity="sha512-D16CBrIrVF48W0Ou0ca3D65JFo/HaEAjTugBXeWS/JH+1KNu54ZOtHPccxJ7PQ44rTItUT6DSI6xNL+U34SuuQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+            const lightbox = new PhotoSwipeLightbox({
+                gallery: '#gallery',
+                children: 'a',
+                showHideAnimationType: 'fade',
+                pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.4/photoswipe.esm.min.js')
+            });
+            lightbox.init();
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+    </body>
+
+</html>

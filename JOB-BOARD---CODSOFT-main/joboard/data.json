@@ -1,0 +1,119 @@
+{
+    "log": {
+        "mail": "password",
+        "vaibhav": "mm",
+        "example@gmail.com": "exam"
+    },
+    "basicdata": {
+        "email": [
+            "name",
+            "dob",
+            "degree",
+            "clg",
+            "experience",
+            "jobsposted",
+            "empaccepted",
+            "jobsapplied",
+            "jobsinprocess",
+            "completedjobs",
+            "moneymade"
+        ],
+        "vaibhav": [
+            "vaibhav",
+            "2002-02-20",
+            "be",
+            "amcec",
+            "2",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "example@gmail.com": [
+            "example name",
+            "2002-03-20",
+            "bca",
+            "xyzw",
+            "5",
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "cvurl": {
+        "email": "url",
+        "vaibhav": "cv.com",
+        "example@gmail.com": "newcv.url"
+    },
+    "cvskills": {
+        "email": [
+            "skills"
+        ]
+    },
+    "jobpost": {
+        "jobid": [
+            "company name",
+            "type",
+            "email",
+            "url",
+            "position",
+            "salary",
+            "ft\/pt",
+            "experience",
+            "opentill",
+            [
+                "skills required"
+            ]
+        ],
+        "12g5hyx4": [
+            "niorels",
+            "tech",
+            "vaibhav",
+            "https:\/\/niorels.com",
+            "Engineer",
+            "65000",
+            "ft",
+            "2 years",
+            "2026-02-20",
+            [
+                "Data science"
+            ]
+        ],
+        "123abc": [
+            "tech.co",
+            "tech",
+            "example@gmail.com",
+            "tech.com",
+            "manager",
+            "60000",
+            "ft",
+            "5",
+            "2024-05-30",
+            [
+                "Data science",
+                "Data analysis",
+                "UI\/UX",
+                "Software Engineer",
+                "Programming"
+            ]
+        ]
+    },
+    "applications": {
+        "jobid": [
+            "mail",
+            "accepted\/rejected",
+            "paid"
+        ]
+    },
+    "newsletter": [
+        "emails",
+        "example@gmail.com",
+        "example1@gmail.com",
+        "example2@gmail.com"
+    ]
+}

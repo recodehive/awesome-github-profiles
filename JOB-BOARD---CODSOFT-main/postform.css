@@ -1,0 +1,73 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(186, 225, 246, 0.505);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.mainform{
+    padding: 3vw;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    transition: .5s;
+}
+#companyName, #companyType, #postName, #experi, #salary, #companyUrl, #jobDescription, #jobid{
+    border: none;
+    border-bottom: 1px solid rgb(99, 99, 99);
+    border-left: 1px solid rgb(99,99,99);
+    border-radius: 10px;
+    padding-left: 1vw;
+}
+#submit{
+    background-color: transparent;
+    border: none;
+    background-image: linear-gradient(to right,#FF5F6D, #FFC371);
+    padding: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 2vh;
+    border-radius: 20px;
+}
+.mainform h2{
+    background-image: linear-gradient(to right,#FF5F6D, #FFC371);
+    padding: 0.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 20px;
+    text-align: center;
+}
+.mainform #form{
+    display: flex;
+    flex-direction: column;
+    transition: .5s;
+}
+#se,#webdev,#appdev,#ds,#da,#uix,#ved,#prog {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-bottom: 0;
+    border-radius: 3px;
+    border: 1px solid #393939;
+    background-color: #fff;
+    cursor: pointer;
+}
+#se:checked,#webdev:checked,#appdev:checked,#ds:checked,#da:checked,#uix:checked,#ved:checked,#prog:checked {
+    border-color: #ffffff00;
+    background-color: #FF5F6D;
+    transition: .5s;
+}
+a{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 3vw;
+    text-decoration: none;
+    color: black;
+    padding: 1vw;
+    background-color: white;
+    border-radius: 20px;
+}

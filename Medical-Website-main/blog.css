@@ -1,0 +1,200 @@
+.container-blog{
+    display: flex;
+    gap: 8px;
+}
+.col{
+    background-color: rgba(250, 235, 215, 0.91);
+    border: 1px solid rgb(3, 3, 58);
+}
+.col1{
+    width: 60px;
+    flex-grow: 2;
+    border-radius: 5px;
+}
+.col2{
+    width:30px ;
+    border-radius: 5px;
+    height: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-self: flex-start;
+}
+
+.col1 h1{
+    font-size: 35px;
+    font-weight: 500;
+    padding: 13px;
+    color: rgb(16, 135, 209);
+}
+.col1 img{
+    padding: 10px;
+}
+.col1 p{
+    font-size: 18px;
+    padding: 10px;
+}
+ol h3{
+    font-weight: 500;
+    font-size: 20px;
+}
+.col1 ol{
+    padding:0px 15px ;
+}
+.col1 ol p{
+    font-size: 15px;
+    padding: 4px;
+}
+.first{
+    padding-bottom: 56px;
+}
+.question{
+    padding: 45px 10px;
+    padding-bottom: 56px;
+    border-top: 2px solid rgba(170, 56, 56, 0.8);
+    border-bottom:2px solid rgba(170, 56, 56, 0.8) ;
+}
+.question h3{
+    font-weight: 500;
+    font-size: 23px;
+    color: rgb(16, 135, 209);
+}
+.question1 h4,.question2 h4{
+    font-weight: 500;
+    font-size: 17px;
+    padding: 0 10px;
+}
+.question1 p,.question2 p{
+    font-size: 15px;
+    padding-top: 2px;
+    padding-left: 20px;
+}
+.chart{
+    padding: 65px 0;
+    border-bottom:2px solid rgba(170, 56, 56, 0.8) ;
+}
+.chart h2{
+    font-weight: 500;
+    font-size: 23px;
+    color: rgb(16, 135, 209);
+    padding: 0 13px;
+}
+.chart p{
+    font-size: 17px;
+}
+table{
+    margin-left: 20px;
+    width: 95%;
+}
+tbody, td, tfoot, th, thead, tr {
+    box-sizing: border-box;
+    border-color: black;
+    border-style: solid;
+    border-width: 1px;
+    font-size: 15px;
+    text-align: center;
+    padding: 2px;
+}
+.importance{
+    padding: 56px 0;
+}
+.importance h2{
+    font-weight: 500;
+    font-size: 26px;
+    color: rgb(16, 135, 209);
+    padding: 13px;
+}
+.importance ol{
+    list-style-type: square;
+    padding: 0 35px;
+    font-size: 16px;
+}
+.importance p{
+    font-size: 16px;
+    padding-left: 15px;
+}
+
+.box-contact{
+    background-color: #4385a9;
+    padding: 13px;
+    margin: 13px;
+    border-radius: 7px;
+    border: 2px solid white;
+}
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+.top-header{
+    font-size: 23px;
+    font-weight: 500;
+    color: white;
+    padding: 13px;
+}
+.input-field{
+    width: 312px;
+    padding: 3px 28px;
+}
+.input-box{
+    height: 38px;
+}
+.submit1{
+    border-bottom: 2px solid white;
+}
+.submit1 button{
+    background-color: rgb(16, 135, 209);
+    border: 1px solid rgba(255, 255, 255, 0.885);
+    border-radius: 3px;
+    text-align: center;
+    margin: 8px 110px;
+    margin-bottom: 18px;
+    padding: 2px 30px;
+    font-size: 20px;
+    color: white;
+}
+.box-contact p{
+    font-size: 23px;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    padding-top: 18px;
+}
+.submit2 button{
+    background-color: rgb(16, 135, 209);
+    border: 1px solid rgba(255, 255, 255, 0.885);
+    border-radius: 3px;
+    text-align: center;
+    margin: 8px 70px;
+    padding: 2px 58px;
+    font-size: 20px;
+    color: white;
+}
+.submit1 button:hover,.submit2 button:hover{
+    background-color: rgb(12, 208, 208);
+}
+.check{
+    margin: 3px;
+    font-size: large;
+}
+.remember{
+    display: inline;
+    margin: 9px;
+}
+.remember p{
+    display: inline;
+    font-size: 14px;
+    padding: 0 5px;
+    text-align: left;
+}
+.mail-blog p{
+    font-size: 15px;
+    font-weight: 400;
+}
+.phn-blog p{
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0;
+}

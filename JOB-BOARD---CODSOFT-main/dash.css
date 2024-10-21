@@ -1,0 +1,331 @@
+body{
+    background-color: #bceaf1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+.fcc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sidebar{
+    background-image: linear-gradient(to bottom,#0f6bae, #c6cdff);
+    border-radius: 20px;
+    width: 18%;
+    height: 98vh;
+    margin-top: 1vh;
+    text-align: center;
+}
+#showbar{
+    width: 80%;
+    height: 97vh;
+    margin-top: 1.3vh;
+}
+.user{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 1vw;
+    padding-bottom: 0.5vh;
+}
+.user svg{
+    width:max(6vw,2vh);
+    margin-top: 2vh;
+}
+.user p{
+    margin-top: 0;
+}
+.user h1{
+    margin-bottom: 0;
+}
+.links-sidebar{
+    display: flex;
+    flex-direction: column;
+    margin-left: 2.5vw;
+    font-size: 1.5vw;
+    z-index: 1;
+}
+.links-sidebar div{
+    display: flex;
+}
+.links-sidebar svg, .links-sidebar button, .links-sidebar a{
+    margin-top: 2vh;
+}
+.links-sidebar a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    padding: 1vw;
+}
+.links-sidebar div button{
+    width: 100%;
+    background-color: transparent;
+    padding: 1vw;
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5vw;
+    color: white;
+}
+.links-sidebar svg{
+    margin-right: 1vw;
+    padding-left: 0;
+}
+.sidebar-img{
+    width: max(15vw,5vh);
+    bottom: 3vh;
+    left: 1vw;
+    z-index: 0;
+}
+.links-sidebar div button:hover, .links-sidebar div a:hover{
+    transition: .5s ease-in-out;
+    background-color: #bceaf1 !important;
+    border-top-left-radius: 2vw;
+    border-bottom-left-radius: 2vw;
+}
+
+
+/* DASHBOARD CSS PART */
+
+
+.dashscreen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.profileotherinfo div div svg{
+    width: 25px;
+    margin-right: 2vw;
+}
+.dashblock{
+    margin: 0.5vh;
+    padding: 1vw;
+    transition:  all .7s ease-in-out;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+.dashstat{
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+.profiledetails{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+}
+.profiledetails div{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+.profiledetails div p{
+    padding: 0;
+    margin: 0;
+}
+.post_a_job button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    font-size: 1.5vw;
+    border: none;
+    cursor: pointer;
+}
+.post_a_job img{
+    width: 6vh;
+    border-radius: 6vw;
+    margin-right: 1vw;
+}
+.dashblock:hover{
+    transition:  all .7s ease-in-out;
+    background-color: #0f6cae5b;
+}
+.actstat{
+    display: flex;
+}
+.tcomp{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.grid2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.grid2 div{
+    display: flex;
+    justify-content: center;
+    margin: 2vw;
+    margin-bottom: 0;
+    margin-top: 0;
+    align-items: center;
+    flex-direction: column;
+}
+#aofcomp{
+    position: absolute;
+    right: 5vw;
+}
+.profdash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.profdash h1, .popup-content h2{
+    padding: 0.5vw 3vw;
+    border-radius: 20px;
+    background-image: linear-gradient(to top,#FF5F6D, #FFC371);
+}
+.edprof{
+    position: absolute;
+    right: 4%;
+    margin: 1vw;
+    margin-top: 4vw;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.popup-content {
+    background-color: #fefefe;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2vw;
+    color: #ffc116;
+    float: right;
+    font-size: 5vw;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.pofilesave{
+    border: none;
+    background-color: transparent;
+    background-image: linear-gradient(to top,#FF5F6D, #FFC371);
+    padding: 0.5vw 1vw;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.popup-content div input{
+    border: none;
+    border-bottom: 1px solid grey;
+    border-left: 1px solid grey;
+    border-radius: 4px;
+}
+
+
+/* COMPANIES CSS PART */
+
+
+#companiespart{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: #ff5f6c84;
+}
+#compfilter{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+#compfilter div{
+    margin: 2vw 1vw;
+}
+#complist{
+    border: 1px solid black;
+    background-color: #9dd3fa;
+    color: black;
+    margin-bottom: 2vw;
+    border-radius: 2vh;
+    padding: 1vh;
+}
+#complist thead th, #complist tbody td{
+    padding: 2vw;
+    border: 1px solid black;
+    background-color: #c5e1f5;
+}
+/* #complist{
+    width: 90%;
+    margin: 2vw;
+}
+#complist tr{
+    display: flex;
+}
+.company-item{
+    display: flex;
+    padding: 2vw;
+    border: 1px solid grey;
+    background-color: white;
+    color: black;
+}
+#namec{
+    width: 50%;
+}
+#typec{
+    width: 30%;
+}
+#weblink{
+    width: 20%;
+} */
+
+
+/*  JOBS CSS PART */
+
+
+#jobspart {
+    background-color: #ff5f6c84;
+    border-radius: 20px;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.filters {
+    margin-bottom: 20px;
+}
+.job-list {
+    width: 90%;
+    border-collapse: collapse;
+}
+.job-list th, .job-list td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.job-list thead tr{
+    border-radius: 20px;
+}

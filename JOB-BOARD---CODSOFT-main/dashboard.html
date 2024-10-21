@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dash.css">
+    <script src="dashb.js"></script>
+    <title>DashBoard</title>
+</head>
+<body style="margin: 0;">
+
+
+    <div id="sidebar">
+        <div class="user">
+            <svg viewBox="0 0 512 512"><path fill="#74C0FC" d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg>
+            <h1 id="sidebar-name">User Name</h1>
+            <p id="sidebar-email">useracc@gmail.com</p>
+        </div>
+        <hr>
+        <div class="links-sidebar">
+            <div id="whiteprop"class="home-div-sidebar">
+                <svg style="width: 1.7vw;" viewBox="0 0 576 512"><path fill="#FFD43B" d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
+                <a id="homeb" href="index.html">HOME</a>
+            </div>
+            <div id="whiteprop"class="dash-div-sidebar">
+                <svg style="width: 1.7vw;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#FFD43B" d="M512 80c8.8 0 16 7.2 16 16V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V96c0-8.8 7.2-16 16-16H512zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM208 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128zm-32 32c-44.2 0-80 35.8-80 80c0 8.8 7.2 16 16 16H304c8.8 0 16-7.2 16-16c0-44.2-35.8-80-80-80H176zM376 144c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z"/></svg>
+                <button id="btn1">DashBoard</button>
+            </div>
+            <div id="whiteprop"class="comp-div-sidebar">
+                <svg style="width: 1.45vw;" viewBox="0 0 384 512"><path fill="#FFD43B" d="M48 0C21.5 0 0 21.5 0 48V464c0 26.5 21.5 48 48 48h96V432c0-26.5 21.5-48 48-48s48 21.5 48 48v80h96c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H48zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V240zm112-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V240c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V240zM80 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16zm80 16c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16V112zM272 96h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16z"/></svg>
+                <button id="btn2">Companies</button>
+            </div>
+            <div id="whiteprop"class="job-div-sidebar">
+                <svg style="width: 2vw;" viewBox="0 0 576 512"><path fill="#FFD43B" d="M112 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm40 304V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V256.9L59.4 304.5c-9.1 15.1-28.8 20-43.9 10.9s-20-28.8-10.9-43.9l58.3-97c17.4-28.9 48.6-46.6 82.3-46.6h29.7c33.7 0 64.9 17.7 82.3 46.6l44.9 74.7c-16.1 17.6-28.6 38.5-36.6 61.5c-1.9-1.8-3.5-3.9-4.9-6.3L232 256.9V480c0 17.7-14.3 32-32 32s-32-14.3-32-32V352H152zm136 16a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm211.3-43.3c-6.2-6.2-16.4-6.2-22.6 0L416 385.4l-28.7-28.7c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l40 40c6.2 6.2 16.4 6.2 22.6 0l72-72c6.2-6.2 6.2-16.4 0-22.6z"/></svg>
+                <button id="btn3">Jobs</button>
+            </div>
+            <div id="whiteprop" class="conn-div-sidebar">
+                <svg style="width: 1.8vw;" viewBox="0 0 640 512">><path fill="#FFD43B" d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V389.2C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zM448 416V394.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176h32c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2V416c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3V261.7c-10 11.3-16 26.1-16 42.3zm144-42.3v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2V448c0 17.7-14.3 32-32 32H288c-17.7 0-32-14.3-32-32V405.2c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112h32c61.9 0 112 50.1 112 112z"/></svg>
+                <button id="btn4">Connections</button>
+            </div>
+        </div>
+        <img class="sidebar-img" src="img/world.png">
+    </div>
+
+
+    <div id="showbar">
+
+
+        <div id="dasboardpart" class="dashscreen">
+            <div class="profdash dashblock">
+                <div>
+                    <a href="#" class="edprof" id="openForm">Edit Profile</a>
+                </div>
+                <h1>Profile</h1>
+                <div class="profiledetails">
+                        <div><p id="dashprofilename">Name : user</p></div>
+                        <div><p id="dashprofilemail">e-mail id : useracc@email.com</p></div>
+                        <div><p id="dashprofiledob">DOB : 45678</p></div>
+                        <div><p id="dashprofiledegree">Degree : BE</p></div>
+                        <div><p id="dashprofileclg">college : university</p></div>
+                        <div><p id="dashprofileexp">Experience : 3yrs</p></div>
+                </div>
+            </div>
+            <div class="profileotherinfo">
+                <div class="dashblock post_a_job">
+                    <div class="fcc actstat">
+                        <button onclick="jobpost_form()" id="form_add_job"><img src="img/resume.jpg">Post a Job</button>
+                    </div>
+                    <div class="dashstat">
+                        <div style="margin: 2vh;" class="fcc actstat">
+                            <p style="margin: 0;">Number of Jobs Posted : </p>
+                            <p id="Number-of-Jobs-Posted" style="margin: 0; margin-left:1vw;">0</p>
+                        </div>
+                        <div class="fcc actstat">
+                            <p style="margin: 0;">Number of Employees placed : </p>
+                            <p id="Number-of-Employees-placed" style="margin: 0; margin-left:1vw;">0</p>
+                        </div>
+                        <div class="fcc actstat">
+                            <p style="margin: 0;">Number of Job Applications filled : </p>
+                            <p id="no-of-job-applied" style="margin: 0; margin-left:1vw;">0</p>
+                        </div>
+                        <div class="fcc actstat">
+                            <p style="margin: 0;">Number of Applications approved : </p>
+                            <p id="no-of-app-approves" style="margin: 0; margin-left:1vw;">0</p>
+                        </div>
+                        <div class="fcc">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#63E6BE" d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/></svg>
+                            <div class="fcc" style="justify-content: space-between;">
+                                <p>Worked on number of companies :</p>
+                                <p id="workexp">0</p>
+                            </div>
+                        </div>
+                        <div class="fcc">
+                            <svg viewBox="0 0 512 512"><path fill="#63E6BE" d="M320 96H192L144.6 24.9C137.5 14.2 145.1 0 157.9 0H354.1c12.8 0 20.4 14.2 13.3 24.9L320 96zM192 128H320c3.8 2.5 8.1 5.3 13 8.4C389.7 172.7 512 250.9 512 416c0 53-43 96-96 96H96c-53 0-96-43-96-96C0 250.9 122.3 172.7 179 136.4l0 0 0 0c4.8-3.1 9.2-5.9 13-8.4zm84 88c0-11-9-20-20-20s-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5c-13.9 8.3-25.9 22.8-25.8 43.9c.1 20.3 12 33.1 24.7 40.7c11 6.6 24.7 10.8 35.6 14l1.7 .5c12.6 3.8 21.8 6.8 28 10.7c5.1 3.2 5.8 5.4 5.9 8.2c.1 5-1.8 8-5.9 10.5c-5 3.1-12.9 5-21.4 4.7c-11.1-.4-21.5-3.9-35.1-8.5c-2.3-.8-4.7-1.6-7.2-2.4c-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9 .6 4 1.3 6.1 2.1l0 0 0 0c8.3 2.9 17.9 6.2 28.2 8.4V424c0 11 9 20 20 20s20-9 20-20V410.2c8-1.7 16-4.5 23.2-9c14.3-8.9 25.1-24.1 24.8-45c-.3-20.3-11.7-33.4-24.6-41.6c-11.5-7.2-25.9-11.6-37.1-15l0 0-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5c-5.2-3.1-5.3-4.9-5.3-6.7c0-3.7 1.4-6.5 6.2-9.3c5.4-3.2 13.6-5.1 21.5-5c9.6 .1 20.2 2.2 31.2 5.2c10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V216z"/></svg>
+                            <div class="fcc" style="justify-content: space-between;">
+                                <p>Profit :</p>
+                                <p id="moneymade">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jobpostnoc">
+            </div>
+            
+            <div id="tcomp" class="tcomp dashblock">
+                <div class="fcc">
+                    <h1>TOP COMPANY</h1>
+                    <a onclick="document.getElementById('btn2').click()" id="aofcomp" style="color: lime;">Explore more ></a>
+                </div>
+                <div class="grid2">
+                    <div class="top4c">
+                        <svg style="width:10vh;" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"  width="272.7" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 272.70001 238.5">
+                            <path fill="#fc0" d="m195.8 17.933c23.3 0 42.2 98.3 42.2 219.7h34c0-130.7-34.3-236.5-76.3-236.5-24 0-45.2 31.7-59.2 81.5-14-49.8-35.2-81.5-59-81.5-42 0-76.2 105.7-76.2 236.4h34c0-121.4 18.7-219.6 42-219.6s42.2 90.8 42.2 202.8h33.8c0-112 19-202.8 42.3-202.8"/>
+                        </svg>
+                        <h2>Mc Donald's</h2>
+                    </div>
+                    <div class="top4c">
+                        <svg style="width:13vh;" viewBox="50 20 350 230" xmlns="http://www.w3.org/2000/svg"><g fill="#486aae"><path d="m375.394 93.432c-3.794-7.461-8.791-14.612-15.007-21.318-13.969-15.077-33.678-27.623-57.002-36.276-23.516-8.72-50.338-13.334-77.595-13.334s-54.079 4.614-77.583 13.334c-23.336 8.654-43.046 21.2-57.015 36.276-6.212 6.705-11.225 13.866-15.018 21.331 30.365-7.343 82.306-17.038 130.534-18.063 4.652-.1 7.855 1.39 9.964 4.063 2.569 3.255 2.376 14.858 2.313 20.049l-1.371 134.17c2.716.09 5.445.148 8.176.148 2.754 0 5.498-.045 8.214-.135l-1.371-134.184c-.071-5.19-.27-16.794 2.308-20.049 2.114-2.672 5.306-4.162 9.957-4.063 48.208 1.017 100.137 10.714 130.496 18.051"/><path d="m381.877 110.88c-44.442-10.047-74.121-11.905-103.405-13.53-25.526-1.419-25.859 7.696-23.311 25.115.167 1.063.372 2.403.615 3.931 8.562 50.712 19.224 94.352 21.056 101.759 62.23-14.225 107.109-53.664 107.109-99.994 0-5.834-.705-11.614-2.064-17.281m-185.434 11.585c2.551-17.418 2.224-26.534-23.299-25.115-29.294 1.625-58.98 3.482-103.439 13.536-1.358 5.667-2.072 11.44-2.072 17.274 0 20.024 8.146 39.4 23.56 56.047 13.969 15.077 33.679 27.623 57.015 36.282 8.446 3.127 17.359 5.69 26.54 7.74 1.723-6.939 12.63-51.487 21.285-103.106.16-.989.308-1.902.41-2.658"/></g></svg>
+                        <h2>TATA MOTORS</h2>
+                    </div>
+                    <div style="padding-top: 3vh;" class="top4c">
+                        <svg style="width:15vh;" viewBox="0 0 103.91040975230915 42.874962420010526" xmlns="http://www.w3.org/2000/svg"><path d="M100.75 0a3.132 3.132 0 0 0-3.125 3.125c0 1.744 1.413 3.156 3.125 3.156a3.164 3.164 0 0 0 3.156-3.156c0-1.729-1.426-3.125-3.156-3.125zm0 .469c1.47 0 2.688 1.187 2.688 2.656s-1.218 2.688-2.688 2.688c-1.469 0-2.656-1.22-2.656-2.688A2.654 2.654 0 0 1 100.75.469zm-65.5.219c-3.886 0-6.726 2.58-7.125 7.125h-3v2.25h2.969v21.624h3.375V10.063H39c-2.8 2.264-4.594 5.963-4.594 10.094 0 6.854 4.943 12.393 11.063 12.469.03.015.078.031.125.031 6.181 0 11.156-5.6 11.156-12.5 0-.811-.081-1.625-.219-2.406 1.117 1.775 3.249 2.666 6.094 3.906 3.381 1.423 5.25 2.654 5.25 4.782 0 2.555-2.386 3.858-5.094 3.843-2.647 0-4.736-1.075-7.031-3.156v4c1.407.904 3.581 1.438 5.938 1.438 1.805-.017 4.793-.428 6.843-2.157 1.3-1.086 2.219-2.723 2.219-5.125-.016-1.973-.887-3.335-2.219-4.406-1.162-.932-2.659-1.655-4.219-2.313-4.07-2.02-5.608-2.44-5.562-4.75 0-3.076 2.654-4 4.75-4 .903 0 1.671.147 2.406.407 1.377.505 1.823 1.509 2.313 2.625.152.337.251.55.312.687.03.046.048.095.063.125.022.06.012.064 0 .031l6.344 15.25c-1.072 2.433-2.268 5.003-3.094 6.625l-.031.032c-.123.245-.237.472-.344.656a13.5 13.5 0 0 1-.344.625l-.781 1.469h3.281c1.439-3.183 7.559-18.068 8.875-21.25.856 2.295 2.959 3.233 6.188 4.625 3.366 1.424 5.28 2.655 5.28 4.781 0 2.54-2.416 3.875-5.124 3.844-2.739 0-4.864-1.142-7.281-3.375l-.22-.188v4.063c1.347 1.131 3.76 1.781 6.407 1.781 2.952 0 9.063-1.069 9.063-7.25-.015-3.703-3.103-5.327-6.438-6.75-4.07-2.019-5.452-2.424-5.406-4.719 0-3.075 2.512-4 4.594-4 2.386 0 3.872.876 5.968 2.406V8.72c-1.697-.598-3.134-.813-5.062-.813-3.855 0-7.331 1.398-8.219 4.657l-4.781 11.812-.5 1.5-.438-1.5-6.437-15.688c-.444-.122-.981-.283-1.563-.406-1.193-.26-2.569-.452-3.625-.437-.152-.015-.3-.032-.469-.032-4.466 0-8.78 1.875-8.78 6.313 0 .26.014.521.03.75-1.79-4.254-5.61-7.188-10.093-7.188h-.125A11.61 11.61 0 0 0 44 7.813H31.406c-.505-3.166.954-5 3.188-5 2.8 0 4.01.852 5.218 1.97h.126s.016-.146.03-.376V1.344c-.81-.368-2.18-.657-4.718-.657zM0 .78v30.907h3.719V.78zm99.594.625V4.72h.594V3.375h.687l.531 1.344h.688l-.625-1.438c.214-.107.562-.216.562-.812 0-.919-.669-1.063-1.281-1.063zm.594.563h.656c.351 0 .562.146.562.437 0 .29-.225.438-.5.438h-.719zm-82.126 5.75c-4.085 0-5.795 1.468-7.156 2.937a.804.804 0 0 0-.156.281h-.063l-.03-2.906H7.374v23.657h3.375V14.405c.091-2.111 3.111-4.219 5.438-4.219 2.8 0 5.093 1.9 5.093 4.5v17h3.344v-18.53c-.091-2.097-2.645-5.438-6.563-5.438zm27.22 2.437h.187c4.131.046 7.502 4.478 7.593 10 .093 5.615-3.214 10.237-7.437 10.313h-.156c-4.146-.047-7.549-4.493-7.657-10.032-.092-5.6 3.262-10.205 7.47-10.28z" fill="#2a7cc9" fill-rule="evenodd"/></svg>
+                        <H2>INFOSYS</H2>
+                    </div>
+                    <div class="top4c">
+                        <svg style="width: 8vh;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 326667 333333" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M326667 170370c0-13704-1112-23704-3518-34074H166667v61851h91851c-1851 15371-11851 38519-34074 54074l-311 2071 49476 38329 3428 342c31481-29074 49630-71852 49630-122593m0 0z" fill="#4285f4"/><path d="M166667 333333c44999 0 82776-14815 110370-40370l-52593-40742c-14074 9815-32963 16667-57777 16667-44074 0-81481-29073-94816-69258l-1954 166-51447 39815-673 1870c27407 54444 83704 91852 148890 91852z" fill="#34a853"/><path d="M71851 199630c-3518-10370-5555-21482-5555-32963 0-11482 2036-22593 5370-32963l-93-2209-52091-40455-1704 811C6482 114444 1 139814 1 166666s6482 52221 17777 74814l54074-41851m0 0z" fill="#fbbc04"/><path d="M166667 64444c31296 0 52406 13519 64444 24816l47037-45926C249260 16482 211666 1 166667 1 101481 1 45185 37408 17777 91852l53889 41853c13520-40185 50927-69260 95001-69260m0 0z" fill="#ea4335"/></svg>
+                        <h2>GOOGLE</h2>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="companiespart">
+            <div id="compfilter">
+                <div>
+                    <label for="search">Search:</label>
+                    <input type="text" id="search" name="search">
+                </div>
+                <div>
+                    <label for="typeFilter">Filter by Type:</label>
+                    <select id="typeFilter">
+                        <option value="">All Types</option>
+                        <option value="Type 1">Type 1</option>
+                        <option value="Type 2">Type 2</option>
+                    </select>
+                </div>
+            </div>
+            <table id="complist">
+                <thead>
+                    <tr>
+                        <th id="namec" class="company-item">Company Name</th>
+                        <th id="typec" class="company-item">Type</th>
+                        <th id="weblink" class="company-item">Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="namec" class="company-item">Company Name 1</td>
+                        <td id="typec" class="company-item">Type 1</td>
+                        <td id="weblink" class="company-item">www.company1.com</td>
+                    </tr>
+                    <tr>
+                        <td id="namec" class="company-item">Company Name 2</td>
+                        <td id="typec" class="company-item">Type 2</td>
+                        <td id="weblink" class="company-item">www.company2.com</td>
+                    </tr>
+                    <tr>
+                        <td id="namec" class="company-item">Company Name 1</td>
+                        <td id="typec" class="company-item">Type 2</td>
+                        <td id="weblink" class="company-item">www.company1.com</td>
+                    </tr>
+                </tbody>
+            </table>              
+        </div>
+
+        <div id="jobspart">
+            <div class="filters">
+                <label for="companySearch">Search by Company:</label>
+                <input type="text" id="companySearch" name="companySearch">
+                <label for="durationFilter">Filter by Duration:</label>
+                <select id="durationFilter">
+                    <option value="">All Durations</option>
+                    <option value="Short Term">Short Term</option>
+                    <option value="Long Term">Long Term</option>
+                </select>
+            </div>
+            <table class="job-list">
+                <thead>
+                    <tr>
+                        <th>Company Name</th>
+                        <th>Salary</th>
+                        <th>Duration</th>
+                        <th>Full Time/Part Time</th>
+                        <th>Skills required</th>
+                        <th>read more</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Company A</td>
+                        <td>$50,000</td>
+                        <td>Short Term</td>
+                        <td>Full Time</td>
+                        <td>html</td>
+                        <td><A href="#">read more</A></td>
+                    </tr>
+                    <tr>
+                        <td>Company A</td>
+                        <td>$40,000</td>
+                        <td>Long Term</td>
+                        <td>Part Time</td>
+                        <td>css</td>
+                        <td><A href="#">read more</A></td>
+                    </tr>
+                    <tr>
+                        <td>Company C</td>
+                        <td>$60,000</td>
+                        <td>Long Term</td>
+                        <td>Full Time</td>
+                        <td>js</td>
+                        <td><A href="#">read more</A></td>
+                    </tr>
+                    <tr>
+                        <td>Company D</td>
+                        <td>$45,000</td>
+                        <td>Short Term</td>
+                        <td>Part Time</td>
+                        <td>full stack</td>
+                        <td><A href="#">read more</A></td>
+                    </tr>
+                    <tr>
+                        <td>Company E</td>
+                        <td>$55,000</td>
+                        <td>Long Term</td>
+                        <td>Full Time</td>
+                        <td>node</td>
+                        <td><A href="#">read more</A></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <div id="popupForm" style="color: black;" class="popup">
+        <form class="popup-content" id="myForm">
+            <span class="close">&times;</span>
+            <h2>Enter Details</h2>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            </div>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+            </div>
+            <div>
+                <label for="clg">college:</label>
+                <input type="text" id="clg" name="clg" required><br><br>
+            </div>
+            <div>
+                <label for="degree">Degree:</label>
+                <input type="text" id="degree" name="degree" required><br><br>
+            </div>
+            <div>
+                <label for="experience">Experience:</label>
+                <input type="text" id="experience" name="experience" required><br><br>
+            </div>
+            <div>
+                <label for="cvurlup">CV URL:</label>
+                <input type="text" id="cvurlup" name="cvurlup" required><br><br>
+            </div>
+            <input onclick="saveupdinfo()" id="pofilesave" class="pofilesave" type="submit" value="Save">
+        </form>
+    </div>
+      
+    <!--///////////////////////////////////////////////////////////////////////////
+    ////////////////////////////// SIDE BAR SCRIPTING /////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////-->
+    <script>
+        window.onload = function(){
+            var button = document.getElementById('btn1');
+            button.click();
+        }
+        const dash = document.getElementById('btn1');
+        const home = document.getElementById('homeb');
+        const comp = document.getElementById('btn2');
+        const job = document.getElementById('btn3');
+        const connect = document.getElementById('btn4');
+        const transp = document.getElementById('whiteprop');
+        const dashscreen = document.getElementById('dasboardpart');
+        const compscreen = document.getElementById('companiespart');
+        const jobscreen =document.getElementById('jobspart');
+        function handleButtonClick(button) {
+            allwhite();
+            button.style.backgroundColor='#bceaf1';
+            button.style.borderBottomLeftRadius = '2vw';
+            button.style.borderTopLeftRadius = '2vw';
+        }
+        dash.addEventListener('click', () => { handleButtonClick(dash); dashscreen.style.display='flex';});
+        job.addEventListener('click', () => { handleButtonClick(job); jobscreen.style.display='flex';});
+        comp.addEventListener('click', () => { handleButtonClick(comp); compscreen.style.display='flex';});
+        connect.addEventListener('click', () => { handleButtonClick(connect); });
+        home.addEventListener('click', () => { handleButtonClick(home); });
+        function allwhite(){
+            dash.style.border = 'none';
+            dash.style.backgroundColor = 'transparent';
+            home.style.border = 'none';
+            home.style.backgroundColor = 'transparent';
+            comp.style.border = 'none';
+            comp.style.backgroundColor = 'transparent';
+            job.style.border = 'none';
+            job.style.backgroundColor = 'transparent';
+            connect.style.border = 'none';
+            connect.style.backgroundColor = 'transparent';
+            dashscreen.style.display='none';
+            compscreen.style.display='none';
+            jobscreen.style.display='none';
+        }
+        var modal = document.getElementById("popupForm");
+        var btn = document.getElementById("openForm");
+        var span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        document.getElementById("myForm").onsubmit = function() {
+            modal.style.display = "none";
+            return false;
+        }
+    </script>
+    <!--///////////////////////////////////////////////////////////////////////////
+    /////////////////////////// COMPANY FILTER SCRIPTING //////////////////////////
+    ////////////////////////////////////////////////////////////////////////////-->
+    <!-- <script>
+        function searchCompanies() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const filterValue = document.getElementById('typeFilter').value;
+        const companyRows = document.querySelectorAll('#complist tbody tr:not(:first-child)');
+        for (const companyRow of companyRows) {
+            const companyNameCell = companyRow.querySelector('#complist tbody td:nth-child(1)');
+            const companyTypeCell = companyRow.querySelector('#complist tbody td:nth-child(2)');
+            const companyName = companyNameCell.textContent.toLowerCase();
+            const companyType = companyTypeCell.textContent.toLowerCase();
+            if (companyName.includes(searchTerm) &&
+                (filterValue === '' || filterValue === companyType)) {
+            companyRow.style.display = '';
+            } else {
+            companyRow.style.display = 'none';
+            }
+        }
+        }
+        document.getElementById('search').addEventListener('keyup', searchCompanies);
+        document.getElementById('typeFilter').addEventListener('change', searchCompanies);
+        searchCompanies();
+    </script> -->
+    <!--///////////////////////////////////////////////////////////////////////////
+    ////////////////////////////// JOB FILTER OPTIONS /////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////-->
+    <!-- <script>
+        function filterJobs() {
+            var companySearch = document.getElementById("companySearch").value.toLowerCase();
+            var typeFilter = document.getElementById("typeFilter").value.toLowerCase();
+            var durationFilter = document.getElementById("durationFilter").value.toLowerCase();
+            var jobRows = document.querySelectorAll(".job-list tbody tr");
+            jobRows.forEach(function(row) {
+                var companyName = row.querySelector(".job-list tbody td:nth-child(1)").innerText.toLowerCase();
+                var type = row.querySelector(".job-list tbody td:nth-child(4)").innerText.toLowerCase();
+                var duration = row.querySelector(".job-list tbody td:nth-child(3)").innerText.toLowerCase();
+                if (companyName.includes(companySearch) && (typeFilter === "" || type.includes(typeFilter)) && (durationFilter === "" || duration.includes(durationFilter))) {
+                    row.style.display = "table-row";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+        document.getElementById("companySearch").addEventListener("input", filterJobs);
+        document.getElementById("typeFilter").addEventListener("change", filterJobs);
+        document.getElementById("durationFilter").addEventListener("change", filterJobs);
+        filterJobs();
+    </script> -->
+    <script>
+        function searchCompanies() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            const filterValue = document.getElementById('typeFilter').value.toLowerCase();
+            const companyRows = document.querySelectorAll('#complist tbody tr');
+            for (const companyRow of companyRows) {
+                const companyNameCell = companyRow.querySelector('td:nth-child(1)');
+                const companyTypeCell = companyRow.querySelector('td:nth-child(2)');
+                const companyNamee = companyNameCell.textContent.toLowerCase();
+                const companyType = companyTypeCell.textContent.toLowerCase();
+                if (companyNamee.includes(searchTerm) &&
+                    (filterValue === '' || filterValue === companyType)) {
+                    companyRow.style.display = '';
+                } else {
+                    companyRow.style.display = 'none';
+                }
+            }
+        }
+        document.getElementById('search').addEventListener('keyup', searchCompanies);
+        document.getElementById('typeFilter').addEventListener('change', searchCompanies);
+        searchCompanies();
+
+        function filterJobs() {
+            var companySearch = document.getElementById("companySearch").value.toLowerCase();
+            var typeFilter = document.getElementById("typeFilter").value.toLowerCase();
+            var durationFilter = document.getElementById("durationFilter").value.toLowerCase();
+            var jobRows = document.querySelectorAll(".job-list tbody tr");
+            jobRows.forEach(function(row) {
+                var companyName = row.querySelector("td:nth-child(1)").innerText.toLowerCase();
+                var type = row.querySelector("td:nth-child(4)").innerText.toLowerCase();
+                var duration = row.querySelector("td:nth-child(3)").innerText.toLowerCase();
+                if (companyName.includes(companySearch) && (typeFilter === "" || type.includes(typeFilter)) && (durationFilter === "" || duration.includes(durationFilter))) {
+                    row.style.display = "table-row";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+        document.getElementById("companySearch").addEventListener("input", filterJobs);
+        document.getElementById("typeFilter").addEventListener("change", filterJobs);
+        document.getElementById("durationFilter").addEventListener("change", filterJobs);
+        filterJobs();
+    </script>
+    
+
+
+</body>
+</html>
