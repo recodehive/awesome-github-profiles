@@ -871,7 +871,7 @@ body.dark-mode .footer-button:hover {
 }
 
 .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: black;
 }
 
 .icon-content a[data-social="youtube"] .filled {
