@@ -664,8 +664,22 @@ body.dark-mode .navbar-link:hover {
   color: #333;
   transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
 }
+
+.footer-heading.dark-mode {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  color: #f0f0f0;
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
+}
+
 .footer-heading:hover {
   color: #000; /* Darker on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted effect */
+}
+.footer-heading.dark-mode:hover {
+  color: #e0e0e0; /* Darker on hover */
   transform: scale(1.05); /* Slight zoom effect */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted effect */
 }
