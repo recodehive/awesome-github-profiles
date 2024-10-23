@@ -20,7 +20,7 @@ body.dark-mode .mic-button{
     /* background-color: white !important; */
 }
 body.dark-mode .fa-microphone{
-    color: white;
+    color: #fff;
 }
 
 .show{
@@ -39,6 +39,7 @@ body.dark-mode .fa-microphone{
     justify-content: center;
 
 }
+
 #animated-voice{
     display: none;
 }
