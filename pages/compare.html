@@ -161,27 +161,22 @@
 
     <div class="container">
         <h1>GitHub Contributor Comparison</h1>
+
+        <div class="search-bar-components">
+          <div class="form-group">
+            <input id="username1" placeholder="Enter Username" type="text" oninput="fetchGitHubUsers(this.value,1)" required/>
+            <div class="list" id="resultList1" style="border: 1px solid #ddd; margin-top: 10px; display: none;"></div>
+          </div>
+          <div class="form-group">
+            <input id="username2" placeholder="Enter Username" type="text" oninput="fetchGitHubUsers(this.value,2)" required/>
+            <div class="list" id="resultList2" style="border: 1px solid #ddd; margin-top: 10px; display: none;"></div>
+          </div>
+          <button id="submitBtn" class="button">Compare</button>
+          <div id="loader" class="hidden">
+            <div class="spinner"></div>
+          </div>
+        </div>
         
-        <div class="form-group">
-            <label for="contributorSelect1">Contributor 1:</label>
-            <select id="contributorSelect1" class="select">
-                <option value="">Select Contributor 1</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="contributorSelect2">Contributor 2:</label>
-            <select id="contributorSelect2" class="select">
-                <option value="">Select Contributor 2</option>
-            </select>
-        </div>
-
-        <button id="submitBtn" class="button">Submit</button>
-        <div id="loader" class="hidden">
-          <div class="spinner"></div>
-        </div>
-
-
         <div id="comparisonTable" class="comparison hidden">
             <h2>Contributor Comparison</h2>
             <table>
