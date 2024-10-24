@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to BEFIT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container home-container">
+      <div class="logo">
+        <img src="logo_1.png" alt="BEFIT Logo" class="logo-img" />
+      </div>
+      <h1>Welcome to BEFIT</h1>
+      <div class="button-container">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showSignup()">Sign UP</button>
+      </div>
+    </div>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">LOGIN</button>
+        </form>
+        <button class="google-btn">LOGIN WITH GOOGLE</button>
+        <p>
+          Don't have an account? <a href="#" onclick="showSignup()">Signup</a>
+        </p>
+      </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('signupModal')">&times;</span>
+        <h2>Create new Account</h2>
+        <form id="signupForm">
+          <input type="text" placeholder="Username" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Sign up</button>
+        </form>
+        <button class="google-btn">Sign up with Google</button>
+        <p>
+          Already Registered? <a href="#" onclick="showLogin()">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

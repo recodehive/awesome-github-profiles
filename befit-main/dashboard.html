@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEFIT - Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #fff;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1,
+      h2 {
+        text-align: center;
+        color: #ffff00;
+      }
+      .stats {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .stat-box {
+        background-color: #222;
+        margin: 40px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        height: 100px;
+        width: 100px;
+      }
+      .exercises {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .exercise {
+        width: 30%;
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .exercise img {
+        width: 100%;
+        height: auto;
+      }
+      .exercise-title {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>DASHBOARD</h1>
+      <div class="stats">
+        <div class="stat-box">
+          <h3>Walk</h3>
+          <p><span id="steps">0</span> Steps</p>
+        </div>
+
+        <div class="stat-box">
+          <h3>Calories</h3>
+          <p><span id="calories">0</span> kcal</p>
+        </div>
+        <div class="stat-box">
+          <h3>BMI</h3>
+          <p><span id="bmi">0</span></p>
+          <p id="bmiCategory"></p>
+        </div>
+      </div>
+      <h2>STRETCHING</h2>
+      <div class="exercises">
+        <div class="exercise">
+          <img src="exercise_1_.png" alt="Leg Exercise" />
+          <div class="exercise-title">LEG</div>
+        </div>
+        <div class="exercise">
+          <img
+            src="exercise_2.png"
+            alt="Cardio Exercise"
+          />
+          <div class="exercise-title">CARDIO</div>
+        </div>
+        <div class="exercise">
+          <img src="exercise_3.png" alt="Core Exercise" />
+          <div class="exercise-title">CORE</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simulated data (in a real app, this would come from a backend or user input)
+      const steps = Math.floor(Math.random() * 10000);
+      const calories = Math.floor(Math.random() * 3000);
+
+      // Update dashboard with simulated data
+      document.getElementById("steps").textContent = steps;
+      document.getElementById("calories").textContent = calories;
+
+      // Retrieve BMI data from localStorage (set in bmi.html)
+      const bmi = localStorage.getItem("bmiResult") || "N/A";
+      const bmiCategory = localStorage.getItem("bmiCategory") || "N/A";
+
+      document.getElementById("bmi").textContent = bmi;
+      document.getElementById("bmiCategory").textContent = bmiCategory;
+    </script>
+  </body>
+</html>
