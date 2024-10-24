@@ -15,7 +15,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 let currentPage=1;
-const profilesPerPage = 20; // Number of profiles per page
+const profilesPerPage = 18; // Number of profiles per page
 
 document.addEventListener("DOMContentLoaded", function () {
   let contributors = [];
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function updatePaginationControls(currentPage, profilesPerPage, totalProfiles) {
     const totalPages = Math.ceil(totalProfiles / profilesPerPage);
     const pageInfo = document.getElementById("page-info");
-    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+    pageInfo.textContent = `${currentPage} / ${totalPages}`;
   
     // Disable previous button if on the first page
     document.getElementById("prev-page").disabled = currentPage === 1;

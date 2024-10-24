@@ -54,7 +54,8 @@ label{
 
 .button {
     display: block;
-    width: 100%;
+    width: 25%;
+    height: 30%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -131,6 +132,14 @@ select{
     color: white;
     background-color: black;
 }
+.dark-mode #link1 a{
+    color: #ddd;
+    text-decoration: none;
+}
+.dark-mode #link2 a{
+    color: #ddd;
+    text-decoration: none;
+}
 #avatarImg1{
     --s: 10px;
     padding: var(--s);
@@ -187,11 +196,7 @@ select{
     display: none;
   }
   
-  #progressBarContainer {
-
-
 #progressBarContainer {
-
     position: fixed;
     top: 0;
     left: 0;
@@ -207,5 +212,67 @@ select{
     background: white;
     transition: width 0.2s ease;
 
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    padding: 10px; 
+}
+.user {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user:hover{
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+.search-bar-components {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content:space-around; 
+}
+
+input {
+    width: 100%; 
+    max-width: 300px; 
+    height: 40px; 
+    padding: 10px;
+    font-size: 16px; 
+    border: 1px solid #ccc;
+    border-radius: 8px; 
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+
+input:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+
+@media screen and (max-width: 768px) {
+    input {
+        max-width: 100%; 
+    }
+    .list{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
+        gap: 10px; 
+        padding: 10px; 
+    }
+    .search-bar-components{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
