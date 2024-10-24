@@ -45,7 +45,56 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Please fill in all fields');
       return;
     }
+    function isValidEmail(email) {
+      // Regular expression for stricter email validation
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+      // Check for the basic format
+      if (!emailRegex.test(email)) {
+          return false;
+      }
+  
+      // Split the email into local part and domain part
+      const [localPart, domainPart] = email.split('@');
+  
+      // Ensure local part and domain part exist and aren't too long
+      if (localPart.length > 64 || domainPart.length > 255) {
+          return false;
+      }
+  
+      // Ensure domain part has a valid format
+      const domainParts = domainPart.split('.');
+      if (domainParts.some(part => part.length > 63)) {
+          return false;
+      }
+  
+      // Additional checks for edge cases
+      if (localPart.startsWith('.') || localPart.endsWith('.') || localPart.includes('..')) {
+          return false;
+      }
+  
+      return true;
+  }
+  
+  
+    // Function to validate username format
+    function validateUsername(username) {
+      // Ensure the username is 3-20 characters long, alphanumeric, and contains at least one letter
+      const usernamePattern = /^(?=.*[a-zA-Z])[a-zA-Z0-9]{3,20}$/;
+      return usernamePattern.test(username);
+    }
+    
 
+    if (!validateUsername(username)) {
+      alert('Please enter a valid username (3-20 alphanumeric characters).');
+      return;
+    }
+
+    // Validate email
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
     // Dummy signup logic for demo purposes
     localStorage.setItem('username', username);
     localStorage.setItem('email', email);
