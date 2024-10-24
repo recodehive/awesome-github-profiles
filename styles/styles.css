@@ -1489,4 +1489,60 @@ a {
   background: white;
   transition: width 0.2s ease;
 }
+.social-share {
+  position: relative;
+  display: inline-block;
+}
 
+.share-icons {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social-share:hover .share-icons {
+  display: flex;
+  opacity: 1;
+}
+
+.share-btn {
+  margin: 0 5px;
+  color: #0D92F4;
+  font-size: 1.2rem;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.share-btn[data-platform="twitter"] {
+  color: #1da1f2;
+}
+
+.share-btn[data-platform="whatsapp"] {
+  color: #25d366;
+}
+
+.share-btn[data-platform="linkedin"] {
+  color: #0077b5;
+}
+
+.share-btn[data-platform="instagram"] {
+  color: #e4405f;
+}
+
+.share-btn[data-platform="github"] {
+  color: #333;
+}
+
+.share-btn:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
