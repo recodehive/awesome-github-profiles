@@ -281,6 +281,424 @@
       </div>
       
     </div>
+
+    <style>
+      /* Chatbot button */
+      #chatbot-button {
+          position: fixed;
+          bottom: 45px;
+          right: 65px;
+          border: none;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          background-color: #333;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 24px;
+          cursor: pointer;
+          z-index: 100;
+          animation: fadeIn 1s ease-in-out;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      #chatbot-button:hover {
+          background-color: #000000;
+      }
+      
+      /* Floating animation for chatbot button */
+      #chatbot-button.floating {
+          animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+          0% {
+              transform: translateY(0);
+          }
+          50% {
+              transform: translateY(-7px);
+          }
+          100% {
+              transform: translateY(0);
+          }
+      }
+      
+      /* Tooltip for the chatbot button */
+      #chatbot-button .tooltip {
+          visibility: hidden;
+          background-color: #0D6EFD;
+          color: white;
+          text-align: center;
+          border-radius: 10px;
+          padding: 9px;
+          font-size: 15px;
+          position: absolute;
+          bottom: 70px;
+          right: -130px;
+          transform: translateX(-50%);
+          width: 270px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1;
+          opacity: 0;
+          transition: opacity 0.3s;
+      }
+      
+      #chatbot-button:hover .tooltip {
+          visibility: visible;
+          opacity: 1;
+      }
+      
+      /* Hide tooltip on touch devices */
+      @media (hover: none) and (pointer: coarse), (max-width: 767px) {
+          .tooltip {
+              display: none;
+          }
+      }
+      
+      /* Chatbox window */
+      #chatbot {
+          display: none;
+          flex-direction: column;
+          background-color: #767676;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          position: fixed;
+          bottom: 35px;
+          right: 55px;
+          width: 400px;
+          max-height: 600px;
+          overflow: hidden;
+          z-index: 1000;
+          transition: all 0.3s ease;
+          animation: fadeIn 1s ease-in-out;
+      }
+      
+      #chatbot.active {
+          display: flex;
+      }
+      
+      /* Chatbox header */
+      .chatbot-header {
+          background-color: #000000;
+          color: #fff;
+          padding: 15px;
+          border-radius: 8px 8px 0 0;
+          font-size: 16px;
+          font-weight: bold;
+          position: relative;
+      }
+      
+      /* Close button styling */
+      .chatbot-header .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          width: 30px;
+          height: 30px;
+          background-color: transparent;
+          border: none;
+          color: #fff;
+          font-size: 24px;
+          cursor: pointer;
+          transition: color 0.3s ease, transform 0.3s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+      
+      /* Hover effect for the close button */
+      .chatbot-header .close-btn:hover {
+          
+          transform: scale(1.6); /* Enlarge slightly */
+      }
+      
+      /* Chatbox messages container */
+      /* Chatbox messages container with scroll */
+      #chatbot-messages {
+          flex-grow: 1;
+          overflow-y: auto;
+          padding: 10px;
+          max-height: 300px; /* Set max-height for the messages container */
+          animation: fadeIn 1s ease-in-out;
+          scroll-behavior: smooth; /* Smooth scrolling */
+      }
+      
+      /* Scrollbar styling (optional) */
+      #chatbot-messages::-webkit-scrollbar {
+          width: 8px;
+      }
+      
+      #chatbot-messages::-webkit-scrollbar-thumb {
+          background-color: #000000;
+          border-radius: 8px;
+      }
+      
+      #chatbot-messages::-webkit-scrollbar-track {
+          background-color: #f1f1f1;
+      }
+      
+      
+      /* Messages styling */
+      .message {
+          margin-bottom: 10px;
+      }
+      
+      .message.bot {
+          text-align: left;
+      }
+      
+      .message.user {
+          text-align: right;
+      }
+      
+      .message .message-text {
+          display: inline-block;
+          padding: 10px;
+          border-radius: 10px;
+          max-width: 80%;
+      }
+      
+      .message.bot .message-text {
+          background-color: #2c2c2c;
+          color: white;
+      }
+      
+      .message.user .message-text {
+          background-color: #000000;
+          color: #fff;
+          word-wrap: break-word;
+      }
+      
+      /* Chatbox questions section */
+      /* Chatbox questions container */
+      .chatbot-questions {
+          padding: 15px;
+          background-color: #f4f1f1;
+          border-radius: 0 0 8px 8px;
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern feel */
+      }
+      
+      /* Question paragraph */
+      .chatbot-questions p {
+          font-size: 14px;
+          margin-bottom: 10px;
+          color: #333;
+      }
+      
+      /* Question list styling */
+      .chatbot-questions ul {
+          background-color: #2c2c2c;
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin: 0; /* Removing default margin for a cleaner look */
+      }
+      
+      /* Individual question list item */
+      .chatbot-questions li {
+          background-color: #ffffff; /* White background for a clean modern look */
+          padding: 12px 18px; /* Slightly larger padding for better spacing */
+          border-radius: 8px; /* More rounded corners for a modern aesthetic */
+          cursor: pointer;
+          transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to elevate the list items */
+      }
+      
+      /* Hover effect for list items */
+      .chatbot-questions li:hover {
+          background-color: #000000; /* Darker background on hover */
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+          transform: translateY(-3px); /* Slight lift on hover for interactivity */
+      }
+      
+      /* Chatbox questions list container */
+      #question-list {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 12px 15px;
+    border-radius: 8px; /* Rounded borders */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+    background-color: #3a3a3a; /* Darker background */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for focus */
+    color: #f1f1f1; /* Light text color */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect */
+#question-list:hover {
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+    transform: scale(1.02); /* Slight scale-up on hover */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+
+      
+      #chatbot-input-container {
+    display: flex;
+    align-items: center;
+    background-color: #000000; /* Background color for the container */
+    padding: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow at the top */
+}
+
+#chatbot-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #3a3a3a; /* Input field background */
+    color: #e0e0e0; /* Input text color */
+    font-size: 14px;
+    outline: none; /* Removes default outline */
+    transition: background-color 0.3s ease;
+}
+
+#chatbot-input::placeholder {
+    color: #a0a0a0; /* Placeholder text color */
+}
+
+#chatbot-send {
+    margin-left: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #4a90e2; /* Button color */
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+#chatbot-send:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+}
+
+#chatbot-send:active {
+    transform: scale(0.95); /* Button click effect */
+}
+
+      
+      
+          </style>
+      
+          <button id="chatbot-button">&#9993;</button>
+      
+          <div id="chatbot" class="hidden">
+              <div class="chatbot-header">
+                  <span>Chatbot</span>
+                  <button class="close-btn">&times;</button>
+              </div>
+              
+              <div id="chatbot-window">
+                  <div id="chatbot-messages"></div>
+                  <ul id="question-list"></ul>
+              </div>
+              <div id="chatbot-input-container">
+                  <input type="text" id="chatbot-input" placeholder="Type a message...">
+                  <button id="chatbot-send">Send</button>
+              </div>
+          </div>
+      
+          <script>
+          // Get necessary elements
+      const chatbotButton = document.getElementById('chatbot-button');
+      const chatbot = document.getElementById('chatbot');
+      const closeChatbot = document.querySelector('.close-btn'); // Updated to match the new HTML structure
+      const messagesContainer = document.getElementById('chatbot-messages');
+      const inputField = document.getElementById('chatbot-input');
+      const sendButton = document.getElementById('chatbot-send');
+      const questionList = document.getElementById('question-list');
+      let questionsRendered = false;
+      
+      // Toggle chatbot visibility
+      function toggleChatbot() {
+          chatbot.classList.toggle('active');
+      }
+      
+      // Render initial bot message
+      const messages = [
+          { text: 'Hello! Welcome to Awesome GitHub Profiles', type: 'bot' }
+      ];
+      
+      // Hardcoded questions and answers
+      const questionsAndAnswers = [
+          { question: 'What is RecoderHive?', answer: 'RecodeHive is a community-driven platform offering curated machine learning repositories' },
+          { question: 'What is GitHub?', answer: 'A cloud-based platform that uses Git, an open source version control system, to enable real-time collaboration on code.' },
+          { question: 'How do I contribute to the repository?', answer: 'You can contribute by forking the repository, making changes, and submitting a pull request. Learn more <a href="https://github.com/recodehive/awesome-github-profiles/blob/gh-pages/README.md" target="_blank">here</a>' },
+          { question: 'How frequently is the repository updated?', answer: 'The repository is regularly updated with new content and improvements.' }
+          // Add more questions and answers as needed
+      ];
+      
+      // Function to render messages in the chat
+      function renderMessages() {
+          messagesContainer.innerHTML = '';
+          messages.forEach((msg) => {
+              const messageDiv = document.createElement('div');
+              messageDiv.className = `message ${msg.type}`;
+              messageDiv.innerHTML = `<span class="message-text">${msg.text}</span>`;
+              messagesContainer.appendChild(messageDiv);
+          });
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+      
+      // Function to add new message
+      function addMessage(text, type) {
+          messages.push({ text, type });
+          renderMessages();
+      }
+      
+      // Function to render question list
+      function renderQuestions() {
+          questionsAndAnswers.forEach((qa) => {
+              const listItem = document.createElement('li');
+              listItem.textContent = qa.question;
+              listItem.addEventListener('click', () => {
+                  addMessage(qa.question, 'user');
+                  setTimeout(() => addMessage(qa.answer, 'bot'), 500);
+              });
+              questionList.appendChild(listItem);
+          });
+      }
+      
+      // Event listener for opening the chatbot
+      chatbotButton.addEventListener('click', () => {
+          toggleChatbot();
+          renderMessages();
+          if (!questionsRendered) {
+              questionsRendered = true;
+              renderQuestions();
+          }
+      });
+      
+      // Event listener for closing the chatbot
+      closeChatbot.addEventListener('click', () => {
+          chatbot.classList.remove('active');
+      });
+      
+      // Event listener for the send button
+      sendButton.addEventListener('click', () => {
+          const userInput = inputField.value.trim();
+          if (userInput) {
+              addMessage(userInput, 'user');
+              inputField.value = '';
+              setTimeout(() => addMessage('Choose from the list of questions!', 'bot'), 500); // Bot response
+          }
+      });
+      
+      // Event listener for Enter key press
+      inputField.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+              sendButton.click();
+          }
+      });
+      
+          </script>
     <footer id="Contact" class="footer-2">
       <div class="footer-container">
         <div class="footer-content">
