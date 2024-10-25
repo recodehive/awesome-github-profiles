@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
-</head>
+<style>
+          /* circle styles */
+          .circle {
+            height: 24px;
+            width: 24px;
+            border-radius: 24px;
+            background-color: rgb(255, 0, 0);
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 99999999;
+          }
+        </style>  
+    </head>
 <body>
     <div id="preloader">
         <div class="loader-wrapper">
@@ -130,5 +144,74 @@
             </section>
         </div>
     </div>
+
+<!-- Circles -->
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<script>
+    // coordinates for the cursor :
+    const coords = { x: 0, y: 0 };
+    const circles = document.querySelectorAll(".circle");
+
+    const colors = [
+      "#fc5720", "#fc6532", "#fc6532","#fd8b65", "#d5585c", "#fac3b1", "#f4d5cb", "#fefefe", "#fefefe", "#cdf2c5", "#b2eca5", "#95e283", "#7dda68", "#4adc2d", "#69d451", "#54c939", "#34b916", "#28b309", "#1e9c02", 
+    ];
+
+    circles.forEach(function (circle, index) {
+      circle.x = 0;
+      circle.y = 0;
+      circle.style.backgroundColor = colors[index % colors.length];
+    });
+
+    // update the coordinates when the mouse moves:
+    window.addEventListener("mousemove", function (e) {
+      coords.x = e.clientX;
+      coords.y = e.clientY;
+    });
+
+    // animation function to move the circles:
+    function animateCircles() {
+      let x = coords.x;
+      let y = coords.y;
+
+      circles.forEach(function (circle, index) {
+       
+
+        circle.style.left = x - 12 + "px";
+        circle.style.top = y - 12 + "px";
+        circle.style.scale = (circles.length - index) / circles.length;
+
+        circle.x = x;
+        circle.y = y;
+
+        const nextCircle = circles[index + 1] || circles[0];
+        x += (nextCircle.x - x) * 0.3;
+        y += (nextCircle.y - y) * 0.3;
+      });
+
+      requestAnimationFrame(animateCircles);
+    }
+    
+    animateCircles();
+  </script>
+
 </body>
 </html>
