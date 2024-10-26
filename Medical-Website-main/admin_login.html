@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Admin Login</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(to right, #b1b1b1b9, #838a9393);
+            background-image: url(./img/helth\ 3.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            position: relative;
+            width: 50vh;
+            height: 65vh;
+        }
+
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            transition: transform 0.6s linear;
+        }
+
+        .front {
+            z-index: 2;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .container.flipped .front {
+            transform: rotateY(-180deg);
+        }
+
+        .container.flipped .back {
+            transform: rotateY(0deg);
+        }
+
+        .top {
+            text-align: center;
+            margin-bottom: 10vh;
+        }
+
+        .top span {
+            position: relative;
+            top: 3vh;
+            font-size: 25px;
+            letter-spacing: 0.2vh;
+            font-weight: 700;
+            color: #264653;
+            text-shadow: 1px 1px 2px rgba(83, 154, 182, 1);
+        }
+
+        .inputBox {
+            box-shadow: rgb(219, 219, 219) 3px 3px 6px 0px inset,
+                rgba(221, 220, 220, 0.301) -3px -3px 6px 1px inset;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 4.5vh;
+            width: 40vh;
+            height: 6vh;
+            margin-bottom: 4vh;
+            border-radius: 5vh;
+        }
+
+        .inputBox:focus-within {
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+                -5px -5px 10px rgba(255, 255, 255, 0.5);
+            outline: 0.5vh solid #264653a1;
+        }
+
+        .input {
+            height: 4vh;
+            width: 30vh;
+            margin-left: -2vh;
+            border: none;
+            outline: none;
+            background: inherit;
+        }
+
+        .input::placeholder {
+            color: black;
+            letter-spacing: 0.05em;
+            font-size: 14px;
+        }
+
+        .btn {
+            margin-top: 2vh;
+            height: 5vh;
+            width: 10vh;
+            border: none;
+            border-radius: 5vh;
+            background: transparent;
+            cursor: pointer;
+            color: #264653;
+            border: 1px solid #264653;
+            font-weight: 600;
+            transition: 0.3s ease;
+            box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+        }
+
+        .btn:hover {
+            background: #264653;
+            color: #fff;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        .user {
+            margin-top: 3vh;
+            color: #0f1f26;
+        }
+
+        .user span {
+            margin-left: 1vh;
+            font-size: 20px;
+            font-weight: bold;
+            color: #195c71;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="front">
+            <div class="top">
+                <span>Admin Login</span>
+            </div>
+            <div class="form">
+                <form id="adminLoginForm">
+                    <div class="inputBox">
+                        <label><i class="fa-solid fa-user"></i></label>
+                        <input type="email" placeholder="Email" class="input" name="email" required>
+                    </div>
+                    <div class="inputBox" style="position: relative;">
+                        <label><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" id="loginPassword" placeholder="Password" class="input" name="password" required>
+                        <i class="fa-solid fa-eye" id="toggleLoginPassword" style="cursor: pointer; position: absolute; right: 10px; top: 10px;"></i>
+                    </div>
+                    <button type="submit" class="btn">Log in</button>
+                    <div class="user">New admin? <span class="newUser">Sign Up</span></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="back">
+            <div class="top">
+                <span>Admin Register</span>
+            </div>
+            <div class="form">
+                <form id="adminRegisterForm">
+                    <div class="inputBox">
+                        <label><i class="fa-solid fa-user"></i></label>
+                        <input type="text" placeholder="Full Name" class="input" name="name" required>
+                    </div>
+                    <div class="inputBox">
+                        <label><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" placeholder="Email" class="input" name="email" required>
+                    </div>
+                    <div class="inputBox">
+                        <label><i class="fa-solid fa-briefcase"></i></label>
+                        <input type="text" placeholder="Department" class="input" name="department" required>
+                    </div>
+                    <div class="inputBox" style="position: relative;">
+                        <label><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" id="registerPassword" placeholder="Password" class="input" name="password" required>
+                        <i class="fa-solid fa-eye" id="toggleRegisterPassword" style="cursor: pointer; position: absolute; right: 10px; top: 10px;"></i>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <div class="user">Existing admin? <span class="existingUser">Log In</span></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('container');
+            const newUser = document.querySelector('.newUser');
+            const existingUser = document.querySelector('.existingUser');
+
+            newUser.addEventListener('click', function() {
+                container.classList.add('flipped');
+            });
+
+            existingUser.addEventListener('click', function() {
+                container.classList.remove('flipped');
+            });
+
+            document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                console.log('Admin login form submitted');
+                const formData = new FormData(this);
+                fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        password: formData.get('password'),
+                        role: 'admin'
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.redirect) {
+                        window.location.href = data.redirect; // This will redirect to the home page
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during login');
+                });
+            });
+
+            document.getElementById('adminRegisterForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                console.log('Admin register form submitted');
+                const formData = new FormData(this);
+                fetch('/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.get('name'),
+                        email: formData.get('email'),
+                        department: formData.get('department'),
+                        password: formData.get('password'),
+                        role: 'admin',
+                        username: formData.get('email') // Use email as username if there's no separate username field
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during registration');
+                });
+            });
+
+            // Toggle password visibility
+            const toggleLoginPassword = document.querySelector("#toggleLoginPassword");
+            const loginPassword = document.querySelector("#loginPassword");
+            toggleLoginPassword.addEventListener("click", function () {
+                const type = loginPassword.getAttribute("type") === "password" ? "text" : "password";
+                loginPassword.setAttribute("type", type);
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            const toggleRegisterPassword = document.querySelector("#toggleRegisterPassword");
+            const registerPassword = document.querySelector("#registerPassword");
+            toggleRegisterPassword.addEventListener("click", function () {
+                const type = registerPassword.getAttribute("type") === "password" ? "text" : "password";
+                registerPassword.setAttribute("type", type);
+                this.classList.toggle("fa-eye-slash");
+            });
+        });
+    </script>
+</body>
+
+</html>

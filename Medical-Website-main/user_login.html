@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+        <title>Login Registration</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                min-height: 100vh;
+                background: linear-gradient(to right, #b1b1b1b9, #838a9393);
+                background-image: url(./img/medicine.jpg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Poppins', sans-serif;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .container {
+                width: 50vh;
+                height: 65vh;
+                border-radius: 3vh;
+                background: #fef9ef72;
+                backdrop-filter: blur(20px);
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2),
+                    10px 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .top {
+                text-align: center;
+                margin-bottom: 10vh;
+            }
+
+            .top span {
+                position: relative;
+                top: 3vh;
+                font-size: 25px;
+                letter-spacing: 0.2vh;
+                font-weight: 700;
+                color: #264653;
+                text-shadow: 1px 1px 2px rgba(83, 154, 182, 1);
+            }
+
+            .inputBox {
+                box-shadow: rgb(219, 219, 219) 3px 3px 6px 0px inset,
+                    rgba(221, 220, 220, 0.301) -3px -3px 6px 1px inset;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-left: 4.5vh;
+                width: 40vh;
+                height: 6vh;
+                margin-bottom: 4vh;
+                border-radius: 5vh;
+            }
+
+            .inputBox:focus-within {
+                box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1),
+                    -5px -5px 10px rgba(255, 255, 255, 0.5);
+                outline: 0.5vh solid #264653a1;
+            }
+
+            .input {
+                height: 4vh;
+                width: 30vh;
+                margin-left: -2vh;
+                border: none;
+                outline: none;
+                background: inherit;
+            }
+
+            .input::placeholder {
+                color: black;
+                letter-spacing: 0.05em;
+                font-size: 14px;
+            }
+
+            .btn {
+                margin-top: 2vh;
+                height: 5vh;
+                width: 10vh;
+                border: none;
+                border-radius: 5vh;
+                background: transparent;
+                cursor: pointer;
+                color: #264653;
+                border: 1px solid #264653;
+                font-weight: 600;
+                transition: 0.3s ease;
+                box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+            }
+
+            .btn:hover {
+                background: #264653;
+                color: #fff;
+            }
+
+            form {
+                text-align: center;
+            }
+
+            .user {
+                margin-top: 3vh;
+                color: #0f1f26;
+            }
+
+            .user span {
+                margin-left: 1vh;
+                font-size: 20px;
+                font-weight: bold;
+                color: #195c71;
+                cursor: pointer;
+                font-weight: 500;
+            }
+
+            /* <!-- --------------------------- back ---------------------------------- --> */
+
+            .inputBoxBack {
+                height: 6vh;
+                margin-bottom: 2vh;
+            }
+
+            .topBack {
+                margin-bottom: 6vh;
+            }
+
+            .btnBack {
+                margin-top: 0vh;
+                height: 5vh;
+                width: 10vh;
+                font-size: 2vh;
+            }
+
+            .front {
+                position: absolute;
+                z-index: 2;
+                transition: 2s ease;
+            }
+
+            .back {
+                position: absolute;
+                transition: 2s ease;
+                z-index: 1;
+                transform: rotateY(180deg);
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="container front">
+            <div class="top">
+                <span>User Login</span>
+            </div>
+            <div class="form">
+                <form id="loginForm">
+                    <div class="inputBox inputBoxFront">
+                        <label><i class="fa-solid fa-user"></i></label>
+                        <input type="text" placeholder="Email" class="input" name="email" required>
+                    </div>
+                    <div class="inputBox inputBoxFront" style="position: relative;">
+                        <label><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" id="loginPassword" placeholder="Password" class="input" name="password" required>
+                        <i class="fa-solid fa-eye" id="toggleLoginPassword" style="cursor: pointer; position: absolute; right: 10px; top: 10px;"></i>
+                    </div>
+                    <input type="hidden" name="role" value="user">
+                    <button type="submit" class="btn">Log in</button>
+                    <div class="user">New user? <span class="newUser">Sign Up</span></div>
+                </form>
+            </div>
+        </div>
+
+        <!-- --------------------------- back ---------------------------------- -->
+
+        <div class="container back">
+            <div class="top topBack">
+                <span>User Register</span>
+            </div>
+            <div class="form formBack">
+                <form id="registerForm" action="/user_register" method="post">
+                    <div class="inputBox inputBoxBack">
+                        <label><i class="fa-solid fa-user"></i></label>
+                        <input type="text" id="name" placeholder="Name" class="input" name="name" required>
+                    </div>
+
+                    <div class="inputBox inputBoxBack">
+                        <label><i class="fa-solid fa-envelope"></i></label>
+                        <input type="email" id="email" placeholder="Email id" class="input" name="email" required>
+                    </div>
+
+                    <div class="inputBox inputBoxBack">
+                        <label><i class="fa-solid fa-phone"></i></label>
+                        <input type="tel" id="phone" placeholder="Phone Number" class="input" name="phone" required
+                            pattern="[6-9]{1}[0-9]{9}">
+                    </div>
+
+                    <div class="inputBox inputBoxBack">
+                        <label><i class="fa-solid fa-user"></i></label>
+                        <input type="text" id="username" placeholder="Username" class="input" name="username" required>
+                    </div>
+                    <div class="inputBox inputBoxBack" style="position: relative;">
+                        <label><i class="fa-solid fa-lock"></i></label>
+                        <input type="password" id="registerPassword" placeholder="Password" class="input"
+                            name="password" required>
+                        <i class="fa-solid fa-eye" id="toggleRegisterPassword"
+                            style="cursor: pointer; position: absolute; right: 10px; top: 10px;"></i>
+                    </div>
+
+                    <button type="submit" class="btn btnBack">Sign Up</button>
+                    <div class="user userBack">Existing user? <span class="existingUser">Log In</span></div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Toggle password visibility for login
+            const toggleLoginPassword = document.querySelector("#toggleLoginPassword");
+            const loginPassword = document.querySelector("#loginPassword");
+
+            toggleLoginPassword.addEventListener("click", function () {
+                const type = loginPassword.getAttribute("type") === "password" ? "text" : "password";
+                loginPassword.setAttribute("type", type);
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            // Toggle password visibility for registration
+            const toggleRegisterPassword = document.querySelector("#toggleRegisterPassword");
+            const registerPassword = document.querySelector("#registerPassword");
+
+            toggleRegisterPassword.addEventListener("click", function () {
+                const type = registerPassword.getAttribute("type") === "password" ? "text" : "password";
+                registerPassword.setAttribute("type", type);
+                this.classList.toggle("fa-eye-slash");
+            });
+
+            document.getElementById("loginForm").addEventListener("submit", function (event) {
+                let isValid = true;
+
+                const email = document.querySelector("input[name='email']").value.trim();
+                const password = loginPassword.value.trim();
+
+                // Email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address");
+                    isValid = false;
+                }
+
+                // Password validation
+                if (password === "") {
+                    alert("Password is required");
+                    isValid = false;
+                }
+
+                // Prevent form submission if invalid
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            document.getElementById("registerForm").addEventListener("submit", function (event) {
+                let isValid = true;
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const username = document.getElementById("username").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const password = registerPassword.value.trim();
+
+                // Name validation
+                if (name === "") {
+                    alert("Name is required");
+                    isValid = false;
+                }
+
+                // Email validation
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address");
+                    isValid = false;
+                }
+
+                // Username validation
+                if (username === "") {
+                    alert("Username is required");
+                    isValid = false;
+                }
+
+                // Phone number validation (Indian numbers starting with 6, 7, 8, or 9 and exactly 10 digits)
+                const phonePattern = /^[6-9][0-9]{9}$/;
+                if (!phonePattern.test(phone)) {
+                    alert("Please enter a valid 10-digit Indian phone number starting with 6, 7, 8, or 9");
+                    isValid = false;
+                }
+
+                // Password validation
+                if (password === "") {
+                    alert("Password is required");
+                    isValid = false;
+                } else if (password.length < 6) {
+                    alert("Password must be at least 6 characters long");
+                    isValid = false;
+                }
+
+                // Prevent form submission if invalid
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+
+            let front = document.querySelector('.front');
+            let back = document.querySelector('.back');
+
+            let newUser = document.querySelector('.newUser');
+            let existingUser = document.querySelector('.existingUser');
+
+            newUser.addEventListener('click', function () {
+                front.style.zIndex = "1";
+                back.style.zIndex = "2";
+                front.style.transform = "rotateY(180deg)";
+                back.style.transform = "rotateY(0deg)";
+            });
+
+            existingUser.addEventListener('click', function () {
+                back.style.zIndex = "1";
+                front.style.zIndex = "2";
+                back.style.transform = "rotateY(180deg)";
+                front.style.transform = "rotateY(0deg)";
+            });
+
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: formData.get('email'),
+                        password: formData.get('password'),
+                        role: formData.get('role')
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during login');
+                });
+            });
+
+            document.getElementById('registerForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                fetch('/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: formData.get('username'),
+                        email: formData.get('email'),
+                        password: formData.get('password'),
+                        role: 'user'
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred during registration');
+                });
+            });
+        </script>
+    </body>
+
+</html>

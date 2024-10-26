@@ -1,0 +1,5 @@
+services:
+  medical-site:
+    build: .
+    ports:
+      - "9090:80"

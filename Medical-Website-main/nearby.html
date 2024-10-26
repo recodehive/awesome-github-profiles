@@ -1,0 +1,207 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>Swasthya Point</title>
+
+  <style>
+    body {
+      background-color: #e8f5e9;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+      margin-top: 20px;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .lead {
+      font-size: 3rem;
+      color: #311f1f;
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .logo {
+         font-size: large;
+    }
+
+    .hospital-block {
+      margin-bottom: 30px;
+      padding: 25px 15px;
+    }
+
+    .hospital-card {
+      border: none;
+      text-align: center;
+      transition: transform 0.2s;
+      padding: 10px;
+      height: 100%;
+      background: linear-gradient(135deg, #bdffde, #ffffff);
+      border-radius: 5px;
+      box-shadow: 4px 4px 10px rgba(175, 231, 175, 0.6);
+    }
+
+    .hospital-card:hover {
+      transform: scale(1.05);
+    }
+
+    .hospital-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .hospital-name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-top: 10px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      line-height: 1.3rem;
+    }
+
+    .hospitals-link {
+      color: #020608;
+      text-decoration: none;
+    }
+
+    .hospitals-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 1rem 0;
+      background-color: #2e2e2e;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header section starts -->
+  <header>
+    <input type="checkbox" name="" id="toggler">
+    <label for="toggler" class="fas fa-bars"></label>
+    <a href="#"class="logo"><img src="img/swasthya-logo.png"></a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#blogs">Blogs</a>
+      <a href="index.htmlnearby.html">Nearby</a>
+    </nav>
+  </header>
+  <!-- header section ends -->
+
+  <!-- Nearby Hospitals Section -->
+  <section class="about" id="about">
+    <p class="lead">Find Nearby Hospitals</p>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <!-- Hospital 1 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h1.jpg" alt="Fortis Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/Fortis+Hospital" target="_blank">
+              <p class="hospital-name">Fortis Hospital, Shalimar Bagh</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital 2 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h2.jpg" alt="Maharaja Agrasen Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/Maharaja+Agrasen+Hospital"
+              target="_blank">
+              <p class="hospital-name">Maharaja Agrasen Hospital, Punjabi Bagh</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital 3 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h3.jpg" alt="Sir Ganga Ram Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/Sir+Ganga+Ram+Hospital"
+              target="_blank">
+              <p class="hospital-name">Sir Ganga Ram Hospital, Delhi NCR</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Hospital 4 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h4.jpg" alt="Dharamshila Superspeciality Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/DELHI+MULTI+SPECIALITY+HOSPITAL"
+              target="_blank">
+              <p class="hospital-name">Dharamshila Superspeciality Hospital,Delhi</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital 5 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h5.jpg" alt="Apollo Spectra Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/Apollo+Spectra+Hospitals" target="_blank">
+              <p class="hospital-name">Apollo Spectra Hospitals, Karol Bagh</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Hospital 6 -->
+      <div class="col-md-4 hospital-block">
+        <div class="card hospital-card">
+          <img src="img/h6.jpg" alt="Max Hospital Image">
+          <div class="card-body">
+            <a class="hospitals-link" href="https://www.google.com/maps/place/Max+Hospital" target="_blank">
+              <p class="hospital-name">Max Hospital,Delhi NCR</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p class="m-0">&copy; 2024 Swasthya Point</p>
+  </footer>
+
+</body>
+
+</html>

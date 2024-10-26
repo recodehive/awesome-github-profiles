@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="./style3.css">
+    <script type="text/javascript" src="script3.js"></script>
+</head>
+<body>
+    <div class="main">
+        <h1 class="form-title">Medical Website</h1>
+        <form id="registerForm">
+        <class="main-user-info">
+            <div class="user-input-box">
+                <label for="name">Name : </label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+        <div class="user-input-box">
+            <label for="email">E-mail : </label>
+            <input type="email" id="email" name="email" placeholder="Enter your mail id">
+        </div>
+        <div class="user-input-box">
+            <label for="password">password : </label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+        </div>
+        <div class="form-submit-button">
+            <input type="submit" value="Register">
+        </div>
+        <div class="register"> 
+            <a href="login.html">Back to login</a>
+        </div>
+    </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch('/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    username: formData.get('name'),
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    role: 'user'
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during registration');
+            });
+        });
+    </script>
+</body>
+</html>

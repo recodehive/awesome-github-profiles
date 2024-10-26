@@ -1,0 +1,14 @@
+
+labels:
+  bug:
+    - "bug"
+    - "error"
+    - "fail"
+  enhancement:
+    - "enhancement"
+    - "feature"
+    - "improvement"
+  documentation:
+    - "docs"
+    - "documentation"
+    - "readme"
