@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome GitHub Profile READMEs</title>
+    <link rel="shortcut icon" href="assets/recode-hive.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/pagination.css" />
+    <link rel="stylesheet" href="styles/speech.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <link rel="stylesheet" href="styles/hamburger.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="loader-wrapper">
+          <img src="recode-hive.png" alt="Logo" class="logo">  
+          <div class="loader"></div>
+      </div>
+  </div> 
+  <style>
+    #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Loader and Logo Wrapper */
+.loader-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;  /* Adjust the size to your preference */
+    height: auto;
+    z-index: 2;  /* Ensure the logo appears above the spinner */
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Fixed Diamond-shaped spinner with rotating color */
+.loader {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 10px solid transparent;  /* Transparent border for all sides */
+    border-top: 10px solid #b0b0b0;  /* Lighter gray border */
+    border-right: 10px solid #404040;  /* Darker gray (black) border */
+    border-radius: 10px;
+    position: absolute;
+    transform: rotate(45deg);  /* Rotate the square to create a diamond shape */
+    animation: spinColor 1.5s linear infinite;  /* Only color will spin */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+}
+
+/* Spinner color animation */
+@keyframes spinColor {
+    0% {
+        border-top-color: #b0b0b0;  /* Lighter gray */
+        border-right-color: #404040;  /* Darker gray */
+    }
+    50% {
+        border-top-color: #404040;  /* Transition to darker gray */
+        border-right-color: #b0b0b0;  /* Lighter gray */
+    }
+    100% {
+        border-top-color: #b0b0b0;  /* Back to original */
+        border-right-color: #404040;  /* Darker gray */
+    }
+}
+
+/* Fade-in effect for the logo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const content = document.getElementById('content');
+
+        // Set a small timeout for better user experience
+        setTimeout(function() {
+            // Hide preloader
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 1s ease-in-out';
+
+            // Show content after preloader fades out
+            setTimeout(function() {
+                preloader.style.display = 'none';
+                content.style.display = 'block';
+            }, 1000); // Delay for content display after preloader fade-out
+        }, 500); // Initial delay before preloader starts fading out
+    });
+</script>
+    <div id="progressBarContainer">
+        <div id="progressBar"></div>
+    </div>
+    <nav class="navbar">
+      <div class="navbar-left" onclick="window.location.href=`index.html`">
+        <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+        <span class="navbar-text">Recode Hive</span>
+      </div>
+      <div class="navbar-right">
+        <a href="pages/githubbadge.html" class="navbar-link">Github-Badge</a>
+        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+        class="navbar-link">Add Profile</a>
+        <a href="#" class="navbar-link">Tools</a>
+        <a href="./pages/events.html" class="navbar-link">Events</a>
+        <a href="./pages/blog.html" class="navbar-link">Blog</a>
+        <a href="./pages/compare.html" class="navbar-link">Compare</a>
+        <a href="login.html" class="navbar-link">Login</a>
+
+      
+        <div class="toggle-switch">
+          <input type="checkbox" id="theme-toggle">
+          <label for="theme-toggle">
+            <div class="switch-button">
+              <span class="material-icons sun-icon">wb_sunny</span>
+              <span class="material-icons moon-icon">brightness_2</span>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+  
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="pages/githubbadge.html" class="navbar-links">Github-Badge</a>
+      <a href="#" class="navbar-links">Tools</a>
+      <a href="./pages/events.html" class="navbar-links">Events</a>
+      <a href="pages/blog.html" class="navbar-links">Blog</a>
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
+      <a href="login.html">Login</a>
+      
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle-mobile">
+        <label for="theme-toggle-mobile">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="side-icons">
+    <div class="icon-content">
+      <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
+        <i class="fab fa-github"></i>
+        <div class="filled"></div>
+      </a>
+    </div>
+    <div class="icon-content">
+      <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
+        <i class="fab fa-youtube"></i>
+        <div class="filled"></div>
+      </a>
+    </div>
+    <div class="icon-content">
+      <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
+        <i class="fab fa-linkedin-in"></i>
+        <div class="filled"></div>
+      </a>
+    </div>
+    <div class="icon-content">
+      <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div class="filled"></div>
+      </a>
+    </div>
+    <div class="icon-content">
+      <a href="https://www.facebook.com/sanjay.k.viswanathan/" target="_blank" aria-label="Facebook" data-social="facebook">
+        <i class="fab fa-facebook-f"></i>
+        <div class="filled"></div>
+      </a>
+    </div>
+  </div>
+  
+     
+    
+  
+
+    <div class="container">
+      <h1 class="main-heading">Awesome GitHub Profile READMEs</h1>
+      <div class="tags">
+        <span class="tag">Badge 🎖️</span>
+        <span class="tag">Minimalistic ✨</span>
+        <span class="tag">Dynamic 🔄</span>
+        <span class="tag">Icons 🎯</span>
+
+        <span class="tag">Backgrounds 😎</span>
+        <span class="tag">GIFS 🖼️</span>
+        <span class="tag">Game Mode 🚀</span>
+        <span class="tag">Code 👨‍💻</span>
+      </div>
+      <div class="search-bar" style="position: relative;">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search Nickname or Username..."
+        />
+        
+          
+        <i class="fas fa-search" style="position: relative;right: 40px;"></i>
+        <button class="mic-button">
+          <!-- icon working properly -->
+           <i class="fa fa-microphone"></i> 
+           
+          <svg id="animated-voice" width="1rem" height="1rem" viewBox="0 0 100 100">
+            <g stroke="#fff" stroke-width="15">
+              <path d="M20,20 20,80">
+                <animate attributeName="d" values="M20,40 20,60;M20,20 20,80;M20,40 20,60" dur="1s" repeatCount="indefinite" />
+              </path>
+              <path d="M50,10 50,90">
+                <animate attributeName="d" values="M50,10 50,90;M50,40 50,60;M50,10 50,90" dur="1s" repeatCount="indefinite" />
+              </path>
+              <path d="M80,20 80,80">
+                <animate attributeName="d" values="M80,40 80,60;M80,20 80,80;M80,40 80,60" dur="1s" repeatCount="indefinite" />
+              </path>
+            </g>
+          </svg>
+        
+        </button>
+        
+        
+        
+        <i class="fa-solid fa-caret-down dropdown" id="caret-down"></i>
+      </div>
+      <!-- Modal Structure -->
+      <div id="myModal" class="modal1" style="left: 62%;">
+        <div class="modal-content">
+          <p class="views">Least Views</p>
+          <p class="views">Most Views</p>
+          <p class="views">Least Likes</p>
+          <p class="views">Most Likes</p>
+        </div>
+      </div>
+      
+
+      <div class="no-profiles-message"><h2>No profiles found</h2></div>
+
+      <div class="profiles">
+        <!-- Profiles will be dynamically loaded here -->
+      </div>
+
+      <!-- Buttons for pagination -->
+      <div class="pagination">
+        <button id="prev-page" disabled><i class="fa-solid fa-backward"></i></button>
+        <span id="page-info"></span>
+        <button id="next-page"><i class="fa-solid fa-forward"></i></button>
+      </div>
+      
+    </div>
+    <footer id="Contact" class="footer-2">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-info">
+            <a href="#"><img src="assets/recode.png" alt="Recode-Hive logo" class="footer-logo" style="width: 20rem; height:auto;"></a>
+          </div>
+          <div class="footer-links">
+            <div class="footer-section">
+              <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+              <div>
+                <a href="pages/help.html" class="footer-link">Contact Us</a>
+                <a href='https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md' class="footer-link">Code of Conduct</a>
+                <a href="pages/faq.html" class="footer-link">FAQ's</a>
+              </div>
+            </div>
+            <div class="footer-section">
+              <h6 class="footer-heading">GET INVOLVED</h6>
+              <div>
+                <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
+                <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-description">
+            <h5>We focus on quality content for the right people at the right time⏱️. What we are trying to do is help you brand personal skills through GitHub readme.md, listing the best profiles, and giving you the opportunity to list your profile to the world 🌎.</h5>
+            <a href="https://stream.recodehive.com/github" class="footer-button">Explore</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <p class="footer-copyright">
+            &copy;<a href = "https://stream.recodehive.com/github" class="footer-copy"><span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.</a> 
+          </p>
+        </div>
+      </div>
+    </footer>
+    
+    
+    <script>
+        document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+    </script>
+    
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+      <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+        <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+      </svg>
+    </button>
+<!-- Toast Notification Container -->
+<div id="toast-container"></div>
+
+<!-- Profile Add Modal -->
+<div id="profileModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button" id="closeModal">&times;</span>
+    <img src="assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+    <h2>Join the Recode Hive Community</h2>
+    <p>Become part of an exclusive community of developers. Showcase your GitHub profile and connect with like-minded individuals to explore new opportunities.</p>
+    <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+       class="add-profile-button">Add Your Profile</a>
+  </div>
+</div>
+
+    <script src="scripts/profileModal.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+    <script src="scripts/ScrollToTop.js"></script>
+    <script src="scripts/retriveprofile.js"></script>
+    <script src="scripts/dark-mode.js"></script>
+    <script src="scripts/hamburger.js"></script>
+    <script src="scripts/revealelementsonscroll.js"></script>
+    <script src="scripts/speechRecognition.js"></script>
+    <!-- Added script for new Twitter logo -->
+    <script src="https://kit.fontawesome.com/856f4a44d7.js" crossorigin="anonymous"></script>
+    <div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+
+  </body>
+</html>

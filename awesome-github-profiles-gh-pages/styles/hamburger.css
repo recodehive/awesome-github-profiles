@@ -1,0 +1,105 @@
+*{
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.navbar-links {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .hamburger {
+    display: none ;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.6s ease;
+  }
+
+  .hamburger div {
+
+    width: 25px;
+    height: 2px;
+    background-color: #000000;
+    margin: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: translateY(14px) rotate(45deg);
+  }
+
+  .hamburger.active div:nth-child(2) {
+      opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    width: 100%;
+    position: fixed;
+    top: 52px;
+    left: 0;
+    opacity: 0;
+    z-index: 999;
+    transform: translateY(-20px);
+    transition: transform 0.5s ease, opacity 0.3s ease;
+  }
+
+
+  .mobile-menu a {
+    padding: 7px;
+    width: 100%;
+    text-align: center;
+    /* border-bottom: 1px solid #444; */
+    color: #000000;
+    text-decoration: none;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a:hover {
+    text-decoration: underline;
+  }
+
+  
+  body.dark-mode .hamburger div {
+    background-color: white;
+  }
+
+  body.dark-mode .mobile-menu a {
+    color: white;
+  }
+
+  body.dark-mode .mobile-menu {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+
+
+  @media (max-width: 768px) {
+    .hamburger div {
+      display: block;
+    }
+    .navbar-right {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .side-icons {
+        flex-direction: column;
+        margin-top: 45px;
+    }
+
+  }
