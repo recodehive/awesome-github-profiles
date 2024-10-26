@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const themeToggleCheckbox = document.querySelector("#theme-toggle");
-  const views = document.querySelectorAll('.views')
+  const themeToggleCheckboxDesktop = document.querySelector("#theme-toggle");
+  const themeToggleCheckboxMobile = document.querySelector("#theme-toggle-mobile");
+  const views = document.querySelectorAll('.views');
+
   // Function to set the theme
   function setTheme(theme) {
     if (theme === "dark") {
       document.body.classList.add("dark-mode");
-      themeToggleCheckbox.checked = true;
+      themeToggleCheckboxDesktop.checked = true;
+      themeToggleCheckboxMobile.checked = true;
       views.forEach(view => {
         view.style.color = "white";
       });
     } else {
       document.body.classList.remove("dark-mode");
-      themeToggleCheckbox.checked = false;
+      themeToggleCheckboxDesktop.checked = false;
+      themeToggleCheckboxMobile.checked = false;
       views.forEach(view => {
         view.style.color = "black";
       });
@@ -19,45 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("theme", theme);
   }
 
-  // Load the theme from localStorage
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
+  // Load the theme from localStorage or set it to the system default
+  const savedTheme = localStorage.getItem("theme");
+  const defaultTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+  setTheme(savedTheme || defaultTheme);
 
-  // Add event listener to toggle checkbox
-  themeToggleCheckbox.addEventListener("change", () => {
-    const newTheme = themeToggleCheckbox.checked ? "dark" : "light";
+  // Add event listeners to both toggle checkboxes
+  themeToggleCheckboxDesktop.addEventListener("change", () => {
+    const newTheme = themeToggleCheckboxDesktop.checked ? "dark" : "light";
     setTheme(newTheme);
   });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const themeToggleCheckbox = document.querySelector("#theme-toggle-mobile");
-  const views = document.querySelectorAll('.views')
-  // Function to set the theme
-  function setTheme(theme) {
-    if (theme === "dark") {
-      document.body.classList.add("dark-mode");
-      themeToggleCheckbox.checked = true;
-      views.forEach(view => {
-        view.style.color = "white";
-      });
-    } else {
-      document.body.classList.remove("dark-mode");
-      themeToggleCheckbox.checked = false;
-      views.forEach(view => {
-        view.style.color = "black";
-      });
-    }
-    localStorage.setItem("theme", theme);
-  }
-
-  // Load the theme from localStorage
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
-
-  // Add event listener to toggle checkbox
-  themeToggleCheckbox.addEventListener("change", () => {
-    const newTheme = themeToggleCheckbox.checked ? "dark" : "light";
+  themeToggleCheckboxMobile.addEventListener("change", () => {
+    const newTheme = themeToggleCheckboxMobile.checked ? "dark" : "light";
     setTheme(newTheme);
   });
 });
