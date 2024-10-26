@@ -1,16 +1,14 @@
 # Ignore directories
-/07-Omnifood-Desktop/
-/befit-main/
-/CODSOFT4-main/
-/dbms-advanced/
-/Html and css/
-/JOB-BOARD---CODSOFT-main/
-/Control Panel/
-/Eclipse IDE for Java Developers - 2023-12/
-/Spotify/
-/Zoom/
+07-Omnifood-Desktop/
+befit-main/
+CODSOFT4-main/
+dbms-advanced/
+Html and css/
+JOB-BOARD---CODSOFT-main/
+Control Panel/
+Eclipse IDE for Java Developers - 2023-12/
+Spotify/
+Zoom/
 
-# Ignore files
-*.log
-*.tmp
-# Add any other file patterns you want to ignore
+# Ignore node_modules if needed
+node_modules/
