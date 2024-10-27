@@ -360,12 +360,11 @@
     <script src="scripts/speechRecognition.js"></script>
     <!-- Added script for new Twitter logo -->
     <script src="https://kit.fontawesome.com/856f4a44d7.js" crossorigin="anonymous"></script>
+    
     <div class="gtranslate_wrapper"></div>
 
         <script>
-
           document.addEventListener('DOMContentLoaded', function() {
-
               window.gtranslateSettings = {
                   "default_language": "en",
                   "detect_browser_language": true,
@@ -374,15 +373,11 @@
                   "alt_flags": {
                       "EN": "british"
                   }
-
               };
 
               const script = document.createElement('script');
-
               script.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
-              
               script.async = true;
-
               document.body.appendChild(script);
           });
       </script>
