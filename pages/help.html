@@ -102,6 +102,102 @@
       </style>
   </head>
   <body>
+    <div id="preloader">
+      <div class="loader-wrapper">
+          <img src="recode-hive.png" alt="Logo" class="logo">  
+          <div class="loader"></div>
+      </div>
+  </div> 
+  <style>
+    #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Loader and Logo Wrapper */
+.loader-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;  /* Adjust the size to your preference */
+    height: auto;
+    z-index: 2;  /* Ensure the logo appears above the spinner */
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Fixed Diamond-shaped spinner with rotating color */
+.loader {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 10px solid transparent;  /* Transparent border for all sides */
+    border-top: 10px solid #b0b0b0;  /* Lighter gray border */
+    border-right: 10px solid #404040;  /* Darker gray (black) border */
+    border-radius: 10px;
+    position: absolute;
+    transform: rotate(45deg);  /* Rotate the square to create a diamond shape */
+    animation: spinColor 1.5s linear infinite;  /* Only color will spin */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+}
+
+/* Spinner color animation */
+@keyframes spinColor {
+    0% {
+        border-top-color: #b0b0b0;  /* Lighter gray */
+        border-right-color: #404040;  /* Darker gray */
+    }
+    50% {
+        border-top-color: #404040;  /* Transition to darker gray */
+        border-right-color: #b0b0b0;  /* Lighter gray */
+    }
+    100% {
+        border-top-color: #b0b0b0;  /* Back to original */
+        border-right-color: #404040;  /* Darker gray */
+    }
+}
+
+/* Fade-in effect for the logo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  </style>
+  <script>
+    window.addEventListener('load', function() {
+        const preloader = document.getElementById('preloader');
+        const content = document.getElementById('content');
+
+        // Set a small timeout for better user experience
+        setTimeout(function() {
+            // Hide preloader
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 1s ease-in-out';
+
+            // Show content after preloader fades out
+            setTimeout(function() {
+                preloader.style.display = 'none';
+                content.style.display = 'block';
+            }, 1000); // Delay for content display after preloader fade-out
+        }, 500); // Initial delay before preloader starts fading out
+    });
+</script>
     <nav class="navbar">
       <a  class="navbar-left" href="../index.html" style="text-decoration: none; color: #333;">
         <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
@@ -113,7 +209,7 @@
         class="navbar-link">Add Profile</a>
         <a href="#" class="navbar-link">Tools</a>
         <a href="events.html" class="navbar-link">Events</a>
-        <a href="blog.html" class="navbar-link">Learn</a>
+        <a href="blog.html" class="navbar-link">Blog</a>
         <a href="compare.html" class="navbar-link">Compare</a>
 
        
@@ -139,7 +235,6 @@
           <a href="events.html" class="navbar-links">Events</a>
           <a href="blog.html" class="navbar-links">Blog</a>
           <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
-          <a href="blog.html" class="navbar-links">Learn</a>
     </div>
 
    <div class="main-container">

@@ -25,15 +25,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 select2.appendChild(option.cloneNode(true));
             });
         });
-
+    
     document.getElementById('submitBtn').addEventListener('click', function () {
-        const login1 = document.getElementById('contributorSelect1').value;
-        const login2 = document.getElementById('contributorSelect2').value;
-
-        document.getElementById('submitBtn').classList.add('hidden');
-        document.getElementById('loader').classList.remove('hidden');
+        const login1 = document.getElementById('username1').value;
+        const login2 = document.getElementById('username2').value;
 
         if (login1 && login2 && login1 !== login2) {
+
+            document.getElementById('loader').classList.add('hidden');
+            document.getElementById('submitBtn').classList.remove('hidden');
+
             Promise.all([
                 fetch(`https://api.github.com/users/${login1}`, {
                     headers: {
@@ -45,9 +46,30 @@ document.addEventListener("DOMContentLoaded", function () {
                         'Authorization': `token ${token}`
                     }
                 }).then(response => response.json()),
+                fetch(`https://api.github.com/users/${login1}/repos`,{
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json()),
+                fetch(`https://api.github.com/users/${login2}/repos`,{
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                }).then(response => response.json()),
             ])
-                .then(([data1, data2]) => {
+                .then(([data1, data2,repoData1,repoData2]) => {
 
+                    let stars1=0,stars2 = 0;
+                    
+                    for( var i = 0;i<repoData1.length;i+=1)
+                    {
+                        stars1 += repoData1[i].watchers_count
+                    }
+                    for( var i = 0;i<repoData2.length;i+=1)
+                    {
+                        stars2 += repoData2[i].watchers_count
+                    }
+                    
                     document.getElementById('loader').classList.add('hidden');
                     document.getElementById('submitBtn').classList.remove('hidden');
                     // Show the table
@@ -80,8 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("following1").textContent = data1.following || "N/A";
                     document.getElementById("following2").textContent = data2.following || "N/A";
 
-                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">GitHub</a>` : "N/A";
-                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">GitHub</a>` : "N/A";
+                    document.getElementById("stars1").textContent = stars1 ;
+                    document.getElementById("stars2").textContent = stars2 ;
+
+                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">${data1.html_url}</a>` : "N/A";
+                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">${data2.html_url}</a>` : "N/A";
 
                     const themeToggleCheckbox = document.querySelector("#theme-toggle");
                     theme = localStorage.getItem("theme") || "light";
@@ -98,8 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
                 .catch((error) => {
                     console.error("Error:", error);
-                    document.getElementById('loader').classList.add('hidden');
-                    document.getElementById('submitBtn').classList.remove('hidden');
                 });
         } else {
             alert("Please select two different contributors.");
@@ -278,3 +301,63 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+async function fetchGitHubUsers(query,number) {
+    const headers = {
+        Accept: "application/vnd.github.v3+json",
+        Authorization: `token ${token}`, 
+    };
+    
+    const resultList = document.getElementById(`resultList${number}`);
+    if (query.length === 0) {
+        resultList.style.display = 'none';
+        return; 
+    }
+
+    try {
+        const response = await fetch(`https://api.github.com/search/users?q=${query}&per_page=12`, {
+            headers: headers,
+        });
+        const data = await response.json();
+
+        // Display the results
+        if (data.items && query.length>0) {
+            displaySearchResults(data.items, number);
+        }
+
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        resultList.innerHTML = "<p>There was an error fetching users. Please try again later.</p>";
+        resultList.style.display = 'block';
+    }
+}
+
+function displaySearchResults(users,number) {
+
+    let resultList = document.getElementById(`resultList${number}`);
+    let searchInput = document.getElementById(`username${number}`);
+
+    resultList.innerHTML = ''; 
+    if (users.length === 0) {
+        resultList.style.display = 'none';
+        return;
+    }
+    
+    resultList.style.display = 'grid';
+    
+    users.forEach(user => {
+        const listItem = document.createElement('div');
+        listItem.className = 'user'; 
+
+        listItem.innerHTML = `
+            <img src="${user.avatar_url}" alt="${user.login}" style="width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+            <span>${user.login}</span>
+        `;
+        listItem.onclick = function () {
+            searchInput.value = user.login;
+
+            resultList.style.display = 'none';
+        };
+        resultList.appendChild(listItem);
+    });
+}
