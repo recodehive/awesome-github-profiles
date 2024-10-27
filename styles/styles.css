@@ -1465,44 +1465,44 @@ a {
   transition: width 0.2s ease;
 }
 
-    .gtranslate_wrapper {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 999;
+.gtranslate_wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  opacity: 1;
+  animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
       opacity: 1;
-      animation: fadeIn 0.3s ease-in forwards;
-    }
+  }
+}
 
-    @keyframes fadeIn {
-      to {
-          opacity: 1;
-      }
-    }
+.gt_float_switcher {
+  border-radius: 15px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(to right, #fef87f, hsl(142, 86%, 75%))!important;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 
-    .gt_float_switcher {
-      border-radius: 15px !important;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
-      background: linear-gradient(to right, #fef87f, hsl(142, 86%, 75%))!important;
-      will-change: transform;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
+.gt_float_switcher:hover {
+  transform: translateZ(0) scale(1.02);
+  transition: transform 0.2s ease;
+}
 
-    .gt_float_switcher:hover {
-      transform: translateZ(0) scale(1.02);
-      transition: transform 0.2s ease;
-    }
+.gt_float_switcher span {
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-weight: 500 !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
-    .gt_float_switcher span {
-      font-family: system-ui, -apple-system, sans-serif !important;
-      font-weight: 500 !important;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    .gt_float_switcher .gt_options {
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      transition: opacity 0.2s ease;
-    }
+.gt_float_switcher .gt_options {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: opacity 0.2s ease;
+}
