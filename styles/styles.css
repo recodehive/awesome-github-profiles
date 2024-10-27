@@ -686,7 +686,7 @@ body.dark-mode .navbar-link:hover {
 .footer-link {
   display: block;
   color: #000;
-  font-size: 0.875rem;
+  font-size: 0.900rem;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -699,7 +699,8 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-description h5 {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  word-spacing: 0.5px;
   font-weight: normal;
   margin-bottom: 1rem;
 }
@@ -708,7 +709,7 @@ body.dark-mode .navbar-link:hover {
   background-color: #000;
   color: #fff;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0.40rem;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
