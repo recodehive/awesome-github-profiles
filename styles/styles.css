@@ -79,6 +79,14 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.mic-button {
+  transition: transform 0.5s ease;
+}
+
+.mic-button:hover {
+  transform: scale(1.2);
+}
+
 .profiles {
   display: flex;
   flex-wrap: wrap;
