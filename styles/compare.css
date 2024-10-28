@@ -151,7 +151,7 @@ select{
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none; 
+    /* user-drag: none;  */
     width: 200px;
     height: 200px;
 }
@@ -167,7 +167,7 @@ select{
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none; 
+    /* user-drag: none;  */
     width: 200px;
     height: 200px;
 }
@@ -196,7 +196,11 @@ select{
     display: none;
   }
   
+  /* #progressBarContainer { */
+
+
 #progressBarContainer {
+
     position: fixed;
     top: 0;
     left: 0;
