@@ -527,14 +527,14 @@ body.dark-mode .profile p {
   background-color: #555;
 }
 
-#theme-toggle-mobile:checked+label .sun-icon {
-  opacity: 0;
-  /* Hide sun icon when checked */
-}
-
 #theme-toggle-mobile:checked+label .moon-icon {
   opacity: 1;
   /* Show moon icon when checked */
+}
+
+#theme-toggle-mobile:checked+label .sun-icon {
+  opacity: 0;
+  /* Hide sun icon when checked */
 }
 
 #theme-toggle-mobile:checked+label .switch-button {
