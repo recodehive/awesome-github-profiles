@@ -1520,3 +1520,12 @@ a {
     backface-visibility: hidden;
     transition: opacity 0.2s ease;
   }
+
+  /* Dark mode link styling */
+body.dark-mode a {
+  color: #f0f0f0; /* Set to a light color for visibility */
+}
+
+body.dark-mode a:hover {
+  color: #ccc; /* Slightly lighter on hover */
+}
