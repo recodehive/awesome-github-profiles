@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Stats Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .stats-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #333;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .activity-item {
+            border-left: 2px solid #e1e4e8;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .activity-item:hover {
+            border-left-color: #0366d6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- Loading Overlay -->
+    <div id="loading" class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Username Input Section -->
+    <div id="username-section" class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-md w-96">
+            <div class="text-center mb-6">
+                <i class="fab fa-github text-5xl text-gray-800"></i>
+                <h2 class="text-2xl font-bold mt-4">GitHub Stats Dashboard</h2>
+            </div>
+            <form id="username-form" class="space-y-4">
+                <div>
+                    <input type="text" id="github-username"
+                        class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+                        placeholder="Enter GitHub Username">
+                </div>
+                <button type="submit"
+                    class="w-full bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition-colors">
+                    View Stats
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard" class="hidden container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center space-x-4">
+                <i class="fab fa-github text-3xl"></i>
+                <h1 class="text-2xl font-bold" id="dashboard-username"></h1>
+            </div>
+            <button onclick="resetDashboard()" class="px-4 py-2 border rounded-md hover:bg-gray-100 transition-colors">
+                Change Username
+            </button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <!-- Assigned Issues -->
+            <div class="stats-card p-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-exclamation-circle text-yellow-500 text-2xl"></i>
+                    <div>
+                        <h3 id="assigned-issues-count" class="text-2xl font-semibold">0</h3>
+                        <p class="text-gray-600">Assigned Issues</p>
+                    </div>
+                </div>
+                <div id="assigned-issues-list" class="space-y-2"></div>
+            </div>
+
+            <!-- Open PRs -->
+            <div class="stats-card p-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-code-branch text-green-500 text-2xl"></i>
+                    <div>
+                        <h3 id="open-prs-count" class="text-2xl font-semibold">0</h3>
+                        <p class="text-gray-600">Open Pull Requests</p>
+                    </div>
+                </div>
+                <div id="open-prs-list" class="space-y-2"></div>
+            </div>
+
+            <!-- Merged PRs -->
+            <div class="stats-card p-6">
+                <div class="flex items-center space-x-4 mb-4">
+                    <i class="fas fa-check-circle text-purple-500 text-2xl"></i>
+                    <div>
+                        <h3 id="merged-prs-count" class="text-2xl font-semibold">0</h3>
+                        <p class="text-gray-600">Merged Pull Requests</p>
+                    </div>
+                </div>
+                <div id="merged-prs-list" class="space-y-2"></div>
+            </div>
+        </div>
+
+        <!-- Activity and Summary Section -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Recent Activity -->
+            <div class="stats-card p-6">
+                <h3 class="text-lg font-semibold mb-4">Recent Activity</h3>
+                <div id="recent-activity" class="space-y-4"></div>
+            </div>
+
+            <!-- Summary -->
+            <div class="stats-card p-6">
+                <h3 class="text-lg font-semibold mb-4">Summary</h3>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Total Contributions</span>
+                        <span id="total-contributions" class="font-semibold">0</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Merge Rate</span>
+                        <span id="merge-rate" class="font-semibold">0%</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-600">Active Repositories</span>
+                        <span id="active-repos" class="font-semibold">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // GitHub token - Replace with your token
+        const token = "your_api_token";
+        // DOM Elements
+        const usernameSection = document.getElementById('username-section');
+        const dashboard = document.getElementById('dashboard');
+        const usernameForm = document.getElementById('username-form');
+        const loading = document.getElementById('loading');
+
+        // Event Listeners
+        usernameForm.addEventListener('submit', handleSubmit);
+
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const username = document.getElementById('github-username').value;
+            if (username) {
+                showLoading();
+                await fetchAndDisplayStats(username);
+                hideLoading();
+            }
+        }
+
+        function showLoading() {
+            loading.style.display = 'flex';
+        }
+
+        function hideLoading() {
+            loading.style.display = 'none';
+        }
+
+        async function fetchAndDisplayStats(username) {
+            try {
+                const { startDate, endDate } = getLastMonthDateRange();
+
+                // Fetch all data in parallel
+                const [assignedIssues, openPRs, closedPRs] = await Promise.all([
+                    fetchPaginatedData(`https://api.github.com/search/issues?q=assignee:${username}+is:issue+is:open+created:>=${startDate}`),
+                    fetchPaginatedData(`https://api.github.com/search/issues?q=author:${username}+is:pr+is:open+created:>=${startDate}`),
+                    fetchPaginatedData(`https://api.github.com/search/issues?q=author:${username}+is:pr+is:closed+created:>=${startDate}`)
+                ]);
+
+                const mergedPRs = closedPRs.filter(pr => pr.pull_request && pr.pull_request.merged_at !== null);
+
+                // Update UI
+                updateDashboard(username, {
+                    assignedIssues,
+                    openPRs,
+                    mergedPRs
+                });
+
+                // Show dashboard
+                usernameSection.classList.add('hidden');
+                dashboard.classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error fetching GitHub data. Please check the username and try again.');
+            }
+        }
+
+        function getLastMonthDateRange() {
+            const now = new Date();
+            const lastMonth = new Date(now.setMonth(now.getMonth() - 1));
+            const startDate = `${lastMonth.getFullYear()}-${('0' + (lastMonth.getMonth() + 1)).slice(-2)}-01`;
+            const endDate = `${lastMonth.getFullYear()}-${('0' + (lastMonth.getMonth() + 1)).slice(-2)}-${new Date(lastMonth.getFullYear(), lastMonth.getMonth() + 1, 0).getDate()}`;
+            return { startDate, endDate };
+        }
+
+        async function fetchPaginatedData(url) {
+            let results = [];
+            let page = 1;
+
+            while (true) {
+                const response = await fetch(`${url}&page=${page}&per_page=100`, {
+                    headers: {
+                        'Authorization': `token ${token}`
+                    }
+                });
+                const data = await response.json();
+
+                if (!data.items || data.items.length === 0) {
+                    break; // No more items to fetch
+                }
+
+                results = results.concat(data.items);
+                page++;
+            }
+
+            return results;
+        }
+
+        function updateDashboard(username, data) {
+            // Update username display
+            document.getElementById('dashboard-username').textContent = `${username}'s Dashboard`;
+
+            // Update counts
+            document.getElementById('assigned-issues-count').textContent = data.assignedIssues.length;
+            document.getElementById('open-prs-count').textContent = data.openPRs.length;
+            document.getElementById('merged-prs-count').textContent = data.mergedPRs.length;
+
+            // Update lists
+            updateList('assigned-issues-list', data.assignedIssues);
+            updateList('open-prs-list', data.openPRs);
+            updateList('merged-prs-list', data.mergedPRs);
+
+            // Update recent activity
+            updateRecentActivity([...data.assignedIssues, ...data.openPRs, ...data.mergedPRs]);
+
+            // Update summary
+            updateSummary(data);
+        }
+
+        function updateList(elementId, items) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = items.slice(0, 3).map(item => `
+                <div class="text-sm">
+                    <div class="text-gray-800">${item.title}</div>
+                    <div class="text-gray-500 text-xs">${item.repository_url.split('/').pop()}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateRecentActivity(items) {
+            const element = document.getElementById('recent-activity');
+            element.innerHTML = items
+                .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+                .slice(0, 5)
+                .map(item => `
+                    <div class="activity-item">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas ${item.pull_request ? 'fa-code-branch text-green-500' : 'fa-exclamation-circle text-yellow-500'}"></i>
+                            <div>
+                                <div class="text-sm font-medium">${item.title}</div>
+                                <div class="text-xs text-gray-500">${new Date(item.created_at).toLocaleDateString()}</div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+        }
+
+        function updateSummary(data) {
+            const totalContributions = data.assignedIssues.length + data.openPRs.length + data.mergedPRs.length;
+            const mergeRate = data.openPRs.length > 0
+                ? ((data.mergedPRs.length / (data.openPRs.length + data.mergedPRs.length)) * 100).toFixed(1)
+                : 0;
+            const activeRepos = new Set([
+                ...data.assignedIssues.map(i => i.repository_url),
+                ...data.openPRs.map(i => i.repository_url),
+                ...data.mergedPRs.map(i => i.repository_url)
+            ]).size;
+
+            document.getElementById('total-contributions').textContent = totalContributions;
+            document.getElementById('merge-rate').textContent = `${mergeRate}%`;
+            document.getElementById('active-repos').textContent = activeRepos;
+        }
+
+        function resetDashboard() {
+            dashboard.classList.add('hidden');
+            usernameSection.classList.remove('hidden');
+            document.getElementById('github-username').value = '';
+        }
+    </script>
+
+</body>
+
+</html>
