@@ -1,0 +1,94 @@
+.video--main {
+    padding: 0px 0 20px 0;
+    margin-top: 70px;
+}
+
+.video--container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.sidebar {
+    max-width: 250px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: sticky;
+    top: 125.6px;
+    font-weight: 500;
+    font-size: large;
+    text-align: right;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: slategrey;
+}
+
+a:hover {
+    color: black;
+    animation: 1ms ease-in-out;
+}
+
+.hash--active {
+    color: black !important;
+}
+
+.module--container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -70px;
+}
+
+.modules {
+    padding-top: 70px;
+}
+
+.modules div {
+    background: white;
+    width: 600px;
+    padding: 20px;
+}
+
+.modules div h1,
+h2 {
+    color: black;
+    margin: 0;
+}
+
+.modules div iframe {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.end-line {
+    border: 3px;
+}
+
+body.dark-mode .video--main {
+    color: white;
+}
+
+body.dark-mode .hash--active {
+    color: white !important;
+}
+
+body.dark-mode a:hover {
+    color: white;
+}
+
+body.dark-mode .modules h1 {
+    color: white;
+}
+
+body.dark-mode .modules h2 {
+    color: white;
+}
+
+body.dark-mode .modules div {
+    background: #3f3f3f;
+}
