@@ -10,6 +10,59 @@
 <p>This README will guide you through the contribution process and provide essential information about the project.</p>
 </div>
 
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+
+<h2>Open-Source-Programmes⭐</h2>
+
+<!-- Added Hacktoberfest 2024 and GSSoC Extended 2024 banners -->
+### This project is now OFFICIALLY accepted for
+
+<table>
+
+   <tr>
+      <th>Event Logo</th>
+      <th>Event Name</th>
+      <th>Event Description</th>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/gssocextd.jpg" width="200" height="auto" loading="lazy" alt="GSSoC 24"/></td>
+      <td>GirlScript Summer of Code 2024</td>
+      <td>GirlScript Summer of Code is a three-month-long Open Source Program conducted every summer by GirlScript Foundation. It is an initiative to bring more beginners to Open-Source Software Development.</td>
+   </tr>
+    <tr>
+      <td><img src="https://github.com/Annapoornaaradhya/Canvas-Editor/blob/readme/hacktoberfest.png" width="200" height="auto" loading="lazy" alt="Hacktoberfest 2024"/></td>
+      <td>Hacktoberfest 2024</td>
+      <td>Hacktoberfest is a month-long celebration of open source software run by DigitalOcean, GitHub, and Twilio. It encourages contributions to open source projects and promotes a global community of developers.</td>
+   </tr>
+
+</table>
+<br/>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+## Screenshots of Features ✨
+### Home Page (Light Mode):
+![image](https://github.com/user-attachments/assets/f8408ac2-ad5c-42c6-af1f-ea2dd635b77f)
+
+### Home Page (Dark Mode):
+![image](https://github.com/user-attachments/assets/8860b8e3-c40d-4296-89f3-19fd3b069839)
+
+### Login Page:
+![image](https://github.com/user-attachments/assets/c8829b33-16d5-4628-b665-b8fb1dec2701)
+
+### Signup Page:
+![image](https://github.com/user-attachments/assets/17b6bad6-ae3f-4a08-be0f-6863458f0a8e)
+
+### Events Timeline:
+![image](https://github.com/user-attachments/assets/5dab494f-adec-4d9a-8108-0353e5436acf)
+
+### Add Profile:
+![image](https://github.com/user-attachments/assets/cd395384-32cf-4b74-8425-b164e2ecad93)
+
+### Github Badge:
+![image](https://github.com/user-attachments/assets/fec17081-f750-4c12-bb0e-8ff23c89b408)
+
 ## Running in your local directory ✨
 
 - npm install ( this will install all the required npm modules)
