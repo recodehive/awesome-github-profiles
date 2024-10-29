@@ -281,8 +281,7 @@ For even more detailed instructions on how to contribute, you can always check o
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
-- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/dinxsh), [Nishant](https://github.com/dinxsh), [Ayushman](https://github.com/dinxsh) for being a core for this repo!
-
+- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman] for being a core for this repo!
 ## Contact Information
 
 If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).

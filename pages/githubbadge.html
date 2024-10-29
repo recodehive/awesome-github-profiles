@@ -17,13 +17,15 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
-            /* background: #fff; */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+}
 
         h1,
         h2 {
@@ -57,45 +59,7 @@
             text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .table-wrapper {
-                overflow-x: auto;
-                display: block;
-            }
-
-            table,
-            th,
-            td {
-                display: block;
-                width: 100%;
-            }
-
-            th,
-            td {
-                box-sizing: border-box;
-                padding: 10px;
-            }
-
-            td {
-                border: none;
-                border-bottom: 1px solid #ddd;
-                position: relative;
-                padding-left: 50%;
-                text-align: right;
-            }
-
-            td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 10px;
-                width: 45%;
-                white-space: nowrap;
-                font-weight: bold;
-                text-align: left;
-            }
-        }
-
-
+        
         #scrollToTop {
             position: fixed;
             bottom: 20px;
@@ -407,7 +371,6 @@
             <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
             <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
                 class="navbar-link">Add Profile</a>
-            <a href="#" class="navbar-link">Tools</a>
             <a href="events.html" class="navbar-link">Events</a>
             <a href="blog.html" class="navbar-link">Blog</a>
             <a href="compare.html" class="navbar-link">Compare</a>
@@ -431,7 +394,6 @@
     </nav>
     <div class="mobile-menu" id="mobile-menu">
         <a href="#" class="navbar-links">Github-Badge</a>
-        <a href="#" class="navbar-links">Tools</a>
         <a href="events.html" class="navbar-links">Events</a>
         <a href="blog.html" class="navbar-links">Blog</a>
         <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
@@ -516,16 +478,7 @@
                             width="60px" alt="Quickdraw"></td>
                     <td>Quickdraw</td>
                     <td>Gitty up!<br>If you closed an issue / pull request within 5 minutes of opening you will unlock this badge<br>
-                       
-                        check the
-                        <a href="https://github.com/sanjay-kv/Open-source-Practice">
-                            Sample repo
-                        </a>
-                        <br>
-                        or
-                        <br>
-                        <a href=" https://youtu.be/BNKSlT8jLQ0">Watch the Video Tutorial</a>
-                    
+                    <a href="https://www.youtube.com/watch?v=BNKSlT8jLQ0">Watch the Video Tutorial</a>
                     </td>
                     <td>
                         <table>
@@ -994,10 +947,9 @@
 
 
     </div>
-    <h1 style="text-align: center;">ℹ️ More Information ℹ️</h1>
-
+    <h1 style="text-align: center;">🛈 More Information 🛈 </h1>
     <h4 style="text-align: center;">You can find more information about GitHub Badges under this <a
-            href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/personalizing-your-profile#displaying-badges-on-your-profile">link</a>.
+            href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile#displaying-badges-on-your-profile">link</a>.
     </h4>
 
     <br>
@@ -1133,6 +1085,7 @@
                             <a href="help.html" class="footer-link">Contact Us</a>
                             <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md"
                                 class="footer-link">Code of Conduct</a>
+                            <a href="faq.html" class="footer-link">FAQ</a>
                         </div>
                     </div>
                     <div class="footer-section">
@@ -1149,8 +1102,8 @@
                 <div class="footer-description">
                     <h5>
                         We focus on quality content to the right people at the right time⏱️. Recode Hive will help you
-                        with updates on what’s happening in the tech industry💻. We focus on everything starting from
-                        How To’s to Data Science.
+                        with updates on what's happening in the tech industry💻. We focus on everything starting from
+                        How To's to Data Science.
                     </h5>
                     <a href="exploremore.html" class="footer-button">Explore</a>
                 </div>
