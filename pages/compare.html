@@ -68,6 +68,159 @@
     animation: spinColor 1.5s linear infinite;  /* Only color will spin */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
 }
+/* Basic Layout Adjustments */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Search Bar Styling */
+.search-bar-components {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    width: 80%;
+    position: relative;
+}
+
+/* Rounded, Elongated Search Bar */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect */
+input[type="text"]:focus {
+    border-color: #0073e6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Enlarged Dropdown Styling */
+.list {
+    border-radius: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.list div {
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: grey;
+    border-radius: 30px;
+}
+
+.list div:hover {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+/* Scrollbar Styling */
+.list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Compare Button */
+#submitBtn {
+    background-color: #0073e6;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submitBtn:hover {
+    background-color: #005bb5;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer Styling */
+.footer-2 {
+    background-color: #3f3f3f;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-link {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #0073e6;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 15px 0;
+    font-size: 12px;
+}
+
+/* Keyframes for Logo Fade-In */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Keyframes for Spinner Color Change */
+@keyframes spinColor {
+    0%, 100% { border-top-color: #b0b0b0; border-right-color: #404040; }
+    50% { border-top-color: #404040; border-right-color: #b0b0b0; }
+}
 
 /* Spinner color animation */
 @keyframes spinColor {
@@ -94,6 +247,26 @@
         opacity: 1;
     }
 }
+/* Dark mode for dropdown list */
+body.dark-mode .list {
+    background-color: #333; /* Dark background */
+    border-color: #555; /* Darker border color */
+}
+
+body.dark-mode .list div {
+    color: #ddd; /* Light text for contrast */
+}
+
+body.dark-mode .list div:hover {
+    background-color: #555; /* Darker hover background */
+    color: #fff; /* White text on hover */
+}
+
+/* Dark mode for scroll bar */
+body.dark-mode .list::-webkit-scrollbar-thumb {
+    background: #777; /* Darker scrollbar thumb */
+}
+
   </style>
   <script>
     window.addEventListener('load', function() {
