@@ -48,6 +48,7 @@
     z-index: 999;
     transform: translateY(-20px);
     transition: transform 0.5s ease, opacity 0.3s ease;
+    padding: 12px;
   }
 
 

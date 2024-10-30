@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Testimonials</title>
+    <link rel="stylesheet" href="../styles/construction.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/compare.css" />
+    <link rel="stylesheet" href="../styles/hamburger.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../styles/slider.css">
+</head>
+<body>
+  <div id="preloader">
+    <div class="loader-wrapper">
+        <img src="recode-hive.png" alt="Logo" class="logo">  
+        <div class="loader"></div>
+    </div>
+</div> 
+<style>
+  #preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Loader and Logo Wrapper */
+.loader-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo {
+  width: 100px;  /* Adjust the size to your preference */
+  height: auto;
+  z-index: 2;  /* Ensure the logo appears above the spinner */
+  animation: fadeIn 2s ease forwards;
+}
+
+/* Fixed Diamond-shaped spinner with rotating color */
+.loader {
+  width: 120px;
+  height: 120px;
+  background-color: transparent;
+  border: 10px solid transparent;  /* Transparent border for all sides */
+  border-top: 10px solid #b0b0b0;  /* Lighter gray border */
+  border-right: 10px solid #404040;  /* Darker gray (black) border */
+  border-radius: 10px;
+  position: absolute;
+  transform: rotate(45deg);  /* Rotate the square to create a diamond shape */
+  animation: spinColor 1.5s linear infinite;  /* Only color will spin */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+}
+
+/* Spinner color animation */
+@keyframes spinColor {
+  0% {
+      border-top-color: #b0b0b0;  /* Lighter gray */
+      border-right-color: #404040;  /* Darker gray */
+  }
+  50% {
+      border-top-color: #404040;  /* Transition to darker gray */
+      border-right-color: #b0b0b0;  /* Lighter gray */
+  }
+  100% {
+      border-top-color: #b0b0b0;  /* Back to original */
+      border-right-color: #404040;  /* Darker gray */
+  }
+}
+
+/* Fade-in effect for the logo */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.achievements {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.achievement-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.achievement-card {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  width: 30%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-reviews {
+  text-align: center;
+  margin: 40px 0;
+  background-color: #f8f9fa; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333; /* Darker text for better readability */
+}
+
+.review-slider {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.review-slide {
+  display: none;
+}
+
+.review-slide.active {
+  display: block;
+}
+
+blockquote {
+  font-style: italic;
+  border-left: 4px solid #007bff; /* Blue accent */
+  padding-left: 20px;
+  margin: 20px auto;
+  font-size: 1.2em; /* Slightly larger font */
+  color: #555; /* Darker text for better readability */
+}
+
+footer {
+  font-weight: bold;
+  color: #007bff; /* Blue accent for user name */
+}
+
+.prev, .next {
+  cursor: pointer;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+#reviewForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#reviewText {
+  width: 80%;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em; /* Consistent font size */
+}
+
+#reviewUser {
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em; /* Consistent font size */
+}
+
+button[type="submit"] {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+body {
+  background-color: #ffffff; /* Light theme background */
+  color: #000000; /* Light theme text color */
+}
+
+body.dark-theme {
+  background-color: #333333; /* Dark theme background */
+  color: #ffffff; /* Dark theme text color */
+}
+
+.toggle-switch {
+  /* Add styles for the toggle switch */
+}
+
+/* Dark Mode Styles */
+body.dark-theme .achievement-card {
+  background: #444; /* Darker background for cards */
+  border: 1px solid #666; /* Slightly lighter border */
+  color: #fff; /* White text for better readability */
+}
+
+body.dark-theme .achievement-card h3 {
+  color: #ffd700; /* Gold color for headings to make them stand out */
+}
+
+body.dark-theme .achievement-cards {
+  background-color: #333; /* Darker background for the container */
+}
+
+/* Dark Mode Styles for Sections */
+body.dark-theme .achievements,
+body.dark-theme .user-reviews {
+  background-color: #444; /* Darker background for sections */
+  color: #fff; /* White text for better readability */
+}
+
+body.dark-theme .achievements h2,
+body.dark-theme .user-reviews h2 {
+  color: #ffd700; /* Gold color for section headings */
+}
+
+/* Dark Mode Styles for User Reviews */
+body.dark-theme .user-reviews {
+  background-color: #444; /* Darker background for the user reviews section */
+  color: #fff; /* White text for better readability */
+}
+
+body.dark-theme .user-reviews blockquote {
+  color: #e0e0e0; /* Lighter gray for the review text */
+  border-left: 4px solid #007bff; /* Blue accent for the left border */
+}
+
+body.dark-theme .user-reviews footer {
+  color: #ffd700; /* Gold color for the user name */
+}
+
+.toast {
+  visibility: hidden; /* Hidden by default */
+  min-width: 250px; /* Minimum width */
+  margin-left: -125px; /* Center the toast */
+  background-color: #333; /* Dark background */
+  color: #fff; /* White text */
+  text-align: center; /* Centered text */
+  border-radius: 5px; /* Rounded corners */
+  padding: 16px; /* Padding */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 50%; /* Center horizontally */
+  bottom: 30px; /* 30px from the bottom */
+  font-size: 17px; /* Font size */
+  transition: visibility 0s, opacity 0.5s linear; /* Fade effect */
+  opacity: 0; /* Hidden by default */
+}
+
+.toast.show {
+  visibility: visible; /* Show the toast */
+  opacity: 1; /* Fade in the toast */
+}
+</style>
+<script>
+  window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      const content = document.getElementById('content');
+
+      // Set a small timeout for better user experience
+      setTimeout(function() {
+          // Hide preloader
+          preloader.style.opacity = '0';
+          preloader.style.transition = 'opacity 1s ease-in-out';
+
+          // Show content after preloader fades out
+          setTimeout(function() {
+              preloader.style.display = 'none';
+              content.style.display = 'block';
+          }, 1000); // Delay for content display after preloader fade-out
+      }, 500); // Initial delay before preloader starts fading out
+  });
+</script>
+  <nav class="navbar">
+    <a class="navbar-left" style="color: #333 !important;text-decoration: none;" href="../index.html">
+      <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+      <span class="navbar-text">Recode Hive</span>
+    </a>
+    <div class="navbar-right">
+      <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" 
+      class="navbar-link">Add Profile</a>
+      <a href="events.html" class="navbar-link">Events</a>
+      <a href="blog.html" class="navbar-link">Blog</a>
+      <a href="compare.html" class="navbar-link">Compare</a>
+
+     
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav> 
+ 
+  
+  <dotlottie-player src="https://lottie.host/c6eb7f61-1abd-41bc-9376-139d7682dfd6/Ww5v9sIBvv.json" background="transparent" speed="1" style="width: 100wh; height: 90vh; z-index: 1" loop autoplay></dotlottie-player>
+
+  <main>
+    <!-- New User Testimonials & Achievements Section -->
+    <section class="achievements">
+      <h2>User Testimonials & Achievements</h2>
+      <div class="achievement-cards">
+        <div class="achievement-card">
+          <h3>🏆 Personalize GitHub Experience</h3>
+          <p>"Recode Hive is a platform that showcases awesome GitHub profile READMEs and allows you to create your own profile with various customizations."</p>
+        </div>
+        <div class="achievement-card">
+          <h3>🌟 Successful Project</h3>
+          <p>"Our project not only met the goals but also exceeded expectations, leading to a successful launch and positive feedback from users."</p>
+        </div>
+        <div class="achievement-card">
+          <h3>🎉 Impactful Event</h3>
+          <p>"The recent event brought together industry leaders and aspiring innovators, creating a platform for collaboration and inspiration."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- New User Reviews Section -->
+    <section class="user-reviews">
+      <h2>User Reviews</h2>
+      <div class="review-slider">
+        <div class="review-slide active">
+          <blockquote>
+            <p>"The community is filled with passionate individuals. It's inspiring to be a part of it! ✨"</p>
+            <footer>- Ananya</footer>
+          </blockquote>
+        </div>
+        <div class="review-slide">
+          <blockquote>
+            <p>"Recode Hive has transformed my GitHub experience. I love the support and resources available!"</p>
+            <footer>- Aryan</footer>
+          </blockquote>
+        </div>
+        <div class="review-slide">
+          <blockquote>
+            <p>"The platform is user-friendly and has helped me showcase my skills effectively!"</p>
+            <footer>- Rahul</footer>
+          </blockquote>
+        </div>
+        <div class="review-slide">
+          <blockquote>
+            <p>"I appreciate the community's encouragement and the opportunities to learn!"</p>
+            <footer>- Aditi</footer>
+          </blockquote>
+        </div>
+      </div>
+      <button class="prev" onclick="changeReview(-1)">&#10094;</button>
+      <button class="next" onclick="changeReview(1)">&#10095;</button>
+
+      <!-- Add Review Form -->
+      <h3>Add Your Review</h3>
+      <form id="reviewForm">
+        <textarea id="reviewText" placeholder="Write your review here..." required></textarea>
+        <input type="text" id="reviewUser" placeholder="Your Name" required />
+        <button type="submit">Submit Review</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }
+
+    let currentReview = 0;
+    const reviews = document.querySelectorAll('.review-slide');
+
+    function changeReview(direction) {
+      reviews[currentReview].classList.remove('active');
+      currentReview = (currentReview + direction + reviews.length) % reviews.length;
+      reviews[currentReview].classList.add('active');
+    }
+
+    // Handle review submission
+    document.getElementById('reviewForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const reviewText = document.getElementById('reviewText').value;
+      const reviewUser = document.getElementById('reviewUser').value;
+
+      // Create a new review slide
+      const newReview = document.createElement('div');
+      newReview.classList.add('review-slide');
+      newReview.innerHTML = `
+        <blockquote>
+          <p>"${reviewText}"</p>
+          <footer>- ${reviewUser}</footer>
+        </blockquote>
+      `;
+
+      // Append the new review to the slider
+      document.querySelector('.review-slider').appendChild(newReview);
+
+      // Clear the form
+      document.getElementById('reviewText').value = '';
+      document.getElementById('reviewUser').value = '';
+
+      // Show the toast notification
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+
+      // Hide the toast after 3 seconds
+      setTimeout(function() {
+        toast.classList.remove('show');
+      }, 3000);
+    });
+
+    // Dark/Light Mode Toggle Functionality
+    const darkModeToggle = document.querySelector('#theme-toggle');
+
+    darkModeToggle.addEventListener('change', function() {
+        document.body.classList.toggle('dark-theme'); // Toggle dark theme class
+    });
+  </script>
+
+  <footer id="Contact" class="footer-2">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-section">
+            <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+            <div>
+              <a href="help.html" class="footer-link">Contact Us</a>
+              <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
+              <a href="faq.html" class="footer-link">FAQ</a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h6 class="footer-heading">GET INVOLVED</h6>
+            <div>
+              <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
+              <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+              <a href="testimonial.html" class="footer-link">Testimonials</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-description">
+          <h5>
+            We focus on quality content for the right people at the right time⏱️. What we are trying to do is help you to brand personal skills through GitHub readme.md, So we listing the best profiles & opportunity to list your profile to the world 🌎.
+          </h5>
+          <a href="exploremore.html" class="footer-button">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-container">
+        <p class="footer-copyright">
+          &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights reserved.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+    </script>
+  </footer>
+
+  <div id="toast" class="toast">Thank you for submitting the review!</div>
+</body>
+</html>
+
+   
