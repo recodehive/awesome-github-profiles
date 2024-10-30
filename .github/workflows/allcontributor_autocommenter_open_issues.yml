@@ -1,8 +1,11 @@
-name: Comment on New Issue
+name: Comment on All Existing Open Issues
 
 on:
   issues:
     types: [opened]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   comment-on-new-issue:
@@ -15,7 +18,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const issue = context.payload.issue;
+            const issue = github.context.payload.issue;
             const issueCreator = issue.user.login;
             const issueNumber = issue.number;
 
@@ -23,8 +26,8 @@ jobs:
               const commentMessage = `@all-contributors please add @${issueCreator} for review`;
 
               github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
+                owner: github.context.repo.owner,
+                repo: github.context.repo.repo,
                 issue_number: issueNumber,
                 body: commentMessage
               });
