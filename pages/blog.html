@@ -83,60 +83,7 @@
 			}
 		} */
 
-		/* Spinner color animation */
-		@keyframes spinColor {
-			0% {
-				border-top-color: #b0b0b0;
-				/* Lighter gray */
-				border-right-color: #404040;
-				/* Darker gray */
-			}
 
-			50% {
-				border-top-color: #404040;
-				/* Transition to darker gray */
-				border-right-color: #b0b0b0;
-				/* Lighter gray */
-			}
-
-			100% {
-				border-top-color: #b0b0b0;
-				/* Back to original */
-				border-right-color: #404040;
-				/* Darker gray */
-			}
-		}
-
-		/* Fade-in effect for the logo */
-		@keyframes fadeIn {
-			0% {
-				opacity: 0;
-			}
-
-			100% {
-				opacity: 1;
-			}
-		}
-	</style>
-	<script>
-		window.addEventListener('load', function () {
-			const preloader = document.getElementById('preloader');
-			const content = document.getElementById('content');
-
-			// Set a small timeout for better user experience
-			setTimeout(function () {
-				// Hide preloader
-				preloader.style.opacity = '0';
-				preloader.style.transition = 'opacity 1s ease-in-out';
-
-				// Show content after preloader fades out
-				setTimeout(function () {
-					preloader.style.display = 'none';
-					content.style.display = 'block';
-				}, 1000); // Delay for content display after preloader fade-out
-			}, 500); // Initial delay before preloader starts fading out
-		});
-	</script>
 	<div id="progressBarContainer">
 		<div id="progressBar"></div>
 	</div>
