@@ -1,0 +1,38 @@
+name: Comment on New Pull Requests
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment-on-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Add Comment to New PR
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const commentMessage = `
+            Thank you for creating this PR! 🎉 We'll look into it asap.
+            
+            - [ ] Make sure on the right-hand side under reviewer you select @sanjay-kv or @HimangshuSharma01, so review can be faster
+            - [ ] To appreciate your contribution I will provide free GitHub Profile review: Use Coupon: \`recodehive\` to get it free 👇🏻
+            - [ ] Get Free [Profile Review](https://topmate.io/sanjaykv/1135910/pay) 
+            - [ ] Don't forget to star the repo ✨
+            - [ ] You can connect with me on LinkedIn to learn more about [Github](https://www.linkedin.com/in/sanjay-k-v/)
+            
+            Your contributions are highly appreciated! 😊 Don't forget to follow me @sanjay-kv 
+            \`More surprise when you raise PR\`
+            `;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: commentMessage
+            });
+
+            console.log(`Commented on PR #${context.issue.number}`);
