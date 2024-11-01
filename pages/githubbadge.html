@@ -1075,33 +1075,40 @@
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
+                    <a href="../index.html" style="text-decoration: none; color: #333;">
+                        <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
+                    </a>
+                    <div class="social-media-links">
+                        <a href="https://facebook.com/recodehive" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/recodehive" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="https://instagram.com/recodehive" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/recodehive" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/recodehive" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
-
+    
                 <div class="footer-links">
                     <div class="footer-section">
                         <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
                         <div>
                             <a href="help.html" class="footer-link">Contact Us</a>
-                            <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md"
-                                class="footer-link">Code of Conduct</a>
+                            <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
                             <a href="faq.html" class="footer-link">FAQ</a>
                         </div>
                     </div>
                     <div class="footer-section">
                         <h6 class="footer-heading">GET INVOLVED</h6>
                         <div>
-                            <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
-                                class="footer-link">Add Your Profile</a>
-                            <a href="https://github.com/recodehive/Support/issues/new?assignees=&labels=invite+me+to+the+community&projects=&template=invitation.yml&title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization"
-                                class="footer-link">Join the Organization</a>
+                            <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&amp;labels=%E2%9E%95+profile&amp;projects=&amp;template=add_profile.md&amp;title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
+                            <a href="https://github.com/recodehive/Support/issues/new?assignees=&amp;labels=invite+me+to+the+community&amp;projects=&amp;template=invitation.yml&amp;title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+                            <a href="events.html" class="footer-link">Events</a>
                         </div>
                     </div>
                 </div>
-
+    
                 <div class="footer-description">
                     <h5>
-                        We focus on quality content to the right people at the right time⏱️. Recode Hive will help you
+                        We focus on quality content to the right people at the right time⏱. Recode Hive will help you
                         with updates on what's happening in the tech industry💻. We focus on everything starting from
                         How To's to Data Science.
                     </h5>
@@ -1109,21 +1116,42 @@
                 </div>
             </div>
         </div>
-
+    
         <div class="footer-bottom">
             <div class="footer-container">
                 <p class="footer-copyright">
-                    &copy; <span id="dynamic-year"></span> Recode-Hive. Made with 🖤️ by the community. All rights
+                    © <span id="dynamic-year">2024</span> Recode-Hive. Made with 🖤 by the community. All rights
                     reserved.
                 </p>
             </div>
         </div>
-
+    
         <script>
             document.getElementById("dynamic-year").textContent = new Date().getFullYear();
         </script>
-
     </footer>
+    
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Custom CSS for social icons -->
+    <style>
+        .social-media-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 15px;
+        }
+    
+        .social-icon {
+            font-size: 2rem; /* Increased icon size */
+            color: #333; /* Default color */
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+        }
+    
+        .social-icon:hover {
+            color: #007bff; /* Change color on hover */
+            transform: rotate(20deg); /* Rotate 20 degrees on hover */}
+    </style>
 
     <!-- Scroll to top -->
     <button id="scrollToTop" aria-label="Scroll to top">
