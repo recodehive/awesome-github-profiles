@@ -203,26 +203,6 @@ body.dark-mode .profile p {
   color: #f0f0f0;
 }
 
-/* Switch Label */
-.toggle-switch label {
-  position: relative;
-  top: 0px;
-  left: 7px;
-  cursor: pointer;
-  width: 55px;
-  /* Adjust width to fit switch button and icons */
-  height: 30px;
-  /* Adjust height if needed */
-  background-color: #ccc;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.5s ease;
-}
-
 .no-profiles-message h2 {
   color: black;
 }
@@ -429,7 +409,7 @@ body.dark-mode .profile p {
 .toggle-switch label {
   position: relative;
   top: 0px;
-  left: 7px;
+  left: 0px;
   width: 55px;
   /* Adjust width to fit switch button and icons */
   height: 30px;
@@ -596,9 +576,6 @@ body.dark-mode .toggle-label {
   background-color: #c5c5c5;
 }
 
-.toggle-switch {
-  margin-left: 5px;
-}
 
 /* Dark mode adjustments */
 body.dark-mode .navbar,
@@ -1522,3 +1499,12 @@ a {
     backface-visibility: hidden;
     transition: opacity 0.2s ease;
   }
+
+  /* Dark mode link styling */
+body.dark-mode a {
+  color: #f0f0f0; /* Set to a light color for visibility */
+}
+
+body.dark-mode a:hover {
+  color: #ccc; /* Slightly lighter on hover */
+}
