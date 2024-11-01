@@ -389,7 +389,9 @@ body.dark-mode ::-webkit-scrollbar-button {
 
 /* Dark Mode Styles */
 body.dark-mode {
-  background-color: #000000;
+  background-color: #171717;
+
+  /* 171717 */
   color: #f0f0f0;
 }
 
@@ -1039,11 +1041,11 @@ body.theme-dark .event .link {
 }
 
 body.theme-dark .container {
-  background-color: black !important;
+  background-color: #0a0e0f !important;
 }
 
 body.theme-dark .center {
-  background-color: black !important;
+  background-color: #0a0e0f !important;
 }
 
 /* Light Mode Styles */
@@ -1141,7 +1143,7 @@ body.theme-dark .center {
 
 .dark-mode .header,
 .dark-mode .cell {
-  background-color: black !important;
+  background-color: #0a0e0f !important;
 }
 
 body.dark-mode .side-icons a {
@@ -1244,7 +1246,7 @@ body.dark-mode #scrollToTop:hover {
 }
 
 body.dark-mode #scrollToTop .arrow-icon {
-  fill: black;
+  fill: #0a0e0f;
 }
 
 html {

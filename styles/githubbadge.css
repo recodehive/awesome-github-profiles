@@ -105,10 +105,10 @@ body.theme-dark .event .link {
 }
 
 body.theme-dark .container{
-  background-color: black !important;
+  background-color: #171717 !important;
 }
 body.theme-dark .center {
-  background-color: black !important;
+  background-color: #171717 !important;
 }
 body.dark-mode .themed-text {
   color: white;
@@ -193,12 +193,8 @@ body.dark-mode .themed-text {
     border: 1px solid #ddd; /* Add border */
 }
 .dark-mode .header,.dark-mode .cell{
-  background-color: black !important;
+  background-color:#171717 !important;
 }
-
-
-
-
 
 .certificate{
   width: 100%;
