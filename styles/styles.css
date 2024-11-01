@@ -628,13 +628,13 @@ body.dark-mode .navbar-link:hover {
 
 .footer-description {
   flex: 1 1 300px;
-  max-width: 500px;
+  max-width: 300px;
   margin-right: 30px;
 }
 
 .footer-logo {
-  width: 475px;
-  height: 200px;
+  width: 500px;
+  height: 100px;
   cursor: pointer;
 }
 
