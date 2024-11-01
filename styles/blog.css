@@ -391,7 +391,7 @@ body.dark-mode .saved-blogs {
 /* Dark Mode */
 .dark-mode .main-popup-content, 
 .dark-mode .side-content{
-    background-color: black;
+    background-color: #0a0e0f;;
 }
 
 .dark-mode .main-popup-content i,

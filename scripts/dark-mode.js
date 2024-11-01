@@ -7,17 +7,29 @@ document.addEventListener("DOMContentLoaded", function () {
   function setTheme(theme) {
     if (theme === "dark") {
       document.body.classList.add("dark-mode");
-      themeToggleCheckboxDesktop.checked = true;
-      themeToggleCheckboxMobile.checked = true;
+
+      if (themeToggleCheckboxDesktop) {
+        themeToggleCheckboxDesktop.checked = true;
+      }
+      if (themeToggleCheckboxMobile) {
+        themeToggleCheckboxMobile.checked = true;
+      }
+
       views.forEach(view => {
         view.style.color = "white";
       });
     } else {
       document.body.classList.remove("dark-mode");
-      themeToggleCheckboxDesktop.checked = false;
-      themeToggleCheckboxMobile.checked = false;
+
+      if (themeToggleCheckboxDesktop) {
+        themeToggleCheckboxDesktop.checked = false;
+      }
+      if (themeToggleCheckboxMobile) {
+        themeToggleCheckboxMobile.checked = false;
+      }
+
       views.forEach(view => {
-        view.style.color = "black";
+        view.style.color = "#0a0e0f";
       });
     }
     localStorage.setItem("theme", theme);
@@ -28,14 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const defaultTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
   setTheme(savedTheme || defaultTheme);
 
-  // Add event listeners to both toggle checkboxes
-  themeToggleCheckboxDesktop.addEventListener("change", () => {
-    const newTheme = themeToggleCheckboxDesktop.checked ? "dark" : "light";
-    setTheme(newTheme);
-  });
+  // Add event listeners to both toggle checkboxes if they exist
+  if (themeToggleCheckboxDesktop) {
+    themeToggleCheckboxDesktop.addEventListener("change", () => {
+      const newTheme = themeToggleCheckboxDesktop.checked ? "dark" : "light";
+      setTheme(newTheme);
+    });
+  }
 
-  themeToggleCheckboxMobile.addEventListener("change", () => {
-    const newTheme = themeToggleCheckboxMobile.checked ? "dark" : "light";
-    setTheme(newTheme);
-  });
+  if (themeToggleCheckboxMobile) {
+    themeToggleCheckboxMobile.addEventListener("change", () => {
+      const newTheme = themeToggleCheckboxMobile.checked ? "dark" : "light";
+      setTheme(newTheme);
+    });
+  }
 });
