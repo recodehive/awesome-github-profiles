@@ -139,7 +139,7 @@ select:focus {
 
 .dark-mode select {
     color: white;
-    background-color: black;
+    background-color: #0a0e0f;
 }
 
 #avatarImg1, #avatarImg2 {

@@ -33,12 +33,12 @@
 
 @media (max-width: 600px) {
   .fixed-heading {
-      font-size: 8vw; /* Smaller font size for smaller screens */
+      font-size: 8vw; 
   }
 }
 
 @media (max-width: 400px) {
   .fixed-heading {
-      font-size: 6vw; /* Even smaller font size for very small screens */
+      font-size: 6vw; 
   }
 }

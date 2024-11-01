@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (theme === "dark") {
             return {
                 borderColor1: "rgba(54, 162, 235, 1)",
-                pointBackgroundColor1: "rgba(54, 162, 235, 1)",
+                pointBackgroundColor1: "rgba(255, 99, 132, 1)",
                 borderColor2: "rgba(255, 99, 132, 1)",
                 pointBackgroundColor2: "rgba(255, 99, 132, 1)",
                 gridColor: "rgba(255, 255, 255, 0.3)", // Lighter grid color for dark mode
@@ -187,12 +187,12 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             return {
                 borderColor1: "rgba(54, 162, 235, 1)",
-                pointBackgroundColor1: "rgba(54, 162, 235, 1)",
+                pointBackgroundColor1: "rgb(10, 14, 15)",
                 borderColor2: "rgba(255, 99, 132, 1)",
                 pointBackgroundColor2: "rgba(255, 99, 132, 1)",
                 gridColor: "rgba(200, 200, 200, 0.3)", // Darker grid color for light mode
                 tickColor: "#333", // Dark ticks for light mode
-                legendColor: "#333", // Dark legend labels for light mode
+                legendColor: "rgb(10, 14, 15)", // Dark legend labels for light mode
             };
         }
     }

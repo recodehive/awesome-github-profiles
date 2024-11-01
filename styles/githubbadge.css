@@ -105,10 +105,10 @@ body.theme-dark .event .link {
 }
 
 body.theme-dark .container{
-  background-color: black !important;
+  background-color: #171717 !important;
 }
 body.theme-dark .center {
-  background-color: black !important;
+  background-color: #171717 !important;
 }
 body.dark-mode .themed-text {
   color: white;
@@ -176,29 +176,24 @@ body.dark-mode .themed-text {
 
 .inner-table .header .cell {
     flex: auto !important;
-    background-color: #f2f2f2; /* Light gray background for inner table header */
-}
+    background-color: #f2f2f2; }
 
 .inner-table .rows {
-    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-x: auto; 
 }
 
 .inner-table .row {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: nowrap; 
 }
 
 .inner-table .row .cell {
     flex: 1;
-    border: 1px solid #ddd; /* Add border */
+    border: 1px solid #ddd; 
 }
 .dark-mode .header,.dark-mode .cell{
-  background-color: black !important;
+  background-color:#171717 !important;
 }
-
-
-
-
 
 .certificate{
   width: 100%;
