@@ -285,12 +285,18 @@ body.dark-mode ::-webkit-scrollbar-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
   margin-bottom: 20px;
 }
 
 .tag {
-  display: inline-block;
+  flex: 0 0 25%; /* Each tag will take up 25% of the width */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
   margin: 5px;
   padding: 10px 15px;
   background-color: #fff;
@@ -779,10 +785,10 @@ body.dark-mode .footer-button:hover {
 .side-icons {
   position: fixed;
   right: 20px;
-  top: 30%;
+  top: 20%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .icon-content {
