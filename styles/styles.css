@@ -298,7 +298,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   flex-wrap: wrap;
   margin-bottom: 20px;
   margin: 5px;
-  padding: 10px 15px;
+  padding: 11px 15px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 20px;
