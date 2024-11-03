@@ -299,6 +299,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   margin-bottom: 20px;
   margin: 5px;
   padding: 10px 15px;
+  padding: 15px 25px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 20px;
