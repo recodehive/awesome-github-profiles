@@ -420,6 +420,33 @@
     </div>
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch GitHub username from local storage
+            const gitUsername = localStorage.getItem('gitUsername');
+
+            if (gitUsername) {
+                // Directly call the function to load data for GitHub stats
+                document.getElementById('username-section').style.display = 'none';
+                document.getElementById('loading').classList.remove('hidden');
+                loadData(gitUsername)
+                    .then(() => {
+                        document.getElementById('dashboard').style.display = 'block';
+                    })
+                    .catch((error) => {
+                        showError(error.message || config.errorMessages.default);
+                        resetDashboard();
+                    })
+                    .finally(() => {
+                        document.getElementById('loading').classList.add('hidden');
+                    });
+            } else {
+                // If no GitHub username is found, redirect to login page
+                alert('GitHub username not found. Please log in again.');
+                window.location.href = 'index.html';
+            }
+        });
+
         // Configuration object for better organization
         const config = {
             apiBase: 'https://api.github.com',

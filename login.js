@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const password = document.querySelector(".sign-in-form input[type='password']").value;
 
     // Dummy login logic for demo purposes
-    if (username === 'admin' && password === 'password') {
+    if (username === localStorage.getItem('username') && password === localStorage.getItem('password')) {
       alert('Login successful!');
-      // Redirect to dashboard page
-      window.location.href = 'index.html';
+      // Redirect to stats dashboard page
+      window.location.href = 'pages/stats.html';
     } else {
       alert('Invalid username or password');
     }
@@ -40,8 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = document.querySelector(".sign-up-form input[type='text']").value;
     const email = document.querySelector(".sign-up-form input[type='email']").value;
     const password = document.querySelector(".sign-up-form input[type='password']").value;
+    const gitUsername = document.querySelector(".sign-up-form input[type='text'][placeholder='Git Username']").value; // Git Username
 
-    if (username === '' || email === '' || password === '') {
+
+    if (username === '' || email === '' || password === '' || gitUsername === '') {
       alert('Please fill in all fields');
       return;
     }
@@ -97,10 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Dummy signup logic for demo purposes
     localStorage.setItem('username', username);
+    localStorage.setItem('gitUsername', gitUsername);
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
     localStorage.setItem('isLoggedIn', 'true');
-
     alert('Signup successful!');
     // Redirect to dashboard page
     window.location.href = 'index.html';
@@ -156,3 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector(".sign-up-form input[type='password']").addEventListener('input', checkPasswordStrength);
 
 });
+
+
+
