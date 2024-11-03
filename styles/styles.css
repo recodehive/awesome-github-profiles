@@ -916,7 +916,7 @@ body.dark-mode .side-icons .icon-content a:hover {
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(45deg, rgba(10, 151, 207, 0.9) 60%, rgba(15, 61, 214, 0.9) 40%);
   color: #333;
   margin: 0;
   padding: 0;
