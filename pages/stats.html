@@ -420,13 +420,10 @@
     </div>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', () => {
-            // Fetch GitHub username from local storage
             const gitUsername = localStorage.getItem('gitUsername');
 
             if (gitUsername) {
-                // Directly call the function to load data for GitHub stats
                 document.getElementById('username-section').style.display = 'none';
                 document.getElementById('loading').classList.remove('hidden');
                 loadData(gitUsername)
@@ -441,16 +438,15 @@
                         document.getElementById('loading').classList.add('hidden');
                     });
             } else {
-                // If no GitHub username is found, redirect to login page
                 alert('GitHub username not found. Please log in again.');
                 window.location.href = 'index.html';
             }
         });
 
-        // Configuration object for better organization
         const config = {
             apiBase: 'https://api.github.com',
-            itemsPerPage: 5,
+            itemsPerPage: 100,
+            token: 'your_token', // Replace with your GitHub access token
             errorMessages: {
                 rateLimit: 'GitHub API rate limit exceeded. Please try again later.',
                 auth: 'Authentication failed. Please check your token.',
@@ -460,17 +456,14 @@
             }
         };
 
-        // State management
         const state = {
             loading: false,
             error: null,
             data: {}
         };
 
-        // Store the original unfiltered data
         let originalData = {};
 
-        // API call wrapper with error handling
         async function fetchWithErrorHandling(url, options = {}) {
             try {
                 const response = await fetch(url, {
@@ -503,7 +496,60 @@
             }
         }
 
-        // Display error message
+        async function fetchPaginatedData(url) {
+            let page = 1;
+            let allItems = [];
+            let hasMoreData = true;
+
+            while (hasMoreData) {
+                const paginatedUrl = `${url}&per_page=${config.itemsPerPage}&page=${page}`;
+                const response = await fetchWithErrorHandling(paginatedUrl, {
+                    headers: {
+                        'Authorization': `Bearer ${config.token}`
+                    }
+                });
+
+                if (response.items && response.items.length > 0) {
+                    allItems = allItems.concat(response.items);
+                    page++;
+                } else {
+                    hasMoreData = false;
+                }
+            }
+
+            return allItems;
+        }
+
+        async function loadData(username) {
+            const queries = {
+                assignedIssues: `search/issues?q=is:issue+assignee:${username}+state:open&sort=created&order=desc`,
+                openPRs: `search/issues?q=is:pull-request+author:${username}+state:open&sort=created&order=desc`,
+                mergedPRs: `search/issues?q=is:pull-request+author:${username}+state:closed+is:merged&sort=created&order=desc`
+            };
+
+
+            try {
+                const results = await Promise.all(
+                    Object.entries(queries).map(([key, query]) =>
+                        fetchPaginatedData(`${config.apiBase}/${query}`)
+                    )
+                );
+
+                const [assignedIssues, openPRs, mergedPRs] = results;
+                state.data = {
+                    assignedIssues: { items: assignedIssues },
+                    openPRs: { items: openPRs },
+                    mergedPRs: { items: mergedPRs }
+                };
+                originalData = JSON.parse(JSON.stringify(state.data));
+
+                updateDashboard(username);
+                initializeSearch();
+            } catch (error) {
+                throw error;
+            }
+        }
+
         function showError(message) {
             const errorDiv = document.createElement('div');
             errorDiv.className = 'error-message';
@@ -517,7 +563,6 @@
             form.insertBefore(errorDiv, form.firstChild);
         }
 
-        // Updated handleSubmit function
         async function handleSubmit(e) {
             e.preventDefault();
             const username = document.getElementById('github-username').value.trim();
@@ -544,42 +589,15 @@
             }
         }
 
-        // Updated loadData function to store original data
-        async function loadData(username) {
-            const queries = {
-                assignedIssues: `search/issues?q=assignee:${username}+state:open&sort=created&order=desc`,
-                openPRs: `search/issues?q=author:${username}+type:pr+state:open&sort=created&order=desc`,
-                mergedPRs: `search/issues?q=author:${username}+type:pr+state:closed+is:merged&sort=created&order=desc`
-            };
-
-            try {
-                const results = await Promise.all(
-                    Object.entries(queries).map(([key, query]) =>
-                        fetchWithErrorHandling(`${config.apiBase}/${query}`)
-                    )
-                );
-
-                const [assignedIssues, openPRs, mergedPRs] = results;
-                state.data = { assignedIssues, openPRs, mergedPRs };
-                originalData = JSON.parse(JSON.stringify(state.data)); // Store a deep copy
-
-                updateDashboard(username);
-                initializeSearch();
-            } catch (error) {
-                throw error;
-            }
-        }
-
-        // New function to update dashboard
         function updateDashboard(username) {
             const { assignedIssues, openPRs, mergedPRs } = state.data;
 
             document.getElementById('dashboard-username').textContent = username;
-            document.getElementById('assigned-issues-count').textContent = assignedIssues.total_count;
+            document.getElementById('assigned-issues-count').textContent = assignedIssues.items.length;
             document.getElementById('assigned-issues-list').innerHTML = createStatsList(assignedIssues.items);
-            document.getElementById('open-prs-count').textContent = openPRs.total_count;
+            document.getElementById('open-prs-count').textContent = openPRs.items.length;
             document.getElementById('open-prs-list').innerHTML = createStatsList(openPRs.items);
-            document.getElementById('merged-prs-count').textContent = mergedPRs.total_count;
+            document.getElementById('merged-prs-count').textContent = mergedPRs.items.length;
             document.getElementById('merged-prs-list').innerHTML = createStatsList(mergedPRs.items);
 
             calculateSummary(assignedIssues, openPRs, mergedPRs);
@@ -606,20 +624,17 @@
             const searchTerm = event.target.value.toLowerCase().trim();
 
             if (!searchTerm) {
-                // Reset to original data if search is empty
                 state.data = JSON.parse(JSON.stringify(originalData));
                 updateDashboard(document.getElementById('dashboard-username').textContent);
                 return;
             }
 
-            // Filter the data
             const filteredData = {
                 assignedIssues: filterItems(originalData.assignedIssues, searchTerm),
                 openPRs: filterItems(originalData.openPRs, searchTerm),
                 mergedPRs: filterItems(originalData.mergedPRs, searchTerm)
             };
 
-            // Update state with filtered data
             state.data = filteredData;
             updateDashboard(document.getElementById('dashboard-username').textContent);
         }
@@ -637,27 +652,8 @@
 
             return {
                 ...data,
-                total_count: filteredItems.length,
                 items: filteredItems
             };
-        }
-
-        // Previous helper functions remain the same
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            const now = new Date();
-            const diff = Math.floor((now - date) / 1000); // difference in seconds
-
-            if (diff < 60) return 'just now';
-            if (diff < 3600) return `${Math.floor(diff / 60)} minutes ago`;
-            if (diff < 86400) return `${Math.floor(diff / 3600)} hours ago`;
-            if (diff < 2592000) return `${Math.floor(diff / 86400)} days ago`;
-
-            return date.toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
-            });
         }
 
         function createListItem(item) {
@@ -688,6 +684,23 @@
                 </div>
             `;
         }
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const now = new Date();
+            const diff = Math.floor((now - date) / 1000); // difference in seconds
+
+            if (diff < 60) return 'just now';
+            if (diff < 3600) return `${Math.floor(diff / 60)} minutes ago`;
+            if (diff < 86400) return `${Math.floor(diff / 3600)} hours ago`;
+            if (diff < 2592000) return `${Math.floor(diff / 86400)} days ago`;
+
+            return date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
+            });
+        }
+
 
         function showModal(type) {
             const modalTitles = {
@@ -740,8 +753,8 @@
         }
 
         function calculateSummary(assignedIssues, openPRs, mergedPRs) {
-            const totalContributions = assignedIssues.total_count + openPRs.total_count + mergedPRs.total_count;
-            const mergeRate = mergedPRs.total_count > 0 ? ((mergedPRs.total_count / (openPRs.total_count + mergedPRs.total_count)) * 100).toFixed(1) : '0';
+            const totalContributions = assignedIssues.items.length + openPRs.items.length + mergedPRs.items.length;
+            const mergeRate = mergedPRs.items.length > 0 ? ((mergedPRs.items.length / (openPRs.items.length + mergedPRs.items.length)) * 100).toFixed(1) : '0';
             const activeRepos = new Set([...assignedIssues.items, ...openPRs.items, ...mergedPRs.items].map(item => item.repository_url.split('/').pop())).size;
 
             document.getElementById('total-contributions').textContent = totalContributions;
@@ -749,7 +762,6 @@
             document.getElementById('active-repos').textContent = activeRepos;
         }
 
-        // Update resetDashboard to also reset search
         function resetDashboard() {
             state.data = {};
             originalData = {};
@@ -760,9 +772,9 @@
             }
         }
 
-        // Event Listener
         document.getElementById('username-form').addEventListener('submit', handleSubmit);
     </script>
+
 </body>
 
 </html>
