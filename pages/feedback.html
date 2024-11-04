@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <title>Events | Recode Hive</title>
+  <link rel="shortcut icon" href="../assets/events.png" type="image/x-icon">
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="stylesheet" href="../styles/hamburger.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4f6dff, #00d4ff);
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      max-width: 1500px;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* padding: 1em; */
+      background: #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      top: -5pc;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .navbar-icon {
+      width: 30px;
+      height: auto;
+      margin-right: 8px;
+    }
+
+    .navbar-text {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 1em;
+    }
+
+    /* Feedback Form */
+    .feedback-form {
+      background: white;
+      border-radius: 10px;
+      padding: 2em;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 600px;
+      margin: 2em 0;
+      text-align: center;
+    }
+
+    .feedback-form h2 {
+      color: #4f6dff;
+      margin-bottom: 1em;
+    }
+
+    .feedback-form label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5em;
+    }
+
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form textarea {
+      width: 100%;
+      padding: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      font-size: 1em;
+    }
+
+    .feedback-form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .star-rating {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 1.5em;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: #4f6dff;
+    }
+
+    .feedback-form button {
+      width: 100%;
+      padding: 0.8em;
+      background: linear-gradient(90deg, #4f6dff, #00d4ff);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    .footer-2 {
+      width: 100%;
+      max-width: 1500px;
+      background-color: #f2f2f2;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .footer-info,
+    .footer-links,
+    .footer-description {
+      flex: 1;
+      min-width: 250px;
+      margin: 1em;
+      text-align: center;
+    }
+
+    .footer-info img {
+      width: 360px;
+      margin-bottom: 1em;
+    }
+
+    .social-media-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 1em;
+    }
+
+    .footer-bottom {
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a class="navbar-left" href="../index.html" style="text-decoration: none; color: #333;">
+      <img src="../assets/recode-hive.png" alt="Recode Hive Icon" class="navbar-icon">
+      <span class="navbar-text">Recode Hive</span>
+    </a>
+    <div class="navbar-right">
+      <a href="githubbadge.html" class="navbar-link">Github-Badge</a>
+      <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+"
+        class="navbar-link">Add Profile</a>
+      <a href="events.html" class="navbar-link">Events</a>
+      <a href="blog.html" class="navbar-link">Blog</a>
+      <a href="compare.html" class="navbar-link">Compare</a>
+      <a href="../login.html" class="navbar-link">Login</a>
+
+      <div class="toggle-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle">
+          <div class="switch-button">
+            <span class="material-icons sun-icon">wb_sunny</span>
+            <span class="material-icons moon-icon">brightness_2</span>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="githubbadge.html" class="navbar-links">Github-Badge</a>
+    <a href="" class="navbar-links">Events</a>
+    <a href="blog.html" class="navbar-links">Blog</a>
+    <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&labels=%E2%9E%95+profile&projects=&template=add_profile.md&title=Add+Profile%3A+" class="navbar-links">Add Profile</a>
+    <a href="../login.html">Login</a>
+    <div class="toggle-switch">
+      <input type="checkbox" id="theme-toggle-mobile">
+      <label for="theme-toggle-mobile">
+        <div class="switch-button">
+          <span class="material-icons sun-icon">wb_sunny</span>
+          <span class="material-icons moon-icon">brightness_2</span>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Feedback Form -->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4f6dff, #00d4ff);
+      color: #333;
+    }
+
+    .feedback-form {
+      background: white;
+      border-radius: 10px;
+      padding: 2em;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 550px;
+    }
+
+    .feedback-form h2 {
+      color: #4f6dff;
+      margin-bottom: 1em;
+      text-align: center;
+    }
+
+    .feedback-form label {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+      display: block;
+      color: #333;
+    }
+
+    .feedback-form input[type="text"],
+    .feedback-form input[type="email"],
+    .feedback-form textarea {
+      width: 100%;
+      padding: 0.8em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .feedback-form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    /* Star rating */
+    .star-rating {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 1em;
+      direction: rtl; /* Aligns stars to the right */
+    }
+
+    .star-rating input {
+      display: none;
+    }
+
+    .star-rating label {
+      font-size: 1.5em;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    /* Left-to-right hover effect */
+    .star-rating label:hover,
+    .star-rating label:hover ~ label,
+    .star-rating input:checked ~ label {
+      color: #4f6dff;
+    }
+
+    .feedback-form button {
+      width: 100%;
+      padding: 0.8em;
+      background: linear-gradient(90deg, #4f6dff, #00d4ff);
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .feedback-form button:hover {
+      background: linear-gradient(90deg, #3f5cc8, #00a2cc);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="feedback-form">
+    <h2>Feedback Form</h2>
+    <form id="form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="feedback">Feedback</label>
+      <textarea id="feedback" name="feedback" placeholder="Enter your feedback" required></textarea>
+
+      <label>Rating</label>
+      <div class="star-rating">
+        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+      </div>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("form").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const feedback = document.getElementById("feedback").value;
+      const rating = document.querySelector("input[name='rating']:checked")?.value;
+
+      // Email validation regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (!rating) {
+        alert("Please provide a star rating.");
+        return;
+      }
+
+      alert(`Thank you, ${name}! Your feedback has been submitted.\nEmail: ${email}\nRating: ${rating} stars\nFeedback: ${feedback}`);
+      document.getElementById("form").reset();
+    });
+  </script>
+</body>
+</html>
+
+  <!-- Footer -->
+  <footer id="Contact" class="footer-2">
+    <div class="footer-container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="#"><img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo"></a>
+                
+                <!-- Social Media Icons below the logo -->
+                <div class="social-media-icons">
+                    <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <div class="filled"></div>
+                    </a>
+                    <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
+                        <i class="fab fa-youtube" aria-hidden="true"></i>
+                        <div class="filled"></div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <div class="filled"></div>
+                    </a>
+                    <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                        <div class="filled"></div>
+                    </a>
+                    <a href="https://www.facebook.com/sanjay.k.viswanathan/" target="_blank" aria-label="Facebook" data-social="facebook">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        <div class="filled"></div>
+                    </a>
+                </div>
+                <!-- End of Social Media Icons -->
+
+            </div>
+            <div class="footer-links" style="text-align: left;"> <!-- Align to the left -->
+                <div class="footer-section">
+                    <h6 class="footer-heading">ABOUT RECODE-HIVE</h6>
+                    <div>
+                        <a href="pages/help.html" class="footer-link">Contact Us</a>
+                        <a href="https://github.com/recodehive/awesome-github-profiles/blob/main/CODE_OF_CONDUCT.md" class="footer-link">Code of Conduct</a>
+                        <a href="pages/faq.html" class="footer-link">FAQ's</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h6 class="footer-heading">GET INVOLVED</h6>
+                    <div>
+                        <a href="https://github.com/recodehive/awesome-github-profiles/issues/new?assignees=&amp;labels=%E2%9E%95+profile&amp;projects=&amp;template=add_profile.md&amp;title=Add+Profile%3A+" class="footer-link">Add Your Profile</a>
+                        <a href="https://github.com/recodehive/Support/issues/new?assignees=&amp;labels=invite+me+to+the+community&amp;projects=&amp;template=invitation.yml&amp;title=Please+invite+me+to+the+Recode-Hive+GitHub+Community+Organization" class="footer-link">Join the Organization</a>
+                        <!-- New Events Link -->
+                        <a href="./pages/events.html" class="footer-link">Events</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-description">
+                <h5>We focus on quality content for the right people at the right time⏱. What we are trying to do is help you
+                    brand personal skills through GitHub readme.md, listing the best profiles, and giving you the opportunity to
+                    list your profile to the world 🌎.</h5>
+                <a href="https://stream.recodehive.com/github" class="footer-button">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p class="footer-copyright" style="margin-left: 320px;">
+                © <span id="dynamic-year">2024</span> Recode-Hive. Made with 🖤 by the community. All rights reserved.
+            </p>
+            <!-- Social Media Icons in the footer-bottom -->
+            <div class="social-media-icons">
+                <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                    <div class="filled"></div>
+                </a>
+                <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                    <div class="filled"></div>
+                </a>
+                <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    <div class="filled"></div>
+                </a>
+                <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                    <div class="filled"></div>
+                </a>
+                <a href="https://www.facebook.com/sanjay.k.viswanathan/" target="_blank" aria-label="Facebook" data-social="facebook">
+                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    <div class="filled"></div>
+                </a>
+            </div>
+            <!-- End of Social Media Icons -->
+        </div>
+    </div>
+</footer>
+
+<style>
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center the logo and social icons */
+    }
+
+    .social-media-icons {
+        display: flex;
+        justify-content: center; /* Center the icons horizontally */
+        margin-top: 10px; /* Space between the logo and icons */
+    }
+
+    .social-media-icons a {
+        margin: 0 15px; /* Space between icons */
+        text-decoration: none; /* Remove underline */
+        color: #000; /* Default color */
+        position: relative; /* For positioning the filled effect */
+        transition: transform 0.3s, background-color 0.3s; /* Smooth transition for effects */
+    }
+
+    .social-media-icons a i {
+        font-size: 24px; /* Smaller icon size */
+    }
+
+    .social-media-icons a .filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent; /* Initial background */
+        transition: background-color 0.3s; /* Smooth background color transition */
+        border-radius: 50%; /* Make it circular */
+    }
+
+    .social-media-icons a:hover {
+        transform: rotate(20deg); /* Hover rotation effect */
+    }
+
+    .social-media-icons a:hover .filled {
+        background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
+    }
+
+    .footer-links {
+        text-align: left; /* Align the links to the left */
+        margin-top: 20px; /* Add spacing from above elements */
+    }
+
+    .footer-section {
+        margin-bottom: 15px; /* Space between sections */
+    }
+
+    .footer-bottom {
+        text-align: center; /* Center the footer-bottom content */
+        margin-top: 20px; /* Space between main content and footer */
+    }
+    </style>
+    <script src="../scripts/script.js"></script>
+  <script src="../scripts/ScrollToTop.js"></script>
+  <script src="../scripts/dark-mode.js"></script>
+  <script src="../scripts/hamburger.js"></script>
+  <script>
+
+    function active() {
+      const contentDiv = document.getElementById('scroll1');
+      contentDiv.style.height = '100%'
+    }
+    function active1() {
+      const contentDiv = document.getElementById('scroll2');
+      contentDiv.style.height = '100%'
+    }
+    function active2() {
+      const contentDiv = document.getElementById('scroll3');
+      contentDiv.style.height = '100%'
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const contentDiv = document.getElementById('scroll1');
+      const contentDiv1 = document.getElementById('scroll2');
+      const contentDiv2 = document.getElementById('scroll3');
+
+      contentDiv.style.height = '0%'
+
+      contentDiv1.style.height = '0%'
+      contentDiv2.style.height = '0%'
+
+      // Function to call when the content div comes into view
+      function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Call your function here
+            if (entry.target.id == "scroll1") {
+              active();
+            } if (entry.target.id == "scroll2") {
+              active1()
+            } if (entry.target.id == "scroll3") {
+              active2()
+            }
+
+            // Optionally, stop observing after the first intersection
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+
+      // Create an Intersection Observer instance
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // Use the viewport as the root
+        rootMargin: '-200px',
+        threshold: 0.1 // Trigger when 10% of the target is visible
+      });
+
+      // Start observing the target element
+      observer.observe(contentDiv);
+      observer.observe(contentDiv1);
+      observer.observe(contentDiv2);
+
+      // Example function to call when content div is in view
+
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const contentDiv1 = document.getElementById('scroll1');
+      const contentDiv2 = document.getElementById('scroll2');
+      const contentDiv3 = document.getElementById('scroll3');
+
+      // Set initial height to 0% for the line divs
+      contentDiv1.style.height = '0%';
+      contentDiv2.style.height = '0%';
+      contentDiv3.style.height = '0%';
+
+      // Function to expand the line when it comes into view
+      function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.height = '100%'; // Set height to 100% when the element is in view
+            observer.unobserve(entry.target);   // Stop observing after it animates
+          }
+        });
+      }
+
+      // IntersectionObserver configuration
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px', // Adjust margin if needed
+        threshold: 0.1 // Trigger when 10% of the target is visible
+      });
+
+      // Start observing the elements
+      observer.observe(contentDiv1);
+      observer.observe(contentDiv2);
+      observer.observe(contentDiv3);
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    // Select the "Events" link from the navbar
+    const eventsLink = document.querySelector('.navbar-link[href="events.html"]');
+
+    // Add an event listener to the "Events" link
+    eventsLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Prevent the default behavior of the link
+
+      // Smooth scroll to the top of the page
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Enables smooth scrolling
+      });
+    });
+  });
+  </script>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+</html>
