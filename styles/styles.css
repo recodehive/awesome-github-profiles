@@ -292,10 +292,10 @@ body.dark-mode ::-webkit-scrollbar-button {
 }
 
 .tag {
-<<<<<<< HEAD
+
   
   display: inline-block;
-=======
+
   flex: 0 0 25%; /* Each tag will take up 25% of the width */
   box-sizing: border-box; /* Ensures padding and border are included in width */
   display: flex;
@@ -303,7 +303,7 @@ body.dark-mode ::-webkit-scrollbar-button {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
->>>>>>> origin/gh-pages
+
   margin: 5px;
   padding: 11px 15px;
   background-color: #fff;
@@ -931,7 +931,7 @@ body.dark-mode .side-icons .icon-content a:hover {
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(45deg, rgba(0, 8, 11, 0.9) 60%, rgba(1, 4, 15, 0.9) 40%);
+  background-color: #f4f4f4;
   color: #333;
   margin: 0;
   padding: 0;

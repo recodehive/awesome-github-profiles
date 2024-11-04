@@ -59,6 +59,68 @@
         .center {
             text-align: center;
         }
+        #scrollToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s, color 0.3s, opacity 0.3s, transform 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #scrollToTop:hover {
+            background-color: rgb(62, 62, 62);
+        }
+
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #scrollToTop .arrow-icon {
+            fill: white;
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
+
+        #scrollToTop:hover {
+            transform: translateY(-5px);
+            /* Move button up on hover */
+        }
+
+        #scrollToTop:hover .arrow-icon {
+            transform: translateY(-2px);
+            /* Move arrow up on hover */
+        }
+
+        body.dark-mode #scrollToTop {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark-mode #scrollToTop:hover {
+            background-color: rgba(182, 182, 182, 0.999);
+        }
+
+        body.dark-mode #scrollToTop .arrow-icon {
+            fill: black;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
         .navbar-links {
             margin-left: 20px;
             text-decoration: none;
@@ -994,154 +1056,12 @@
             transform: rotate(20deg); /* Rotate 20 degrees on hover */}
     </style>
 
-    <!-- Scroll to top -->
-    <button id="scrollToTopBtn" class="scroll-top" aria-label="Scroll to top">
-        <div class="scroll-top-icon">
-                <i class="fas fa-arrow-up"></i>            
-        </div>
-        <svg class="progress-ring" width="60" height="60">
-            <circle class="progress-ring__circle" stroke="#ffffff" stroke-width="4" fill="transparent" r="28" cx="30"
-                cy="30"></circle>
+    <!-- Scroll to top --> <button id="scrollToTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
+            <path
+                d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
         </svg>
     </button>
-    <style>
-        .scroll-top {
-            position: fixed;
-            right: 1.6%;
-            background: linear-gradient(100deg, #1ca6f0, #3c7aff, #05deff);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-            overflow: visible;
-            z-index: 10;
-            bottom: 25px;
-            /* Ensure button is on top */
-        }
-    
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-    
-        .scroll-top:hover {
-            transform: scale(1.1);
-            /* Subtle scaling instead of expanding */
-            box-shadow: 0 8px 20px rgba(255, 69, 159, 0.6);
-            /* Slightly larger shadow */
-        }
-    
-        .scroll-top:active {
-            transform: scale(1.05);
-            /* Minor scale reduction on click */
-        }
-    
-        .scroll-top-icon {
-            position: relative;
-            z-index: 2;
-            transition: transform 0.3s ease;
-        }
-    
-        .scroll-top:hover .scroll-top-icon {
-            transform: translateY(-3px);
-        }
-    
-        /* Progress Ring Styling */
-        .progress-ring {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            transform: rotate(-90deg);
-            /* To start from the top */
-        }
-    
-        .progress-ring__circle {
-            transition: stroke-dashoffset 0.35s;
-            transform-origin: 50% 50%;
-        }
-    
-        /* Pulse Animation */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-            }
-    
-            50% {
-                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.7);
-            }
-    
-            100% {
-                box-shadow: 0 5px 15px rgba(255, 69, 159, 0.4);
-            }
-        }
-    
-        .scroll-top:hover {
-            animation: pulse 1.5s infinite;
-        }
-    
-        .scroll-top.show {
-            animation: none;
-            /* No animation when showing the button */
-        }
-    
-        .scroll-top.show:hover {
-            animation: pulse 1.5s infinite;
-            /* Pulse on hover */
-        }
-    </style>
-    <script>
-        // Get the button
-        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        const progressCircle = document.querySelector(".progress-ring__circle");
-        const radius = progressCircle.r.baseVal.value;
-        const circumference = 2 * Math.PI * radius;
-    
-        // Set the circle progress properties
-        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-        progressCircle.style.strokeDashoffset = circumference;
-    
-        // Function to show or hide the button based on scroll position
-        function toggleScrollButton() {
-            if (window.scrollY > 100) {
-                scrollToTopBtn.classList.add("show");
-            } else {
-                scrollToTopBtn.classList.remove("show");
-            }
-        }
-    
-        // Function to set the scroll progress on the button ring
-        function setProgress(percent) {
-            const offset = circumference - (percent / 100) * circumference;
-            progressCircle.style.strokeDashoffset = offset;
-        }
-    
-        // Listen for scroll events to update button visibility and progress
-        window.addEventListener("scroll", () => {
-            toggleScrollButton();
-            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            setProgress(scrollPercent);
-        });
-    
-        // Smooth scroll to top when the button is clicked
-        scrollToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-      </script>
     <script src="../scripts/ScrollToTop.js"></script>
     <script src="../scripts/dark-mode.js"></script>
     <script>
