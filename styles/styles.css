@@ -290,8 +290,7 @@ body.dark-mode ::-webkit-scrollbar-button {
 }
 
 .tag {
-  flex: 0 0 25%; /* Each tag will take up 25% of the width */
-  box-sizing: border-box; /* Ensures padding and border are included in width */
+  
   display: inline-block;
   margin: 5px;
   padding: 10px 15px;
@@ -300,6 +299,8 @@ body.dark-mode ::-webkit-scrollbar-button {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  flex: 0 0 25%; /* Each tag will take up 25% of the width */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
 }
 
 .tag:hover {
