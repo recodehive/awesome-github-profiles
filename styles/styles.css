@@ -290,6 +290,8 @@ body.dark-mode ::-webkit-scrollbar-button {
 }
 
 .tag {
+  flex: 0 0 25%; /* Each tag will take up 25% of the width */
+  box-sizing: border-box; /* Ensures padding and border are included in width */
   display: inline-block;
   margin: 5px;
   padding: 10px 15px;
@@ -883,17 +885,17 @@ body.dark-mode .side-icons .icon-content a:hover i {
 
 /* Dark mode background colors for different icons */
 body.dark-mode .side-icons .icon-content a[data-social="facebook"] .filled {
-  background-color: #3b5998;
+  background-color: #040c1e;
   /* Darker shade for Facebook in dark mode */
 }
 
 body.dark-mode .side-icons .icon-content a[data-social="linkedin"] .filled {
-  background-color: #0077b5;
+  background-color: #04141d;
   /* Darker shade for LinkedIn in dark mode */
 }
 
 body.dark-mode .side-icons .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #030d13;
   /* Darker shade for Twitter in dark mode */
 }
 
@@ -916,7 +918,7 @@ body.dark-mode .side-icons .icon-content a:hover {
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(45deg, rgba(10, 151, 207, 0.9) 60%, rgba(15, 61, 214, 0.9) 40%);
+  background: linear-gradient(45deg, rgba(0, 8, 11, 0.9) 60%, rgba(1, 4, 15, 0.9) 40%);
   color: #333;
   margin: 0;
   padding: 0;
