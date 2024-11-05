@@ -31,6 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Invalid username or password');
     }
   });
+  document.addEventListener("DOMContentLoaded", function () {
+  const rememberMeCheckbox = document.getElementById("remember-me");
+  const usernameInput = document.getElementById("username");
+
+  // Load saved username if it exists
+  if (localStorage.getItem("rememberedUsername")) {
+    usernameInput.value = localStorage.getItem("rememberedUsername");
+    rememberMeCheckbox.checked = true;
+  }
+
+  // When the form is submitted, save the username if "Remember Me" is checked
+  document.querySelector(".sign-in-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+    if (rememberMeCheckbox.checked) {
+      localStorage.setItem("rememberedUsername", usernameInput.value);
+    } else {
+      localStorage.removeItem("rememberedUsername");
+    }
+
+    // Add form submission logic here
+  });
+});
+
 
   // Sign-up form submission
   document.querySelector(".sign-up-form").addEventListener('submit', function(event) {
