@@ -63,51 +63,123 @@
         </div>
       </div>
 
-      <div class="panels-container">
-        <a href="index.html" class="homeBtn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" width="30" height="30">
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-          </svg>
-        </a>
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>New here ?</h3>
-            <p>
-                Discover new experiences and profiles with awesome-github-profiles <br>Get access to exclusive content and features. <br> Create your account.
-            </p>
-            <a href="index.html" class="homeBtn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" width="30" height="30">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-              </svg>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register & Login</title>
+  <!-- Link to add favicon -->
+  <link rel="shortcut icon" href="assets/recode-hive.png" type="image/x-icon">
+  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <form action="#" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock toggle-password" id="toggle-password"></i>
+            <input type="password" id="password-input" placeholder="Password" required />
+          </div>
+
+          <input type="submit" value="Login" class="btn solid" />
+          <p class="social-text">Or Sign in with social platforms</p>
+          <div class="social-media">
+
+
+            <a href="https://github.com/YourGitHubProfile" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"
+                width="40" height="40" style="margin-left: 5px;">
             </a>
-            <button class="btn transparent" id="sign-up-btn">
-              Sign up
-            </button>
           </div>
-          <img src="img/log.svg" class="image" alt="" />
-        </div>
-        <div class="panel right-panel">
-          
-          <div class="content">
-            
-            <h3>One of us ?</h3>
-            <p>
-                Welcome to our community
-            </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Sign in
-            </button>
-            
+        </form>
+        <form action="#" class="sign-up-form">
+          <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Username" />
           </div>
-          <img src="img/register.svg" class="image" alt="" />
-        </div>
-        
+          <div class="input-field">
+            <i class="fas fa-code-branch"></i>
+            <input type="text" placeholder="Git Username" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock toggle-password" id="toggle-password"></i>
+            <input type="password" id="password-input" placeholder="Password" minlength="8" />
+          </div>
+          <input type="submit" class="btn" value="Sign up" />
+          <p class="social-text">Or Sign up with social platforms</p>
+          <div class="social-media">
+
+            <a href="https://github.com/YourGitHubProfile" target="_blank">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"
+                width="40" height="40" style="margin-left: 5px;">
+            </a>
+          </div>
+        </form>
       </div>
-      
     </div>
-    <script src="login.js"></script>
-    <div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  </body>
+
+    <div class="panels-container">
+      <a href="index.html" class="homeBtn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" width="30" height="30">
+          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+        </svg>
+      </a>
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>New here ?</h3>
+          <p>
+            Discover new experiences and profiles with awesome-github-profiles <br>Get access to exclusive content and
+            features. <br> Create your account.
+          </p>
+          <a href="index.html" class="homeBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20" width="30" height="30">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+          </a>
+          <button class="btn transparent" id="sign-up-btn">
+            Sign up
+          </button>
+        </div>
+        <img src="img/log.svg" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+
+        <div class="content">
+
+          <h3>One of us ?</h3>
+          <p>
+            Welcome to our community
+          </p>
+          <button class="btn transparent" id="sign-in-btn">
+            Sign in
+          </button>
+
+        </div>
+        <img src="img/register.svg" class="image" alt="" />
+      </div>
+
+    </div>
+
+  </div>
+  <script src="login.js"></script>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = { "default_language": "en", "detect_browser_language": true, "wrapper_selector": ".gtranslate_wrapper" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+</body>
+
 </html>

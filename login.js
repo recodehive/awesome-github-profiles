@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
     }
 
+
     //if "user-info" already exists, don't let the user access the login route
     if(localStorage.getItem("user-info"))
     {
@@ -72,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
       //if the user doesn't exist and code exists in localStorage, get the user information
       getGhUser()
       
+    // Dummy login logic for demo purposes
+    if (username === localStorage.getItem('username') && password === localStorage.getItem('password')) {
+      alert('Login successful!');
+      // Redirect to stats dashboard page
+      window.location.href = 'pages/stats.html';
+    } else {
+      alert('Invalid username or password');
     }
 
     
@@ -137,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Regular expression for stricter email validation
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+
         // Check for the basic format
         if (!emailRegex.test(email)) {
           return false;
@@ -147,6 +156,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Ensure local part and domain part exist and aren't too long
         if (localPart.length > 64 || domainPart.length > 255) {
+    // Get the input values
+    const username = document.querySelector(".sign-up-form input[type='text']").value;
+    const email = document.querySelector(".sign-up-form input[type='email']").value;
+    const password = document.querySelector(".sign-up-form input[type='password']").value;
+    const gitUsername = document.querySelector(".sign-up-form input[type='text'][placeholder='Git Username']").value; // Git Username
+
+
+    if (username === '' || email === '' || password === '' || gitUsername === '') {
+      alert('Please fill in all fields');
+      return;
+    }
+    function isValidEmail(email) {
+      // Regular expression for stricter email validation
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  
+      // Check for the basic format
+      if (!emailRegex.test(email)) {
+
           return false;
         }
 
@@ -180,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
+
       // Validate email
       if (!isValidEmail(email)) {
         alert("Please enter a valid email address.");
@@ -195,6 +223,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // Redirect to dashboard page
       window.location.href = "index.html";
     });
+
+    // Validate email
+    if (!isValidEmail(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    // Dummy signup logic for demo purposes
+    localStorage.setItem('username', username);
+    localStorage.setItem('gitUsername', gitUsername);
+    localStorage.setItem('email', email);
+    localStorage.setItem('password', password);
+    localStorage.setItem('isLoggedIn', 'true');
+    alert('Signup successful!');
+    // Redirect to dashboard page
+    window.location.href = 'index.html';
+  });
+
 
   // Toggle password visibility for sign-up form
   const forms = document.querySelectorAll("form");
@@ -245,7 +290,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Monitor password input on the sign-up form to check password strength
+
   document
     .querySelector(".sign-up-form input[type='password']")
     .addEventListener("input", checkPasswordStrength);
 });
+
+  document.querySelector(".sign-up-form input[type='password']").addEventListener('input', checkPasswordStrength);
+
+});
+
+
+
+

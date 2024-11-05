@@ -3,47 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Not Found</title>
+    <title>404</title>
     <style>
-        body {
+        .sectionA{
+            font-family: Familjen Grotesk, sans-serif;
+            font-size: 250px;
+            text-align: center;
+            /* margin-top: 10%; */
+            font-weight: bold;
+
+        }
+        .sectionAa{
+            font-family: Familjen Grotesk, sans-serif;
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .sectionAb{
+            font-family: Familjen Grotesk, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 5%;
+            color: grey;
+        }
+        .greenbutton{
+            font-family: Familjen Grotesk, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(2, 56, 2);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin: 35% 35%;
+            margin-top: 5%;
+        }
+        footer a{
+            margin-top: -25%;
+            font-family: Familjen Grotesk, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 32vh;
-            background-color: #f8f9fa;
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-        }
-        .error {
-            text-align: center;
-        }
-        .error h1 {
-            font-size: 4rem;
-            color: #404040;
-            margin: auto;
-        }
-        .error p {
-            font-size: 1.2rem;
-            color: #606060;
-        }
-        .error a {
             text-decoration: none;
-            background-color: #007bff;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            transition: background-color 0.2s ease;
-        }
-        .error a:hover {
-            background-color: #0056b3;
+            color: black;
         }
     </style>
 </head>
 <body>
-    <div class="error">
-        <h1>Error:404</h1>
-        <p>Oops! The page you are looking for does not exist.</p><br>
-        <a href="index.html">Go Back Home</a>
+    <div class="container-fluid">
+        <div class="sectionA">404</div>
+        <div class="sectionAa">Page Not Found</div>
+        <div class="sectionAb">The page you are looking for doesn't exist or has been moved</div>
+        <div type="button" class="greenbutton">GO HOME</div>
     </div>
+    <footer>
+        <a target="_blank" href="https://github.com/vishantrathi">@VISHANT RATHI</a>
+    </footer>
 </body>
 </html>
