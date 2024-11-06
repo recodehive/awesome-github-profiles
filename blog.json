@@ -15,7 +15,7 @@
         "author": "Sanjay KV",
         "date": "April 14, 2021",
         "comments": 0,
-        "excerpt": "What is Github? Github is a way of version control your software development using Git, Github was founded in 2008.",
+        "excerpt": "What is Github? Github is a way of version control your software development using Git. Github was founded in 2008.",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/How-to-use-Github-1024x576.jpg",
         "link": "https://recodehive.com/how-to-create-github-account/"
     },
@@ -35,7 +35,7 @@
         "author": "Sanjay KV",
         "date": "April 17, 2021",
         "comments": 0,
-        "excerpt": "What is Clone/Push in Github Once you created Repository and have done your part of the analysis...",
+        "excerpt": "What is Clone/Push in Github? Once you created Repository and have done your part of the analysis...",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/Start-with-Github-1-1024x576.jpg",
         "link": "https://recodehive.com/how-to-create-repository-in-github/"
     },
@@ -45,7 +45,7 @@
         "author": "Sanjay KV",
         "date": "April 18, 2021",
         "comments": 0,
-        "excerpt": "Headsup to the Github Cheatsheet This is part of GitHub/Git Tutorials and a continuation of the previous post",
+        "excerpt": "Headsup to the Github Cheatsheet. This is part of GitHub/Git Tutorials and a continuation of the previous post.",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/Git-Cheatsheet-1024x576.jpg",
         "link": "https://recodehive.com/git-cheat-sheet-50-git-commands-git-tutorials/"
     },
@@ -55,7 +55,7 @@
         "author": "Sanjay KV",
         "date": "April 19, 2021",
         "comments": 0,
-        "excerpt": "What is GitHub Colloboration? GitHub collaboration is a space where you can invite another developer to your repository and",
+        "excerpt": "What is GitHub Collaboration? GitHub collaboration is a space where you can invite another developer to your repository.",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/Inviting-Collaborators-to-Github-1024x576.jpg",
         "link": "https://recodehive.com/how-to-add-collaborators-into-github-repository/"
     },
@@ -65,27 +65,27 @@
         "author": "Sanjay KV",
         "date": "April 20, 2021",
         "comments": 0,
-        "excerpt": "What is GitHub Colloboration? GitHub collaboration is a space where you can invite another developer to your repository and",
+        "excerpt": "What is GitHub Collaboration? GitHub collaboration is a space where you can invite another developer to your repository.",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/How-to-git-branch-1024x576.jpg",
         "link": "https://recodehive.com/how-to-create-new-branch-and-merge-in-github/"
     },
     {
         "category": "DEV LABS GITHUB",
-        "title": "How to resolve merge conflicts in github",
+        "title": "How to resolve merge conflicts in GitHub?",
         "author": "Sanjay KV",
         "date": "April 23, 2021",
         "comments": 0,
-        "excerpt": "Understanding Github Conflicts Let’s imagine a case where two developer working on one respository by creating 2 different branch",
+        "excerpt": "Understanding GitHub Conflicts: Let’s imagine a case where two developers are working on one repository by creating 2 different branches.",
         "image": "https://recodehive.com/wp-content/uploads/2021/04/Github-working-with-conflicts-1024x576.jpg",
         "link": "https://recodehive.com/how-to-resolve-merge-conflicts-in-github/"
     },
     {
         "category": "DEV LABS GITHUB",
-        "title": "Push large files to Github| Git lfs tutorial",
+        "title": "Push large files to Github | Git LFS tutorial",
         "author": "Sanjay KV",
         "date": "May 01, 2021",
         "comments": 0,
-        "excerpt": "Failed to Push Some Refs | Git Error I was trying to push File size more than 100 MB to Github.",
+        "excerpt": "Failed to Push Some Refs | Git Error: I was trying to push a file size more than 100 MB to Github.",
         "image": "https://recodehive.com/wp-content/uploads/2021/05/GIT-LFS-recodehive-1024x576.jpg",
         "link": "https://recodehive.com/push-large-files-to-github-git-lfs-tutorial/"
     },
@@ -95,7 +95,7 @@
         "author": "Sanjay KV",
         "date": "September 28, 2021",
         "comments": 0,
-        "excerpt": "This is a part of GitHub’s complete Tutorial available on this website, We will look at how to",
+        "excerpt": "This is a part of GitHub’s complete Tutorial available on this website. We will look at how to host a website using GitHub.",
         "image": "https://recodehive.com/wp-content/uploads/2021/09/Github-Pages-hosting-1-1024x576.png",
         "link": "https://recodehive.com/how-to-host-a-website-using-github/"
     },
@@ -105,7 +105,7 @@
         "author": "Sanjay KV",
         "date": "October 2, 2021",
         "comments": 0,
-        "excerpt": "This is a continuation of the previous post, We have already created a repository on the same, if not",
+        "excerpt": "This is a continuation of the previous post. We have already created a repository on the same; if not, please do that first.",
         "image": "https://recodehive.com/wp-content/uploads/2021/10/GitHub-Pages-custome-Domain-1024x576.png",
         "link": "https://recodehive.com/how-to-setup-custom-domain-on-github-pages/"
     },
@@ -115,7 +115,7 @@
         "author": "Sanjay KV",
         "date": "October 4, 2021",
         "comments": 0,
-        "excerpt": "What is Forking in GitHub? Forking an Existing GitHub repository helps to create a copy of the main file",
+        "excerpt": "What is Forking in GitHub? Forking an existing GitHub repository helps to create a copy of the main repository that you can modify.",
         "image": "https://recodehive.com/wp-content/uploads/2021/10/GitHub-Forking-1024x576.png",
         "link": "https://recodehive.com/how-to-fork-a-repository-in-github/"
     },
@@ -125,7 +125,7 @@
         "author": "Sanjay KV",
         "date": "November 24, 2021",
         "comments": 0,
-        "excerpt": "Understanding Github Conflicts Let’s imagine a case where two developer working on one respository by creating 2 different branch",
+        "excerpt": "Understanding GitHub Organizations: Let’s imagine a case where two developers are working on one repository by creating two different branches.",
         "image": "https://recodehive.com/wp-content/uploads/2021/11/Make-Organization-Public-1024x576.jpg",
         "link": "https://recodehive.com/how-to-make-organization-visible-in-github/"
     },
@@ -135,18 +135,5 @@
         "author": "Sowmiya V",
         "date": "September 25, 2022",
         "comments": 0,
-        "excerpt": "Hacktoberfest is an annual event that encourages people to contribute to open-source projects. The event takes place throughout the",
-        "image": "https://recodehive.com/wp-content/uploads/2022/09/RECODEHIVE-THUMBNAIL-1.jpg",
-        "link": "https://recodehive.com/__trashed/"
-    },
-    {
-        "category": "Tech",
-        "title": "How to Optimize Your GitHub Readme Profile with GPRM?",
-        "author": "Sanjay KV",
-        "date": "May 27, 2023",
-        "comments": 0,
-        "excerpt": "Whether you’re a software developer, data scientist, or web designer, having a GitHub profile is essential to showcase",
-        "image": "https://recodehive.com/wp-content/uploads/2022/12/RECODEHIVE-THUMBNAIL-22.png",
-        "link": "https://recodehive.com/how-to-optimize-your-github-readme-profile-with-gprm/"
-    }
-]
+        "excerpt": "Hacktoberfest is an annual event that encourages people to contribute to open-source projects. The event takes place throughout the month of October.",
+        "image": "https://recodehive.com/wp-content/uploads/202
