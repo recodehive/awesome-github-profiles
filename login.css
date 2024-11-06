@@ -61,6 +61,13 @@ form.sign-in-form {
   z-index: 2;
 }
 
+.github-login{
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 .title {
   font-size: 2.2rem;
   color: #444;

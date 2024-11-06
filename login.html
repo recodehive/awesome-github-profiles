@@ -1,5 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register & Login</title>
+    <!-- Link to add favicon -->
+    <link rel="shortcut icon" href="assets/recode-hive.png" type="image/x-icon">
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Sign in</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock toggle-password" id="toggle-password"></i>
+              <input type="password" id="password-input" placeholder="Password" required/>
+            </div>
+            
+            <input type="submit" value="Login" class="btn solid" />
+            <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+        
+
+              <button type="button" class="github-login" id="gh-lg-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="40" height="40" style="margin-left: 5px;">
+              </button>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <h2 class="title">Sign up</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock toggle-password" id="toggle-password"></i>
+              <input type="password" id="password-input" placeholder="Password" minlength="8" />
+            </div>
+            <input type="submit" class="btn" value="Sign up" />
+            <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+            
+               <button type="button" class="github-login" id="gh-sg-btn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="40" height="40" style="margin-left: 5px;">
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
 
 <head>
   <meta charset="UTF-8" />
