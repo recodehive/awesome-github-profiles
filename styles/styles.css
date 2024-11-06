@@ -648,8 +648,9 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-logo {
-  width: 500px;
-  height: 100px;
+  width: 275px;
+  height: 130px;
+
   cursor: pointer;
 }
 
@@ -761,6 +762,9 @@ body.dark-mode .footer-button:hover {
   .footer-info,
   .footer-description {
     margin-bottom: 20px;
+  }
+  .footer-description{
+    margin-right: 0;
   }
 }
 
