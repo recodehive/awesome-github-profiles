@@ -8,6 +8,12 @@ const cors =require("cors");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Middleware to remove Google Chrome alert
+app.use((req, res, next) => {
+  res.setHeader('Content-Security-Policy', "script-src 'self'");
+  next();
+});
+
 // Middleware
 const allowedOrigins = [
   "https://recodehive.github.io/awesome-github-profiles",
