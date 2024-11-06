@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Project Recommendation Engine</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* GitHub-inspired styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        .search-form {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .search-form input {
+            flex: 1;
+            padding: 10px 16px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin-right: 10px;
+        }
+
+        .search-form button {
+            padding: 10px 20px;
+            background-color: #2f81f7;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-form button:hover {
+            background-color: #1f66c4;
+        }
+
+        #recommendations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 24px;
+        }
+
+        .project-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        }
+
+        .project-card .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .project-card .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-card p {
+            font-size: 14px;
+            color: #8b949e;
+            margin: 6px 0;
+        }
+
+        .project-card .info {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #8b949e;
+        }
+
+        .project-card .info i {
+            margin-right: 6px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack-item {
+            background-color: #21262d;
+            color: #c9d1d9;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tech-stack-item i {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>GitHub Project Recommendation Engine</h1>
+        <form id="usernameForm" class="search-form">
+            <input type="text" id="username" placeholder="Enter GitHub username" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div id="recommendations"></div>
+    </div>
+
+    <script>
+        const GITHUB_TOKEN = "your_token";
+
+        document.getElementById("usernameForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+            const username = document.getElementById("username").value.trim();
+            if (!username) {
+                alert("Please enter a GitHub username.");
+                return;
+            }
+            fetchRecommendations(username);
+        });
+
+        async function fetchRecommendations(username) {
+            const recommendationsContainer = document.getElementById("recommendations");
+            recommendationsContainer.innerHTML = "<p>Loading...</p>";
+
+            try {
+                // Step 1: Fetch user repositories and analyze languages/topics
+                const repoResponse = await fetch(`https://api.github.com/users/${username}/repos`, {
+                    headers: {
+                        'Authorization': `token ${GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                const repos = await repoResponse.json();
+
+                if (!repos || repos.length === 0) {
+                    recommendationsContainer.innerHTML = "<p>No repositories found for this user.</p>";
+                    return;
+                }
+
+                // Analyze languages and topics
+                const languageCount = {};
+                repos.forEach(repo => {
+                    if (repo.language) {
+                        languageCount[repo.language] = (languageCount[repo.language] || 0) + 1;
+                    }
+                });
+
+                // Get the top 2 most used languages
+                const topLanguages = Object.keys(languageCount)
+                    .sort((a, b) => languageCount[b] - languageCount[a])
+                    .slice(0, 2);
+
+                // Step 2: Use GitHub Search API to find similar projects
+                const query = topLanguages.map(lang => `language:${lang}`).join("+");
+                const searchResponse = await fetch(
+                    `https://api.github.com/search/repositories?q=${query}&sort=stars&order=desc&per_page=6`,
+                    {
+                        headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    }
+                );
+                const searchData = await searchResponse.json();
+
+                if (searchData.items && searchData.items.length > 0) {
+                    recommendationsContainer.innerHTML = "";
+                    searchData.items.forEach(project => {
+                        const projectElement = document.createElement("div");
+                        projectElement.classList.add("project-card");
+                        projectElement.addEventListener("click", () => {
+                            window.open(project.html_url, "_blank");
+                        });
+
+                        const techStackElement = document.createElement("div");
+                        techStackElement.classList.add("tech-stack");
+
+                        const languages = [project.language, "JavaScript", "Python", "Java", "C++", "C#", "PHP", "Ruby", "Swift", "Go", "Rust"];
+                        languages.forEach(lang => {
+                            if (lang) {
+                                const langElement = document.createElement("div");
+                                langElement.classList.add("tech-stack-item");
+                                langElement.innerHTML = `<i class="fas fa-circle" style="color: ${getLanguageColor(lang)}"></i> ${lang}`;
+                                techStackElement.appendChild(langElement);
+                            }
+                        });
+
+                        projectElement.innerHTML = `
+                            <div class="header">
+                                <img src="${project.owner.avatar_url}" alt="${project.owner.login}'s avatar" class="avatar">
+                                <h3>${project.name}</h3>
+                            </div>
+                            <p>${project.description || "No description available."}</p>
+                            ${techStackElement.outerHTML}
+                            <div class="info">
+                                <i class="fas fa-star"></i> ${project.stargazers_count.toLocaleString()}
+                                <i class="fas fa-code-branch"></i> ${project.forks_count.toLocaleString()}
+                                <i class="fas fa-circle" style="color: ${project.language ? getLanguageColor(project.language) : '#8b949e'}"></i> ${project.language || "Unknown"}
+                            </div>
+                        `;
+                        recommendationsContainer.appendChild(projectElement);
+                    });
+                } else {
+                    recommendationsContainer.innerHTML = "<p>No recommendations found.</p>";
+                }
+            } catch (error) {
+                recommendationsContainer.innerHTML = "<p>Error fetching data. Please try again later.</p>";
+                console.error("Error fetching recommendations:", error);
+            }
+        }
+
+        function getLanguageColor(language) {
+            // Define the color mapping for common programming languages
+            const languageColors = {
+                "JavaScript": "#f1e05a",
+                "Python": "#3572A5",
+                "Java": "#b07219",
+                "C++": "#f34b7d",
+                "C#": "#178600",
+                "PHP": "#4F5D95",
+                "Ruby": "#701516",
+                "Swift": "#ffac45",
+                "Go": "#00ADD8",
+                "Rust": "#dea584"
+            };
+
+            return languageColors[language] || "#8b949e";
+        }
+    </script>
+</body>
+
+</html>
