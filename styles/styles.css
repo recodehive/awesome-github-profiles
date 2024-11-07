@@ -676,12 +676,15 @@ body.dark-mode .navbar-link:hover {
   font-size: 0.900rem;
   text-decoration: none;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #000; /* Darker on hover */
+  color: #007bff;
+   /* light blue on hover */
   text-decoration: underline;
-  transform: translateX(5px); /* Slight shift to the right */
+  /* transform: translateX(5px); Slight shift to the right */
+  /* color:#171717; */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
 }
 
@@ -733,10 +736,14 @@ body.dark-mode .footer-link {
 body.dark-mode .footer-info img {
   filter: brightness(0) invert(1);
 }
-
+body.dark-mode .footer-link:hover {
+  color: #00d8ff;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
 body.dark-mode .footer-heading {
   color: #fff;
 }
+
 
 body.dark-mode .footer-button {
   background-color: #fff;
