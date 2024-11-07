@@ -241,3 +241,50 @@ To report an issue, follow these steps:
 We truly appreciate your time and effort to help improve our project. Feel free to reach out if you have any questions or need guidance. Happy coding! 🚀
 
 ##
+
+# Adding Contributors Using the All-Contributors Tool
+
+We use the [all-contributors](https://allcontributors.org) tool to acknowledge and celebrate the contributions of our community members. Follow these steps to add a contributor:
+
+1. **Install the All-Contributors CLI:**
+
+   If you haven't already, install the all-contributors CLI globally on your machine:
+
+   ```bash
+   npm install -g all-contributors-cli
+   ```
+
+2. **Add a Contributor:**
+
+   To add a contributor, use the following command:
+
+   ```bash
+   npx all-contributors add <username> <contribution>
+   ```
+
+   Replace `<username>` with the GitHub username of the contributor and `<contribution>` with the type of contribution (e.g., code, doc, design).
+
+3. **Update the README:**
+
+   After adding a contributor, update the README file to reflect the changes:
+
+   ```bash
+   npx all-contributors generate
+   ```
+
+4. **Commit and Push:**
+
+   Commit the changes to the README file and push them to the repository:
+
+   ```bash
+   git add README.md
+   git commit -m "docs: add <username> as a contributor"
+   git push origin <your_branch_name>
+   ```
+
+5. **Create a Pull Request:**
+
+   Create a pull request to merge the changes into the main branch. Once the pull request is reviewed and merged, the contributor will be acknowledged in the README file.
+
+##
+

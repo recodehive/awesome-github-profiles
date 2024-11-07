@@ -1,8 +1,8 @@
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2000&pause=1000&center=true&width=900&lines=Awesome+GitHub+Profiles)](https://git.io/typing-svg)
 
 <img src="https://www.animatedimages.org/data/media/562/animated-line-image-0184.gif" width="1920" />
 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 ## 📋 Participating Programs
 
