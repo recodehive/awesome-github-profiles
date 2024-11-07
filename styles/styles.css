@@ -1306,12 +1306,21 @@ a {
 }
 
 .modal-content p {
-  border-bottom: solid 1px gray;
+  /* border-bottom: solid 1px gray; */
   padding-top: 0px;
   cursor: pointer;
   padding-bottom: 5px;
   margin-top: 0px !important;
   margin-bottom: 5px;
+}
+
+/*changed part*/
+.modal-content p:hover{
+  background-color: rgb(30, 29, 29);
+  color: white;
+  border-radius: 24px;
+  padding:2px;
+  transform: scale(1.12);
 }
 
 /* Close Button */
