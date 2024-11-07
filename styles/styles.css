@@ -634,6 +634,26 @@ body.dark-mode .navbar-link:hover {
   margin-bottom: 20px;
 }
 
+.social-media-icons a .filled {
+  z-index: -1;
+}
+
+.footer-youtube-icon:hover {
+  color: #ff0000;
+}
+
+.footer-linkedin-icon:hover {
+  color: #0077b5;
+}
+
+.footer-twitter-icon:hover {
+  color: #1da1f2;
+}
+
+.footer-facebook-icon:hover {
+  color: #3b5998;
+}
+
 .footer-links {
   display: flex;
   flex-wrap: wrap;
