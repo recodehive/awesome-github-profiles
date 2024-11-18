@@ -922,7 +922,7 @@ body.dark-mode .footer-button:hover {
 }
 
 .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #1c1e1f;
 }
 
 .icon-content a[data-social="youtube"] .filled {
@@ -968,7 +968,7 @@ body.dark-mode .side-icons .icon-content a[data-social="linkedin"] .filled {
 }
 
 body.dark-mode .side-icons .icon-content a[data-social="twitter"] .filled {
-  background-color: #1da1f2;
+  background-color: #1b1e21;
   /* Darker shade for Twitter in dark mode */
 }
 
