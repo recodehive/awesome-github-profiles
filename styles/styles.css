@@ -774,6 +774,10 @@ body.dark-mode .footer-link {
   color: #fff;
 }
 
+body.dark-mode .footer-copyright {
+  color: #fff;
+}
+
 body.dark-mode .footer-info img {
   filter: brightness(0) invert(1);
 }
@@ -791,10 +795,11 @@ body.dark-mode .footer-heading {
 body.dark-mode .footer-button {
   background-color: #fff;
   color: #000;
+  font-weight: 600;
 }
 
 body.dark-mode .footer-button:hover {
-  background-color: #e0e0e0;
+  background-color: #212020;
 }
 
 /* Responsive adjustments */
