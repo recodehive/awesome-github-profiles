@@ -760,10 +760,15 @@ body.dark-mode .navbar-link:hover {
   font-size: 0.875rem;
   margin: 0;
 }
+.footer-copyright a{
+  color: #000;
+}
 
-.footer-copyright:hover {
+.footer-copyright a:hover {
+  color: #007bff;
   text-decoration: underline;
 }
+
 
 /* Dark mode styles */
 body.dark-mode .footer-2 {
