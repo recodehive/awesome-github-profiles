@@ -682,10 +682,12 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-logo {
-  width: 275px;
-  height: 130px;
-
+  width: auto;
+  height: 73px;
+  
   cursor: pointer;
+  padding-left: 20px;
+  padding-top: 40px;
 }
 
 .footer-section {
