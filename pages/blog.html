@@ -22,6 +22,7 @@
 			<div class="loader"></div>
 		</div>
 	</div>
+	
 	<style>
 		#preloader {
 			position: fixed;
@@ -35,55 +36,77 @@
 			align-items: center;
 			z-index: 9999;
 		}
-
-		/* Loader and Logo Wrapper */
+	
+		/* Wrapper */
 		.loader-wrapper {
 			position: relative;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-
-		/* Logo styling */
+	
+		/* Logo */
 		.logo {
-			width: 100px;
-			/* Adjust the size to your preference */
+			width: 100px; /* Size */
 			height: auto;
-			z-index: 2;
-			/* Ensure the logo appears above the spinner */
+			z-index: 2; /* Above */
 			animation: fadeIn 2s ease forwards;
 		}
-
-		/* Fixed Diamond-shaped spinner with rotating color */
+	
+		/* Spinner */
 		.loader {
 			width: 120px;
 			height: 120px;
 			background-color: transparent;
 			border: 10px solid transparent;
-			/* Transparent border for all sides */
-			border-top: 10px solid #b0b0b0;
-			/* Lighter gray border */
-			border-right: 10px solid #404040;
-			/* Darker gray (black) border */
+			border-top: 10px solid #b0b0b0; /* Light */
+			border-right: 10px solid #404040; /* Dark */
 			border-radius: 10px;
 			position: absolute;
-			transform: rotate(45deg);
-			/* Rotate the square to create a diamond shape */
-			animation: spinColor 1.5s linear infinite;
-			/* Only color will spin */
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-			/* Subtle shadow for depth */
+			transform: rotate(45deg); /* Diamond */
+			animation: spinColor 1.5s linear infinite; /* Spin */
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Shadow */
 		}
-		/* @media(max-width: 500px){
-			.ways-content h1{
-				font-size: 0.5rem !important;
+	
+		/* Fade */
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(-20px);
 			}
-			.footer-section{
-				margin: 0 !important;
+			100% {
+				opacity: 1;
+				transform: translateY(0);
 			}
-		} */
-
-
+		}
+	
+		/* Spin Color */
+		@keyframes spinColor {
+			0% {
+				border-top-color: #b0b0b0;
+				border-right-color: #404040;
+			}
+			50% {
+				border-top-color: #404040;
+				border-right-color: #b0b0b0;
+			}
+			100% {
+				border-top-color: #b0b0b0;
+				border-right-color: #404040;
+			}
+		}
+	</style>
+	
+	<script>
+		// Load
+		window.addEventListener('load', function () {
+			// Timeout
+			setTimeout(function () {
+				document.getElementById('preloader').style.display = 'none';
+			}, 2000); // 2 seconds
+		});
+	</script>
+	
 	<div id="progressBarContainer">
 		<div id="progressBar"></div>
 	</div>
