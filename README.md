@@ -147,23 +147,13 @@ Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understandi
 
 - ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - _MTECHVIRAL_
 
-<h2 id="contribute">Contribute</h2>
-
-Contributions are always welcome!
-To ensure a smooth collaboration process, Follow these steps:
-
-<!---Please read the [contribution guidelines](contributing.md) first. --->
-<!--- Uncomment it when there is a file named  contributing.md --->
-
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
 - [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman]() for being early contributor for this repo!
 ## Contact Information
 
-If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).
-
-We value open communication and are happy to help!
+If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions). We value open communication and are happy to help!
 
 ## Contributors ✨
 
