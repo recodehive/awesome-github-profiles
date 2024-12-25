@@ -47,74 +47,6 @@
 <!-- BEFORE-GETTING-STARTED: START -->
 <h2>Before Getting Started⭐</h2>
 
-<br/>
-<!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
-
-## Screenshots of Features ✨
-### Home Page :
-![image](https://github.com/user-attachments/assets/f8408ac2-ad5c-42c6-af1f-ea2dd635b77f)
-
-### Login Page:
-![image](https://github.com/user-attachments/assets/c8829b33-16d5-4628-b665-b8fb1dec2701)
-
-### Events Timeline:
-![image](https://github.com/user-attachments/assets/5dab494f-adec-4d9a-8108-0353e5436acf)
-
-### Add Profile:
-![image](https://github.com/user-attachments/assets/cd395384-32cf-4b74-8425-b164e2ecad93)
-
-### Github Badge:
-![image](https://github.com/user-attachments/assets/fec17081-f750-4c12-bb0e-8ff23c89b408)
-
-## Running in your local directory ✨
-
-- npm install ( this will install all the required npm modules)
-
-<h3 style="color: #4A90E2;">Table of Contents</h3>
-
-<ul style="list-style-type: none;">
-  <li><a href="#profiles" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Profiles</a></li>
-  <li><a href="#code-of-conduct" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Code of Conduct</a></li>
-  <li><a href="#how-to-fork" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">How to Fork</a></li>
-  <li><a href="#tutorials" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Tutorials</a></li>
-  <li><a href="#contribute" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Contribute</a></li>
-  <li><a href="#special-thanks" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Special Thanks</a></li>
-  <li><a href="#contact-information" style="text-decoration: none; color: #4A90E2; transition: color 0.3s;">Contact Information</a></li>
-</ul>
-
-<h2 id="profiles">Profiles ✨</h2>
-
-<p>Each profile in this repository is designed to showcase individual GitHub contributions effectively.</p>
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/REHAN-18"><img src="https://avatars.githubusercontent.com/u/143922855?v=4?s=100" width="100px;" alt="MD REHAN"/><br /><sub><b>MD REHAN</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AREHAN-18" title="Reviewed Pull Requests">👀</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-## Code of Conduct
-
-To foster a positive and inclusive community, please adhere to the following guidelines:
-
-- **Be Respectful:** Treat everyone with respect. Engage in constructive conversations.
-- **No Harassment:** Harassment, bullying, or discrimination will not be tolerated.
-- **Report Issues:** If you witness or experience any unacceptable behavior, please report it to the project maintainers.
-
-Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understanding.
-
 ## How to Fork
 
 Forking allows you to create a personal copy of the repository, where you can experiment and make changes without affecting the original project. Here’s how to do it:
@@ -138,42 +70,10 @@ Forking allows you to create a personal copy of the repository, where you can ex
   git clone https://github.com/recodehive/awesome-github-profiles.git
   ```
 
-<h2 id="tutorials">Tutorials</h2>
+## Running in your local directory ✨
 
-- ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - _MTECHVIRAL_
-- ["How To Create a Github Profile ReadMe"](https://www.youtube.com/watch?v=DOiGs2NiDbU) - _James Q Quick_
-- ["How to create a GitHub profile README"](https://www.youtube.com/watch?v=vND_UY7xk24) - _Code With Confidence_
-- ["How To Create A GitHub Profile README"](https://www.youtube.com/watch?v=Y1z7_GfEPiE) - _Program With Erik_
-- ["Next Level GitHub Profile README"](https://youtu.be/ECuqb5Tv9qI) - _codeSTACKr_
-- ["How To Create A GitHub Profile README"](https://www.aboutmonica.com/blog/how-to-create-a-github-profile-readme) - _Monica Powell_
-- ["How to Stand Out on Github with Profile READMEs"](https://medium.com/better-programming/how-to-stand-out-on-github-with-profile-readmes-dfd2102a3490?source=friends_link&sk=61df9c4b63b329ad95528b8d7c00061f) - _Jessica Lim_
-- ["What's on your GitHub Profile"](https://dev.to/waylonwalker/what-s-on-your-github-profile-40p3) - _Waylon Walker_
-- ["3 Ways to Spice up your Github Profile README 🔥"](https://dev.to/jayehernandez/3-ways-to-spice-up-your-github-profile-readme-1276) - _Jaye Hernandez_
-- ["Dynamically Generated Github Stats For Your Profile ReadMe"](https://dev.to/anuraghazra/dynamically-generated-github-stats-for-your-profile-readme-o4g) - _Anurag Hazra_
-- ["How to create an awesome GIF for your GitHub Profile README"](https://dev.to/satvikchachra/how-to-add-an-awesome-readme-to-your-github-profile-361n) - _Satvik Chachra_
-- ["Create a special repository in your GitHub Profile 🔨, supported and unsupported features"](https://torrocus.com/blog/special-github-repository/) - _Alex Malaszkiewicz_
-- ["How to create a Github Profile README with Dynamic Github Stats"](https://codewithghazi.com/how-to-create-a-github-profile-readme-with-dynamic-github-stats/) - _Ghazi Khan_
-- ["How I Built A Self-Updating README On My Github Profile"](https://www.mokkapps.de/blog/how-i-built-a-self-updating-readme-on-my-git-hub-profile/) - _Michael Hoffmann (Mokkapps)_
-- ["Building a self-updating profile README for GitHub"](https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/) - _Simon Willison_
-- ["How to create an interactive README for your GitHub profile"](https://kavishhukmani.me/github-profile-interactive-readme-tutorial/) - _Kavish Hukmani_
-- ["什么？Github 居然可以这么玩？"](https://zhuanlan.zhihu.com/p/161705999) - _Tw93_
-- ["Getting started with Markdown Badges"](https://dev.to/ileriayo/mardown-badges-2og0) - _Ileriayo Adebiyi_
-- ["Show your latest dev.to posts automatically on your GitHub profile readme"](https://dev.to/gautamkrishnar/show-your-latest-dev-to-posts-automatically-in-your-github-profile-readme-3nk8) - _Gautam krishna R_
-- ["How I Built A Self-Updating README by Webhooks and Netlify Functions"](https://github.com/RaoHai/RaoHai/blob/master/How-I-Built-A-Self-Updating-README-by-Webhooks-and-Netlify-Functions.md/) - _Rao Hai_
-- ["Build a Stunning README For Your GitHub Profile"](https://towardsdatascience.com/build-a-stunning-readme-for-your-github-profile-9b80434fe5d7) - _Martin Heinz_
-- ["How I added my Spotify statistics to my GitHub readme 📜"](https://dev.to/gargakshit/how-i-added-my-spotify-statistics-to-my-github-readme-4jdd) - _Akshit Garg_
-- ["Static Readme Regeneration"](https://dev.to/aralroca/static-readme-regeneration-4pf2) - _Aral Roca_
-- ["How to Create a Self-Updating README.md for Your GitHub Profile"](https://medium.com/@th.guibert/how-to-create-a-self-updating-readme-md-for-your-github-profile-f8b05744ca91) - _Thomas Guibert_
-- ["一文玩转 github 主页"](https://blog.holic-x.com/wv-blog/post/7ad96a5d.html) - _holic-x_
+- npm install ( this will install all the required npm modules)
 
-
-<h2 id="contribute">Contribute</h2>
-
-Contributions are always welcome!
-To ensure a smooth collaboration process, Follow these steps:
-
-<!---Please read the [contribution guidelines](contributing.md) first. --->
-<!--- Uncomment it when there is a file named  contributing.md --->
 
 1. **Fork the Repository:**
 
@@ -236,10 +136,52 @@ To ensure a smooth collaboration process, Follow these steps:
    - Navigate to the original repository where you want to propose your changes.
    - Click on "New Pull Request" and follow the instructions to submit your changes for review.
 For even more detailed instructions on how to contribute, you can always check out the [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+<br/>
+<!--Line-->
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+
+## Screenshots of Features ✨
+### Home Page :
+![image](https://github.com/user-attachments/assets/f8408ac2-ad5c-42c6-af1f-ea2dd635b77f)
+
+### Login Page:
+![image](https://github.com/user-attachments/assets/c8829b33-16d5-4628-b665-b8fb1dec2701)
+
+### Add Profile:
+![image](https://github.com/user-attachments/assets/cd395384-32cf-4b74-8425-b164e2ecad93)
+
+### Github Badge:
+![image](https://github.com/user-attachments/assets/fec17081-f750-4c12-bb0e-8ff23c89b408)
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+## Code of Conduct
+
+To foster a positive and inclusive community, please adhere to the following guidelines:
+
+- **Be Respectful:** Treat everyone with respect. Engage in constructive conversations.
+- **No Harassment:** Harassment, bullying, or discrimination will not be tolerated.
+- **Report Issues:** If you witness or experience any unacceptable behavior, please report it to the project maintainers.
+
+Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understanding.
+
+
+<h2 id="tutorials">Tutorials</h2>
+
+- ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - _MTECHVIRAL_
+
+<h2 id="contribute">Contribute</h2>
+
+Contributions are always welcome!
+To ensure a smooth collaboration process, Follow these steps:
+
+<!---Please read the [contribution guidelines](contributing.md) first. --->
+<!--- Uncomment it when there is a file named  contributing.md --->
+
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
-- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman] for being a core for this repo!
+- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman]() for being early contributor for this repo!
 ## Contact Information
 
 If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions).
@@ -258,9 +200,34 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+<p>Each profile in this repository is designed to showcase individual GitHub contributions effectively.</p>
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/sanjay-kv"><img src="https://avatars.githubusercontent.com/u/30715153?v=4?s=100" width="100px;" alt="MD REHAN"/><br /><sub><b>Sanjay KV</b></sub></a><br /><a href="https://github.com/recodehive/awesome-github-profiles/pulls?q=is%3Apr+reviewed-by%3AREHAN-18" title="Reviewed Pull Requests">👀</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+
 
 <div align="center">
-    <a href="#top">
-        <img src="https://img.shields.io/badge/Back%20to%20Top-000000?style=for-the-badge&logo=github&logoColor=white" alt="Back to Top">
-    </a>
+
+Happy opensource and here’s to your career success! 🎉
+<br>
+### recode-hive 2025
+
+[Website](https://recodehive.com/) | [Instagram](https://www.instagram.com/sanjay.viswa_/) | [LinkedIn](https://www.linkedin.com/in/sanjay-k-v/) | [Twitter](https://x.com/sanjay_kv_) | [YouTube](https://www.youtube.com/@RecodeHive)<br>
+**🔔 Don’t miss a beat!** <br>
+  Subscribe to receive our newsletter directly in your inbox for the latest career insights & tailored to your journey.<br>
+[![Subscribe to Our Newsletter](https://img.shields.io/badge/Subscribe%20to%20Our%20Newsletter-%F0%9F%93%A9-blue)](https://recodehive.substack.com/) <br>
+
 </div>
+
