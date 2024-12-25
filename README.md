@@ -200,7 +200,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 Happy opensource and here’s to your career success! 🎉
 <br>
-### recode-hive 2025
+### re:codehive 2025
 
 [Website](https://recodehive.com/) | [Instagram](https://www.instagram.com/sanjay.viswa_/) | [LinkedIn](https://www.linkedin.com/in/sanjay-k-v/) | [Twitter](https://x.com/sanjay_kv_) | [YouTube](https://www.youtube.com/@RecodeHive)<br>
 **🔔 Don’t miss a beat!** <br>
