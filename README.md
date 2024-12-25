@@ -16,14 +16,14 @@
      </thead>
     <tbody>
          <tr>
-            <td><img alt="Stars" src="https://img.shields.io/github/stars/Bitbox-Connect/Bitbox?style=flat&logo=github"/></td>
-            <td><img alt="Forks" src="https://img.shields.io/github/forks/Bitbox-Connect/Bitbox?style=flat&logo=github"/></td>
-            <td><img alt="Issues" src="https://img.shields.io/github/issues/Bitbox-Connect/Bitbox?style=flat&logo=github"/></td>
-            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/Bitbox-Connect/Bitbox?style=flat&logo=github"/></td>
-            <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/Bitbox-Connect/Bitbox?style=flat&color=green&logo=github"/></td>
+            <td><img alt="Stars" src="https://img.shields.io/github/stars/recodehive/awesome-github-profiles?style=flat&logo=github"/></td>
+            <td><img alt="Forks" src="https://img.shields.io/github/forks/recodehive/awesome-github-profiles?style=flat&logo=github"/></td>
+            <td><img alt="Issues" src="https://img.shields.io/github/issues/recodehive/awesome-github-profiles?style=flat&logo=github"/></td>
+            <td><img alt="Open Pull Requests" src="https://img.shields.io/github/issues-pr/recodehive/awesome-github-profiles?style=flat&logo=github"/></td>
+            <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/recodehive/awesome-github-profiles?style=flat&color=green&logo=github"/></td>
         </tr>
     </tbody>
-</table> 
+</table>
 
 
 
@@ -32,7 +32,7 @@
   
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <a href="#contributors-">
-  <img src="https://img.shields.io/badge/All_contributors-76-orange.svg?style=flat-square" style="height: 35px;"/>
+  <img src="https://img.shields.io/badge/All_contributors-92-orange.svg?style=flat-square" style="height: 35px;"/>
 </a>
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -46,6 +46,7 @@
 
 <!-- BEFORE-GETTING-STARTED: START -->
 <h2>Before Getting Started⭐</h2>
+
 
 ## Running in your local directory ✨
 
@@ -83,7 +84,9 @@
 5. **Test Your Changes:**
 
    - If applicable, run tests to ensure that your changes do not break existing functionality.
-
+     ```bash
+     npm start
+      ```
 6. **Stage Your Changes:**
 
    - Use the `git add` command to stage the changes you want to commit.
@@ -92,7 +95,7 @@
      ```
    - You can also stage specific files by replacing `.` with the file names:
      ```bash
-     git add <file1> <file2>
+     git add <your filename> 
      ```
 
 7. **Commit Your Changes:**
@@ -147,13 +150,21 @@ Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understandi
 
 - ["Create Impressive GitHub Portfolio"](https://www.youtube.com/watch?v=dkE4mVhwMB4) - _MTECHVIRAL_
 
+<h2 id="contribute">Contribute</h2>
+
+Contributions are always welcome!
+To ensure a smooth collaboration process, Follow these steps:
+
+<!---Please read the [contribution guidelines](contributing.md) first. --->
+<!--- Uncomment it when there is a file named  contributing.md --->
+
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
 - [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman]() for being early contributor for this repo!
 ## Contact Information
 
-If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com. You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions). We value open communication and are happy to help!
+If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com.<br> You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions). We value open communication and are happy to help!
 
 ## Contributors ✨
 
@@ -189,7 +200,7 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 Happy opensource and here’s to your career success! 🎉
 <br>
-### re:codehive 2025
+### recode-hive 2025
 
 [Website](https://recodehive.com/) | [Instagram](https://www.instagram.com/sanjay.viswa_/) | [LinkedIn](https://www.linkedin.com/in/sanjay-k-v/) | [Twitter](https://x.com/sanjay_kv_) | [YouTube](https://www.youtube.com/@RecodeHive)<br>
 **🔔 Don’t miss a beat!** <br>
