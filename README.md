@@ -23,7 +23,7 @@
             <td><img alt="Closed Pull Requests" src="https://img.shields.io/github/issues-pr-closed/Bitbox-Connect/Bitbox?style=flat&color=green&logo=github"/></td>
         </tr>
     </tbody>
-</table>
+</table> 
 
 
 
