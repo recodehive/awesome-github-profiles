@@ -47,29 +47,6 @@
 <!-- BEFORE-GETTING-STARTED: START -->
 <h2>Before Getting Started⭐</h2>
 
-## How to Fork
-
-Forking allows you to create a personal copy of the repository, where you can experiment and make changes without affecting the original project. Here’s how to do it:
-
-### Navigate to the Repository:
-
-- Go to the awesome-gitHub-profiles repository.
-
-### Click on Fork:
-
-- On the top right corner, click the "Fork" button.
-
-### Select Your Account:
-
-- Choose your GitHub account to create the fork.
-
-### Clone Your Fork:
-
-- Use the command below to clone your fork to your local machine:
-  ```bash
-  git clone https://github.com/recodehive/awesome-github-profiles.git
-  ```
-
 ## Running in your local directory ✨
 
 - npm install ( this will install all the required npm modules)
