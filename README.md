@@ -36,7 +36,7 @@
 </a>
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-🔍Welcome to the awesome-github-profiles repo project! 🌟.
+🔍Welcome to the awesome-github-profiles repo project! 🌟...
 
 <p>This README will guide you through the contribution process and provide essential information about the project.</p>
 </div>
