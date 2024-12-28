@@ -42,10 +42,12 @@
 </div>
 
 <!--Line-->
-<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900"> 
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="1200"> 
 
 <!-- BEFORE-GETTING-STARTED: START -->
 <h2>Before Getting Started⭐</h2>
+
+[![How to do your first GitHub Open Source contribution](https://img.youtube.com/vi/Fl2L9bXSRy0/0.jpg)](https://www.youtube.com/watch?v=Fl2L9bXSRy0)
 
 
 ## Running in your local directory ✨
