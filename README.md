@@ -47,7 +47,9 @@
 <!-- BEFORE-GETTING-STARTED: START -->
 <h2>Before Getting Started⭐</h2>
 
-[![How to do your first GitHub Open Source contribution](https://img.youtube.com/vi/Fl2L9bXSRy0/0.jpg)](https://www.youtube.com/watch?v=Fl2L9bXSRy0)
+Watch the below video: 
+<a href="https://www.youtube.com/watch?v=Fl2L9bXSRy0">
+![image](https://github.com/user-attachments/assets/e558ee7d-9e59-421b-ba6d-e72e726b9aab)</a>
 
 
 ## Running in your local directory ✨
