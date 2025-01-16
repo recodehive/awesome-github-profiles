@@ -1,4 +1,3 @@
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2000&pause=1000&center=true&width=900&lines=Awesome+GitHub+Profiles)](https://git.io/typing-svg)
 
 
@@ -213,3 +212,22 @@ Happy opensource and here’s to your career success! 🎉
 
 </div>
 
+## Code Structure
+
+The repository is organized into several main directories and files, each serving a specific purpose. Below is an overview of the main directories and files:
+
+### Directories
+
+- **assets**: Contains various assets such as images, icons, and other media files used in the project.
+- **pages**: Contains HTML files for different pages of the project, such as the home page, login page, and other feature-specific pages.
+- **scripts**: Contains JavaScript files that provide functionality to the project, such as handling user interactions, fetching data, and manipulating the DOM.
+- **styles**: Contains CSS files that define the styling and layout of the project.
+
+### Files
+
+- **index.html**: The main HTML file that serves as the entry point for the project.
+- **README.md**: The main README file that provides an overview of the project, instructions for contributing, and other important information.
+- **CONTRIBUTING.md**: Contains guidelines and instructions for contributing to the project.
+- **CODE_OF_CONDUCT.md**: Outlines the code of conduct for contributors to ensure a positive and inclusive community.
+
+Each directory and file plays a crucial role in the overall structure and functionality of the project. Understanding the purpose of each component will help you navigate and contribute to the project more effectively.
