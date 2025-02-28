@@ -712,23 +712,25 @@ body.dark-mode .navbar-link:hover {
   /* Soft shadow for a lifted effect */
 }
 
+/* Footer Link Styling */
 .footer-link {
-  display: block;
-  color: #000;
-  font-size: 0.900rem;
+  display: block; /* Crucial:  Allows padding, margins, and background */
+  color: #000; /* Initial text color */
+  font-size: 0.9rem;
   text-decoration: none;
-  margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
+  margin: 0 0.5rem; /* Horizontal spacing between links */
+  padding: 5px 10px; /* Padding around the text within the link */
+  border-radius: 5px; /* Rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-link:hover {
-  color: #007bff;
-  /* light blue on hover */
-  text-decoration: underline;
-  /* transform: translateX(5px); Slight shift to the right */
-  /* color:#171717; */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  /* Soft shadow effect */
+/* Hover Effect */
+.footer-link:hover,
+.footer-link:focus {
+  color: #fff; /* Text color on hover (or focus) */
+  background-color: #0077b5; /* Background color on hover */
+  transform: scale(1.05);  /* Slightly enlarge the link */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
 }
 
 .footer-description h5 {
