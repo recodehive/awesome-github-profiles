@@ -273,6 +273,10 @@ body.dark-mode .saved-blogs {
     margin-top: 20px;
     margin-bottom: 20px !important;
 }
+.ways1 img{
+    border-radius: 20px;
+    margin-bottom: 30px !important;
+}
 .dark-mode .ways1 a{
     color: white !important;
 }
@@ -286,6 +290,10 @@ body.dark-mode .saved-blogs {
     flex-direction: row-reverse;
     margin-top: 30px;
     /* flex-wrap: wrap; */
+    margin-bottom: 30px !important;
+}
+.ways2 img{
+    border-radius: 20px;
     margin-bottom: 30px !important;
 }
 
