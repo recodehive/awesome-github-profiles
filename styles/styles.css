@@ -754,23 +754,28 @@ body.dark-mode .navbar-link:hover {
 }
 
 .footer-bottom {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #75727298;
   padding: 10px 0;
   text-align: center;
 }
 
-.footer-copyright {
-  color: #000;
-  font-size: 0.875rem;
+
+.footer-bottom p {
   margin: 0;
-}
-.footer-copyright a{
-  color: #000;
+  padding: 10px 0;
+  max-width: 100%;
+  font-weight: 400;
 }
 
-.footer-copyright a:hover {
-  color: #007bff;
-  text-decoration: underline;
+.footer-bottom a.no-underline {
+  text-decoration: none;
+  word-break: break-word;
+  color: #1992d3;
+}
+
+.footer-bottom a.no-underline:hover {
+  text-decoration: none;
+  color: #026499;
 }
 
 
