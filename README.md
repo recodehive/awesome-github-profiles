@@ -1,6 +1,6 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=25&duration=2000&pause=1000&center=true&width=900&lines=Awesome+GitHub+Profiles)](https://git.io/typing-svg)
 
-Must do it in the future,.
+
 ## 📊 Project Metrics
 
 <table align="center">
@@ -146,7 +146,7 @@ To foster a positive and inclusive community, please adhere to the following gui
 - **No Harassment:** Harassment, bullying, or discrimination will not be tolerated.
 - **Report Issues:** If you witness or experience any unacceptable behavior, please report it to the project maintainers.
 
-Please read the [code of Conduct](CODE_OF_CONDUCT.md) for more clear understanding.
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) for more clear understanding.
 
 
 <h2 id="tutorials">Tutorials</h2>
@@ -180,7 +180,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [All-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 <p>Each profile in this repository is designed to showcase individual GitHub contributions effectively.</p>
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
