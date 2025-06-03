@@ -293,3 +293,9 @@ body.dark-mode .themed-text {
    width: 40%;
    height: 400px;
 }
+
+@media (max-width: 768px) {
+  .social-media-links {
+    justify-content: center;
+  }
+}
