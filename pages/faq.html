@@ -327,28 +327,28 @@ body.dark-mode .faq-answer {
   <div class="footer-container">
       <div class="footer-content">
           <div class="footer-info">
-              <a href="#"><img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo"></a>
+              <img src="../assets/recode.png" alt="Recode-Hive logo" class="footer-logo">
               
-              <!-- Social Media Icons below the logo -->
-              <div class="social-media-icons">
+              <!-- Social Media Icons -->
+                 <div class="social-media-icons">
                   <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
-                      <i class="fab fa-github" aria-hidden="true"></i>
+                      <i class="fab fa-github"></i>
                       <div class="filled"></div>
                   </a>
                   <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
-                      <i class="fab fa-youtube" aria-hidden="true"></i>
+                      <i class="fab fa-youtube footer-youtube-icon"></i>
                       <div class="filled"></div>
                   </a>
                   <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
-                      <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                      <i class="fab fa-linkedin-in footer-linkedin-icon"></i>
                       <div class="filled"></div>
                   </a>
                   <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
-                      <i class="fab fa-twitter" aria-hidden="true"></i>
+                      <i class="fab fa-twitter footer-twitter-icon"></i>
                       <div class="filled"></div>
                   </a>
                   <a href="https://www.facebook.com/sanjay.k.viswanathan/" target="_blank" aria-label="Facebook" data-social="facebook">
-                      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                      <i class="fab fa-facebook-f footer-facebook-icon"></i>
                       <div class="filled"></div>
                   </a>
               </div>
@@ -375,45 +375,23 @@ body.dark-mode .faq-answer {
               </div>
           </div>
           <div class="footer-description">
-              <h5>We focus on quality content for the right people at the right time⏱. What we are trying to do is help you
+              <h5>We focus on quality content for the right people at the right time. What we are trying to do is help you
                   brand personal skills through GitHub readme.md, listing the best profiles, and giving you the opportunity to
-                  list your profile to the world 🌎.</h5>
+                  list your profile to the world.</h5>
               <a href="https://stream.recodehive.com/github" class="footer-button">Explore</a>
           </div>
       </div>
   </div>
 
-  <div class="footer-bottom">
-      <div class="footer-container">
-          <p class="footer-copyright">
-              © <span id="dynamic-year">2024</span> Recode-Hive. Made with 🖤 by the community. All rights reserved.
-          </p>
-          <!-- Social Media Icons in the footer-bottom -->
-          <div class="social-media-icons">
-              <a href="https://github.com/sanjay-kv" target="_blank" aria-label="GitHub" data-social="github">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                  <div class="filled"></div>
-              </a>
-              <a href="https://stream.recodehive.com/github" target="_blank" aria-label="YouTube" data-social="youtube">
-                  <i class="fab fa-youtube" aria-hidden="true"></i>
-                  <div class="filled"></div>
-              </a>
-              <a href="https://www.linkedin.com/in/sanjay-k-v/" target="_blank" aria-label="LinkedIn" data-social="linkedin">
-                  <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                  <div class="filled"></div>
-              </a>
-              <a href="https://twitter.com/sanjay_kv_" target="_blank" aria-label="Twitter" data-social="twitter">
-                  <i class="fab fa-twitter" aria-hidden="true"></i>
-                  <div class="filled"></div>
-              </a>
-              <a href="https://www.facebook.com/sanjay.k.viswanathan/" target="_blank" aria-label="Facebook" data-social="facebook">
-                  <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                  <div class="filled"></div>
-              </a>
-          </div>
-          <!-- End of Social Media Icons -->
-      </div>
+    <div class="footer-bottom">
+    <p>© <span id="dynamic-year">2024</span> Recode-Hive. Made with 🖤 by the 
+      <a href="https://github.com/recodehive/awesome-github-profiles" target="_blank" rel="noopener noreferrer" class="no-underline">community</a>. All rights reserved.
+    </p>
   </div>
+
+    <script>
+        document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+    </script>
 </footer>
 
 <style>
@@ -424,41 +402,41 @@ body.dark-mode .faq-answer {
   }
 
   .social-media-icons {
-      display: flex;
-      justify-content: center; /* Center the icons horizontally */
-      margin-top: 10px; /* Space between the logo and icons */
-  }
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
 
-  .social-media-icons a {
-      margin: 0 15px; /* Space between icons */
-      text-decoration: none; /* Remove underline */
-      color: #000; /* Default color */
-      position: relative; /* For positioning the filled effect */
-      transition: transform 0.3s, background-color 0.3s; /* Smooth transition for effects */
-  }
+    .social-media-icons a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #000;
+        position: relative;
+        transition: transform 0.3s, background-color 0.3s;
+    }
 
-  .social-media-icons a i {
-      font-size: 24px; /* Smaller icon size */
-  }
+    .social-media-icons a i {
+        font-size: 24px;
+    }
 
-  .social-media-icons a .filled {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: transparent; /* Initial background */
-      transition: background-color 0.3s; /* Smooth background color transition */
-      border-radius: 50%; /* Make it circular */
-  }
+    .social-media-icons a .filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        transition: background-color 0.3s;
+        border-radius: 50%;
+    }
 
-  .social-media-icons a:hover {
-      transform: rotate(20deg); /* Hover rotation effect */
-  }
+    .social-media-icons a:hover {
+        transform: rotate(20deg);
+    }
 
-  .social-media-icons a:hover .filled {
-      background-color: rgba(0, 0, 0, 0.1); /* Change background on hover */
-  }
+    .social-media-icons a:hover .filled {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
 
   .footer-links {
       text-align: left; /* Align the links to the left */

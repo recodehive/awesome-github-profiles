@@ -24,7 +24,6 @@
 
 body.dark-mode .content-block{
   background-color: #333;
-
 }
 
 .main-heading {
@@ -113,7 +112,6 @@ body.dark-mode .step-box{
   background-color: #555;
   color: #fff;
 }
-
   .steps-clone {
     position: relative;
     display: flex;
@@ -121,11 +119,11 @@ body.dark-mode .step-box{
     flex-direction: column;
     justify-content: center;
   }
-  
   .steps-clone:tiny {
     position: static;
     display: block;
-  }.steps-clone {
+  }
+  .steps-clone {
     position: relative;
     display: flex;
     margin-top: 0px;
@@ -137,9 +135,6 @@ body.dark-mode .step-box{
     display: flex;
     justify-content: center;
     align-items: center;
-
-   
-
   }
   .text-block{
     padding: 50px;
@@ -151,7 +146,8 @@ body.dark-mode .step-box{
   .steps-clone:tiny {
     position: static;
     display: block;
-  }.dot {
+  }
+  .dot {
     z-index: 3;
     position: absolute;
     width: 12px;
@@ -184,6 +180,14 @@ body.dark-mode .step-box{
     align-items: center;
     align-content: center;
   }
+
+  .footer-logo {
+    width: auto;
+    height: 95px;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-top: 40px;
+}
   
   @media only screen and (max-width:700px){
     .content-block {
