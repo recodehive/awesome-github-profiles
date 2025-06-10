@@ -43,10 +43,6 @@ body.dark-mode .blog-card .save-btn {
     color: #fff;
 }
 
-
-
-
-
 .saved-blogs {
     display: flex; 
     align-items: center; 
@@ -588,4 +584,29 @@ body.dark-mode .saved-blogs {
     width: 0%;
     background: white;
     transition: width 0.2s ease;
+}
+
+.footer-bottom {
+  border-top: 1px solid #75727298;
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+  padding: 10px 0;
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.footer-bottom a.no-underline {
+  text-decoration: none;
+  word-break: break-word;
+  color: #1992d3;
+}
+
+.footer-bottom a.no-underline:hover {
+  text-decoration: none;
+  color: #026499;
 }
