@@ -173,10 +173,6 @@ input[type="text"]:focus {
     display: none;
 }
 
-
-
-
-
 /* Dark mode for dropdown list */
 body.dark-mode .list {
     background-color: #333; /* Dark background */
@@ -242,89 +238,77 @@ body, html {
     transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
-/* Improved footer styling */
-
-.footer-2 {
-  background-color: #dedede;
-  padding: 40px 0;
-}
-
-.footer-container {
-  padding: 0 20px;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.footer-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
-.footer-info {
-  flex: 0 1 200px;
-  margin-bottom: 20px;
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 50px;
-}
-
-.footer-link:hover {
-    color: var(--primary-color); /* Change color on hover */
-}
-
-.footer-description {
-  flex: 1 1 300px;
-  max-width: 450px;
-  margin-right: 30px;
-}
-
-.footer-logo {
-    width: auto;
-    height: 73px;
-    cursor: pointer;
-    padding-left: 20px;
-    padding-top: 40px;
-}
-
-.footer-section {
-  margin-right: 20px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center; /* Centered links */
-    gap: 30px; /* Increased gap */
-    margin-bottom: 20px; /* Space below links */
-}
-.footer-heading {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  color: #333;
-  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Added transitions for hover effects */
-}
-.footer-heading:hover {
-  color: #000; /* Darker on hover */
-  transform: scale(1.05); /* Slight zoom effect */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted effect */
-}
+/* Footer Link Styling */
 .footer-link {
-  display: block;
-  color: #000;
-  font-size: 0.900rem;
+  display: block; /* Crucial:  Allows padding, margins, and background */
+  color: #000; /* Initial text color */
+  font-size: 0.9rem;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  margin: 0 0.5rem; /* Horizontal spacing between links */
+  padding: 5px 10px; /* Padding around the text within the link */
+  border-radius: 5px; /* Rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.footer-link:hover,
+.footer-link:focus {
+  color: #fff; /* Text color on hover (or focus) */
+  background-color: #0077b5; /* Background color on hover */
+  transform: scale(1.05);  /* Slightly enlarge the link */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.footer-description h5 {
+  font-size: 1.1rem;
+  word-spacing: 0.5px;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.footer-button {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.40rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+  background-color: #1371af;
+}
+
+.footer-bottom {
+  border-top: 1px solid #75727298;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  padding: 10px 0;
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.footer-bottom a.no-underline {
+  text-decoration: none;
+  word-break: break-word;
+  color: #1992d3;
+}
+
+.footer-bottom a.no-underline:hover {
+  text-decoration: none;
+  color: #026499;
 }
 
 .hidden {
     display: none;
 }
+
+/* End Improved footer styling */
+
 
 /* Button styling */
 .button {
@@ -689,16 +673,12 @@ body.dark-mode td {
     }
 </style>
   
-
     <!-- Scroll to top -->
     <button id="scrollToTop" aria-label="Scroll to top">
       <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
         <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
       </svg>
     </button>
-
-
-    
     <script src="../scripts/ScrollToTop.js"></script>
     <script src="../scripts/dark-mode.js"></script>
     <script src="../scripts/compare.js"></script>
@@ -706,12 +686,11 @@ body.dark-mode td {
     <!-- <div class="gtranslate_wrapper"></div> -->
 <!-- <script>window.gtranslateSettings = {"default_language":"en","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper"}</script> -->
 <!-- <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script> -->
-<button id="scrollToTop" aria-label="Scroll to top">
+  <button id="scrollToTop" aria-label="Scroll to top">
     <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
         <path
             d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z" />
     </svg>
-</button>
-
+ </button>
   </body>
 </html>
