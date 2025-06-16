@@ -236,6 +236,444 @@ input:focus {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
 }
 
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Loader and Logo Wrapper */
+.loader-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    width: 100px;  /* Adjust the size to your preference */
+    height: auto;
+    z-index: 2;  /* Ensure the logo appears above the spinner */
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Fixed Diamond-shaped spinner with rotating color */
+.loader {
+    width: 120px;
+    height: 120px;
+    background-color: transparent;
+    border: 10px solid transparent;  /* Transparent border for all sides */
+    border-top: 10px solid #b0b0b0;  /* Lighter gray border */
+    border-right: 10px solid #404040;  /* Darker gray (black) border */
+    border-radius: 10px;
+    position: absolute;
+    transform: rotate(45deg);  /* Rotate the square to create a diamond shape */
+    animation: spinColor 1.5s linear infinite;  /* Only color will spin */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);  /* Subtle shadow for depth */
+}
+/* Basic Layout Adjustments */
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff; /* White background for contrast */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+h1 {
+    font-weight: 600; /* Bolder heading */
+    font-size: 2.5rem; /* Larger font size */
+    color: #333; /* Darker color for headings */
+    margin-bottom: 20px; /* Space below heading */
+}
+
+/* Search Bar Styling */
+.search-bar-components {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    width: 80%;
+    position: relative;
+}
+
+/* Rounded, Elongated Search Bar */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus Effect */
+input[type="text"]:focus {
+    border-color: #0073e6;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Enlarged Dropdown Styling */
+.list {
+    border-radius: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.list div {
+    padding: 10px 15px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: grey;
+    border-radius: 30px;
+}
+
+.list div:hover {
+    background-color: #0073e6;
+    color: #fff;
+}
+
+/* Scrollbar Styling */
+.list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+/* Compare Button */
+#submitBtn {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 12px 24px; /* Increased padding */
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+}
+
+#submitBtn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Dark mode for dropdown list */
+body.dark-mode .list {
+    background-color: #333; /* Dark background */
+    border-color: #555; /* Darker border color */
+}
+
+body.dark-mode .list div {
+    color: #ddd; /* Light text for contrast */
+}
+
+body.dark-mode .list div:hover {
+    background-color: #555; /* Darker hover background */
+    color: #fff; /* White text on hover */
+}
+
+/* Dark mode for scroll bar */
+body.dark-mode .list::-webkit-scrollbar-thumb {
+    background: #777; /* Darker scrollbar thumb */
+}
+
+/* Consistent color palette */
+:root {
+    --primary-color: #0073e6; /* Main color */
+    --secondary-color: #005bb5; /* Darker shade for hover */
+    --background-color: #f9f9f9; /* Light background */
+    --text-color: #333; /* Dark text */
+    --footer-background: #2c2c2c; /* Footer background */
+    --footer-text-color: #fff; /* Footer text color */
+}
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+}
+
+/* Button styling */
+#submitBtn {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 12px 24px; /* Increased padding */
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+}
+
+#submitBtn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Footer Link Styling */
+.footer-link {
+  display: block; /* Crucial:  Allows padding, margins, and background */
+  color: #000; /* Initial text color */
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin: 0 0.5rem; /* Horizontal spacing between links */
+  padding: 5px 10px; /* Padding around the text within the link */
+  border-radius: 5px; /* Rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect */
+.footer-link:hover,
+.footer-link:focus {
+  color: #fff; /* Text color on hover (or focus) */
+  background-color: #0077b5; /* Background color on hover */
+  transform: scale(1.05);  /* Slightly enlarge the link */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.footer-description h5 {
+  font-size: 1.1rem;
+  word-spacing: 0.5px;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.footer-button {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.40rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+  background-color: #1371af;
+}
+
+.footer-bottom {
+  border-top: 1px solid #75727298;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  padding: 10px 0;
+  max-width: 100%;
+  font-weight: 400;
+}
+
+.footer-bottom a.no-underline {
+  text-decoration: none;
+  word-break: break-word;
+  color: #1992d3;
+}
+
+.footer-bottom a.no-underline:hover {
+  text-decoration: none;
+  color: #026499;
+}
+
+.hidden {
+    display: none;
+}
+
+/* End Improved footer styling */
+
+
+/* Button styling */
+.button {
+    background-color: var(--primary-color);
+    border: none;
+    color: #fff;
+    padding: 8px 16px; /* Adjusted padding for a smaller button */
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
+    margin-top: 10px; /* Add margin for spacing */
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #171717; /* Dark background */
+    color: #ddd; /* Light text color */
+}
+
+body.dark-mode .container {
+    background-color: #444; /* Darker background for the container */
+    color: #fff; /* Light text color */
+}
+
+body.dark-mode .table {
+    background-color: #555; /* Dark background for the table */
+    color: #fff; /* Light text color */
+}
+
+body.dark-mode th {
+    background-color: #0073e6; /* Darker blue for table headers */
+    color: #fff; /* White text for headers */
+}
+
+body.dark-mode td {
+    background-color: #666; /* Slightly lighter dark for table cells */
+    color: #fff; /* White text for table cells */
+}
+
+/* Additional styles for the reset button in dark mode */
+body.dark-mode .button {
+    background-color: #0073e6; /* Primary color for buttons */
+    color: #fff; /* White text */
+}
+
+body.dark-mode .button:hover {
+    background-color: #005bb5; /* Darker shade on hover */
+}
+
+/* Table Styling */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Remove space between borders */
+    margin-top: 20px; /* Space above the table */
+}
+
+th, td {
+    padding: 12px; /* Increased padding for better spacing */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add border for better separation */
+}
+
+th {
+    font-weight: bold; /* Bold text for headers */
+    background-color: #e0e0e0; /* Light gray background for headers */
+    color: #333; /* Dark text for headers */
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light background for even rows */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* White background for odd rows */
+}
+
+tr:hover {
+    background-color: #f1f1f1; /* Light hover effect for rows */
+}
+
+/* Dark mode adjustments */
+body.dark-mode th {
+    background-color: #555; /* Darker background for headers in dark mode */
+    color: #fff; /* White text for headers */
+}
+
+body.dark-mode td {
+    background-color: #444; /* Darker background for cells in dark mode */
+    color: #fff; /* White text for table cells */
+    border: 1px solid #666; /* Darker border for cells in dark mode */
+}
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media-icons a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #000;
+        position: relative;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .social-media-icons a i {
+        font-size: 24px;
+    }
+
+    .social-media-icons a .filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        transition: background-color 0.3s;
+        border-radius: 50%;
+    }
+
+    .social-media-icons a:hover {
+        transform: rotate(20deg);
+    }
+
+    .social-media-icons a:hover .filled {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-links {
+        text-align: left;
+        margin-top: 20px;
+    }
+
+    .footer-section {
+        margin-bottom: 15px;
+    }
+
 @media screen and (max-width: 768px) {
     input {
         max-width: 100%;
