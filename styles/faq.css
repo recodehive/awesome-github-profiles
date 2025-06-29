@@ -188,6 +188,174 @@ body.dark-mode .step-box{
     padding-left: 20px;
     padding-top: 40px;
 }
+      body{margin:0;padding:0;font-family: Poppins,sans-serif;}
+      * {box-sizing: border-box;}
+      
+      input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        outline:none;
+      
+      }
+      
+      input[type=submit] {
+        background-color: #0D92F4;
+        color: white;
+        padding: 10px 20px;
+        border: 2px solid #0D92F4;;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      input[type=submit]:hover {
+          border:2px solid #075d9c;
+        background-color:#F4F4F4;;
+        color:#075d9c;
+      }
+      
+      .container {
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      form{
+         width:70%;
+          padding-block: 10px;
+          padding-inline: 20px;
+          background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(242, 232, 234, 0) 91.2% );
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          border-radius: 10px;;
+          display: flex;
+          flex-direction: column;
+         gap:20px;
+      }
+      h3{
+          text-align: center;
+          font-size: 32px;
+          margin-bottom:0;
+          color:#091057;
+          
+      }
+      p{
+          text-align: center;
+          font-size:14px;
+      }
+      label{
+          font-weight: bold;
+          color:#091057;
+          font-size:small;
+        
+      }
+      
+        
+      .form0{
+          display:flex;
+          gap:32px;
+      }
+      .form2{
+      width:50%;
+      text-align: left;
+      }
+      .form1{
+        text-align: left;
+          width:50%;
+      }
+
+  /* FAQ Section Styling */
+.faq-section {
+    margin: 20px;
+}
+
+.faq-header h2 {
+    font-family: "San Francisco", sans-serif;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000; /* Black for light mode */
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .faq-header h2 {
+    color: #fff; /* White for dark mode */
+}
+
+/* FAQ Question Styling */
+.faq-question {
+    background-color: #f1f1f1; /* Lighter for questions */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: "San Francisco", sans-serif;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-question:hover {
+    transform: translateY(-3px);
+    background-color: #e8e8e8;
+}
+
+/* FAQ Answer Styling - Different background from questions */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    background-color: #ffffff; /* Different from question background */
+    border-radius: 10px;
+    margin: 10px auto; /* Centers the answer */
+    width: 60%; /* Matches question width */
+    transition: max-height 0.6s ease-in-out, padding 0.3s ease, background-color 0.3s ease;
+    font-family: "San Francisco", sans-serif;
+    font-size: 16px;
+    color: #555;
+    opacity: 0;
+}
+
+.faq-question.active + .faq-answer {
+    max-height: 500px;
+    padding: 15px 20px;
+    opacity: 1;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .faq-question {
+    background-color: #333; /* Darker for questions */
+    color: #f1f1f1;
+}
+
+body.dark-mode .faq-answer {
+    background-color: #222; /* Slightly lighter than question background */
+    color: #f1f1f1;
+}
+
+/* Additional transition for smoother effects */
+.faq-question, .faq-answer {
+    transition: all 0.3s ease;
+}
   
   @media only screen and (max-width:700px){
     .content-block {

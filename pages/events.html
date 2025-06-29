@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +10,8 @@
   <link rel="stylesheet" href="../styles/hamburger.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Link to Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -199,65 +200,6 @@
         document.getElementById("dynamic-year").textContent = new Date().getFullYear();
     </script>
 </footer>
-
-<!-- Link to Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<!-- Custom CSS for social icons -->
-<style>
-  .social-media-icons {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-
-    .social-media-icons a {
-        margin: 0 15px;
-        text-decoration: none;
-        color: #000;
-        position: relative;
-        transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .social-media-icons a i {
-        font-size: 24px;
-    }
-
-    .social-media-icons a .filled {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: transparent;
-        transition: background-color 0.3s;
-        border-radius: 50%;
-    }
-
-    .social-media-icons a:hover {
-        transform: rotate(20deg);
-    }
-
-    .social-media-icons a:hover .filled {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-
-     .footer-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center the logo and social icons */
-    }
-
-
-    .footer-links {
-        text-align: left; /* Align the links to the left */
-        margin-top: 20px; /* Add spacing from above elements */
-    }
-
-    .footer-section {
-        margin-bottom: 15px; /* Space between sections */
-    }
-</style>
 
 <button id="scrollToTop" aria-label="Scroll to top">
   <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg" class="arrow-icon">
