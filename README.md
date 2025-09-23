@@ -164,7 +164,7 @@ To ensure a smooth collaboration process, Follow these steps:
 
 <h2 id="special-thanks">Special Thanks 🙇</h2>
 
-- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708), [Ayushman]() for being early contributor for this repo!
+- [Dinesh Talwadker](https://github.com/dinxsh) [Hemant](https://github.com/Hemu21), [Nishant](https://github.com/nishant0708) [Ayushman]() for being early contributor for this repo!
 ## Contact Information
 
 If you have questions, suggestions, or feedback, please reach out via email at sanjay@recodehive.com.<br> You can also join our discussion forum [here](https://github.com/recodehive/awesome-github-profiles/discussions). We value open communication and are happy to help!
