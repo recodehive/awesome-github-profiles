@@ -17,6 +17,9 @@ const allowedOrigins = [
   "https://example.com"
 ];
 
+const path = require('path');
+app.use(express.static(path.join(__dirname)));
+
 // CORS configuration
 app.use(cors({
   origin: function (origin, callback) {
@@ -38,7 +41,7 @@ app.use(express.json());
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("GitHub OAuth backend is running!");
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // GitHub OAuth route
