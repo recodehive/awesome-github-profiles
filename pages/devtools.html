@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Developer Tools</title>
+    <link rel="icon" href="recode-hive.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Animations */
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shine {
+            from { background-position: -200%; }
+            to { background-position: 200%; }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-in-out forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a90e2;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #60a5fa;
+        }
+
+        /* Custom Select Styling */
+        .custom-select-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 12rem;
+        }
+
+        .custom-select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e0e0e0;
+            pointer-events: none;
+        }
+
+        #filter-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            padding-right: 2.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
+    <header class="w-full bg-gradient-to-r from-blue-900 to-green-900 text-white text-center py-4 sm:py-6 lg:py-8 shadow-lg top-0">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold animate-pulse">Awesome Developer Tools</h1>
+        <p class="mt-2 text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto">A curated, interactive, and responsive collection of tools to supercharge your development workflow.</p>
+        <div class="mt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <input type="text" id="search" placeholder="Search by name, description, or category..." class="w-full sm:w-80 md:w-96 p-3 rounded-full bg-gray-800 text-gray-100 border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-sm sm:text-base">
+            <div class="custom-select-wrapper">
+                <select id="filter-select" class="w-full p-3 rounded-full bg-gray-800 text-gray-100 border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-sm sm:text-base">
+                    <option value="">All Categories</option>
+                    <!-- Categories populated by JS -->
+                </select>
+            </div>
+        </div>
+    </header>
+    <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="tool-grid">
+            <!-- Tools will be rendered here by JS -->
+        </div>
+    </main>
+    <button id="back-to-top" title="Back to Top" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-blue-900 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg opacity-0 transition-all duration-300 hover:bg-blue-700 hover:scale-110 text-sm sm:text-base">↑</button>
+    <script>
+        // List of tools
+        const tools = [
+            { category: 'Analytics Tools', name: 'Plausible', description: 'Easy to use and privacy-friendly Google Analytics alternative.', link: 'https://plausible.io/' },
+            { category: 'Analytics Tools', name: 'Repohistory', description: 'GitHub repo analytics tool without 14 days limit.', link: 'https://repohistory.com' },
+            { category: 'Analytics Tools', name: 'Umami', description: 'Open source, privacy-focused alternative to Google Analytics.', link: 'https://umami.is/' },
+            { category: 'Cloud Platforms', name: 'Vercel', description: 'Frontend cloud for static sites and serverless functions.', link: 'https://vercel.com/' },
+            { category: 'Cloud Platforms', name: 'Netlify', description: 'All-in-one platform for automating modern web projects.', link: 'https://www.netlify.com/' },
+            { category: 'Cloud Platforms', name: 'AWS', description: 'Comprehensive cloud computing services platform.', link: 'https://aws.amazon.com/' },
+            { category: 'Cloud Platforms', name: 'Google Cloud Platform', description: 'Scalable and secure cloud infrastructure.', link: 'https://cloud.google.com/' },
+            { category: 'Cloud Platforms', name: 'Azure', description: 'Microsoft’s cloud computing platform.', link: 'https://azure.microsoft.com/' },
+            { category: 'Cloud Platforms', name: 'DigitalOcean', description: 'Developer-friendly cloud for small apps.', link: 'https://www.digitalocean.com/' },
+            { category: 'Cloud Platforms', name: 'Render', description: 'Unified cloud to build and run apps with ease.', link: 'https://render.com/' },
+            { category: 'AI Coding Tools', name: 'Cursor', description: 'AI-powered code editor with native GPT integration.', link: 'https://www.cursor.so/' },
+            { category: 'AI Coding Tools', name: 'GitHub Copilot', description: 'AI pair programmer powered by OpenAI.', link: 'https://github.com/features/copilot' },
+            { category: 'AI Coding Tools', name: 'Windsurf', description: 'Free AI-powered code autocomplete.', link: 'https://windsurf.com/' },
+            { category: 'AI Coding Tools', name: 'Tabnine', description: 'AI code completions trained on open-source code.', link: 'https://www.tabnine.com/' },
+            { category: 'AI Coding Tools', name: 'Cody (Sourcegraph)', description: 'AI coding assistant with codebase context.', link: 'https://sourcegraph.com/cody' },
+            { category: 'AI Coding Tools', name: 'Amazon CodeWhisperer', description: 'AI-powered code suggestions from AWS.', link: 'https://aws.amazon.com/codewhisperer/' },
+            { category: 'AI Coding Tools', name: 'Claude Code', description: 'Anthropic\'s official CLI for Claude.', link: 'https://claude.ai/code' },
+            { category: 'AI Coding Tools', name: 'Cline', description: 'AI-powered code assistant.', link: 'https://github.com/cline/cline' },
+            { category: 'AI Coding Tools', name: 'OpenCode', description: 'AI coding agent built for the terminal.', link: 'https://opencode.ai/' },
+            { category: 'AI Coding Tools', name: 'Kodus', description: 'Open-source AI code-review tool.', link: 'https://kodus.io/' },
+            { category: 'IDEs & Code Editors', name: 'VSCode', description: 'Popular, extensible open-source editor by Microsoft.', link: 'https://code.visualstudio.com/' },
+            { category: 'IDEs & Code Editors', name: 'IntelliJ IDEA', description: 'Powerful IDE for JVM and polyglot development.', link: 'https://www.jetbrains.com/idea/' },
+            { category: 'IDEs & Code Editors', name: 'WebStorm', description: 'IDE for JavaScript and web development.', link: 'https://www.jetbrains.com/webstorm/' },
+            { category: 'IDEs & Code Editors', name: 'Neovim', description: 'Modernized Vim for advanced editing.', link: 'https://neovim.io/' },
+            { category: 'IDEs & Code Editors', name: 'Sublime Text', description: 'Lightweight, fast code editor.', link: 'https://www.sublimetext.com/' },
+            { category: 'IDEs & Code Editors', name: 'Fleet', description: 'Collaborative, lightweight IDE by JetBrains.', link: 'https://www.jetbrains.com/fleet/' },
+            { category: 'CLIs & Terminal Tools', name: 'Fig', description: 'Autocomplete and UI enhancements for your terminal.', link: 'https://fig.io/' },
+            { category: 'CLIs & Terminal Tools', name: 'Warp', description: 'Modern, Rust-based terminal with AI commands.', link: 'https://www.warp.dev/' },
+            { category: 'CLIs & Terminal Tools', name: 'tldr', description: 'Simplified man pages for command-line tools.', link: 'https://tldr.sh/' },
+            { category: 'CLIs & Terminal Tools', name: 'fzf', description: 'Fuzzy finder for terminal power users.', link: 'https://github.com/junegunn/fzf' },
+            { category: 'CLIs & Terminal Tools', name: 'exa', description: 'Modern replacement for `ls` with icons and colors.', link: 'https://the.exa.website/' },
+            { category: 'CLIs & Terminal Tools', name: 'bat', description: 'Cat clone with syntax highlighting.', link: 'https://github.com/sharkdp/bat' },
+            { category: 'CLIs & Terminal Tools', name: 'zx', description: 'Tool for writing shell scripts in JavaScript.', link: 'https://github.com/google/zx' },
+            { category: 'CLIs & Terminal Tools', name: 'ccr', description: 'Enhanced CLI history manager, project-aware, with sync and encryption.', link: 'https://github.com/NeverVane/commandchronicles' },
+            { category: 'DevOps & Infrastructure', name: 'Docker', description: 'Container platform for building and running apps.', link: 'https://www.docker.com/' },
+            { category: 'DevOps & Infrastructure', name: 'Kubernetes', description: 'Container orchestration system.', link: 'https://kubernetes.io/' },
+            { category: 'DevOps & Infrastructure', name: 'Terraform', description: 'Infrastructure as code tool by HashiCorp.', link: 'https://www.terraform.io/' },
+            { category: 'DevOps & Infrastructure', name: 'Pulumi', description: 'IaC tool using real programming languages.', link: 'https://www.pulumi.com/' },
+            { category: 'DevOps & Infrastructure', name: 'GitHub Actions', description: 'CI/CD pipelines natively in GitHub.', link: 'https://github.com/features/actions' },
+            { category: 'DevOps & Infrastructure', name: 'CircleCI', description: 'Continuous integration and delivery platform.', link: 'https://circleci.com/' },
+            { category: 'DevOps & Infrastructure', name: 'Jenkins', description: 'Open-source automation server.', link: 'https://www.jenkins.io/' }
+        ];
+
+        // Extract unique categories
+        const categories = [...new Set(tools.map(tool => tool.category))];
+
+        // Populate filter select
+        const filterSelect = document.getElementById('filter-select');
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat;
+            filterSelect.appendChild(option);
+        });
+
+        // Function to render tools
+        function renderTools(filteredTools) {
+            const grid = document.getElementById('tool-grid');
+            grid.innerHTML = ''; // Clear existing
+            filteredTools.forEach((tool, index) => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-800 rounded-lg p-4 sm:p-6 shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300 animate-slide-up shine-effect';
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.innerHTML = `
+                    <span class="text-xs uppercase text-gray-500">${tool.category}</span>
+                    <h2 class="text-lg sm:text-xl font-semibold text-blue-400 mt-2">${tool.name}</h2>
+                    <p class="text-gray-300 mt-2 text-sm sm:text-base">${tool.description}</p>
+                    <a href="${tool.link}" target="_blank" class="inline-block mt-4 bg-green-800 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 text-sm sm:text-base">Visit</a>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Initial render
+        renderTools(tools);
+
+        // Search and filter functionality
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', filterTools);
+        filterSelect.addEventListener('change', filterTools);
+
+        function filterTools() {
+            const query = searchInput.value.toLowerCase();
+            const selectedCategory = filterSelect.value;
+            const filtered = tools.filter(tool => 
+                (selectedCategory === '' || tool.category === selectedCategory) &&
+                (tool.name.toLowerCase().includes(query) ||
+                tool.description.toLowerCase().includes(query) ||
+                tool.category.toLowerCase().includes(query))
+            );
+            renderTools(filtered);
+        }
+
+        // Back to Top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.remove('opacity-0');
+            } else {
+                backToTop.classList.add('opacity-0');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
