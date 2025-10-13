@@ -1004,6 +1004,61 @@ body.dark-mode .side-icons .icon-content a:hover {
   /* Slightly stronger shadow in dark mode */
 }
 
+/* Fix overlapping and adjust side icon layout for mobile */
+@media (max-width: 1024px) {
+  .side-icons {
+    right: 5px;
+    top: 15%; /* moved further up (was 18%) */
+    gap: 6px;
+    z-index: 9;
+  }
+
+  .side-icons .icon-content a {
+    width: 38px;
+    height: 38px;
+  }
+
+  .side-icons .icon-content a i {
+    font-size: 18px;
+  }
+}
+
+/* For smaller mobile screens (portrait view) */
+@media (max-width: 768px) {
+  .side-icons {
+    right: 2px;
+    top: 18%; /* moved up from 22% */
+    gap: 5px;
+  }
+
+  .side-icons .icon-content a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .side-icons .icon-content a i {
+    font-size: 16px;
+  }
+}
+
+/* For very small devices (under 480px width) */
+@media (max-width: 480px) {
+  .side-icons {
+    right: 0;
+    top: 22%; /* moved up from 27% */
+    gap: 4px;
+  }
+
+  .side-icons .icon-content a {
+    width: 28px;
+    height: 28px;
+  }
+
+  .side-icons .icon-content a i {
+    font-size: 14px;
+  }
+}
+
 /* Base styles */
 body {
   font-family: Arial, sans-serif;
