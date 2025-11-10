@@ -1,0 +1,68 @@
+
+        /* Custom Animations */
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes shine {
+            from { background-position: -200%; }
+            to { background-position: 200%; }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.5s ease-in-out forwards;
+        }
+
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1e1e1e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4a90e2;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #60a5fa;
+        }
+
+        /* Custom Select Styling */
+        .custom-select-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 12rem;
+        }
+
+        .custom-select-wrapper::after {
+            content: '▼';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #e0e0e0;
+            pointer-events: none;
+        }
+
+        #filter-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            width: 100%;
+            padding-right: 2.5rem;
+        }

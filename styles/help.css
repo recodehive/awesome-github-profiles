@@ -526,3 +526,61 @@ body.dark-mode .step-box{
   .footer-section {
       margin-bottom: 15px; /* Space between sections */
     }
+    
+.contact-box h2 {
+  margin-bottom: 20px;
+}
+
+.contact-box p {
+  margin-bottom: 5px;
+  margin-top: 2px;
+  color: #ccc;
+  font-size: 18px;
+  padding-bottom: 10px;
+}
+
+.contact-box input,
+.contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-box button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.contact-box button:hover {
+  background-color: #0056b3;
+}
+
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #8f141e;
+
+}
