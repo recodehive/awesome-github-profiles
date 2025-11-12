@@ -481,3 +481,60 @@ body.dark-mode .faq-answer {
   body.dark-mode .dot{
     background-color: #c0c0c0 !important;
   }
+
+  .footer-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the logo and social icons */
+  }
+
+  .social-media-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media-icons a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #000;
+        position: relative;
+        transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .social-media-icons a i {
+        font-size: 24px;
+    }
+
+    .social-media-icons a .filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        transition: background-color 0.3s;
+        border-radius: 50%;
+    }
+
+    .social-media-icons a:hover {
+        transform: rotate(20deg);
+    }
+
+    .social-media-icons a:hover .filled {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+  .footer-links {
+      text-align: left; /* Align the links to the left */
+      margin-top: 20px; /* Add spacing from above elements */
+  }
+
+  .footer-section {
+      margin-bottom: 15px; /* Space between sections */
+  }
+
+  .footer-bottom {
+      text-align: center; /* Center the footer-bottom content */
+      margin-top: 20px; /* Space between main content and footer */
+  }

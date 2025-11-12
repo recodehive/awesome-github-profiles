@@ -610,3 +610,128 @@ body.dark-mode .saved-blogs {
   text-decoration: none;
   color: #026499;
 }
+
+
+		#preloader {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: 9999;
+		}
+	
+		/* Wrapper */
+		.loader-wrapper {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	
+		/* Logo */
+		.logo {
+			width: 100px; /* Size */
+			height: auto;
+			z-index: 2; /* Above */
+			animation: fadeIn 2s ease forwards;
+		}
+	
+		/* Spinner */
+		.loader {
+			width: 120px;
+			height: 120px;
+			background-color: transparent;
+			border: 10px solid transparent;
+			border-top: 10px solid #b0b0b0; /* Light */
+			border-right: 10px solid #404040; /* Dark */
+			border-radius: 10px;
+			position: absolute;
+			transform: rotate(45deg); /* Diamond */
+			animation: spinColor 1.5s linear infinite; /* Spin */
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Shadow */
+		}
+	
+		/* Fade */
+		@keyframes fadeIn {
+			0% {
+				opacity: 0;
+				transform: translateY(-20px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	
+		/* Spin Color */
+		@keyframes spinColor {
+			0% {
+				border-top-color: #b0b0b0;
+				border-right-color: #404040;
+			}
+			50% {
+				border-top-color: #404040;
+				border-right-color: #b0b0b0;
+			}
+			100% {
+				border-top-color: #b0b0b0;
+				border-right-color: #404040;
+			}
+		}
+		.footer-info {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+	
+		.social-media-icons {
+			display: flex;
+			justify-content: center;
+			margin-top: 10px;
+		}
+	
+		.social-media-icons a {
+			margin: 0 15px;
+			text-decoration: none;
+			color: #000;
+			position: relative;
+			transition: transform 0.3s, background-color 0.3s;
+		}
+	
+		.social-media-icons a i {
+			font-size: 24px;
+		}
+	
+		.social-media-icons a .filled {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: transparent;
+			transition: background-color 0.3s;
+			border-radius: 50%;
+		}
+	
+		.social-media-icons a:hover {
+			transform: rotate(20deg);
+		}
+	
+		.social-media-icons a:hover .filled {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+	
+		.footer-links {
+			text-align: left;
+			margin-top: 20px;
+		}
+	
+		.footer-section {
+			margin-bottom: 15px;
+		}
+	
