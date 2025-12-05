@@ -517,9 +517,6 @@ body.dark-mode .tool-description {
     transform: scale(1.05);
 }
 
-.tool-link:hover {
-    background-color: #2563eb;
-}
 
 /* ===================== NO RESULTS ===================== */
 
