@@ -5,29 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Awesome Developer Tools</title>
     <link rel="icon" href="recode-hive.png">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../styles/devtools.css" />
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
-    <header class="w-full bg-gradient-to-r from-blue-900 to-green-900 text-white text-center py-4 sm:py-6 lg:py-8 shadow-lg top-0">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold animate-pulse">Awesome Developer Tools</h1>
-        <p class="mt-2 text-xs sm:text-sm md:text-base lg:text-lg max-w-2xl mx-auto">A curated, interactive, and responsive collection of tools to supercharge your development workflow.</p>
-        <div class="mt-4 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
-            <input type="text" id="search" placeholder="Search by name, description, or category..." class="w-full sm:w-80 md:w-96 p-3 rounded-full bg-gray-800 text-gray-100 border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-sm sm:text-base">
-            <div class="custom-select-wrapper">
-                <select id="filter-select" class="w-full p-3 rounded-full bg-gray-800 text-gray-100 border-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 text-sm sm:text-base">
-                    <option value="">All Categories</option>
-                    <!-- Categories populated by JS -->
-                </select>
+<body>
+    <header id="header">
+        <div class="header-container">
+            <div class="header-content">
+                <h1>Awesome Developer Tools</h1>
+                <p>A curated collection of tools to supercharge your development workflow.</p>
+            </div>
+            <div class="toggle-switch">
+                <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                <label for="theme-toggle">
+                    <div class="switch-button">
+                        <span class="material-icons sun-icon">wb_sunny</span>
+                        <span class="material-icons moon-icon">brightness_2</span>
+                    </div>
+                </label>
             </div>
         </div>
     </header>
-    <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="tool-grid">
-            <!-- Tools will be rendered here by JS -->
+
+    <main id="main">
+        <div class="container">
+            <!-- Search and Filter -->
+            <div class="search-filter-container">
+                <div class="search-wrapper">
+                    <input type="text" id="search" placeholder="Search tools..." class="search-input">
+                    <span class="search-icon material-icons">search</span>
+                </div>
+                
+                <select id="filter-select" class="filter-select">
+                    <option value="">All Categories</option>
+                </select>
+
+                <button id="clear-filters" class="clear-filters-btn hidden">
+                    <span class="material-icons">close</span>
+                    Clear Filters
+                </button>
+
+                <div class="view-toggle">
+                    <button id="grid-view-btn" class="view-btn active" title="Grid View" aria-label="Grid View">
+                        <span class="material-icons">dashboard</span>
+                    </button>
+                    <button id="list-view-btn" class="view-btn" title="List View" aria-label="List View">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results Info -->
+            <div class="results-info">
+                <span id="tool-count" class="tool-count-badge">Showing <strong>0</strong> tools</span>
+            </div>
+
+            <!-- Tools Grid -->
+            <div class="tool-grid" id="tool-grid">
+                <!-- Tools will be rendered here by JS -->
+            </div>
+
+            <div id="no-results" class="no-results hidden">
+                <p>No tools found</p>
+            </div>
         </div>
     </main>
-    <button id="back-to-top" title="Back to Top" class="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 bg-blue-900 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg opacity-0 transition-all duration-300 hover:bg-blue-700 hover:scale-110 text-sm sm:text-base">↑</button>
     <script>
         // List of tools
         const tools = [
@@ -86,19 +128,61 @@
             filterSelect.appendChild(option);
         });
 
+        // Category colors for visual variety
+        const categoryColors = {
+            'Analytics Tools': 'from-purple-500/20 to-purple-600/20',
+            'Cloud Platforms': 'from-blue-500/20 to-blue-600/20',
+            'AI Coding Tools': 'from-pink-500/20 to-pink-600/20',
+            'IDEs & Code Editors': 'from-orange-500/20 to-orange-600/20',
+            'CLIs & Terminal Tools': 'from-green-500/20 to-green-600/20',
+            'DevOps & Infrastructure': 'from-red-500/20 to-red-600/20'
+        };
+
+        const categoryBadges = {
+            'Analytics Tools': 'text-purple-400 bg-purple-500/20',
+            'Cloud Platforms': 'text-blue-400 bg-blue-500/20',
+            'AI Coding Tools': 'text-pink-400 bg-pink-500/20',
+            'IDEs & Code Editors': 'text-orange-400 bg-orange-500/20',
+            'CLIs & Terminal Tools': 'text-green-400 bg-green-500/20',
+            'DevOps & Infrastructure': 'text-red-400 bg-red-500/20'
+        };
+
         // Function to render tools
         function renderTools(filteredTools) {
             const grid = document.getElementById('tool-grid');
-            grid.innerHTML = ''; // Clear existing
+            const noResults = document.getElementById('no-results');
+            const toolCount = document.getElementById('tool-count');
+            
+            // Update tool count
+            if (filteredTools.length === 0) {
+                toolCount.innerHTML = 'Showing <strong>0</strong> tools';
+            } else {
+                toolCount.innerHTML = `Showing <strong>${filteredTools.length}</strong> tools`;
+            }
+            
+            if (filteredTools.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            grid.innerHTML = '';
+            
             filteredTools.forEach((tool, index) => {
                 const card = document.createElement('div');
-                card.className = 'bg-gray-800 rounded-lg p-4 sm:p-6 shadow-xl hover:shadow-2xl hover:scale-105 transform transition-all duration-300 animate-slide-up shine-effect';
-                card.style.animationDelay = `${index * 0.1}s`;
+                card.className = 'tool-card';
+                card.style.animationDelay = `${index * 0.05}s`;
+                
                 card.innerHTML = `
-                    <span class="text-xs uppercase text-gray-500">${tool.category}</span>
-                    <h2 class="text-lg sm:text-xl font-semibold text-blue-400 mt-2">${tool.name}</h2>
-                    <p class="text-gray-300 mt-2 text-sm sm:text-base">${tool.description}</p>
-                    <a href="${tool.link}" target="_blank" class="inline-block mt-4 bg-green-800 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all duration-300 text-sm sm:text-base">Visit</a>
+                    <div class="tool-header">
+                        <div>
+                            <h2 class="tool-name">${tool.name}</h2>
+                            <p class="tool-category">${tool.category}</p>
+                        </div>
+                    </div>
+                    <p class="tool-description">${tool.description}</p>
+                    <a href="${tool.link}" target="_blank" rel="noopener noreferrer" class="tool-link">Visit</a>
                 `;
                 grid.appendChild(card);
             });
@@ -122,21 +206,102 @@
                 tool.category.toLowerCase().includes(query))
             );
             renderTools(filtered);
+            updateClearFiltersButton();
         }
 
-        // Back to Top button
-        const backToTop = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.remove('opacity-0');
+        // Update clear filters button visibility
+        function updateClearFiltersButton() {
+            const query = searchInput.value.trim();
+            const selectedCategory = filterSelect.value;
+            const clearBtn = document.getElementById('clear-filters');
+            if (query !== '' || selectedCategory !== '') {
+                clearBtn.style.display = 'inline-block';
             } else {
-                backToTop.classList.add('opacity-0');
+                clearBtn.style.display = 'none';
             }
-        });
+        }
 
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        // Clear filters button functionality
+        const clearFiltersBtn = document.getElementById('clear-filters');
+        if (clearFiltersBtn) {
+            clearFiltersBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                filterSelect.value = '';
+                renderTools(tools);
+                updateClearFiltersButton();
+            });
+        }
+
+        // View toggle functionality
+        const gridViewBtn = document.getElementById('grid-view-btn');
+        const listViewBtn = document.getElementById('list-view-btn');
+        const toolGrid = document.getElementById('tool-grid');
+
+        function setViewMode(mode) {
+            if (mode === 'list') {
+                toolGrid.classList.remove('grid-view');
+                toolGrid.classList.add('list-view');
+                listViewBtn.classList.add('active');
+                gridViewBtn.classList.remove('active');
+            } else {
+                toolGrid.classList.remove('list-view');
+                toolGrid.classList.add('grid-view');
+                gridViewBtn.classList.add('active');
+                listViewBtn.classList.remove('active');
+            }
+            localStorage.setItem('devtools-view-mode', mode);
+        }
+
+        // Load saved view mode or default to grid
+        const savedViewMode = localStorage.getItem('devtools-view-mode') || 'grid';
+        setViewMode(savedViewMode);
+
+        // Add event listeners for view toggle buttons
+        if (gridViewBtn) {
+            gridViewBtn.addEventListener('click', () => setViewMode('grid'));
+        }
+
+        if (listViewBtn) {
+            listViewBtn.addEventListener('click', () => setViewMode('list'));
+        }
+
+        // Dark Mode Toggle - Similar to index.html
+        const themeToggleCheckbox = document.querySelector("#theme-toggle");
+
+        // Function to set the theme
+        function setTheme(theme) {
+            if (theme === "dark") {
+                document.body.classList.add("dark-mode");
+                if (themeToggleCheckbox) {
+                    themeToggleCheckbox.checked = true;
+                }
+            } else {
+                document.body.classList.remove("dark-mode");
+                if (themeToggleCheckbox) {
+                    themeToggleCheckbox.checked = false;
+                }
+            }
+            localStorage.setItem("devtools-theme", theme);
+        }
+
+        // Load the theme from localStorage or set it to the system default
+        const savedTheme = localStorage.getItem("devtools-theme");
+        const defaultTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+        setTheme(savedTheme || defaultTheme);
+
+        // Add event listener to toggle checkbox
+        if (themeToggleCheckbox) {
+            themeToggleCheckbox.addEventListener("change", () => {
+                const newTheme = themeToggleCheckbox.checked ? "dark" : "light";
+                setTheme(newTheme);
+            });
+        }
     </script>
+</body>
+</html>
+<script>
+    document.getElementById("dynamic-year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
