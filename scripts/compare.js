@@ -105,8 +105,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     document.getElementById("stars1").textContent = stars1 ;
                     document.getElementById("stars2").textContent = stars2 ;
 
-                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank">${data1.html_url}</a>` : "N/A";
-                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank">${data2.html_url}</a>` : "N/A";
+                    document.getElementById("link1").innerHTML = data1.html_url ? `<a href="${data1.html_url}" target="_blank" rel="noopener noreferrer">${data1.html_url}</a>` : "N/A";
+                    document.getElementById("link2").innerHTML = data2.html_url ? `<a href="${data2.html_url}" target="_blank" rel="noopener noreferrer">${data2.html_url}</a>` : "N/A";
 
                     const themeToggleCheckbox = document.querySelector("#theme-toggle");
                     theme = localStorage.getItem("theme") || "light";
