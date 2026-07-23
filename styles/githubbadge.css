@@ -552,3 +552,85 @@ body.dark-mode .themed-text {
         padding-top: 40px;
         object-fit: scale-down; /* Ensure the aspect ratio is maintained */
         }
+
+/* Issue #1364: on mobile the badge tables overflow horizontally. The last
+   column holds a nested DEFAULT/BRONZE/SILVER/GOLD tier table, and crammed
+   into a narrow column on a phone it pushes the row off-screen. Below 768px
+   each badge row becomes a stacked card, so every cell (including the nested
+   tier table) gets the full viewport width instead of overflowing. The three
+   primary tables are direct children of .container; the tier tables live
+   inside a <td>, so the child combinator leaves them untouched. Desktop is
+   unchanged. */
+@media screen and (max-width: 768px) {
+    .container > table,
+    .container > table > tbody,
+    .container > table > tbody > tr,
+    .container > table > tbody > tr > td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .container > table > thead {
+        display: none;
+    }
+
+    .container > table > tbody > tr {
+        margin: 0 0 16px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 12px;
+        overflow-x: auto; /* a very wide tier table scrolls inside its own card */
+    }
+
+    .container > table > tbody > tr > td {
+        border: none;
+        text-align: center;
+        padding: 6px 4px;
+    }
+
+    /* All three primary tables share Badge / Name / How to get as columns 1-3,
+       so labelling by position is safe. The 4th column exists only on the
+       achievement tables. */
+    .container > table > tbody > tr > td:nth-child(2)::before {
+        content: "Name: ";
+        font-weight: 700;
+    }
+
+    .container > table > tbody > tr > td:nth-child(3)::before {
+        content: "How to get: ";
+        font-weight: 700;
+    }
+
+    .container > table > tbody > tr > td:nth-child(4)::before {
+        content: "Needed amount";
+        font-weight: 700;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    .container > table > tbody > tr > td:first-child img {
+        max-width: 96px;
+        height: auto;
+    }
+
+    /* The nested tier table now sits in a full-width cell, so center it and
+       let it size to its content rather than stretching the card. */
+    .container > table td table {
+        width: auto;
+        margin: 8px auto 0;
+    }
+
+    /* Shrink the tier cells so all four columns (DEFAULT/BRONZE/SILVER/GOLD)
+       fit within the card instead of clipping GOLD off the right edge. */
+    .container > table td table th,
+    .container > table td table td {
+        padding: 3px 4px;
+        font-size: 11px;
+    }
+
+    .container > table td table img {
+        max-width: 44px;
+        height: auto;
+    }
+}
