@@ -56,6 +56,7 @@ Awesome-github-profiles/
 │   ├── profileModal.js       # Profile modal functionality
 │   ├── retriveprofile.js     # Profile retrieval script
 │   ├── revealelementsonscroll.js # Reveal elements on scroll
+|   ├── socialpopicon.js        #Reveal social pop icons on scroll 
 │   └── speechRecognition.js   # Speech recognition functionality
 ├── styles/                   # CSS styles
 │   ├── blog.css              # Blog styles
