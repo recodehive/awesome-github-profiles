@@ -1272,13 +1272,15 @@ body.theme-dark .center {
 body.dark-mode .side-icons a {
   color: white !important;
 }
-
 @media (max-width: 768px) {
   .side-icons {
     width: 50px;
     height: auto;
     padding: 10px 0;
     gap: 15px;
+    display: flex;          /* ensure flex layout */
+    flex-direction: column; /* stack icons vertically */
+    align-items: center;    /* center icons horizontally */
   }
 
   .icons {
@@ -1297,6 +1299,9 @@ body.dark-mode .side-icons a {
     height: auto;
     padding: 30px 0;
     gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .icons {
@@ -1309,7 +1314,7 @@ body.dark-mode .side-icons a {
   }
 
   .footer-description {
-    max-width: 600;
+    max-width: 600px;    /* added missing px */
     text-align: center;
     margin: 0 auto;
   }
@@ -1695,4 +1700,147 @@ body.dark-mode a {
 body.dark-mode a:hover {
   color: #ccc;
   /* Slightly lighter on hover */
+}
+
+/* POP UP SOCIAL MEDIA BUTTONS  */
+/* Social Toggle Button */
+.social-toggle {
+  position: fixed;
+  bottom: 80px; 
+  right: 20px;
+  height: 20px;
+  width: 20px;
+  background-color: #000000;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.social-toggle i {
+  font-size: 18px;
+}
+
+body.dark-mode .social-toggle {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+
+/* Social Popup */
+.social-popup {
+  display: none;
+  position: fixed;
+  bottom: 140px;
+  right: 20px;
+  background: transparent;  
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: none;
+  z-index: 9999;
+  flex-direction: column;    
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.social-popup.show {
+  display: flex;
+}
+
+/* Icon container - circle */
+.social-popup .icon-content {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  overflow: hidden; 
+}
+
+/* Icon styling */
+.social-popup .icon-content i {
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Hover effect */
+.social-popup .icon-content:hover {
+  transform: scale(1.15);
+}
+
+/* Platform-specific colors */
+.social-popup .icon-content a[aria-label="GitHub"] {
+  background-color: #333;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-popup .icon-content a[aria-label="GitHub"]:hover {
+  background-color: #444;
+}
+
+.social-popup .icon-content a[aria-label="YouTube"] {
+  background-color: #FF0000;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-popup .icon-content a[aria-label="YouTube"]:hover {
+  background-color: #cc0000;
+}
+
+.social-popup .icon-content a[aria-label="Twitter"] {
+  background-color: #000000;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-popup .icon-content a[aria-label="Twitter"]:hover {
+  background-color: #1a1a1a;
+}
+
+.social-popup .icon-content a[aria-label="LinkedIn"] {
+  background-color: #0077B5;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-popup .icon-content a[aria-label="LinkedIn"]:hover {
+  background-color: #005f91;
+}
+
+.social-popup .icon-content a[aria-label="Facebook"] {
+  background-color: #1877F2;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-popup .icon-content a[aria-label="Facebook"]:hover {
+  background-color: #145dbf;
+}
+
+/* Show toggle only when scrolled */
+body.scrolled .social-toggle {
+  display: block;
 }

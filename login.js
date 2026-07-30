@@ -25,31 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const code = params.get("code");
     
     if (code) {
-      console.log("OAuth code received:", code);
       getGhUser(code);
     }
   };
 
   // Get GitHub user data
   const getGhUser = (code) => {
-    console.log("Starting GitHub user fetch with code:", code);
-    
     fetch(`${BACKEND_URL}/api/auth/github?code=${code}`)
       .then(res => {
-        console.log("Auth response status:", res.status);
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         return res.json();
       })
       .then(response => {
-        console.log("Auth response data:", response);
         if (!response.data || !response.data.access_token) {
           throw new Error('No access token received');
         }
         
         const token = response.data.access_token;
-        console.log("Received access token, fetching user data");
         
         return fetch(`${BACKEND_URL}/api/auth/github/getUser`, {
           headers: {
@@ -58,14 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       })
       .then(res => {
-        console.log("User data response status:", res.status);
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         return res.json();
       })
       .then(response => {
-        console.log("User data response:", response);
         if (!response.user) {
           throw new Error('No user data received');
         }
@@ -86,11 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         alert("Failed to authenticate with GitHub. Please try again.");
       });
   };
-
-  // Handle GitHub auth on page load
-  if (window.location.search.includes("code")) {
-    handleGitHubAuth();
-  }
 
   // Handle GitHub auth on page load
   if (window.location.search.includes("code")) {
