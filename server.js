@@ -53,8 +53,6 @@ app.get("/api/auth/github", async (req, res) => {
       return res.status(400).json({ message: "Authorization code is required" });
     }
 
-    console.log("Received GitHub code:", code);
-
     const response = await axios.post(
       'https://github.com/login/oauth/access_token',
       {
@@ -69,8 +67,6 @@ app.get("/api/auth/github", async (req, res) => {
         }
       }
     );
-
-    console.log("GitHub OAuth response:", response.data);
 
     if (response.data.error) {
       throw new Error(response.data.error_description || response.data.error);
@@ -96,18 +92,12 @@ app.get("/api/auth/github/getUser", async (req, res) => {
     }
 
     const token = authHeader.split(' ')[1];
-    console.log("Fetching user data with token:", token.substring(0, 10) + '...');
 
     const response = await axios.get("https://api.github.com/user", {
       headers: {
         Authorization: `Bearer ${token}`,
         Accept: 'application/json'
       }
-    });
-
-    console.log("GitHub user data response:", {
-      name: response.data.name,
-      email: response.data.email
     });
 
     res.status(200).json({
